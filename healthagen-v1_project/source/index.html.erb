@@ -1,0 +1,44 @@
+---
+title: Dashboard
+---
+
+<div class="row clearfix">  
+  <div class="col span-6">
+    people count: <%= data.people.friends.count %>
+    <ul>
+      <% data.people.friends.each_with_index do |f, index| %>
+      <li><%= index + 1 %>: <%= f %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col span-6 omega">
+    sidebar count: <%= data.sidebar.count %>
+    <ul>
+      <% 1.upto(5) do |num| %>
+          <li><%= num %>: <%= data.sidebar[num] %></li>
+      <% end %>
+    </ul>
+  </div>
+</div><!-- .row -->
+
+<div class="row clearfix"> 
+  <div class="col span-3">
+  </div>
+
+  <div class="col span-3">
+  </div>
+
+  <div class="col span-3">
+  </div>
+
+  <div class="col span-3 omega">
+  </div>
+</div><!-- .row -->
+
+<div class="row clearfix">
+  <div class="col span-12">
+  </div>
+</div><!-- .row -->
+
+

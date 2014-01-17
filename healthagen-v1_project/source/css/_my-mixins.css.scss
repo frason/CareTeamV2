@@ -1,0 +1,42 @@
+//  Mixin for rem units
+//  http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+//
+//  example:
+//    @include rem-fallback(margin, 10, 20, 30, 40);
+//
+//  returns:
+//     body {
+//       margin: 100px 200px 300px 400px;
+//       margin: 10rem 20rem 30rem 40rem; 
+//     }
+// ==========================================================================
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*10}px;  // multiplier modified to 10 instead of 16
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  } 
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
+}
