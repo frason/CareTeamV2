@@ -1,5 +1,5 @@
 @import "susy";
-@import "my-mixins";
+@import "partials/my-mixins";
 
 html {
   /*  set baseline to 1rem = 10px
@@ -14,19 +14,22 @@ body {
   @include rem-fallback(padding-top, 8);  // add padding-top for bootstrap .navbar-fixed-top
 }
 
-$total-columns: 9;     // min default grid
+$mobile: 8;
+$desktop: 12;
+
+$total-columns: $mobile;     // min default grid
 $column-width: 80px;   // width each column
 $gutter-width: 20px;   // width of each gutter
-$grid-padding: 5px;    // grid-padding
+$grid-padding: 10px;    // grid-padding
 
-$desktop: 12;
-//$container-style: fluid;
+$container-style: fluid;
 
 $grayLight: #e5e5e5;
+$grayMedium: #aaa;
 $grayDark: #9b9b9b;
 
 .container { 
-  @include container($total-columns, $desktop);  // establish the outer grid-containing element
+  @include container($mobile, $desktop);  // establish the outer grid-containing element
   //@include susy-grid-background;
   //border: 1px solid red;
 
@@ -35,6 +38,9 @@ $grayDark: #9b9b9b;
   }
 }
 
+/* --------------------------------------------------------------
+  Mobile-first styles
+----------------------------------------------------------------- */
 nav {
   background-color: $grayLight;
   width: 100%;
@@ -58,6 +64,10 @@ nav {
     width: 30px;
     height: 30px;
 
+    &:hover {
+      background-color: $grayMedium;
+    }
+
     .icon-bar {
       display: block;
       height: 4px;
@@ -65,7 +75,7 @@ nav {
       background-color: $grayLight;
 
       + .icon-bar {
-      margin-top: 4px;
+        margin-top: 4px;
       }
     }
   }
@@ -73,113 +83,77 @@ nav {
 
 .row {
   width: 100%;
-  background-color: #999;
+  //background-color: #999;
   //@include rem-fallback(margin, 1, 0);
 }
 
 .col {
-  background-color: blue;
   min-height: 207px;
   background-color: $grayLight;
+  position: relative;
   @include rem-fallback(margin, 1, 0);
+}
 
-  //&:nth-child(#{$total-columns}n) {
-  //  @include omega;
-  //}
-  &[class*="span-"]:last-child, &[class*="span-"].omega {
-    @include omega;
+.ribbon {
+  width: 0;
+  height: 0;
+
+  &:before {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: rgba(74, 186, 226, 0.7) rgba(74, 186, 226, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-image: none;
+    border-left: 4rem solid rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 4rem;
+    content: "";
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
   }
-  &.span-1 {
-    @include span-columns(1);
-  }
-  &.span-2 {
-    @include span-columns(2);
-  }
-  &.span-3 {
-    @include span-columns(3);
-  }
-  &.span-4 {
-    @include span-columns(4);
-  }
-  &.span-5 {
-    @include span-columns(5);
-  }
-  &.span-6 {
-    @include span-columns(6);
-  }
-  &.span-7 {
-    @include span-columns(7);
-  }
-  &.span-8 {
-    @include span-columns(8);
-  }      
-  &.span-9, &.span-10 &.span-11, &.span-12 {
-    @include span-columns(9);
+  &.warning:before {
+    border-left: 4rem solid rgba(255, 187, 77, 0.88);
+    border-top: 4rem solid rgba(255, 187, 77, 0.88);
+  }  
+  i {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-size: 26px;
+    color: white;
+    &.icon-check:before {
+      content: "\00BB";
+    }
   }
 }
 
-.main {
-  @include span-columns(6);
-  background-color: orange;
-}
 
-.sidebar {
-  @include span-columns(3 omega);
-  background-color: yellow;
-}
+// hide clearfix between columns until appropriate breakpoint with a second class: .visible-col#
+//.clearfix.noshow {
+//    display: none;
+//    visibility: hidden;
+//}
 
+@include make-colSpans($mobile);
+
+
+/* --------------------------------------------------------------
+  Media-query for Desktop breakpoint
+----------------------------------------------------------------- */
 @include at-breakpoint($desktop){
   .container { 
     //@include susy-grid-background;
   }
 
-  .col {
-    
-    &.span-1 {
-      @include span-columns(1);
-    }
-    &.span-2 {
-      @include span-columns(2);
-    }
-    &.span-3 {
-      @include span-columns(3);
-    }
-    &.span-4 {
-      @include span-columns(4);
-    }
-    &.span-5 {
-      @include span-columns(5);
-    }
-    &.span-6 {
-      @include span-columns(6);
-    }
-    &.span-7 {
-      @include span-columns(7);
-    }
-    &.span-8 {
-      @include span-columns(8);
-    }      
-    &.span-9 {
-      @include span-columns(9);
-    }
-    &.span-10 {
-      @include span-columns(10);
-    }
-    &.span-11 {
-      @include span-columns(11);
-    }
-    &.span-12 {
-      @include span-columns(12);
-    }
-  }
+  @include make-colSpans($desktop);
 
-  .main {
-    @include span-columns(6);
-    background-color: green;
-  }
-
-  .sidebar {
-    @include span-columns(6 omega);
-    background-color: green;
-  }
 }
+
+.omega {
+  @include omega;
+}
+
+

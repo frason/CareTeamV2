@@ -86,40 +86,4 @@ rbenv rehash
 ```
 Now if you type `ruby -v` in the Terminal, it should print out `ruby 1.9.3-p484`.
 
-## Optional
-
-Now that you have Homebrew, you can easily install other things with `brew`. (These are not required for this project.)
-
-### Installing Git
-
-```shell
-brew install git
-```
-
-### Installing PhantomJS
-
-```shell
-brew install phantomjs
-```
-
-### Installing Node.js
-
-```shell
-brew install node
-```
-
-A useful Sublime Text package that requires Node.js is [Autoprefixer]( https://sublime.wbond.net/packages/Autoprefixer) for CSS vendor-prefixes.
-
-### Installing Grunt CLI
-
-```shell
-npm install -g grunt-cli
-```
-
-### Installing Bundler
-
-```shell
-gem update --system
-gem install bundler
-```
 

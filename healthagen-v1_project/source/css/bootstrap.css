@@ -1012,8 +1012,8 @@ textarea.input-lg {
   overflow-x: visible;
   padding-right: 15px;
   padding-left: 15px;
-  border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  /*border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);*/
   -webkit-overflow-scrolling: touch;
 }
 .navbar-collapse:before,
@@ -1142,9 +1142,9 @@ textarea.input-lg {
   }
 }
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: 0;
 }
-/*.navbar-nav > li > a {
+.navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
@@ -1182,10 +1182,10 @@ textarea.input-lg {
   /*.navbar-nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
-  }*/
+  }
   .navbar-nav.navbar-right:last-child {
     margin-right: -15px;
-  }
+  }*/
 }
 @media (min-width: 768px) {
   .navbar-left {

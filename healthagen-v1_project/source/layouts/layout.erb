@@ -11,12 +11,16 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <%= stylesheet_link_tag "boilerplate", "bootstrap", "grid", "buttons" %>
+    <link rel="stylesheet" href="css/boilerplate.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/buttons.css">
+
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body class="<%= page_classes %>">
 
-    <%= partial "nav/nav-1" %>
+    <%= partial "partials/nav-1" %>
 
     <div style="width:1180px; height:50px; border:1px solid blue; margin:0 auto; display:none;">
         <span style="font-size:16px;">Font size: 16px</span>
@@ -31,7 +35,10 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <%= javascript_include_tag  "vendor/bootstrap", "plugins", "main" %>
+
+    <script src="js/vendor/bootstrap.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
