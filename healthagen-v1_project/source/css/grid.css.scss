@@ -2,16 +2,41 @@
 @import "partials/my-mixins";
 
 html {
-  /*  set baseline to 1rem = 10px
-      http://snook.ca/archives/html_and_css/font-size-with-rem
-  */
+  /* set baseline to 1rem = 10px ... http://snook.ca/archives/html_and_css/font-size-with-rem */ 
   font-size: 62.5%;
 }
+
+/* mobile */
+@media screen and (min-width: 300px) { html { font-size: 10px; } }
+@media screen and (min-width: 330px) { html { font-size: 11px; } }
+@media screen and (min-width: 360px) { html { font-size: 12px; } }
+@media screen and (min-width: 390px) { html { font-size: 13px; } }
+@media screen and (min-width: 420px) { html { font-size: 14px; } }
+@media screen and (min-width: 450px) { html { font-size: 15px; } }
+@media screen and (min-width: 480px) { html { font-size: 16px; } }
+@media screen and (min-width: 510px) { html { font-size: 17px; } }
+@media screen and (min-width: 540px) { html { font-size: 18px; } }
+//@media screen and (min-width: 570px) { html { font-size: 19px; } }
+//@media screen and (min-width: 600px) { html { font-size: 20px; } }
+//@media screen and (min-width: 630px) { html { font-size: 21px; } }
+//@media screen and (min-width: 660px) { html { font-size: 22px; } }
+//@media screen and (min-width: 690px) { html { font-size: 23px; } }
+
+/* desktop */
+@media screen and (min-width: 700px) { html { font-size: 10px; } }
+@media screen and (min-width: 770px) { html { font-size: 11px; } }
+@media screen and (min-width: 840px) { html { font-size: 12px; } }
+@media screen and (min-width: 910px) { html { font-size: 13px; } }
+@media screen and (min-width: 980px) { html { font-size: 14px; } }
+@media screen and (min-width: 1050px) { html { font-size: 15px; } }
+@media screen and (min-width: 1120px) { html { font-size: 16px; } }
+@media screen and (min-width: 1190px) { html { font-size: 17px; } }
+@media screen and (min-width: 1260px) { html { font-size: 18px; } }
 
 body {
   line-height: 1.3;
   @include rem-fallback(font-size, 1.3);
-  @include rem-fallback(padding-top, 8);  // add padding-top for bootstrap .navbar-fixed-top
+  @include rem-fallback(padding-top, 6);  // add padding-top for bootstrap .navbar-fixed-top
 }
 
 $mobile: 8;
@@ -44,9 +69,8 @@ $grayDark: #9b9b9b;
 nav {
   background-color: $grayLight;
   width: 100%;
-  @include rem-fallback(min-height, 4);
   @include rem-fallback(font-size, 1.5);
-  @include rem-fallback(padding, 1.5, 0);
+  @include rem-fallback(padding, 1, 0);
 
   .navbar-nav {
     float:left !important;
@@ -56,13 +80,16 @@ nav {
   }
 
   button.dropdown-toggle {
-    padding: 4px;
+    //padding: 4px;
+    @include rem-fallback(padding, .4);
     background-color: $grayDark;
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
-    width: 30px;
-    height: 30px;
+    //width: 30px;
+    //height: 30px;
+    @include rem-fallback(width, 3);
+    @include rem-fallback(height, 3);
 
     &:hover {
       background-color: $grayMedium;
@@ -70,12 +97,14 @@ nav {
 
     .icon-bar {
       display: block;
-      height: 4px;
+      //height: 4px;
+      @include rem-fallback(height, .4);
       border-radius: 3px;
       background-color: $grayLight;
 
       + .icon-bar {
-        margin-top: 4px;
+        //margin-top: 4px;
+        @include rem-fallback(margin-top, .4);
       }
     }
   }
@@ -88,7 +117,7 @@ nav {
 }
 
 .col {
-  min-height: 207px;
+  @include rem-fallback(min-height, 15);
   background-color: $grayLight;
   position: relative;
   @include rem-fallback(margin, 1, 0);
@@ -99,20 +128,17 @@ nav {
   height: 0;
 
   &:before {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
     border-color: rgba(74, 186, 226, 0.7) rgba(74, 186, 226, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-    border-image: none;
-    border-left: 4rem solid rgba(0, 0, 0, 0);
     border-style: solid;
-    border-width: 4rem;
+    //border-width: 40px;
+    @include rem-fallback(border-width, 3);
     content: "";
     display: block;
     position: absolute;
     right:0;
     top:0;
+    width: 0;
+    height: 0;
   }
   &.warning:before {
     border-left: 4rem solid rgba(255, 187, 77, 0.88);
@@ -121,8 +147,9 @@ nav {
   i {
     position: absolute;
     right: 6px;
-    top: 6px;
-    font-size: 26px;
+    top: 0px;
+    //font-size: 30px;
+    @include rem-fallback(font-size, 3);
     color: white;
     &.icon-check:before {
       content: "\00BB";
@@ -130,20 +157,16 @@ nav {
   }
 }
 
+@include make-colSpans($mobile, true);
 
-// hide clearfix between columns until appropriate breakpoint with a second class: .visible-col#
-//.clearfix.noshow {
-//    display: none;
-//    visibility: hidden;
-//}
-
-@include make-colSpans($mobile);
-
+@include at-breakpoint($mobile 1179px) {
+  @include make-colHide($mobile);
+}
 
 /* --------------------------------------------------------------
   Media-query for Desktop breakpoint
 ----------------------------------------------------------------- */
-@include at-breakpoint($desktop){
+@include at-breakpoint($desktop) {
   .container { 
     //@include susy-grid-background;
   }
@@ -155,5 +178,4 @@ nav {
 .omega {
   @include omega;
 }
-
 

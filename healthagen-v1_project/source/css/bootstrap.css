@@ -43,7 +43,6 @@ html {
 }
 body {
   margin: 0;
-  padding-top: 70px;
 }
 a {
   background: transparent;
@@ -635,6 +634,9 @@ textarea.input-lg {
   border-top: 4px solid;
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
+  border-top: .4rem solid;
+  border-right: .4rem solid transparent;
+  border-left: .4rem solid transparent;
 }
 .dropdown {
   position: relative;
@@ -737,6 +739,7 @@ textarea.input-lg {
 .navbar-fixed-bottom .dropdown .caret {
   border-top: 0;
   border-bottom: 4px solid;
+  border-bottom: .4rem solid;
   content: "";
 }
 .dropup .dropdown-menu,

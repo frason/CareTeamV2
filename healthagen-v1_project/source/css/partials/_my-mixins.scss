@@ -46,18 +46,22 @@
 // -----------------------------------------------------------------
 //  Generate class for each column-span in a Susy layout
 // -----------------------------------------------------------------
-@mixin make-colSpans($num) {
+@mixin make-colHide($num) {
+  .col#{$num}-hide {
+    display: none !important;
+  }
+}
+
+@mixin make-colSpans($num, $isDefaultStyle: false) {
   @for $i from 1 through $num {
     .col#{$num}-span#{$i} {
       @include span-columns($i);
     }
   }
-  //.visible-col#{$num} {
-  //  display: block !important;
-  //}
-  //.omega {
-  //  @include omega;
-  //}
+  @if $isDefaultStyle == false {
+    @include make-colHide($num);
+  }
+
 }
 
 
