@@ -50,6 +50,9 @@
   .col#{$num}-hide {
     display: none !important;
   }
+  .col#{$num}-omega {
+    @include omega;
+  }
 }
 
 @mixin make-colSpans($num, $isDefaultStyle: false) {

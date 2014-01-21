@@ -20,6 +20,19 @@
 </head>
 <body class="<%= page_classes %>">
 
+    <div id="panel"><!-- info-panel -->
+      <dl>
+        <dt>window-width:</dt>
+        <dd class="win"></dd>
+        <dt>body-width:</dt>
+        <dd class="width"></dd>
+        <dt>font-size:</dt>
+        <dd class="fontsize"></dd>
+        <!--dt>layout:</dt>
+        <dd class="layout"></dd-->
+      </dl>
+    </div>
+
     <%= partial "partials/nav-1" %>
 
     <div style="width:1180px; height:50px; border:1px solid blue; margin:0 auto; display:none;">
@@ -39,6 +52,28 @@
     <script src="js/vendor/bootstrap.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        // Code for the info-panel
+        var $window = $(window),
+            $body = $('body');
+            $panel = $('#panel'),
+            $win = $('.win', $panel),
+            $width = $('.width', $panel),
+            $fontsize = $('.fontsize', $panel),
+            $layout = $('.layout', $panel),
+
+        $win.html($window.width() + 'px');
+        $width.html($body.outerWidth() + 'px');
+        $fontsize.html($('html').css('font-size'));
+
+        $(window).on('resize', function(){
+            //console.log($window.width());
+            $win.html($window.width() + 'px');
+            $width.html($body.outerWidth() + 'px');
+            $fontsize.html($('html').css('font-size'));
+        })
+    </script>
 
 </body>
 </html>

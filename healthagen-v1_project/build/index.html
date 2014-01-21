@@ -20,6 +20,19 @@
 </head>
 <body class="index">
 
+    <div id="panel"><!-- info-panel -->
+      <dl>
+        <dt>window-width:</dt>
+        <dd class="win"></dd>
+        <dt>body-width:</dt>
+        <dd class="width"></dd>
+        <dt>font-size:</dt>
+        <dd class="fontsize"></dd>
+        <!--dt>layout:</dt>
+        <dd class="layout"></dd-->
+      </dl>
+    </div>
+
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,7 +74,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li>
-                    <form class="navbar-form navbar-left" role="search">
+                    <form class="navbar-form" role="search">
                       <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                       </div>
@@ -84,7 +97,7 @@
 
     <div class="container">
       <div class="row clearfix">
-  <div class="col col12-span6 col8-span4">
+  <div class="col col12-span6 col8-span4 col6-span6">
     <div class="ribbon">
       <i class="icon-check"></i>
     </div>
@@ -100,7 +113,10 @@
     </ul>
   </div>
 
-  <div class="col col12-span6 col8-span4 omega">
+  <div class="col col12-span6 col12-omega col8-span4 col8-omega col6-span6">
+    <div class="ribbon">
+      <i class="icon-check"></i>
+    </div>
     sidebar count: 5
     <ul>
       
@@ -119,21 +135,21 @@
 
   <!--div class="clearfix col8-hide"></div--> 
 
-  <div class="col col12-span3 col8-span2">
+  <div class="col col12-span3 col8-span2 col6-span3">
   </div>
 
-  <div class="col col12-span3 col8-span2">
+  <div class="col col12-span3 col8-span2 col6-span3 col6-omega">
   </div>
 
-  <div class="col col12-span3 col8-span2">
+  <div class="col col12-span3 col8-span2 col6-span3">
   </div>
 
-  <div class="col col12-span3 col8-span2 omega">
+  <div class="col col12-span3 col12-omega col8-span2 col8-omega col6-span3 col6-omega">
   </div>
 </div><!-- .row -->
 
 <div class="row clearfix">
-  <div class="col col12-span12 col8-span8">
+  <div class="col col12-span12 col8-span8 col6-span6">
   </div>
 </div><!-- .row -->
 
@@ -147,6 +163,28 @@
     <script src="js/vendor/bootstrap.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        // Code for the info-panel
+        var $window = $(window),
+            $body = $('body');
+            $panel = $('#panel'),
+            $win = $('.win', $panel),
+            $width = $('.width', $panel),
+            $fontsize = $('.fontsize', $panel),
+            $layout = $('.layout', $panel),
+
+        $win.html($window.width() + 'px');
+        $width.html($body.outerWidth() + 'px');
+        $fontsize.html($('html').css('font-size'));
+
+        $(window).on('resize', function(){
+            //console.log($window.width());
+            $win.html($window.width() + 'px');
+            $width.html($body.outerWidth() + 'px');
+            $fontsize.html($('html').css('font-size'));
+        })
+    </script>
 
 </body>
 </html>
