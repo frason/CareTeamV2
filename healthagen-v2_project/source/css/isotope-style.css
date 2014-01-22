@@ -230,13 +230,12 @@ body {
 }
 
 .element .number {
-  font-size: 1.25em;
-  font-weight: bold;
-  color: hsla(0,0%,0%,.5);
+  font-size: 2rem;
+  color: #aaa;
   left: 0.5em;
-  top: 4em;
+  top: 5rem;
 }
-
+/*
 .variable-sizes .element.width2 { width: 230px; }
 
 .variable-sizes .element.height2 { height: 230px; }
@@ -253,12 +252,12 @@ body {
   height: 350px;
   z-index: 100;
 }
-
+*/
 .clickable .element:hover {
   cursor: pointer;
 }
 
-.clickable .element:hover h3, .clickable .element:hover h2 {
+.clickable .element:hover h3, .clickable .element:hover h2, .clickable .element:hover .category, .clickable .element:hover .date {
   /*text-shadow: 0 0 10px white, 0 0 10px white; */
   color: #aaa;
 }
@@ -350,11 +349,16 @@ body {
 #options .option-combo {
   display: inline-block;
   float: left;
-  margin-right: 10px;
 }
-
+#options .option-combo:first-child {
+  margin-left: 0.625rem;
+}
 #options .option-combo.option-right {
   float: right;
+}
+
+#options ul#sort-direction {
+  margin-right: 0.625rem;
 }
 
 #options .option-combo ul {

@@ -7,7 +7,7 @@ title: Dashboard
 
 <section id="options" class="clearfix"> 
   <div class="option-combo">
-    <h3>Filters</h3>
+    <h3>Filter by:</h3>
     <ul id="filters" class="option-set clearfix" data-option-key="filter">
       <li><a href="#filter" data-option-value="*" class="selected">All</a></li>
       <li><a href="#filter" data-option-value=".qualityMeasures">Quality Measures</a></li>
@@ -17,20 +17,20 @@ title: Dashboard
   </div>
 
   <div class="option-combo option-right">
-    <h3>Sort</h3>
+    <h3>Sort order:</h3>
+    <ul id="sort-direction" class="option-set clearfix" data-option-key="sortAscending">
+      <li><a href="#sortAscending=true" data-option-value="true" class="selected">Ascending</a></li>
+      <li><a href="#sortAscending=false" data-option-value="false">Descending</a></li>
+    </ul>
+  </div>
+
+  <div class="option-combo option-right">
+    <h3>Sort by:</h3>
     <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy">
       <li><a href="#sortBy=original-order" data-option-value="original-order" class="selected" data>Default</a></li>
       <li><a href="#sortBy=date" data-option-value="date">Date</a></li>
       <li><a href="#sortBy=name" data-option-value="name">Name</a></li>
       <li><a href="#sortBy=number" data-option-value="number">Percentage</a></li>
-    </ul>
-  </div>
-
-  <div class="option-combo option-right">
-    <h3>Sort direction</h3>
-    <ul id="sort-direction" class="option-set clearfix" data-option-key="sortAscending">
-      <li><a href="#sortAscending=true" data-option-value="true" class="selected">Ascending</a></li>
-      <li><a href="#sortAscending=false" data-option-value="false">Descending</a></li>
     </ul>
   </div>
 </section><!-- #options -->
@@ -50,7 +50,7 @@ title: Dashboard
     </div>
 
         
-    <div class="col desktop-col12-span2 tablet-col12-span2 mobile-col12-span2 qualityMeasures element" data-date="4/18/2014 13:14">
+    <div class="col desktop-col12-span2 tablet-col12-span2 mobile-col12-span2 qualityMeasures height2 element" data-date="4/18/2014 13:14">
     <div class="item">
       <p class="number">52%</p>
       <h3 class="name">Cancer</h3>
@@ -60,7 +60,7 @@ title: Dashboard
     </div>
     
         
-    <div class="col desktop-col12-span4 tablet-col12-span4 mobile-col12-span4 utilMeasures element" data-date="2/1/2014 18:22">
+    <div class="col desktop-col12-span4 tablet-col12-span4 mobile-col12-span4 utilMeasures height2 element" data-date="2/1/2014 18:22">
     <div class="item">
       <p class="number">83%</p>
       <h3 class="name">Cancer</h3>
@@ -80,7 +80,7 @@ title: Dashboard
     </div>
     
         
-    <div class="col desktop-col12-span2 tablet-col12-span2 mobile-col12-span2 registry element" data-date="7/28/2014 20:38">
+    <div class="col desktop-col12-span2 tablet-col12-span2 mobile-col12-span2 registry height2 element" data-date="7/28/2014 20:38">
     <div class="item">
       <p class="number">20%</p>
       <h3 class="name">Cancer</h3>
@@ -120,7 +120,7 @@ title: Dashboard
     </div>
 
         
-    <div class="col desktop-col12-span2 tablet-col12-span2 mobile-col12-span2 qualityMeasures element" data-date="5/25/2014 13:14">
+    <div class="col desktop-col12-span2 tablet-col12-span2 mobile-col12-span2 qualityMeasures height2 element" data-date="5/25/2014 13:14">
     <div class="item">
       <p class="number">27%</p>
       <h3 class="name">Aches</h3>
@@ -170,7 +170,7 @@ title: Dashboard
     </div>
 
         
-    <div class="col desktop-col12-span2 tablet-col12-span2 mobile-col12-span2 utilMeasures element" data-date="1/15/2013 14:14">
+    <div class="col desktop-col12-span2 tablet-col12-span2 mobile-col12-span2 utilMeasures height2 element" data-date="1/15/2013 14:14">
     <div class="item">
       <p class="number">93%</p>
       <h3 class="name">Diabetes</h3>

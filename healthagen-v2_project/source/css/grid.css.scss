@@ -54,7 +54,7 @@ $blueMedium: #4ABAE2;
   //background-color: #ccc;
 
   .item {
-    @include rem-fallback(min-height, 15);
+    @include rem-fallback(min-height, 11);
     background-color: $grayLight;
     position: relative;
     width: 100%;
@@ -93,6 +93,14 @@ $blueMedium: #4ABAE2;
 ----------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {  
   @include make-colSpans-withPrefix($total-columns, $mobile);  
+
+  .desktop-col12-span4.height2 .item {
+    height: 11rem;
+  }
+  .desktop-col12-span2.height2 .item {
+    height: 11rem;
+  }
+
 }
 
 /* --------------------------------------------------------------
@@ -101,12 +109,28 @@ $blueMedium: #4ABAE2;
 /* iPads (portrait and landscape) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   @include make-colSpans-withPrefix($total-columns, $tablet);
+
+  .desktop-col12-span4.height2 .item {
+    height: 16.5rem;
+  }
+  .desktop-col12-span2.height2 .item {
+    height: 16.5rem;
+  }
+
 }
 /* --------------------------------------------------------------
   Media-query for Desktop breakpoint
 ----------------------------------------------------------------- */
 @media only screen and (min-width: 1025px) {
   @include make-colSpans-withPrefix($total-columns, $desktop); 
+
+  .desktop-col12-span4.height2 .item {
+    height: 22rem;
+  }
+  .desktop-col12-span2.height2 .item {
+    height: 22rem;
+  }
+
 }
 
 /* --------------------------------------------------------------
@@ -195,7 +219,8 @@ nav {
       border-radius: 4px;
     }
     i {
-      @include rem-fallback(font-size, 2); 
+      @include rem-fallback(font-size, 2);
+      line-height: 2rem; 
       right: 14px;
       top: 3px;     
     }
@@ -206,6 +231,7 @@ nav {
     right: 6px;
     top: 0px;
     @include rem-fallback(font-size, 3);
+    line-height: 3rem;
     color: white;
     &.icon-check:before {
       content: "\00BB";
