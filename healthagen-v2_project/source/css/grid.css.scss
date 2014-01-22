@@ -1,0 +1,251 @@
+@import "susy";
+@import "partials/my-mixins";
+
+html {
+  // Susy 'at-breakpoint' calculates with base of 1rem = 16px, so do not use base of 62.5% below:
+  //set baseline to 1rem = 10px ... http://snook.ca/archives/html_and_css/font-size-with-rem
+  //font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.3;
+  @include rem-fallback(font-size, 1.3);
+  @include rem-fallback(padding-top, 5.625);  // add padding-top for bootstrap .navbar-fixed-top
+}
+
+$mobile: "mobile";
+$tablet: "tablet";
+$desktop: "desktop";
+
+$total-columns: 12;       // min default grid
+$column-width: 6.25rem;   // width each column
+$gutter-width: 0rem;      // width of each gutter
+$grid-padding: 0.625rem;   // grid-padding
+
+$container-style: fluid;
+
+$grayLight: #e5e5e5;
+$grayMedium: #aaa;
+$grayDark: #9b9b9b;
+$blueMedium: #4ABAE2;
+
+.container { 
+  @include container($total-columns);  // establish the outer grid-containing element
+  //@include susy-grid-background;
+  //border: 1px solid red;
+
+  ol, ul {
+    text-align:left;
+  }
+}
+
+.row {
+  width: 100%;
+  //background-color: #999;
+  //@include rem-fallback(margin, 1, 0);
+}
+
+.col {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* all others */
+  @include rem-fallback(padding, 0.625);
+
+  .item {
+    @include rem-fallback(min-height, 15);
+    background-color: $grayLight;
+    position: relative;
+    width: 100%;
+  }
+}
+
+/* mobile */
+@media screen and (min-width: 300px) { html { font-size: 10px; } }
+@media screen and (min-width: 330px) { html { font-size: 11px; } }
+@media screen and (min-width: 360px) { html { font-size: 12px; } }
+@media screen and (min-width: 390px) { html { font-size: 13px; } }
+@media screen and (min-width: 420px) { html { font-size: 14px; } }
+@media screen and (min-width: 450px) { html { font-size: 15px; } }
+@media screen and (min-width: 480px) { html { font-size: 16px; } }
+@media screen and (min-width: 510px) { html { font-size: 17px; } }
+@media screen and (min-width: 540px) { html { font-size: 18px; } }
+//@media screen and (min-width: 570px) { html { font-size: 19px; } }
+//@media screen and (min-width: 600px) { html { font-size: 20px; } }
+//@media screen and (min-width: 630px) { html { font-size: 21px; } }
+//@media screen and (min-width: 660px) { html { font-size: 22px; } }
+//@media screen and (min-width: 690px) { html { font-size: 23px; } }
+
+/* desktop */
+//@media screen and (min-width: 700px) { html { font-size: 10px; } }
+//@media screen and (min-width: 770px) { html { font-size: 11px; } }
+@media screen and (min-width: 840px) { html { font-size: 12px; } }
+@media screen and (min-width: 910px) { html { font-size: 13px; } }
+@media screen and (min-width: 980px) { html { font-size: 14px; } }
+@media screen and (min-width: 1050px) { html { font-size: 15px; } }
+@media screen and (min-width: 1120px) { html { font-size: 16px; } }
+@media screen and (min-width: 1190px) { html { font-size: 17px; } }
+@media screen and (min-width: 1260px) { html { font-size: 18px; } }
+
+/* --------------------------------------------------------------
+  Mobile-first default styles
+----------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {  
+  @include make-colSpans-withPrefix($total-columns, $mobile);  
+}
+
+/* --------------------------------------------------------------
+  Media-query for Tablet breakpoint
+----------------------------------------------------------------- */
+/* iPads (portrait and landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  @include make-colSpans-withPrefix($total-columns, $tablet);
+}
+/* --------------------------------------------------------------
+  Media-query for Desktop breakpoint
+----------------------------------------------------------------- */
+@media only screen and (min-width: 1025px) {
+  @include make-colSpans-withPrefix($total-columns, $desktop); 
+}
+
+/* --------------------------------------------------------------
+  other default styles
+----------------------------------------------------------------- */
+.omega {
+  @include omega;
+}
+
+nav {
+  background-color: $grayLight;
+  width: 100%;
+  @include rem-fallback(font-size, 1.5);
+  @include rem-fallback(padding, 1, 0);
+
+  .navbar-nav {
+    float:left !important;
+  }
+  .navbar-right {
+    float: right !important;
+  }
+
+  button.dropdown-toggle {
+    //padding: 4px;
+    @include rem-fallback(padding, 0.4);
+    background-color: $grayDark;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    //width: 30px;
+    //height: 30px;
+    @include rem-fallback(width, 3);
+    @include rem-fallback(height, 3);
+
+    &:hover {
+      background-color: $grayMedium;
+    }
+
+    .icon-bar {
+      display: block;
+      //height: 4px;
+      @include rem-fallback(height, 0.4);
+      border-radius: 3px;
+      background-color: $grayLight;
+
+      + .icon-bar {
+        //margin-top: 4px;
+        @include rem-fallback(margin-top, 0.4);
+      }
+    }
+  }
+}
+
+/*---- corner ribbons ----*/
+.ribbon {
+  width: 0;
+  height: 0;
+  position: static !important;
+
+  &:before {
+    border-color: rgba(74, 186, 226, 0.7) rgba(74, 186, 226, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-style: solid;
+    //border-width: 30px;
+    @include rem-fallback(border-width, 3);
+    content: "";
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
+    width: 0;
+    height: 0;
+  }
+  &.warning:before {
+    border-left: 4rem solid rgba(255, 187, 77, 0.88);
+    border-top: 4rem solid rgba(255, 187, 77, 0.88);
+  }  
+  &.hotspot {
+    &:before {
+      @include rem-fallback(width, 1.875);
+      @include rem-fallback(height, 1.875);
+      @include rem-fallback(font-size, 2);
+      border: none;
+      background-color: $blueMedium;
+      right:10px;
+      top:10px;
+      border-radius: 4px;
+    }
+    i {
+      @include rem-fallback(font-size, 2); 
+      right: 14px;
+      top: 3px;     
+    }
+  }
+
+  i {
+    position: absolute;
+    right: 6px;
+    top: 0px;
+    @include rem-fallback(font-size, 3);
+    color: white;
+    &.icon-check:before {
+      content: "\00BB";
+    }
+  }
+}
+
+
+/*---- info-panel ----*/
+#panel {
+  z-index: 1050;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  line-height: 21px;
+  color: #000;
+  border-radius: 8px;
+
+  dl {
+    margin: 0;
+    padding: 0;
+
+    dt, dd {
+      float: left;
+      margin: 0;
+      padding: 0;
+      text-align: left;      
+    }
+
+    dt {
+      width: 120px;
+      font-weight: bold;
+    }
+
+    dd + dt {
+      clear: both;      
+    }
+  }
+}
+
+
