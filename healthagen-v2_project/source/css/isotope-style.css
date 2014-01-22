@@ -189,20 +189,25 @@ body {
 .element.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
 .element.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }*/
 
-.col.utilMeasures .item { background: #F9F2FF;}
-.col.qualityMeasures .item  { background: #FFFAF2;}
-.col.registry .item { background: #FFF2F4;}
+.element.utilMeasures .item { background: #F9F2FF;}
+.element.qualityMeasures .item  { background: #FFFAF2;}
+.element.registry .item { background: #FFF2F4;}
+
+.element .item {
+  border-radius: 5px;
+  border: 1px solid #9b9b9b;
+}
 
 .element * {
   position: absolute;
   margin: 0;
 }
 
-.element .symbol {
-  left: 0.2em;
-  top: 0.4em;
-  font-size: 3.8em;
-  line-height: 1.0em;
+.element .name {
+  left: 1rem;
+  top: 0.5rem;
+  font-size: 2rem;
+  font-weight: normal;
 }
 .element.large .symbol {
   font-size: 4.5em;
@@ -212,16 +217,16 @@ body {
   color: #000;
 }
 
-.element .name {
+.element .category {
   left: 0.5em;
-  bottom: 1.6em;
-  font-size: 1.05em;
+  bottom: 2.5em;
+  font-size: 1rem;
 }
 
-.element .weight {
-  font-size: 0.9em;
+.element .date {
   left: 0.5em;
   bottom: 0.5em;
+  font-size: 0.8rem;
 }
 
 .element .number {
@@ -229,7 +234,7 @@ body {
   font-weight: bold;
   color: hsla(0,0%,0%,.5);
   left: 0.5em;
-  top: 0.5em;
+  top: 4em;
 }
 
 .variable-sizes .element.width2 { width: 230px; }
@@ -306,8 +311,7 @@ body {
 }
 
 #options li a:hover {
-  background-color: #aaa;
-  color: white;
+  background-color: #e5e5e5;
 }
 
 #options li a:active {
@@ -321,15 +325,14 @@ body {
 #options li a {
   /*border-left:  1px solid hsla( 0, 0%, 100%, 0.3 );
   border-right: 1px solid hsla( 0, 0%,   0%, 0.2 );*/
-  border-color: #9b9b9b;
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid #9b9b9b;
+  border-left: none;
   text-decoration: none;
 }
 
 #options li:first-child a {
   border-radius: 5px 0 0 5px;
-  /*border-left: none;*/
+  border: 1px solid #9b9b9b;
 }
 
 #options li:last-child a {
@@ -348,6 +351,10 @@ body {
   display: inline-block;
   float: left;
   margin-right: 10px;
+}
+
+#options .option-combo.option-right {
+  float: right;
 }
 
 #options .option-combo ul {

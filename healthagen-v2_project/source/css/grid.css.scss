@@ -51,6 +51,7 @@ $blueMedium: #4ABAE2;
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* all others */
   @include rem-fallback(padding, 0.625);
+  //background-color: #ccc;
 
   .item {
     @include rem-fallback(min-height, 15);
