@@ -218,12 +218,12 @@ body {
     display: none; } }
 @media only screen and (min-width: 360px) and (max-width: 767px) {
   /* line 99, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
-  .mobile-col12-span2.height2 .item {
-    height: 23.35rem; }
+  .mobile-col12-span4.height2 .item {
+    height: 23.45rem; }
 
   /* line 102, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
-  .mobile-col12-span4.height2 .item {
-    height: 23.35rem; } }
+  .mobile-col12-span8.height2 .item {
+    height: 23.45rem; } }
 /* --------------------------------------------------------------
   Media-query for Tablet breakpoint
 ----------------------------------------------------------------- */
@@ -539,8 +539,8 @@ nav {
     font-size: 20px;
     font-size: 2rem;
     line-height: 2rem;
-    right: 14px;
-    top: 3px; }
+    right: 17px;
+    top: 6px; }
   /* line 230, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
   .ribbon i {
     position: absolute;
@@ -584,3 +584,24 @@ nav {
     /* line 273, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
     #panel dl dd + dt {
       clear: both; }
+  /* line 277, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
+  #panel .breakpoint {
+    display: none; }
+
+/* line 282, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
+.mobile #panel {
+  background-color: rgba(255, 0, 0, 0.3); }
+  /* line 284, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
+  .mobile #panel .break-1 {
+    display: inline; }
+
+/* line 288, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
+.tablet #panel {
+  background-color: rgba(0, 255, 0, 0.3); }
+  /* line 290, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
+  .tablet #panel .break-2 {
+    display: inline; }
+
+/* line 295, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/grid.css.scss */
+.desktop #panel .break-3 {
+  display: inline; }

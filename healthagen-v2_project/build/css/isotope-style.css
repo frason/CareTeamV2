@@ -207,7 +207,7 @@ body {
 .element .name {
   left: 1rem;
   top: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: normal;
 }
 .element.large .symbol {
@@ -234,7 +234,7 @@ body {
   font-size: 2rem;
   color: #aaa;
   left: 0.5em;
-  top: 5rem;
+  top: 3.5rem;
 }
 /*
 .variable-sizes .element.width2 { width: 230px; }

@@ -31,9 +31,11 @@
         <dd class="width"></dd>
         <dt>font-size:</dt>
         <dd class="fontsize"></dd>
-        <!--dt>layout:</dt>
-        <dd class="layout"></dd-->
-      </dl>
+        <dt>breakpoint:</dt>
+        <dd class="breakpoint break-1">mobile</dd>
+        <dd class="breakpoint break-2">tablet</dd>
+        <dd class="breakpoint break-3">desktop</dd>
+     </dl>
     </div>
 
     <%= partial "partials/nav-1" %>
@@ -52,28 +54,6 @@
     <script src="js/vendor/bootstrap.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
-    <script type="text/javascript">
-        // Code for the info-panel
-        var $window = $(window),
-            $body = $('body');
-            $panel = $('#panel'),
-            $win = $('.win', $panel),
-            $width = $('.width', $panel),
-            $fontsize = $('.fontsize', $panel),
-            $layout = $('.layout', $panel),
-
-        $win.html($window.width() + 'px');
-        $width.html($body.outerWidth() + 'px');
-        $fontsize.html($('html').css('font-size'));
-
-        $(window).on('resize', function(){
-            //console.log($window.width());
-            $win.html($window.width() + 'px');
-            $width.html($body.outerWidth() + 'px');
-            $fontsize.html($('html').css('font-size'));
-        })
-    </script>
 
 </body>
 </html>
