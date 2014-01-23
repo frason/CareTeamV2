@@ -48,14 +48,14 @@
 // -----------------------------------------------------------------
 @mixin make-colSpans-withPrefix($num, $prefix) {
   @for $i from 1 through $num {
-    .#{$prefix}-col#{$num}-span#{$i} {
+    .#{$prefix}-#{$num}col-span#{$i} {
       @include span-columns($i);
     }
   }
-  .#{$prefix}-col#{$num}-hide {
+  .#{$prefix}-#{$num}col-hide {
     display: none !important;
   }
-  .#{$prefix}-col#{$num}--omega {
+  .#{$prefix}-#{$num}col-omega {
     @include omega;
   }
   html:after { 

@@ -9,7 +9,7 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>Healthagen | <%= current_page.data.title %></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="initial-scale=1">
 
     <link rel="stylesheet" href="css/boilerplate.css">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -24,18 +24,20 @@
 <body class="<%= page_classes %>">
 
     <div id="panel"><!-- info-panel -->
-      <dl>
-        <dt>window-width:</dt>
-        <dd class="win"></dd>
-        <dt>body-width:</dt>
-        <dd class="width"></dd>
-        <dt>font-size:</dt>
-        <dd class="fontsize"></dd>
-        <dt>breakpoint:</dt>
-        <dd class="breakpoint break-1">mobile</dd>
-        <dd class="breakpoint break-2">tablet</dd>
-        <dd class="breakpoint break-3">desktop</dd>
-     </dl>
+        <a class="close-x" id="close-x">x</a>
+        <dl>
+            <dt>window-width:</dt>
+            <dd class="win"></dd>
+            <dt>body-width:</dt>
+            <dd class="width"></dd>
+            <dt>font-size:</dt>
+            <dd class="fontsize"></dd>
+            <dt>breakpoint:</dt>
+            <dd class="breakpoint break-1">mobile</dd>
+            <dd class="breakpoint break-2">tablet (portrait)</dd>
+            <dd class="breakpoint break-3">tablet (landscape)</dd>
+            <dd class="breakpoint break-4">desktop</dd>
+        </dl>
     </div>
 
     <%= partial "partials/nav-1" %>
