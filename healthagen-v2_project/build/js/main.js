@@ -5,38 +5,107 @@ $.fn.exists = function () {
 
 // info-panel
 jQuery(document).ready(function ($) {  
-  var $window = $(window),
-      $body = $('body'),
-      $html = $('html'),
-      $panel = $('#panel'),
-      $win = $('.win', $panel),
-      $width = $('.width', $panel),
-      $fontsize = $('.fontsize', $panel),
-      $breakpoint = $('.breakpoint', $panel);
 
-  function toggleBreakpoint() {
-    var windowWidth = $window.width();
-     // toggle breakpoint classes
-    $html.toggleClass('desktop', (windowWidth >= 1025));
-    $html.toggleClass('tablet', ( (windowWidth >= 768) && (windowWidth <= 1024) ));
-    $html.toggleClass('mobile', (windowWidth <= 767) );           
-  }
+    var $window = $(window),
+        $body = $('body'),
+        $html = $('html');
 
-  $win.html($window.width() + 'px');
-  $width.html($body.outerWidth() + 'px');
-  $fontsize.html($('html').css('font-size'));
+    function toggleBreakpoint() {
+      var windowWidth = $window.width();
+       // toggle breakpoint classes
+      $html.toggleClass('desktop', (windowWidth >= 1025));
+      $html.toggleClass('tablet', ( (windowWidth >= 768) && (windowWidth <= 1024) ));
+      $html.toggleClass('mobile', (windowWidth <= 767) );           
+    }
 
-  toggleBreakpoint();
+    toggleBreakpoint();
 
-  $(window).on('resize', function(){
-      //console.log($window.width());
+    if( $('#panel').exists() ) {
+      var $panel = $('#panel'),
+          $win = $('.win', $panel),
+          $width = $('.width', $panel),
+          $fontsize = $('.fontsize', $panel);
+
       $win.html($window.width() + 'px');
       $width.html($body.outerWidth() + 'px');
-      $fontsize.html($('html').css('font-size'));
+      $fontsize.html($html.css('font-size'));
+    }
 
-      toggleBreakpoint();
-  });
+    $(window).on('resize', function(){
+        //console.log($window.width());
+        toggleBreakpoint();
+
+        if( $('#panel').exists() ) {
+          $win.html($window.width() + 'px');
+          $width.html($body.outerWidth() + 'px');
+          $fontsize.html($html.css('font-size'));
+        }
+    });
 // end .ready        
 });
 
 
+// dashboard isotope
+jQuery(document).ready(function ($) {  
+  if( $('#isotope-container').exists() ) {  
+    var $container = $('#isotope-container');
+    
+    $container.isotope({
+      itemSelector : '.element',
+      masonry : {
+        columnWidth : 1
+      },
+      /*sortBy : 'date',*/
+      getSortData : {
+        date : function( $elem ) {
+          return Date.parse($elem.attr('data-date'));
+        },
+        hotspot : function( $elem ) {
+          return parseInt($elem.attr('data-hotspot'), 10 );
+        },
+        /*weight : function( $elem ) {
+          return parseFloat( $elem.find('.weight').text().replace( /[\(\)]/g, '') );
+        },*/
+        number : function( $elem ) {
+          return parseInt( $elem.find('.number').text(), 10 );
+        },
+        name : function ( $elem ) {
+          return $elem.find('.name').text();
+        }
+      }
+    });
+    
+    
+    var $optionSets = $('#options .option-set'),
+        $optionLinks = $optionSets.find('a');
+
+    $optionLinks.click(function(){
+      var $this = $(this);
+      // don't proceed if already selected
+      if ( $this.hasClass('selected') ) {
+        return false;
+      }
+      var $optionSet = $this.parents('.option-set');
+      $optionSet.find('.selected').removeClass('selected');
+      $this.addClass('selected');
+
+      // make option object dynamically, i.e. { filter: '.my-filter-class' }
+      var options = {},
+          key = $optionSet.attr('data-option-key'),
+          value = $this.attr('data-option-value');
+      // parse 'false' as false boolean
+      value = value === 'false' ? false : value;
+      options[ key ] = value;
+      if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+        // changes in layout modes need extra logic
+        changeLayoutMode( $this, options )
+      } else {
+        // otherwise, apply new options
+        $container.isotope( options );
+      }
+      
+      return false;
+    });
+  }
+// end .ready        
+});

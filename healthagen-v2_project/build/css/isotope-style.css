@@ -267,10 +267,11 @@ body {
 /**** Example Options ****/
 
 #options {
-  padding-bottom: 1.0em;
+  padding-bottom: 1rem;
 }
 
 #options h3 {
+  margin-top: 0.2em;
   margin-bottom: 0.2em;
   font-size: 14px;
   font-size: .875rem;
@@ -292,7 +293,7 @@ body {
 
 #options li {
   float: left;
-  margin-bottom: 0.2em;
+  margin-bottom: 0em;
 }
 
 #options li a {

@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
   line-height: 1.3;
   @include rem-fallback(font-size, 1.3);
-  @include rem-fallback(padding-top, 5.625);  // add padding-top for bootstrap .navbar-fixed-top
+  @include rem-fallback(padding-top, 4.625);  // add padding-top for bootstrap .navbar-fixed-top
 }
 
 $mobile: "mobile";
@@ -99,7 +99,7 @@ $blueMedium: #4ABAE2;
   .mobile-col12-span4.height2 .item {
     height: 23.45rem;
   }
-  .mobile-col12-span8.height2 .item {
+  .mobile-col12-span8.height2 .item, .mobile-col12-span12.height2 .item {
     height: 23.45rem;
   }
 }
@@ -114,7 +114,7 @@ $blueMedium: #4ABAE2;
   .tablet-col12-span2.height2 .item {
     height: 23.35rem;
   }
-  .tablet-col12-span4.height2 .item {
+  .tablet-col12-span4.height2 .item, .tablet-col12-span6.height2 .item {
     height: 23.35rem;
   }
 
@@ -128,7 +128,7 @@ $blueMedium: #4ABAE2;
   .desktop-col12-span2.height2 .item {
     height: 23.35rem;
   }
-  .desktop-col12-span4.height2 .item {
+  .desktop-col12-span4.height2 .item, .desktop-col12-span6.height2 .item {
     height: 23.35rem;
   }
 
@@ -144,8 +144,8 @@ $blueMedium: #4ABAE2;
 nav {
   background-color: $grayLight;
   width: 100%;
-  @include rem-fallback(font-size, 1.5);
-  @include rem-fallback(padding, 1, 0);
+  @include rem-fallback(font-size, 1.25);
+  @include rem-fallback(padding, 0.625, 0);
 
   .navbar-nav {
     float:left !important;
@@ -155,16 +155,13 @@ nav {
   }
 
   button.dropdown-toggle {
-    //padding: 4px;
     @include rem-fallback(padding, 0.4);
     background-color: $grayDark;
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
-    //width: 30px;
-    //height: 30px;
-    @include rem-fallback(width, 3);
-    @include rem-fallback(height, 3);
+    @include rem-fallback(width, 2.75);
+    @include rem-fallback(height, 2.75);
 
     &:hover {
       background-color: $grayMedium;
@@ -172,13 +169,11 @@ nav {
 
     .icon-bar {
       display: block;
-      //height: 4px;
-      @include rem-fallback(height, 0.4);
+      @include rem-fallback(height, 0.35);
       border-radius: 3px;
       background-color: $grayLight;
 
       + .icon-bar {
-        //margin-top: 4px;
         @include rem-fallback(margin-top, 0.4);
       }
     }
@@ -194,7 +189,6 @@ nav {
   &:before {
     border-color: rgba(74, 186, 226, 0.7) rgba(74, 186, 226, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
     border-style: solid;
-    //border-width: 30px;
     @include rem-fallback(border-width, 3);
     content: "";
     display: block;
