@@ -55,7 +55,6 @@ jQuery(document).ready(function ($) {
       masonry : {
         columnWidth : 1
       },
-      /*sortBy : 'date',*/
       getSortData : {
         date : function( $elem ) {
           return Date.parse($elem.attr('data-date'));
@@ -72,7 +71,8 @@ jQuery(document).ready(function ($) {
         name : function ( $elem ) {
           return $elem.find('.name').text();
         }
-      }
+      },
+      sortBy : 'hotspot'      
     });
     
     
