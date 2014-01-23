@@ -92,15 +92,16 @@ $blueMedium: #4ABAE2;
   Mobile-first default styles
 ----------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {  
-  @include make-colSpans-withPrefix($total-columns, $mobile);  
+  @include make-colSpans-withPrefix($total-columns, $mobile);
+}
 
-  .desktop-col12-span4.height2 .item {
-    height: 11rem;
+@media only screen and (min-width: 360px) and (max-width: 767px) { 
+  .mobile-col12-span2.height2 .item {
+    height: 23.35rem;
   }
-  .desktop-col12-span2.height2 .item {
-    height: 11rem;
+  .mobile-col12-span4.height2 .item {
+    height: 23.35rem;
   }
-
 }
 
 /* --------------------------------------------------------------
@@ -110,11 +111,11 @@ $blueMedium: #4ABAE2;
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   @include make-colSpans-withPrefix($total-columns, $tablet);
 
-  .desktop-col12-span4.height2 .item {
-    height: 16.5rem;
+  .tablet-col12-span2.height2 .item {
+    height: 23.35rem;
   }
-  .desktop-col12-span2.height2 .item {
-    height: 16.5rem;
+  .tablet-col12-span4.height2 .item {
+    height: 23.35rem;
   }
 
 }
@@ -124,11 +125,11 @@ $blueMedium: #4ABAE2;
 @media only screen and (min-width: 1025px) {
   @include make-colSpans-withPrefix($total-columns, $desktop); 
 
-  .desktop-col12-span4.height2 .item {
-    height: 22rem;
-  }
   .desktop-col12-span2.height2 .item {
-    height: 22rem;
+    height: 23.35rem;
+  }
+  .desktop-col12-span4.height2 .item {
+    height: 23.35rem;
   }
 
 }
