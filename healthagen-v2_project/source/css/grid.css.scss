@@ -96,12 +96,16 @@ $blueMedium: #4ABAE2;
 }
 
 @media only screen and (min-width: 360px) and (max-width: 767px) { 
-  .mobile-col12-span4.height2 .item {
-    height: 23.45rem;
+  .element {
+    &.mobile-col12-span4, &.mobile-col12-span8, &.mobile-col12-span12 {
+      &.height2 {
+        .item {
+          height: 23.45rem;
+        } 
+      }
+    }
   }
-  .mobile-col12-span8.height2 .item, .mobile-col12-span12.height2 .item {
-    height: 23.45rem;
-  }
+
 }
 
 /* --------------------------------------------------------------
@@ -111,25 +115,32 @@ $blueMedium: #4ABAE2;
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   @include make-colSpans-withPrefix($total-columns, $tablet);
 
-  .tablet-col12-span2.height2 .item {
-    height: 23.35rem;
-  }
-  .tablet-col12-span4.height2 .item, .tablet-col12-span6.height2 .item {
-    height: 23.35rem;
+  .element {
+    &.tablet-col12-span2, &.tablet-col12-span4, &.tablet-col12-span6 {
+      &.height2 {
+        .item {
+          height: 23.35rem;
+        } 
+      }
+    }
   }
 
 }
+
 /* --------------------------------------------------------------
   Media-query for Desktop breakpoint
 ----------------------------------------------------------------- */
 @media only screen and (min-width: 1025px) {
   @include make-colSpans-withPrefix($total-columns, $desktop); 
 
-  .desktop-col12-span2.height2 .item {
-    height: 23.35rem;
-  }
-  .desktop-col12-span4.height2 .item, .desktop-col12-span6.height2 .item {
-    height: 23.35rem;
+  .element {
+    &.desktop-col12-span2, &.desktop-col12-span4, &.desktop-col12-span6 {
+      &.height2 {
+        .item {
+          height: 23.35rem;
+        } 
+      }
+    }
   }
 
 }
