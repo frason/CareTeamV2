@@ -171,6 +171,30 @@ nav {
   @include rem-fallback(font-size, 1.25);
   @include rem-fallback(padding, 0.625, 0);
 
+  .container {
+    @include rem-fallback(padding, 0 ,1);    
+  }
+
+  h1, h2 {
+    color: $grayDark; 
+    font-weight: normal;
+    display: inline-block;
+    @include rem-fallback(margin, 0, 1.625, 0, 0);
+  }
+
+  h1 {
+     line-height: 1;  
+     @include rem-fallback(font-size, 1);
+
+    strong {
+     @include rem-fallback(font-size, 1.625);     
+    }
+  }
+
+  h2 {
+    @include rem-fallback(font-size, 1.875);
+  }
+
   .navbar-nav {
     float:left !important;
   }
@@ -178,30 +202,42 @@ nav {
     float: right !important;
   }
 
-  button.dropdown-toggle {
-    @include rem-fallback(padding, 0.4);
-    background-color: $grayDark;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    @include rem-fallback(width, 2.75);
-    @include rem-fallback(height, 2.75);
+  button {
+    &.dropdown-toggle {
+      @include rem-fallback(padding, 0.4);
+      background-color: $grayDark;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      @include rem-fallback(width, 2.75);
+      @include rem-fallback(height, 2.75);
 
-    &:hover {
-      background-color: $grayMedium;
-    }
+      &:hover {
+        background-color: $grayMedium;
+      }
 
-    .icon-bar {
-      display: block;
-      @include rem-fallback(height, 0.35);
-      border-radius: 3px;
-      background-color: $grayLight;
+      .icon-bar {
+        display: block;
+        @include rem-fallback(height, 0.35);
+        border-radius: 3px;
+        background-color: $grayLight;
 
-      + .icon-bar {
-        @include rem-fallback(margin-top, 0.4);
+        + .icon-bar {
+          @include rem-fallback(margin-top, 0.4);
+        }
       }
     }
+
+    &.connect {
+      background-color: $blueMedium;     
+      border: 1px solid transparent;
+      border-radius: 4px;
+      @include rem-fallback(padding, 0.4, 1.25);
+      @include rem-fallback(font-size, 1.125);
+      color: white;
+    }
   }
+
 }
 
 /*---- corner ribbons ----*/

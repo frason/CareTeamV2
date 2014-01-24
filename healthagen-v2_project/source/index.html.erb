@@ -2,8 +2,13 @@
 title: Dashboard
 ---
 
-<link rel="stylesheet" href="css/isotope-style.css">
+<% content_for :stylesheets do %>
+  <link rel="stylesheet" href="css/isotope-style.css">
+<% end %>
 
+<% content_for :scripts do %>
+  <script src="js/vendor/jquery.isotope.min.js"></script>
+<% end %>
 
 <section id="options" class="clearfix"> 
   <div class="option-combo">
@@ -286,6 +291,4 @@ title: Dashboard
     </div>
 
 </div><!-- #isotope-container -->
-
-<script src="js/vendor/jquery.isotope.min.js"></script>
 
