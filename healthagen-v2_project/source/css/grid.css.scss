@@ -1,6 +1,17 @@
 @import "susy";
 @import "partials/my-mixins";
 
+@font-face {
+  font-family: 'healthagen';
+  src:url('../fonts/healthagen.eot');
+  src:url('../fonts/healthagen.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/healthagen.woff') format('woff'),
+    url('../fonts/healthagen.ttf') format('truetype'),
+    url('../fonts/healthagen.svg#healthagen') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   // Susy 'at-breakpoint' calculates with base of 1rem = 16px, so do not use base of 62.5% below:
   //set baseline to 1rem = 10px ... http://snook.ca/archives/html_and_css/font-size-with-rem
@@ -8,6 +19,8 @@ html {
 }
 
 body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
   overflow-x: hidden;
   line-height: 1.3;
   @include rem-fallback(font-size, 1.3);
@@ -165,6 +178,50 @@ $blueMedium: #4ABAE2;
   @include omega;
 }
 
+/*---- icons ----*/
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'healthagen';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cog:before {
+  content: "\e600";
+}
+.icon-checkmark:before {
+  content: "\e607";
+}
+.icon-save:before {
+  content: "\e601";
+}
+.icon-download:before {
+  content: "\e602";
+}
+.icon-print:before {
+  content: "\e603";
+}
+.icon-down-arrow:before {
+  content: "\e604";
+}
+.icon-hotspot:before {
+  content: "\e605";
+}
+.icon-up-arrow:before {
+  content: "\e606";
+}
+.icon-search:before {
+  content: "\e608";
+}
+
+/*---- nav ----*/
 nav {
   background-color: $grayLight;
   width: 100%;
@@ -183,8 +240,8 @@ nav {
   }
 
   h1 {
-     line-height: 1;  
-     @include rem-fallback(font-size, 1);
+    line-height: 1;  
+    @include rem-fallback(font-size, 1.0625);
 
     strong {
      @include rem-fallback(font-size, 1.625);     
@@ -192,6 +249,8 @@ nav {
   }
 
   h2 {
+    vertical-align: top;
+    line-height: 1.5;
     @include rem-fallback(font-size, 1.875);
   }
 
@@ -200,6 +259,18 @@ nav {
   }
   .navbar-right {
     float: right !important;
+  }
+
+  a.connect {
+    background-color: $blueMedium;     
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    @include rem-fallback(margin-top, 0.4);
+    @include rem-fallback(padding, 0.2, 1.25);
+    @include rem-fallback(font-size, 1.125);
+    color: white;
   }
 
   button {
@@ -227,15 +298,6 @@ nav {
         }
       }
     }
-
-    &.connect {
-      background-color: $blueMedium;     
-      border: 1px solid transparent;
-      border-radius: 4px;
-      @include rem-fallback(padding, 0.4, 1.25);
-      @include rem-fallback(font-size, 1.125);
-      color: white;
-    }
   }
 
 }
@@ -245,6 +307,15 @@ nav {
   width: 0;
   height: 0;
   position: static !important;
+
+  i {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    @include rem-fallback(font-size, 2.75);
+    line-height: 3rem;
+    color: white;
+  }
 
   &:before {
     border-color: rgba(74, 186, 226, 0.7) rgba(74, 186, 226, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
@@ -266,7 +337,6 @@ nav {
     &:before {
       @include rem-fallback(width, 1.875);
       @include rem-fallback(height, 1.875);
-      @include rem-fallback(font-size, 2);
       border: none;
       background-color: $blueMedium;
       right:10px;
@@ -274,22 +344,10 @@ nav {
       border-radius: 4px;
     }
     i {
-      @include rem-fallback(font-size, 2);
+      @include rem-fallback(font-size, 1.25);
       line-height: 2rem; 
       right: 17px;
-      top: 6px;     
-    }
-  }
-
-  i {
-    position: absolute;
-    right: 6px;
-    top: 0px;
-    @include rem-fallback(font-size, 3);
-    line-height: 3rem;
-    color: white;
-    &.icon-check:before {
-      content: "\00BB";
+      top: 8px;     
     }
   }
 }
