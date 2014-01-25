@@ -178,7 +178,7 @@ mark {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-p,
+/*p,*/
 pre {
     margin: 1em 0;
 }
