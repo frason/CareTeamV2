@@ -9,29 +9,15 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>Healthagen | Dashboard</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <link rel="stylesheet" href="css/boilerplate.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/buttons.css">
-
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <meta name="viewport" content="initial-scale=1">
+    <link href="css/boilerplate.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/grid.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="css/buttons.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    <script src="js/vendor/modernizr-2.6.2.min.js" type="text/javascript"></script>
 </head>
 <body class="index">
-
-    <div id="panel"><!-- info-panel -->
-      <dl>
-        <dt>window-width:</dt>
-        <dd class="win"></dd>
-        <dt>body-width:</dt>
-        <dd class="width"></dd>
-        <dt>font-size:</dt>
-        <dd class="fontsize"></dd>
-        <!--dt>layout:</dt>
-        <dd class="layout"></dd-->
-      </dl>
-    </div>
 
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -87,13 +73,6 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- .container -->            
     </nav>
-
-    <div style="width:1180px; height:50px; border:1px solid blue; margin:0 auto; display:none;">
-        <span style="font-size:16px;">Font size: 16px</span>
-        <span style="font-size:10px;">Font size: 10px</span>
-        <span style="font-size:1rem;">Font size: 1rem</span>
-        <span style="font-size:1em;">Font size: 1em</span>
-    </div>
 
     <div class="container">
       <div class="row clearfix">
@@ -157,34 +136,35 @@
 
     </div><!-- .container -->
 
+    <div style="padding:8px; margin:0 auto; text-align:center; display:none;">
+        <span style="font-size:16px;">Font size: 16px | </span> 
+        <span style="font-size:10px;">Font size: 10px | </span>
+        <span style="font-size:1rem;">Font size: 1rem | </span>
+        <span style="font-size:1em;">Font size: 1em | </span>
+    </div>
+
+    <div id="panel"><!-- info-panel -->
+        <a class="close-x" id="close-x">x</a>
+        <dl>
+            <dt>window-width:</dt>
+            <dd class="win"></dd>
+            <dt>body-width:</dt>
+            <dd class="width"></dd>
+            <dt>font-size:</dt>
+            <dd class="fontsize"></dd>
+            <dt>breakpoint:</dt>
+            <dd class="breakpoint break-1">mobile</dd>
+            <dd class="breakpoint break-2">tablet (portrait)</dd>
+            <dd class="breakpoint break-3">tablet (landscape)</dd>
+            <dd class="breakpoint break-4">desktop</dd>
+        </dl>
+    </div>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-    <script type="text/javascript">
-        // Code for the info-panel
-        var $window = $(window),
-            $body = $('body');
-            $panel = $('#panel'),
-            $win = $('.win', $panel),
-            $width = $('.width', $panel),
-            $fontsize = $('.fontsize', $panel),
-            $layout = $('.layout', $panel),
-
-        $win.html($window.width() + 'px');
-        $width.html($body.outerWidth() + 'px');
-        $fontsize.html($('html').css('font-size'));
-
-        $(window).on('resize', function(){
-            //console.log($window.width());
-            $win.html($window.width() + 'px');
-            $width.html($body.outerWidth() + 'px');
-            $fontsize.html($('html').css('font-size'));
-        })
-    </script>
-
+    
+    <script src="js/vendor/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/plugins.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>

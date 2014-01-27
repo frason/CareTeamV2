@@ -102,43 +102,85 @@ body {
   /* line 71, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   html {
     font-size: 18px; } }
-/* --------------------------------------------------------------
-  info-panel
------------------------------------------------------------------ */
-/* line 76, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+/*---- info-panel ----*/
+/* line 74, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
 #panel {
   z-index: 1050;
   position: fixed;
   right: 10px;
   bottom: 10px;
-  padding: 10px;
+  padding: 10px 30px 10px 10px;
   background-color: rgba(0, 0, 0, 0.3);
   font-size: 14px;
   line-height: 21px;
   color: #000;
-  border-radius: 8px; }
-  /* line 88, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  border-radius: 10px; }
+  /* line 87, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   #panel dl {
     margin: 0;
     padding: 0; }
-    /* line 92, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+    /* line 91, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
     #panel dl dt, #panel dl dd {
       float: left;
       margin: 0;
       padding: 0;
       text-align: left; }
-    /* line 99, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+    /* line 98, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
     #panel dl dt {
       width: 120px;
       font-weight: bold; }
-    /* line 104, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+    /* line 103, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
     #panel dl dd + dt {
       clear: both; }
+  /* line 107, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  #panel .breakpoint {
+    display: none; }
+  /* line 111, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  #panel a.close-x {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    color: white;
+    display: block;
+    border-radius: 10px;
+    background-color: black;
+    font-weight: bold;
+    padding: 5px 7px 8px 7px;
+    line-height: .5;
+    cursor: pointer; }
+    /* line 124, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+    #panel a.close-x:hover {
+      background-color: orange; }
+
+/* line 130, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+.mobile #panel {
+  background-color: rgba(0, 0, 255, 0.4); }
+  /* line 132, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  .mobile #panel .break-1 {
+    display: inline; }
+
+/* line 136, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+.tablet-ptr #panel {
+  background-color: rgba(255, 0, 0, 0.4); }
+  /* line 138, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  .tablet-ptr #panel .break-2 {
+    display: inline; }
+
+/* line 142, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+.tablet-lnd #panel {
+  background-color: rgba(0, 255, 0, 0.4); }
+  /* line 144, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  .tablet-lnd #panel .break-3 {
+    display: inline; }
+
+/* line 149, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+.desktop #panel .break-4 {
+  display: inline; }
 
 /* --------------------------------------------------------------
   Mobile-first default styles
 ----------------------------------------------------------------- */
-/* line 113, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+/* line 157, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
 nav {
   background-color: #e5e5e5;
   width: 100%;
@@ -146,13 +188,13 @@ nav {
   font-size: 1.5rem;
   padding: 10px 0px;
   padding: 1rem 0rem; }
-  /* line 119, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  /* line 163, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   nav .navbar-nav {
     float: left !important; }
-  /* line 122, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  /* line 166, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   nav .navbar-right {
     float: right !important; }
-  /* line 126, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  /* line 170, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   nav button.dropdown-toggle {
     padding: 4px;
     padding: 0.4rem;
@@ -164,37 +206,37 @@ nav {
     width: 3rem;
     height: 30px;
     height: 3rem; }
-    /* line 138, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+    /* line 182, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
     nav button.dropdown-toggle:hover {
       background-color: #aaaaaa; }
-    /* line 142, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+    /* line 186, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
     nav button.dropdown-toggle .icon-bar {
       display: block;
       height: 4px;
       height: 0.4rem;
       border-radius: 3px;
       background-color: #e5e5e5; }
-      /* line 149, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+      /* line 193, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
       nav button.dropdown-toggle .icon-bar + .icon-bar {
         margin-top: 4px;
         margin-top: 0.4rem; }
 
-/* line 157, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+/* line 201, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
 .row {
   width: 100%; }
 
-/* line 163, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+/* line 207, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
 .col {
   min-height: 150px;
   min-height: 15rem;
   background-color: #e5e5e5;
   position: relative; }
 
-/* line 169, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+/* line 213, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
 .ribbon {
   width: 0;
   height: 0; }
-  /* line 173, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  /* line 217, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   .ribbon:before {
     border-color: rgba(74, 186, 226, 0.7) rgba(74, 186, 226, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
     border-style: solid;
@@ -207,11 +249,11 @@ nav {
     top: 0;
     width: 0;
     height: 0; }
-  /* line 186, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  /* line 230, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   .ribbon.warning:before {
     border-left: 4rem solid rgba(255, 187, 77, 0.88);
     border-top: 4rem solid rgba(255, 187, 77, 0.88); }
-  /* line 190, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  /* line 234, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   .ribbon i {
     position: absolute;
     right: 6px;
@@ -219,7 +261,7 @@ nav {
     font-size: 30px;
     font-size: 3rem;
     color: white; }
-    /* line 197, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+    /* line 241, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
     .ribbon i.icon-check:before {
       content: "\00BB"; }
 
@@ -266,7 +308,7 @@ nav {
   display: inline; }
 
 @media (max-width: 580px) {
-  /* line 210, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  /* line 254, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   .col {
     margin-bottom: 3.44828%; }
 
@@ -282,7 +324,7 @@ nav {
   Media-query for Tablet breakpoint
 ----------------------------------------------------------------- */
 @media (min-width: 581px) and (max-width: 1179px) {
-  /* line 225, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  /* line 269, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   .col {
     margin-bottom: 2.5641%; }
 
@@ -346,7 +388,7 @@ nav {
   Media-query for Desktop breakpoint
 ----------------------------------------------------------------- */
 @media (min-width: 73.75em) {
-  /* line 240, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+  /* line 284, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
   .col {
     margin-bottom: 1.69492%; }
 
@@ -433,7 +475,7 @@ nav {
 /* --------------------------------------------------------------
   other default styles
 ----------------------------------------------------------------- */
-/* line 250, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
+/* line 294, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v1_project/source/css/grid.css.scss */
 .omega {
   float: right;
   margin-right: 0;
