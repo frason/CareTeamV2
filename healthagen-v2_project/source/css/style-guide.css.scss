@@ -1,3 +1,5 @@
+@import "partials/my-mixins";
+
 $tableBorder: #D5D9D8;
 
 table {
@@ -15,8 +17,11 @@ table {
   }
 
   &.table-bordered {
-    border: 1px solid $tableBorder;
-    border-collapse: separate;
+    border: 1px solid $tableBorder;    
+    border-collapse: separate;     // Done so we can round those corners!    
+    *border-collapse: collapsed;   // IE7 can't round corners anyway
+    //background-clip: padding-box;
+    //border-radius: 5px;
 
     th, td {
       border-left: 1px solid $tableBorder;
@@ -40,6 +45,19 @@ table {
     }
   }
 
+}
+
+pre, code {
+  background-color: #F5F5F5;
+  border: 1px solid $tableBorder;
+  border-radius: 4px;
+  display: block;
+  @include rem-fallback(font-size, 0.75);
+  margin: 0 0 1rem 0;
+  padding: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: left;
 }
 
 

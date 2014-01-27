@@ -59,32 +59,32 @@ a {
   }
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p, pre, code, h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1rem 0;
 }
 
 h1 {
-  font-size: 2rem;
+  @include rem-fallback(font-size, 2);
 }
 
 h2 {
-  font-size: 1.5rem;
+  @include rem-fallback(font-size, 1.5);
 }
 
 h3 {
-  font-size: 1.1875rem;
+  @include rem-fallback(font-size, 1.1875);
 }
 
 h4 {
-  font-size: 1rem;
+  @include rem-fallback(font-size, 1);
 }
 
 h5 {
-  font-size: 0.8125rem;
+  @include rem-fallback(font-size, 0.8125);
 }
 
 h6 {
-  font-size: 0.75rem;
+  @include rem-fallback(font-size, 0.8125);
 }
 
 .container { 
@@ -312,12 +312,13 @@ nav {
     i {
       @include rem-fallback(font-size, 0.45);
       line-height: 0.5;
-      right: 10px;
+      right: 5px;
       top: 10px;
 
       a.icon-dots {
         color: $grayDark;
         cursor: pointer;
+        padding: 5px;
 
         &:hover {
           color: $blueMedium;
@@ -343,6 +344,7 @@ nav {
   line-height: 21px;
   color: #000;
   border-radius: 10px;
+  font-family: arial, sans-serif;
   //border-top-right-radius: 10px;
 
   dl {
@@ -427,7 +429,7 @@ nav {
 //@media screen and (min-width: 864px) { html { font-size: 18px; } }
 
 /* desktop / tablet-landscape */
-@media screen and (min-width: 885px) { html { font-size: 12px; } }
+//@media screen and (min-width: 885px) { html { font-size: 12px; } }
 @media screen and (min-width: 959px) { html { font-size: 13px; } }
 @media screen and (min-width: 1033px) { html { font-size: 14px; } }
 @media screen and (min-width: 1106px) { html { font-size: 15px; } }
@@ -538,7 +540,7 @@ nav {
     
     h3 {
       @include rem-fallback(font-size, 1.6);
-      font-weight: normal;
+      font-weight: 300;
       margin: 0;
     }
   }
