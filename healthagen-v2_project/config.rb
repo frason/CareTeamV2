@@ -65,6 +65,8 @@ configure :build do
   # Use relative URLs
   activate :relative_assets
 
+  ignore "fonts/_svg-icons/*"
+
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end

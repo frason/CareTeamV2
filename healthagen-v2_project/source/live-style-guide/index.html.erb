@@ -48,7 +48,7 @@ primaryColors:
       <% current_page.data.primaryColors.each do |k| %>
         <tr>
           <td><%= k.scssVar %></td>     
-          <td><%= k.hexColor %></td>
+          <td>#<%= k.hexColor %></td>
           <td class="swatch-col" style="background-color:#<%= k.hexColor %>"></td>
         </tr>
       <% end %>
