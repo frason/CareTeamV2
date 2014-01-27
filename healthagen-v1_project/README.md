@@ -33,7 +33,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 ```shell
 brew install rbenv ruby-build
 ```
-Optional: If you have RVM installed, or previously installed rbenv, run these two lines to remove them before installing rbenv.
+Note: If you have RVM installed, or previously installed rbenv, run these two lines to remove them before installing rbenv.
 
 ```shell
 rvm implode
