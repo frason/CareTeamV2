@@ -1,0 +1,58 @@
+---
+title: Live Style Guide
+nav: partials/nav-style-guide
+relativePath: ../
+
+primaryColors:
+  -
+    scssVar: $grayLight
+    hexColor: e5e5e5
+  -
+    scssVar: $grayMedium
+    hexColor: aaa
+  -
+    scssVar: $grayDark
+    hexColor: 9b9b9b
+  -
+    scssVar: $blueLight
+    hexColor: 0cf
+  -
+    scssVar: $blueMedium
+    hexColor: 4ABAE2
+---
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'style-guide' %>
+<% end %>
+
+<div class="row clearfix">
+  <div class="col desktop-12col-span12 tablet-12col-span12 mobile-12col-span12">
+    <h2>Fonts</h2>
+    <table class="table-bordered table-striped">
+      <tr>
+        <th>CSS</th>
+      </tr>
+      <tr>
+          <td>font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;</td>
+      </tr>
+    </table>
+
+    <h2>Primary Colors</h2>
+
+    <table class="table-bordered table-striped">
+      <tr>
+        <th>SCSS Variable</th>
+        <th>Hex Value</th>
+        <th class="swatch-col">Color</th>
+      </tr>
+      <% current_page.data.primaryColors.each do |k| %>
+        <tr>
+          <td><%= k.scssVar %></td>     
+          <td><%= k.hexColor %></td>
+          <td class="swatch-col" style="background-color:#<%= k.hexColor %>"></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div><!-- .row -->

@@ -1,0 +1,45 @@
+$tableBorder: #D5D9D8;
+
+table {
+  width: 100%;
+  margin: 0 0 1rem 0;
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    
+    &.swatch-col {
+      width: 40px;
+    }
+  }
+
+  &.table-bordered {
+    border: 1px solid $tableBorder;
+    border-collapse: separate;
+
+    th, td {
+      border-left: 1px solid $tableBorder;
+      border-top: 1px solid $tableBorder;
+
+      &:first-child {
+        border-left: 0;
+      }
+    }
+
+    tr:first-child {      
+      th, td {
+        border-top: 0;
+      }  
+    }
+  }
+
+  &.table-striped {
+    tr:nth-child(odd) td, tr:nth-child(odd) th {
+      background-color: #F2F4F3;
+    }
+  }
+
+}
+
+

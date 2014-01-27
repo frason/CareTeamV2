@@ -2,23 +2,23 @@
 
 .gradient-example-button {@include sassy-button;}
 
-#graident-button-simple {
+.gradient-button-simple {
   @include sassy-button("simple");  
 }
 
-#graident-button-matte {
+.gradient-button-matte {
   @include sassy-button("matte");  
 }
 
-#graident-button-shiny {
+.gradient-button-shiny {
   @include sassy-button("shiny");  
 }
 
-#graident-button-glass {
+.gradient-button-glass {
   @include sassy-button("glass");  
 }
 
-#graident-button-flat {
+.gradient-button-flat {
   @include sassy-button("flat");  
 }
 

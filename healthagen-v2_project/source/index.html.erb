@@ -3,11 +3,11 @@ title: Dashboard
 ---
 
 <% content_for :stylesheets do %>
-  <link rel="stylesheet" href="css/isotope-style.css">
+  <%= stylesheet_link_tag 'isotope-style' %>
 <% end %>
 
 <% content_for :scripts do %>
-  <script src="js/vendor/jquery.isotope.min.js"></script>
+  <%= javascript_include_tag 'vendor/jquery.isotope.min' %>
 <% end %>
 
 <section id="options" class="clearfix"> 
@@ -43,333 +43,331 @@ title: Dashboard
 
 <div id="isotope-container" class="row clearfix">
 
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 utilMeasures element" data-hotspot="5" data-date="12/21/2013 3:30">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Diabetes</h3>
-          <p>Utlization Measures</p>
-        </div>
-        <p class="number">80%</p>
-        <p class="date">Aetna last update<br/> 12/21/13 3:30am</p>
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 utilMeasures element" data-hotspot="5" data-date="12/21/2013 3:30">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
       </div>
+      <div class="desc">
+        <h3 class="name">Diabetes</h3>
+        <p>Utlization Measures</p>
+      </div>
+      <p class="number">80%</p>
+      <p class="date">Aetna: last update<br/> 12/21/13 3:30am</p>
     </div>
+  </div>
 
-        
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 qualityMeasures height2 element" data-hotspot="5" data-date="4/18/2014 13:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Cancer</h3>
-          <p>Quality Measures</p>
-        </div>
-        <p class="number">52%</p>
-        <p class="date">Aetna last update<br/> 4/18/14 1:14pm</p>
+      
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 qualityMeasures height2 element" data-hotspot="5" data-date="4/18/2014 13:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
       </div>
+      <div class="desc">
+        <h3 class="name">Cancer</h3>
+        <p>Quality Measures</p>
+      </div>
+      <p class="number">52%</p>
+      <p class="date">Aetna: last update<br/> 4/18/14 1:14pm</p>
     </div>
-    
-        
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 utilMeasures height2 element white" data-hotspot="1" data-date="2/1/2014 18:22">
-      <div class="item">
-        <div class="ribbon hotspot">
-          <i class="icon-hotspot"></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Cancer</h3>
-          <p>Utlization Measures</p>
-        </div>
-        <p class="number">83%</p>
-        <p class="date">Aetna last update 2/1/14 6:22pm</p>
-      </div>
-    </div>
-
-        
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 utilMeasures element" data-hotspot="5" data-date="6/9/2013 14:45">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Aches</h3>
-          <p>Utlization Measures</p>
-        </div>
-        <p class="number">48%</p>
-        <p class="date">Aetna last update<br/> 6/9/13 2:45pm</p>
-      </div>
-    </div>
-    
-        
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry height2 element" data-hotspot="5" data-date="7/28/2014 20:38">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Cancer</h3>
-          <p>Registry</p>
-        </div>
-        <p class="number">20%</p>
-        <p class="date">Aetna last update<br/> 7/28/14 8:38pm</p>
-      </div>
-    </div>
-
-
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 utilMeasures element" data-hotspot="1" data-date="1/15/2013 14:14">
-      <div class="item">
-        <div class="ribbon hotspot">
-          <i class="icon-hotspot"></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Diabetes</h3>
-          <p>Utlization Measures</p>
-        </div>
-        <p class="number">93%</p>
-        <p class="date">Aetna last update<br/> 1/15/13 2:14pm</p>
-      </div>
-    </div>
-
-
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="5" data-date="8/18/2012 14:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Pain</h3>
-          <p>Registry</p>
-        </div>
-        <p class="number">37%</p>
-        <p class="date">Aetna last update<br/> 8/18/12 2:14pm</p>
-      </div>
-    </div>
-    
-        
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 qualityMeasures element" data-hotspot="5" data-date="7/12/2012 13:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Diabetes</h3>
-          <p>Quality Measures</p>
-        </div>
-        <p class="number">81%</p>
-        <p class="date">Aetna last update<br/> 7/12/13 1:14pm</p>
-      </div>
-    </div>
-
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 utilMeasures element" data-hotspot="5" data-date="10/29/2014 17:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Aches</h3>
-          <p>Utlization Measures</p>
-        </div>
-        <p class="number">18%</p>
-        <p class="date">Aetna last update<br/> 10/29/14 5:14pm</p>
-      </div>
-    </div>
-
-        
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 registry element" data-hotspot="5" data-date="9/18/2013 6:22">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Cancer</h3>
-          <p>Registry</p>
-        </div>
-        <p class="number">51%</p>
-        <p class="date">Aetna last update<br/> 9/18/13 6:22am</p>
-      </div>
-    </div>
-
-
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="1" data-date="8/18/2012 14:14">
-      <div class="item">
-        <div class="ribbon hotspot">
-          <i class="icon-hotspot"></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Pain</h3>
-          <p>Registry</p>
-        </div>
-        <p class="number">37%</p>
-        <p class="date">Aetna last update<br/> 8/18/12 2:14pm</p>
-      </div>
-    </div>
-
-
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="5" data-date="8/18/2012 14:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Pain</h3>
-          <p>Registry</p>
-        </div>
-        <p class="number">37%</p>
-        <p class="date">Aetna last update<br/> 8/18/12 2:14pm</p>
-      </div>
-    </div>
-
-        
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 qualityMeasures height2 element" data-hotspot="5" data-date="5/25/2014 13:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Aches</h3>
-          <p>Quality Measures</p>
-        </div>
-        <p class="number">27%</p>
-        <p class="date">Aetna last update<br/> 5/25/14 1:14pm</p>
-      </div>
-    </div>
-
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="1" data-date="9/21/2012 21:10">
-      <div class="item">
-        <div class="ribbon hotspot">
-          <i class="icon-hotspot"></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Aches</h3>
-          <p>Registry</p>
-        </div>
-        <p class="number">77%</p>
-        <p class="date">Aetna last update<br/> 9/21/12 9:10pm</p>
-      </div>
-    </div>
-
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 registry element" data-hotspot="1" data-date="1/8/2014 22:51">
-      <div class="item">
-        <div class="ribbon hotspot">
-          <i class="icon-hotspot"></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Aches</h3>
-          <p>Registry</p>
-        </div>
-        <p class="number">75%</p>
-        <p class="date">Aetna last update<br/> 1/8/14 10:51pm</p>
-      </div>
-    </div> 
-
-
-    <div class="col desktop-12col-span6 tablet-12col-span6 mobile-12col-span12 qualityMeasures element height2 white" data-hotspot="1" data-date="7/7/2014 18:14">
-      <div class="item">
-        <div class="ribbon hotspot">
-          <i class="icon-hotspot"></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Cancer</h3>
-          <p>Quality Measures</p>
-        </div>
-        <p class="number">99%</p>
-        <p class="date">Aetna last update 7/7/14 6:14pm</p>
-      </div>
-    </div>
-
-        
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 utilMeasures element" data-hotspot="5" data-date="10/29/2014 17:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Aches</h3>
-          <p>Utlization Measures</p>
-        </div>
-        <p class="number">18%</p>
-        <p class="date">Aetna last update<br/> 10/29/14 5:14pm</p>
-      </div>
-    </div>
-
-
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 qualityMeasures element" data-hotspot="5" data-date="3/7/2012 18:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Cancer</h3>
-          <p>Quality Measures</p>
-        </div>
-        <p class="number">89%</p>
-        <p class="date">Aetna last update<br/> 3/7/12 6:14pm</p>
-      </div>
-    </div>
-
-
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 utilMeasures height2 element" data-hotspot="5" data-date="1/15/2013 14:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Diabetes</h3>
-          <p>Utlization Measures</p>
-        </div>
-        <p class="number">93%</p>
-        <p class="date">Aetna last update<br/> 1/15/13 2:14pm</p>
-      </div>
-    </div>
+  </div>
   
-        
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="5" data-date="8/18/2012 14:14">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Pain</h3>
-          <p>Registry</p>
-        </div>
-        <p class="number">37%</p>
-        <p class="date">Aetna last update<br/> 8/18/12 2:14pm</p>
+      
+  <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 utilMeasures height2 element white" data-hotspot="1" data-date="2/1/2014 18:22">
+    <div class="item">
+      <div class="ribbon hotspot">
+        <i class="icon-hotspot"></i>
       </div>
-    </div>
-
-        
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="5" data-date="9/21/2012 21:10">
-      <div class="item">
-        <div class="ribbon dots">
-          <i class=""><a class="icon-dots"></a></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Aches</h3>
-          <p>Registry</p>
-        </div>
-        <p class="number">7%</p>
-        <p class="date">Aetna last update<br/> 9/21/12 9:10pm</p>
+      <div class="desc">
+        <h3 class="name">Cancer</h3>
+        <p>Utlization Measures</p>
       </div>
+      <p class="number">83%</p>
+      <p class="date">Aetna: last update 2/1/14 6:22pm</p>
     </div>
-   
+  </div>
 
-
-    <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 qualityMeasures element height2" data-hotspot="1" data-date="11/11/2011 9:14">
-      <div class="item">
-        <div class="ribbon hotspot">
-          <i class="icon-hotspot"></i>
-        </div>
-        <div class="desc">
-          <h3 class="name">Diabetes</h3>
-          <p>Quality Measures</p>
-        </div>
-        <p class="number">71%</p>
-        <p class="date">Aetna last update<br/> 11/11/11 9:14am</p>
+      
+  <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 utilMeasures element" data-hotspot="5" data-date="6/9/2013 14:45">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
       </div>
+      <div class="desc">
+        <h3 class="name">Aches</h3>
+        <p>Utlization Measures</p>
+      </div>
+      <p class="number">48%</p>
+      <p class="date">Aetna: last update<br/> 6/9/13 2:45pm</p>
     </div>
+  </div>
+  
+      
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry height2 element" data-hotspot="5" data-date="7/28/2014 20:38">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Cancer</h3>
+        <p>Registry</p>
+      </div>
+      <p class="number">20%</p>
+      <p class="date">Aetna: last update<br/> 7/28/14 8:38pm</p>
+    </div>
+  </div>
 
+
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 utilMeasures element" data-hotspot="1" data-date="1/15/2013 14:14">
+    <div class="item">
+      <div class="ribbon hotspot">
+        <i class="icon-hotspot"></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Diabetes</h3>
+        <p>Utlization Measures</p>
+      </div>
+      <p class="number">93%</p>
+      <p class="date">Aetna: last update<br/> 1/15/13 2:14pm</p>
+    </div>
+  </div>
+
+
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="5" data-date="8/18/2012 14:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Pain</h3>
+        <p>Registry</p>
+      </div>
+      <p class="number">37%</p>
+      <p class="date">Aetna: last update<br/> 8/18/12 2:14pm</p>
+    </div>
+  </div>
+  
+      
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 qualityMeasures element" data-hotspot="5" data-date="7/12/2012 13:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Diabetes</h3>
+        <p>Quality Measures</p>
+      </div>
+      <p class="number">81%</p>
+      <p class="date">Aetna: last update<br/> 7/12/13 1:14pm</p>
+    </div>
+  </div>
+
+  <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 utilMeasures element" data-hotspot="5" data-date="10/29/2014 17:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Aches</h3>
+        <p>Utlization Measures</p>
+      </div>
+      <p class="number">18%</p>
+      <p class="date">Aetna: last update<br/> 10/29/14 5:14pm</p>
+    </div>
+  </div>
+
+      
+  <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 registry element" data-hotspot="5" data-date="9/18/2013 6:22">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Cancer</h3>
+        <p>Registry</p>
+      </div>
+      <p class="number">51%</p>
+      <p class="date">Aetna: last update<br/> 9/18/13 6:22am</p>
+    </div>
+  </div>
+
+
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="1" data-date="8/18/2012 14:14">
+    <div class="item">
+      <div class="ribbon hotspot">
+        <i class="icon-hotspot"></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Pain</h3>
+        <p>Registry</p>
+      </div>
+      <p class="number">37%</p>
+      <p class="date">Aetna: last update<br/> 8/18/12 2:14pm</p>
+    </div>
+  </div>
+
+
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="5" data-date="8/18/2012 14:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Pain</h3>
+        <p>Registry</p>
+      </div>
+      <p class="number">37%</p>
+      <p class="date">Aetna: last update<br/> 8/18/12 2:14pm</p>
+    </div>
+  </div>
+
+      
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 qualityMeasures height2 element" data-hotspot="5" data-date="5/25/2014 13:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Aches</h3>
+        <p>Quality Measures</p>
+      </div>
+      <p class="number">27%</p>
+      <p class="date">Aetna: last update<br/> 5/25/14 1:14pm</p>
+    </div>
+  </div>
+
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="1" data-date="9/21/2012 21:10">
+    <div class="item">
+      <div class="ribbon hotspot">
+        <i class="icon-hotspot"></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Aches</h3>
+        <p>Registry</p>
+      </div>
+      <p class="number">77%</p>
+      <p class="date">Aetna: last update<br/> 9/21/12 9:10pm</p>
+    </div>
+  </div>
+
+  <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 registry element" data-hotspot="1" data-date="1/8/2014 22:51">
+    <div class="item">
+      <div class="ribbon hotspot">
+        <i class="icon-hotspot"></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Aches</h3>
+        <p>Registry</p>
+      </div>
+      <p class="number">75%</p>
+      <p class="date">Aetna: last update<br/> 1/8/14 10:51pm</p>
+    </div>
+  </div> 
+
+
+  <div class="col desktop-12col-span6 tablet-12col-span6 mobile-12col-span12 qualityMeasures element height2 white" data-hotspot="1" data-date="7/7/2014 18:14">
+    <div class="item">
+      <div class="ribbon hotspot">
+        <i class="icon-hotspot"></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Cancer</h3>
+        <p>Quality Measures</p>
+      </div>
+      <p class="number">99%</p>
+      <p class="date">Aetna: last update 7/7/14 6:14pm</p>
+    </div>
+  </div>
+
+      
+  <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 utilMeasures element" data-hotspot="5" data-date="10/29/2014 17:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Aches</h3>
+        <p>Utlization Measures</p>
+      </div>
+      <p class="number">18%</p>
+      <p class="date">Aetna: last update<br/> 10/29/14 5:14pm</p>
+    </div>
+  </div>
+
+
+  <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 qualityMeasures element" data-hotspot="5" data-date="3/7/2012 18:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Cancer</h3>
+        <p>Quality Measures</p>
+      </div>
+      <p class="number">89%</p>
+      <p class="date">Aetna: last update<br/> 3/7/12 6:14pm</p>
+    </div>
+  </div>
+
+
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 utilMeasures height2 element" data-hotspot="5" data-date="1/15/2013 14:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Diabetes</h3>
+        <p>Utlization Measures</p>
+      </div>
+      <p class="number">93%</p>
+      <p class="date">Aetna: last update<br/> 1/15/13 2:14pm</p>
+    </div>
+  </div>
+
+      
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="5" data-date="8/18/2012 14:14">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Pain</h3>
+        <p>Registry</p>
+      </div>
+      <p class="number">37%</p>
+      <p class="date">Aetna: last update<br/> 8/18/12 2:14pm</p>
+    </div>
+  </div>
+
+      
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 registry element" data-hotspot="5" data-date="9/21/2012 21:10">
+    <div class="item">
+      <div class="ribbon dots">
+        <i class=""><a class="icon-dots"></a></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Aches</h3>
+        <p>Registry</p>
+      </div>
+      <p class="number">7%</p>
+      <p class="date">Aetna: last update<br/> 9/21/12 9:10pm</p>
+    </div>
+  </div>
+ 
+
+  <div class="col desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 qualityMeasures element height2" data-hotspot="1" data-date="11/11/2011 9:14">
+    <div class="item">
+      <div class="ribbon hotspot">
+        <i class="icon-hotspot"></i>
+      </div>
+      <div class="desc">
+        <h3 class="name">Diabetes</h3>
+        <p>Quality Measures</p>
+      </div>
+      <p class="number">71%</p>
+      <p class="date">Aetna: last update<br/> 11/11/11 9:14am</p>
+    </div>
+  </div>
 
 </div><!-- #isotope-container -->
 
