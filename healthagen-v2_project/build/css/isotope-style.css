@@ -364,7 +364,7 @@ body {
   float: right;
 }
 
-#options ul#sort-direction {
+#options ul#sort-direction, #options ul#sort-by {
   margin-right: 0.625rem;
 }
 

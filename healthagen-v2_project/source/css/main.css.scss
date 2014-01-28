@@ -185,16 +185,18 @@ nav {
     color: $grayDark; 
     font-weight: normal;
     font-weight: 300;
-    display: inline-block;
-    @include rem-fallback(margin, 0, 1.625, 0, 0);
+    float: left;
+    @include rem-fallback(margin, 0, 1.25, 0, 0);
   }
 
   h1 {
-    line-height: 1;  
-    @include rem-fallback(font-size, 1.0625);
+    line-height: 1;
+    @include rem-fallback(font-size, 1.0625);  
+    @include rem-fallback(padding-right, 1.25);
+    border-right: 1px solid $grayDark;
 
     strong {
-     @include rem-fallback(font-size, 1.625);     
+     @include rem-fallback(font-size, 1.5625);    
     }
   }
 
@@ -211,25 +213,57 @@ nav {
     float: right !important;
   }
 
-  a.connect {
-    background-color: $blueMedium;     
-    border: 1px solid transparent;
-    border-radius: 4px;
-    display: inline-block;
-    @include rem-fallback(margin-top, 0.4);
-    @include rem-fallback(padding, 0.2, 1.25);
-    @include rem-fallback(font-size, 1.125);
-    //@include sassy-button-gradient("glass");
-    color: white;
+  a {
+    &.btn-primary {
+      background-color: $blueMedium;     
+      border: 1px solid transparent;
+      border-radius: 4px;
+      float: left;
+      vertical-align: top;
+      @include rem-fallback(margin, 0.375, 1.25, 0, 0);
+      @include rem-fallback(padding, 0.2, 0.75);
+      @include rem-fallback(font-size, 1.125);
+      //@include sassy-button-gradient("glass");
+      color: white;
 
-    &:hover {
-      background-color: $blueLight;
+      &:last-child {
+        @include rem-fallback(margin-right, 0);
+      }
+
+      &:hover {
+        background-color: $blueLight;
+      }
+    }
+
+    &.icon-search {
+      //@include rem-fallback(padding, 0, 0, 0, 0.375);
+      padding: 0;
+      line-height: 1.25;
+      @include rem-fallback(width, 1.5);
+      @include rem-fallback(height, 1.875);
+      @include rem-fallback(font-size, 1.375);
+      background-color: transparent;
+      @include rem-fallback(margin-left, -0.375);
+      margin-right: 0.625rem !important;
+
+      &:before {
+        color: $blueMedium;
+      }
+
+      &:hover {
+        background-color: transparent;
+
+        &:before {
+          color: $blueLight;
+        }        
+      }
     }
   }
 
   button {
     &.dropdown-toggle {
-      @include rem-fallback(padding, 0.4);
+      @include rem-fallback(padding, 0.375);
+      @include rem-fallback(margin-right, 0.625);
       background-color: $grayDark;
       background-image: none;
       border: 1px solid transparent;
@@ -243,12 +277,12 @@ nav {
 
       .icon-bar {
         display: block;
-        @include rem-fallback(height, 0.35);
+        @include rem-fallback(height, 0.375);
         border-radius: 3px;
         background-color: $grayLight;
 
         + .icon-bar {
-          @include rem-fallback(margin-top, 0.4);
+          @include rem-fallback(margin-top, 0.375);
         }
       }
     }
@@ -310,7 +344,7 @@ nav {
       background-color: none;      
     }
     i {
-      @include rem-fallback(font-size, 0.45);
+      @include rem-fallback(font-size, 0.4375);
       line-height: 0.5;
       right: 5px;
       top: 10px;
@@ -562,6 +596,4 @@ nav {
     }
   }
 }
-
-
 
