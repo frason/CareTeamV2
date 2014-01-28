@@ -2,6 +2,15 @@
 
 $tableBorder: #D5D9D8;
 
+.container {
+  font-family: arial, sans-serif;
+}
+
+.helvLight {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;  /* Firefox */
+}
+
 table {
   width: 100%;
   margin: 0 0 1rem 0;
@@ -13,6 +22,10 @@ table {
     
     &.swatch-col {
       width: 40px;
+    }
+
+    &.fontIcons {
+      font-size: 1.5rem;
     }
   }
 
@@ -52,12 +65,16 @@ pre, code {
   border: 1px solid $tableBorder;
   border-radius: 4px;
   display: block;
-  @include rem-fallback(font-size, 0.75);
+  @include rem-fallback(font-size, 0.875);
   margin: 0 0 1rem 0;
   padding: 8px;
   white-space: pre-wrap;
   word-wrap: break-word;
   text-align: left;
+
+  &:first-child, &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 

@@ -41,15 +41,21 @@
     <h2>Fonts</h2>
     <table class="table-bordered table-striped">
       <tr>
+        <th>Font Name</th>
         <th>CSS</th>
       </tr>
       <tr>
-          <td>font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;</td>
+        <td class="helvLight">Helvetica Neue Light</td>
+        <td>
+<pre>
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 300;  /* Firefox */
+</pre>          
+        </td>
       </tr>
     </table>
 
     <h2>Primary Colors</h2>
-
     <table class="table-bordered table-striped">
       <tr>
         <th>SCSS Variable</th>
@@ -88,6 +94,117 @@
         </tr>
       
     </table> 
+
+    <h2>Font Icons</h2>
+    <p>Font icons were created with <a href="http://icomoon.io/" target="_blank">IcoMoon</a>.</p>
+    <p>The "/fonts/_svg-icons" folder contains the original ".svg" icon files. You can import the ".svg" files, or the "selection.json", back to the <a href="http://icomoon.io/app/" target="_blank">IcoMoon app</a> using the *Import Icons* button (or via Main Menu > Manage Projects) to retrieve the previous icon selection.</p>
+
+    <p>With the font-encoding number, you can use it as an html-entity or in the CSS ':before' selector in the 'content' property. Example:</p>
+
+    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+      <strong>Font encoding number</strong>
+<pre>
+e600
+</pre>  
+    </div>
+    
+    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+      <strong>HTML entity</strong>
+<pre>
+&amp;#xe600;
+</pre>  
+    </div>
+
+    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+      <strong>CSS class</strong>
+<pre>
+.icon-cog:before {
+  content: "\e600";
+}
+</pre> 
+    </div>
+   
+    <table class="table-bordered table-striped healthagen">
+      <tr>
+        <th>Icon</th>
+        <th>CSS class</th>
+        <th>Font encoding number</th>
+      </tr>
+      
+        <tr>
+          <td class="fontIcons icon-cog"></td>     
+          <td>.icon-cog</td>
+          <td>e600</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-checkmark"></td>     
+          <td>.icon-checkmark</td>
+          <td>e607</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-close"></td>     
+          <td>.icon-close</td>
+          <td>e609</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-save"></td>     
+          <td>.icon-save</td>
+          <td>e601</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-download"></td>     
+          <td>.icon-download</td>
+          <td>e602</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-print"></td>     
+          <td>.icon-print</td>
+          <td>e603</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-down-arrow"></td>     
+          <td>.icon-down-arrow</td>
+          <td>e604</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-hotspot"></td>     
+          <td>.icon-hotspot</td>
+          <td>e605</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-up-arrow"></td>     
+          <td>.icon-up-arrow</td>
+          <td>e606</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-dots"></td>     
+          <td>.icon-dots</td>
+          <td>e60a</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-search"></td>     
+          <td>.icon-search</td>
+          <td>e60b</td>
+        </tr>
+      
+        <tr>
+          <td class="fontIcons icon-search2"></td>     
+          <td>.icon-search2</td>
+          <td>e608</td>
+        </tr>
+      
+      </tr>
+    </table>
 
   </div><!-- .col-->
 </div><!-- .row -->

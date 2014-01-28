@@ -19,6 +19,44 @@ primaryColors:
   -
     scssVar: $blueMedium
     hexColor: 4ABAE2
+
+fontIcons:
+  -
+    cssClass: icon-cog
+    encodeNum: e600
+  -
+    cssClass: icon-checkmark
+    encodeNum: e607
+  -
+    cssClass: icon-close
+    encodeNum: e609
+  -
+    cssClass: icon-save
+    encodeNum: e601
+  -
+    cssClass: icon-download
+    encodeNum: e602
+  -
+    cssClass: icon-print
+    encodeNum: e603
+  -
+    cssClass: icon-down-arrow
+    encodeNum: e604
+  -
+    cssClass: icon-hotspot
+    encodeNum: e605
+  -
+    cssClass: icon-up-arrow
+    encodeNum: e606
+  -
+    cssClass: icon-dots
+    encodeNum: e60a    
+  -
+    cssClass: icon-search
+    encodeNum: e60b 
+  -
+    cssClass: icon-search2
+    encodeNum: e608 
 ---
 
 <% content_for :stylesheets do %>
@@ -30,15 +68,21 @@ primaryColors:
     <h2>Fonts</h2>
     <table class="table-bordered table-striped">
       <tr>
+        <th>Font Name</th>
         <th>CSS</th>
       </tr>
       <tr>
-          <td>font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;</td>
+        <td class="helvLight">Helvetica Neue Light</td>
+        <td>
+<pre>
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 300;  /* Firefox */
+</pre>          
+        </td>
       </tr>
     </table>
 
     <h2>Primary Colors</h2>
-
     <table class="table-bordered table-striped">
       <tr>
         <th>SCSS Variable</th>
@@ -53,6 +97,51 @@ primaryColors:
         </tr>
       <% end %>
     </table> 
+
+    <h2>Font Icons</h2>
+    <p>Font icons were created with <a href="http://icomoon.io/" target="_blank">IcoMoon</a>.</p>
+    <p>The "/fonts/_svg-icons" folder contains the original ".svg" icon files. You can import the ".svg" files, or the "selection.json", back to the <a href="http://icomoon.io/app/" target="_blank">IcoMoon app</a> using the *Import Icons* button (or via Main Menu > Manage Projects) to retrieve the previous icon selection.</p>
+
+    <p>With the font-encoding number, you can use it as an html-entity or in the CSS ':before' selector in the 'content' property. Example:</p>
+
+    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+      <strong>Font encoding number</strong>
+<pre>
+e600
+</pre>  
+    </div>
+    
+    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+      <strong>HTML entity</strong>
+<pre>
+&amp;#xe600;
+</pre>  
+    </div>
+
+    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+      <strong>CSS class</strong>
+<pre>
+.icon-cog:before {
+  content: "\e600";
+}
+</pre> 
+    </div>
+   
+    <table class="table-bordered table-striped healthagen">
+      <tr>
+        <th>Icon</th>
+        <th>CSS class</th>
+        <th>Font encoding number</th>
+      </tr>
+      <% current_page.data.fontIcons.each do |k| %>
+        <tr>
+          <td class="fontIcons <%= k.cssClass %>"></td>     
+          <td>.<%= k.cssClass %></td>
+          <td><%= k.encodeNum %></td>
+        </tr>
+      <% end %>
+      </tr>
+    </table>
 
   </div><!-- .col-->
 </div><!-- .row -->

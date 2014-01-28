@@ -15,8 +15,8 @@ jQuery(document).ready(function ($) {
        // toggle breakpoint classes
       $html.toggleClass('desktop', (windowWidth >= 1025));
       $html.toggleClass('tablet-lnd', ( (windowWidth >= 769) && (windowWidth <= 1024) ));
-      $html.toggleClass('tablet-ptr', ( (windowWidth >= 481) && (windowWidth <= 768) ));          
-      $html.toggleClass('mobile', (windowWidth <= 480) );
+      $html.toggleClass('tablet-ptr', ( (windowWidth >= 640) && (windowWidth <= 768) ));          
+      $html.toggleClass('mobile', (windowWidth <= 639) );
     }
 
     toggleBreakpoint();
