@@ -116,15 +116,3 @@ jQuery(document).ready(function ($) {
 // end .ready        
 });
 
-
-// navbar
-/*jQuery(document).ready(function ($) { 
-  if ( $('#navbar-sm', 'nav').exists() ) {
-    $('#navbar-sm', 'nav').click(function () {
-      var $this = $(this),
-          $divParent = $this.parent().parent().parent();
-      $divParent.toggleClass('isActive', !$divParent.hasClass('isActive'));
-    });
-  }*/
-// end .ready        
-//});

@@ -243,14 +243,22 @@ nav {
   }
 
   .navbar-left {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* all others */
+    @include rem-fallback(min-width, 21.75);
     float:left !important;
     @include rem-fallback(padding, 0.625);
 
     .dropdown-menu {
+      -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+      -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+      box-sizing: border-box;         /* all others */
+      @include rem-fallback(min-width, 21.75);
       background-color: $grayLight;
     }
  
-     &.isActive {
+    &.isActive {
       background-color: $grayDark;
 
       h1 {

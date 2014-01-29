@@ -652,8 +652,7 @@ textarea.input-lg {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 346px;
-  min-width: 21.625rem;
+  min-width: 260px;
   padding: 0;
   margin: 2px 0 0;
   list-style: none;
@@ -664,7 +663,7 @@ textarea.input-lg {
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;*/
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
 }
 .dropdown-menu.pull-right {
