@@ -21,14 +21,14 @@ jQuery(document).ready(function ($) {
 
     toggleBreakpoint();
 
-    if( $('#panel').exists() ) {
+    if ( $('#panel').exists() ) {
       var $panel = $('#panel'),
           $win = $('.win', $panel),
           $width = $('.width', $panel),
           $fontsize = $('.fontsize', $panel),
           $closeBtn = $('.close-x', $panel);
 
-      $closeBtn.click(function(){
+      $closeBtn.click(function () {
         $panel.hide();
       });
 
@@ -37,11 +37,11 @@ jQuery(document).ready(function ($) {
       $fontsize.html($html.css('font-size'));
     }
 
-    $(window).on('resize', function(){
+    $(window).on('resize', function () {
         //console.log($window.width());
         toggleBreakpoint();
 
-        if( $('#panel').exists() ) {
+        if ( $('#panel').exists() ) {
           $win.html($window.width() + 'px');
           $width.html($body.outerWidth() + 'px');
           $fontsize.html($html.css('font-size'));
@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
 
 // dashboard isotope
 jQuery(document).ready(function ($) {  
-  if( $('#isotope-container').exists() ) {  
+  if ( $('#isotope-container').exists() ) {  
     var $container = $('#isotope-container');
     
     $container.isotope({
@@ -62,16 +62,16 @@ jQuery(document).ready(function ($) {
         columnWidth : 1
       },
       getSortData : {
-        date : function( $elem ) {
+        date : function ( $elem ) {
           return Date.parse($elem.attr('data-date'));
         },
-        hotspot : function( $elem ) {
+        hotspot : function ( $elem ) {
           return parseInt($elem.attr('data-hotspot'), 10 );
         },
-        /*weight : function( $elem ) {
+        /*weight : function ( $elem ) {
           return parseFloat( $elem.find('.weight').text().replace( /[\(\)]/g, '') );
         },*/
-        number : function( $elem ) {
+        number : function ( $elem ) {
           return parseInt( $elem.find('.number').text(), 10 );
         },
         name : function ( $elem ) {
@@ -85,7 +85,7 @@ jQuery(document).ready(function ($) {
     var $optionSets = $('#options .option-set'),
         $optionLinks = $optionSets.find('a');
 
-    $optionLinks.click(function(){
+    $optionLinks.click(function () {
       var $this = $(this);
       // don't proceed if already selected
       if ( $this.hasClass('selected') ) {
@@ -115,3 +115,16 @@ jQuery(document).ready(function ($) {
   }
 // end .ready        
 });
+
+
+// navbar
+/*jQuery(document).ready(function ($) { 
+  if ( $('#navbar-sm', 'nav').exists() ) {
+    $('#navbar-sm', 'nav').click(function () {
+      var $this = $(this),
+          $divParent = $this.parent().parent().parent();
+      $divParent.toggleClass('isActive', !$divParent.hasClass('isActive'));
+    });
+  }*/
+// end .ready        
+//});

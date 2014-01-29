@@ -25,8 +25,10 @@ $grid-padding: 0.625rem;  // grid-padding
 $container-style: fluid;
 
 $grayLight: #e5e5e5;
-$grayMedium: #aaa;
+$grayMedium: #bbb;
 $grayDark: #9b9b9b;
+$blackLight: #828282;
+$blackMedium: #4A4A4A;
 $blueLight: #0cf;
 $blueMedium: #4ABAE2;
 
@@ -142,6 +144,24 @@ h6 {
 .icon-close:before {
   content: "\e609";
 }
+.icon-users:before {
+  content: "\e60c";
+}
+.icon-bubble:before {
+  content: "\e60d";
+}
+.icon-menu:before {
+  content: "\e60e";
+}
+.icon-grid:before {
+  content: "\e60f";
+}
+.icon-checkmark-circle:before {
+  content: "\e610";
+}
+.icon-bars:before {
+  content: "\e611";
+}
 .icon-save:before {
   content: "\e601";
 }
@@ -166,16 +186,32 @@ h6 {
 .icon-search:before {
   content: "\e60b";
 }
+.icon-calendar:before {
+  content: "\e613";
+}
+.icon-quality:before {
+  content: "\e614";
+}
+.icon-user:before {
+  content: "\e615";
+}
+.icon-users2:before {
+  content: "\e616";
+}
 .icon-search2:before {
   content: "\e608";
 }
+.icon-checkmark2:before {
+  content: "\e612";
+}
+
 
 /*---- nav ----*/
 nav {
   background-color: $grayLight;
   width: 100%;
   @include rem-fallback(font-size, 1.25);
-  @include rem-fallback(padding, 0.625, 0);
+  //@include rem-fallback(padding, 0.625, 0);
 
   .container {
     @include rem-fallback(padding, 0 ,1);    
@@ -206,11 +242,40 @@ nav {
     @include rem-fallback(font-size, 1.875);
   }
 
-  .navbar-nav {
+  .navbar-left {
     float:left !important;
+    @include rem-fallback(padding, 0.625);
+
+    .dropdown-menu {
+      background-color: $grayLight;
+    }
+ 
+     &.isActive {
+      background-color: $grayDark;
+
+      h1 {
+        border-right: 1px solid $grayLight;      
+      }
+
+      h1, h2 {
+        color: $grayLight;      
+      }
+
+      button {
+        &.dropdown-toggle {
+          background-color: $grayLight;
+
+          .icon-bar {
+            background-color: $grayDark;         
+          }
+        }      
+      }
+    }
   }
+
   .navbar-right {
     float: right !important;
+    @include rem-fallback(padding, 0.625);
   }
 
   a {
@@ -244,7 +309,6 @@ nav {
       @include rem-fallback(font-size, 1.375);
       background-color: transparent;
       @include rem-fallback(margin-left, -0.375);
-      margin-right: 0.625rem !important;
 
       &:before {
         color: $blueMedium;
@@ -288,6 +352,66 @@ nav {
     }
   }
 
+  .dropdown-menu {
+    @include rem-fallback(font-size, 0.9375);
+    font-weight: 300;
+    color: $blackLight;
+
+    a {
+      color: $blackLight;
+
+      &:hover {
+        color: $blackMedium;
+      }      
+    }
+
+    ul.mainLinks {
+      list-style: none;
+      padding: 0;
+      width: 46%;
+      border: 1px solid $grayDark;
+      border-bottom: none;
+      border-top: none;
+
+      li a {
+        border-bottom: 1px solid $grayDark;
+        padding: 0.625rem 0.75rem;
+        padding-right: 0;
+
+
+        &:hover {
+          background-color: white;
+          
+        }
+
+        &.selected {
+          background-color: $grayDark;
+          color: $grayLight; 
+        }
+
+        i[class*="icon-"] {
+          padding-right: 10px;
+        }
+      }       
+    }
+   
+    .rightLinks {
+      list-style: none;
+      padding: 0;
+      position: absolute;
+      left: 51%;
+      top: 20px;
+
+      .pic-clip {
+        float: left;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 100%;
+        margin: -5px 10px 10px 0;
+      }
+    }
+  }
 }
 
 /*---- corner ribbons ----*/
@@ -555,7 +679,6 @@ nav {
   float: left;
   overflow: hidden;
   position: relative;
-  color: #222;
 
   //&.utilMeasures .item { background: #F9F2FF;}
   //&.qualityMeasures .item  { background: #FFFAF2;}

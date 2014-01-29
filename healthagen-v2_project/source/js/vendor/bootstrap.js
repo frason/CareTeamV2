@@ -17,6 +17,7 @@
  * limitations under the License.
  * ======================================================================== */
 
+// !! IMPORTANT NOTE !! : Custom edits made on line: 40, 58, 105
 
 +function ($) { "use strict";
 
@@ -36,6 +37,7 @@
 
     var $parent  = getParent($this)
     var isActive = $parent.hasClass('open')
+    var $divParent = $this.parent().parent().parent();
 
     clearMenus()
 
@@ -52,6 +54,8 @@
       $parent
         .toggleClass('open')
         .trigger('shown.bs.dropdown')
+
+      $divParent.toggleClass('isActive');
 
       $this.focus()
     }
@@ -94,9 +98,11 @@
     $(backdrop).remove()
     $(toggle).each(function (e) {
       var $parent = getParent($(this))
+      var $divParent = $(this).parent().parent().parent();
       if (!$parent.hasClass('open')) return
       $parent.trigger(e = $.Event('hide.bs.dropdown'))
       if (e.isDefaultPrevented()) return
+      $divParent.removeClass('isActive');
       $parent.removeClass('open').trigger('hidden.bs.dropdown')
     })
   }

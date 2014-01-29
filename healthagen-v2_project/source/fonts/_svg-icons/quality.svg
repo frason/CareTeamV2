@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Quality_Icon</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Care-Manager-Dash---States" sketch:type="MSArtboardGroup" transform="translate(-797.000000, -507.000000)" fill="#49BAE2">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(46.000000, 97.000000)">
+                <g id="Group-copy" transform="translate(400.000000, 400.000000)" sketch:type="MSShapeGroup">
+                    <path d="M360.480868,10 C360.480868,10 362.679628,10.9054734 364.790085,10.9054734 C366.894655,10.9054734 369.526104,10.2121736 369.526104,10.2121736 C369.526104,10.2121736 370,11.7571563 370,14.0581944 C370,20.037905 368.104415,23.7972633 365.55244,25.9309531 C364.01007,27.2159484 361.50519,29 360.480868,29 C359.450658,29 356.966383,27.2219251 355.43873,25.9458949 C352.889698,23.8151935 351,20.037905 351,14.0581944 C351,11.721296 351.473896,10.2121736 351.473896,10.2121736 C351.473896,10.2121736 354.058249,10.9054734 356.212858,10.9054734 C358.370411,10.9054734 360.480868,10 360.480868,10 M352,16.0102477 C352.373353,20.1605465 353.809872,23.3168232 356.213554,25.2160547 C358.044761,26.6643894 359.705292,27.6686593 360.476888,28 C361.244928,27.6686593 362.955239,26.6370623 364.775779,25.1989752 C367.17946,23.292912 368.626647,20.1332195 369,16 L352,16.0102477" id="Quality_Icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
