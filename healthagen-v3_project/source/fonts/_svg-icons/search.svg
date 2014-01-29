@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>search-icon2</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs>
+        <path d="M14,16 C17.866,16 21,12.866 21,9 C21,5.134 17.866,2 14,2 C10.134,2 7,5.134 7,9 C7,12.866 10.134,16 14,16 L14,16 Z M6.716,14.287 C7.322,15.12 8.068,15.846 8.919,16.43 L4.728,20.527 C4.111,21.13 3.135,21.123 2.528,20.53 C1.917,19.932 1.923,18.973 2.531,18.379 L6.716,14.287 L6.716,14.287 Z M5.679,12.436 C5.242,11.377 5,10.217 5,9 C5,4.029 9.029,0 14,0 C18.971,0 23,4.029 23,9 C23,13.971 18.971,18 14,18 C12.884,18 11.815,17.797 10.83,17.426 L6.184,21.967 C4.773,23.346 2.478,23.345 1.062,21.961 C-0.351,20.58 -0.356,18.335 1.056,16.954 L5.679,12.436 L5.679,12.436 Z" id="path-1"></path>
+        <mask id="mask-2" sketch:name="SVGID_3_" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <use id="SVGID_3_" fill="#4ABAE2" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+    </g>
+</svg>

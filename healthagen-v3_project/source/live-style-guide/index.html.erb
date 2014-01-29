@@ -1,0 +1,218 @@
+---
+title: Live Style Guide
+nav: partials/nav-style-guide
+relativePath: ../
+
+primaryColors:
+  -
+    scssVar: $grayLight
+    hexColor: e5e5e5
+  -
+    scssVar: $grayMedium
+    hexColor: bbb
+  -
+    scssVar: $grayDark
+    hexColor: 9b9b9b
+  -
+    scssVar: $blackLight
+    hexColor: 828282
+  -
+    scssVar: $blackMedium
+    hexColor: 4A4A4A
+  -
+    scssVar: $blueLight
+    hexColor: 0cf
+  -
+    scssVar: $blueMedium
+    hexColor: 4ABAE2
+
+fontIcons:
+  -
+    cssClass: icon-cog
+    encodeNum: e600
+  -
+    cssClass: icon-checkmark
+    encodeNum: e607
+  -
+    cssClass: icon-close
+    encodeNum: e609
+  -
+    cssClass: icon-users
+    encodeNum: e60c
+  -
+    cssClass: icon-bubble
+    encodeNum: e60d
+  -
+    cssClass: icon-menu
+    encodeNum: e60e
+  -
+    cssClass: icon-grid
+    encodeNum: e60f
+  -
+    cssClass: icon-checkmark-circle
+    encodeNum: e610
+  -
+    cssClass: icon-bars
+    encodeNum: e611
+  -
+    cssClass: icon-save
+    encodeNum: e601
+  -
+    cssClass: icon-download
+    encodeNum: e602
+  -
+    cssClass: icon-print
+    encodeNum: e603
+  -
+    cssClass: icon-down-arrow
+    encodeNum: e604
+  -
+    cssClass: icon-hotspot
+    encodeNum: e605
+  -
+    cssClass: icon-up-arrow
+    encodeNum: e606
+  -
+    cssClass: icon-dots
+    encodeNum: e60a    
+  -
+    cssClass: icon-search
+    encodeNum: e60b 
+  -
+    cssClass: icon-calendar
+    encodeNum: e613
+  -
+    cssClass: icon-quality
+    encodeNum: e614
+  -
+    cssClass: icon-user
+    encodeNum: e615
+  -
+    cssClass: icon-users2
+    encodeNum: e616
+  -
+    cssClass: icon-search2
+    encodeNum: e608 
+  -
+    cssClass: icon-checkmark2
+    encodeNum: e612 
+---
+
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'style-guide' %>
+<% end %>
+
+<div class="row clearfix">
+  <div class="col desktop-12col-span12 tablet-12col-span12 mobile-12col-span12">
+    <h2>Fonts</h2>
+    <table class="table-bordered table-striped">
+      <tr>
+        <th>Font Name</th>
+        <th>CSS</th>
+      </tr>
+      <tr>
+        <td class="helvLight">Helvetica Neue Light</td>
+        <td>
+<pre>
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 300;  /* Firefox */
+</pre>          
+        </td>
+      </tr>
+    </table>
+
+    <div class="row clearfix">
+      <h2>Primary Colors</h2>
+      <%
+        primaryColorsLength = current_page.data.primaryColors.length
+        primaryColorsHalf = primaryColorsLength / 2
+
+        current_page.data.primaryColors.each_with_index do |k, index|
+      %>
+        <% if (index == 0) || (index == (primaryColorsHalf + 1)) then %>
+          <div class="col desktop-12col-span6 tablet-12col-span6 mobile-12col-span12">
+            <table class="table-bordered table-striped">
+              <tr>
+                <th>SCSS Variable</th>
+                <th>Hex Value</th>
+                <th class="swatch-col">Color</th>
+              </tr>
+        <% end %>
+
+            <tr>
+              <td><%= k.scssVar %></td>     
+              <td>#<%= k.hexColor %></td>
+              <td class="swatch-col" style="background-color:#<%= k.hexColor %>"></td>
+            </tr>
+
+        <% if (index == primaryColorsHalf) || (index == (primaryColorsLength - 1)) then %>
+            </table>
+          </div><!-- .col--> 
+        <% end %>
+
+      <% end %>
+    </div><!-- .row -->
+
+
+    <h2>Icon Fonts</h2>
+    <p>Icon fonts were created with <a href="http://icomoon.io/" target="_blank">IcoMoon</a>.</p>
+    <p>The "/fonts/_svg-icons" folder contains the original ".svg" icon files. You can import the ".svg" files, or the "selection.json", back to the <a href="http://icomoon.io/app/" target="_blank">IcoMoon app</a> using the *Import Icons* button (or via Main Menu > Manage Projects) to retrieve the previous icon selection.</p>
+
+    <p>With the font-encoding number, you can use it as an html-entity or in the CSS ':before' selector in the 'content' property. Example:</p>
+
+    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+      <strong>Font encoding number</strong>
+<pre>
+e600
+</pre>  
+    </div>
+    
+    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+      <strong>HTML entity</strong>
+<pre>
+&amp;#xe600;
+</pre>  
+    </div>
+
+    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+      <strong>CSS class</strong>
+<pre>
+.icon-cog:before {
+  content: "\e600";
+}
+</pre> 
+    </div>
+
+    <div class="row clearfix">   
+      <%
+        fontIconsLength = current_page.data.fontIcons.length
+        fontIconsHalf = fontIconsLength / 2
+
+        current_page.data.fontIcons.each_with_index do |k, index|
+      %>
+        <% if (index == 0) || (index == (fontIconsHalf + 1)) then %>
+          <div class="col desktop-12col-span6 tablet-12col-span6 mobile-12col-span12">
+          <table class="table-bordered table-striped">
+            <tr>
+              <th>Icon</th>
+              <th>CSS class</th>
+              <th>Font encoding number</th>
+            </tr>
+        <% end %>
+
+            <tr>
+              <td class="fontIcons"><i class="<%= k.cssClass %>"></i></td>     
+              <td>.<%= k.cssClass %></td>
+              <td><%= k.encodeNum %></td>
+            </tr>
+
+        <% if (index == fontIconsHalf) || (index == (fontIconsLength - 1)) then %>
+            </table>
+          </div><!-- .col--> 
+        <% end %>
+
+      <% end %>
+    </div><!-- .row -->
+
+  </div><!-- .col-->
+</div><!-- .row -->

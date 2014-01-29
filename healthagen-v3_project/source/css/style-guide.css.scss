@@ -1,0 +1,80 @@
+@import "partials/my-mixins";
+
+$tableBorder: #D5D9D8;
+
+.container {
+  font-family: arial, sans-serif;
+}
+
+.helvLight {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;  /* Firefox */
+}
+
+table {
+  width: 100%;
+  margin: 0 0 1rem 0;
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    
+    &.swatch-col {
+      width: 40px;
+    }
+
+    &.fontIcons {
+      font-size: 1.5rem;
+    }
+  }
+
+  &.table-bordered {
+    border: 1px solid $tableBorder;    
+    border-collapse: separate;     // Done so we can round those corners!    
+    *border-collapse: collapsed;   // IE7 can't round corners anyway
+    //background-clip: padding-box;
+    //border-radius: 5px;
+
+    th, td {
+      border-left: 1px solid $tableBorder;
+      border-top: 1px solid $tableBorder;
+
+      &:first-child {
+        border-left: 0;
+      }
+    }
+
+    tr:first-child {      
+      th, td {
+        border-top: 0;
+      }  
+    }
+  }
+
+  &.table-striped {
+    tr:nth-child(odd) td, tr:nth-child(odd) th {
+      background-color: #F2F4F3;
+    }
+  }
+
+}
+
+pre, code {
+  background-color: #F5F5F5;
+  border: 1px solid $tableBorder;
+  border-radius: 4px;
+  display: block;
+  @include rem-fallback(font-size, 0.875);
+  margin: 0 0 1rem 0;
+  padding: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: left;
+
+  &:first-child, &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+

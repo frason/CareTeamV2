@@ -1,0 +1,60 @@
+/* line 5, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.container {
+  font-family: arial, sans-serif; }
+
+/* line 9, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.helvLight {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  /* Firefox */ }
+
+/* line 14, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+table {
+  width: 100%;
+  margin: 0 0 1rem 0; }
+  /* line 18, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+  table th, table td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: top; }
+    /* line 23, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+    table th.swatch-col, table td.swatch-col {
+      width: 40px; }
+    /* line 27, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+    table th.fontIcons, table td.fontIcons {
+      font-size: 1.5rem; }
+  /* line 32, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+  table.table-bordered {
+    border: 1px solid #d5d9d8;
+    border-collapse: separate;
+    *border-collapse: collapsed; }
+    /* line 39, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+    table.table-bordered th, table.table-bordered td {
+      border-left: 1px solid #d5d9d8;
+      border-top: 1px solid #d5d9d8; }
+      /* line 43, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+      table.table-bordered th:first-child, table.table-bordered td:first-child {
+        border-left: 0; }
+    /* line 49, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+    table.table-bordered tr:first-child th, table.table-bordered tr:first-child td {
+      border-top: 0; }
+  /* line 56, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+  table.table-striped tr:nth-child(odd) td, table.table-striped tr:nth-child(odd) th {
+    background-color: #F2F4F3; }
+
+/* line 63, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+pre, code {
+  background-color: #F5F5F5;
+  border: 1px solid #d5d9d8;
+  border-radius: 4px;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  margin: 0 0 1rem 0;
+  padding: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: left; }
+  /* line 75, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+  pre:first-child, pre:last-child, code:first-child, code:last-child {
+    margin-bottom: 0; }
