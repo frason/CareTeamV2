@@ -5,8 +5,14 @@ relativePath: ../
 
 primaryColors:
   -
+    scssVar: $whitMedium
+    hexColor: f5f5f5
+  -
     scssVar: $grayLight
     hexColor: e5e5e5
+  -
+    scssVar: $grayLight2
+    hexColor: d4d4d4
   -
     scssVar: $grayMedium
     hexColor: bbb
@@ -88,8 +94,11 @@ fontIcons:
     cssClass: icon-user
     encodeNum: e615
   -
-    cssClass: icon-users2
+    cssClass: icon-registry
     encodeNum: e616
+  -
+    cssClass: icon-utilization
+    encodeNum: e617
   -
     cssClass: icon-search2
     encodeNum: e608 
@@ -129,7 +138,7 @@ font-weight: 300;  /* Firefox */
 
         current_page.data.primaryColors.each_with_index do |k, index|
       %>
-        <% if (index == 0) || (index == (primaryColorsHalf + 1)) then %>
+        <% if (index == 0) || (index == primaryColorsHalf) then %>
           <div class="col desktop-12col-span6 tablet-12col-span6 mobile-12col-span12">
             <table class="table-bordered table-striped">
               <tr>
@@ -145,7 +154,7 @@ font-weight: 300;  /* Firefox */
               <td class="swatch-col" style="background-color:#<%= k.hexColor %>"></td>
             </tr>
 
-        <% if (index == primaryColorsHalf) || (index == (primaryColorsLength - 1)) then %>
+        <% if (index == (primaryColorsHalf - 1)) || (index == (primaryColorsLength - 1)) then %>
             </table>
           </div><!-- .col--> 
         <% end %>
@@ -190,7 +199,7 @@ e600
 
         current_page.data.fontIcons.each_with_index do |k, index|
       %>
-        <% if (index == 0) || (index == (fontIconsHalf + 1)) then %>
+        <% if (index == 0) || (index == (fontIconsHalf)) then %>
           <div class="col desktop-12col-span6 tablet-12col-span6 mobile-12col-span12">
           <table class="table-bordered table-striped">
             <tr>
@@ -206,7 +215,7 @@ e600
               <td><%= k.encodeNum %></td>
             </tr>
 
-        <% if (index == fontIconsHalf) || (index == (fontIconsLength - 1)) then %>
+        <% if (index == (fontIconsHalf - 1)) || (index == (fontIconsLength - 1)) then %>
             </table>
           </div><!-- .col--> 
         <% end %>

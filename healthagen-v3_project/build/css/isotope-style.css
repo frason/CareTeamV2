@@ -263,10 +263,10 @@ body {
   cursor: pointer;
 }
 
-.clickable .element:hover h3, .clickable .element:hover h2, .clickable .element:hover .category, .clickable .element:hover .date {
-  /*text-shadow: 0 0 10px white, 0 0 10px white; */
+/*.clickable .element:hover h3, .clickable .element:hover h2, .clickable .element:hover .category, .clickable .element:hover .date {
+  text-shadow: 0 0 10px white, 0 0 10px white;
   color: #aaa;
-}
+}*/
 
 
 /**** Example Options ****/

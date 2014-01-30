@@ -1,0 +1,163 @@
+-
+  title: ED Use without Hospitalization
+  subtitle:
+  icon: utilization
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: Bipolar Disorder
+  subtitle: "26,147 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: "Diabetes HG A1c<br> Control (<8%) (ACO 22)"
+  subtitle: 
+  icon: quality
+  hotspot: true
+  percent: "72.07%"
+  subStats: "Current Compliance<br> Down 11.23%"
+  date: "Aetna: last update 3/12/14 3:30am"
+  graphImg: graph-2.png
+-
+  title: Cholesterol Primary
+  subtitle: "26,147 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: Bipolar Disorder
+  subtitle: "26,147 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: Cholesterol Primary
+  subtitle: "26,147 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: Rehospitalization
+  subtitle: 
+  icon: utilization
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: ED Use without Hospitalization
+  subtitle:
+  icon: utilization
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: Rehospitalization
+  subtitle: 
+  icon: utilization
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: "Diabetes LDL-C Control (ACO 23)"
+  subtitle: 
+  icon: quality
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: Atrial Fibrillation
+  subtitle: "71,124 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: Bipolar Disorder
+  subtitle: "26,147 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: "Diabetes HG A1c<br> Poor Control (ACO 27)"
+  subtitle: 
+  icon: quality
+  hotspot: true
+  percent: "13.37%"
+  subStats: "Current Compliance<br> Up 2.31%"
+  date: "Aetna: last update 4/18/14 1:14pm"
+  graphImg: graph-1.png
+-
+  title: Atrial Fibrillation
+  subtitle: "71,124 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: ED Use without Hospitalization
+  subtitle: 
+  icon: utilization
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: High Risk Geriatrics
+  subtitle: "71,124 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: "Diabetes LDL-C Control (ACO 23)"
+  subtitle: 
+  icon: quality
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+-
+  title: High Risk Geriatrics
+  subtitle: "71,124 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+...

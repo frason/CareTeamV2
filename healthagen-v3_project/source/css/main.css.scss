@@ -24,7 +24,9 @@ $grid-padding: 0.625rem;  // grid-padding
 
 $container-style: fluid;
 
+$whiteMedium: #f5f5f5;
 $grayLight: #e5e5e5;
+$grayMedium2: #d4d4d4;
 $grayMedium: #bbb;
 $grayDark: #9b9b9b;
 $blackLight: #828282;
@@ -114,7 +116,7 @@ h6 {
 
   .item {
     @include rem-fallback(min-height, 11);
-    background-color: $grayLight;
+    background-color: $whiteMedium;
     position: relative;
     width: 100%;
   }
@@ -195,8 +197,11 @@ h6 {
 .icon-user:before {
   content: "\e615";
 }
-.icon-users2:before {
+.icon-registry:before {
   content: "\e616";
+}
+.icon-utilization:before {
+  content: "\e617";
 }
 .icon-search2:before {
   content: "\e608";
@@ -423,24 +428,29 @@ nav {
 }
 
 /*---- corner ribbons ----*/
-.ribbon {
-  width: 0;
-  height: 0;
-  position: static !important;
+.corner {
+  position: absolute;
+  right: 8px;
+  top: 7px;
 
   i {
-    position: absolute;
-    right: 8px;
-    top: 5px;
-    @include rem-fallback(font-size, 2.75);
-    line-height: 3rem;
-    color: white;
+    color: $grayMedium2;
+    @include rem-fallback(font-size, 1);
+    line-height: 1;
+  }
+
+  &.big {
+    right: 0;
+    top: 0;    
+
+    i {
+      @include rem-fallback(font-size, 2.75);
+      line-height: 3rem;
+      color: white;
+    }
   }
 
   &:before {
-    border-color: rgba(74, 186, 226, 0.7) rgba(74, 186, 226, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-    border-style: solid;
-    @include rem-fallback(border-width, 3);
     content: "";
     display: block;
     position: absolute;
@@ -449,28 +459,43 @@ nav {
     width: 0;
     height: 0;
   }
+
+  &.ribbon, &.warning, &.hotspot {
+    i {
+      position: absolute;
+      right: 7px;
+      top: 7px;
+    }
+  }
+
+  &.ribbon:before {
+    border-color: rgba(74, 186, 226, 0.7) rgba(74, 186, 226, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-style: solid;
+    @include rem-fallback(border-width, 3);
+  }
+
   &.warning:before {
-    border-left: 4rem solid rgba(255, 187, 77, 0.88);
-    border-top: 4rem solid rgba(255, 187, 77, 0.88);
+    border-color: rgba(255, 187, 77, 0.7) rgba(255, 187, 77, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-style: solid;
+    @include rem-fallback(border-width, 3);
   }  
+
   &.hotspot {
     &:before {
       @include rem-fallback(width, 1.875);
       @include rem-fallback(height, 1.875);
-      border: none;
       background-color: $blueMedium;
       right:10px;
       top:10px;
       border-radius: 4px;
     }
-    i {
-      @include rem-fallback(font-size, 1.25);
-      line-height: 2rem; 
+    i { 
       right: 17px;
       top: 8px;     
     }
   }
-  &.dots {
+
+  /*&.dots {
     &:before {
       border: none;
       background-color: none;      
@@ -491,7 +516,7 @@ nav {
         } 
       }      
     }
-  }
+  }*/
 }
 
 /*---- info-panel ----*/
@@ -612,10 +637,8 @@ nav {
 
   .element {
     &.#{$mobile}-12col-span4, &.#{$mobile}-12col-span8, &.#{$mobile}-12col-span12 {
-      &.height2 {
-        .item {
-          height: 23.45rem;
-        } 
+      &.height2 .item {
+        height: 23.45rem;
       }
     }
   }
@@ -632,10 +655,8 @@ nav {
 
   .element {
     &.#{$tablet}-12col-span2, &.#{$tablet}-12col-span4, &.#{$tablet}-12col-span6 {
-      &.height2 {
-        .item {
-          height: 23.35rem;
-        } 
+      &.height2 .item {
+        height: 23.35rem;
       }
     }
   }
@@ -665,10 +686,8 @@ nav {
 
   .element {
     &.#{$desktop}-12col-span2, &.#{$desktop}-12col-span4, &.#{$desktop}-12col-span6 {
-      &.height2 {
-        .item {
+      &.height2 .item {
           height: 23.35rem;
-        } 
       }
     }
   }
@@ -688,40 +707,71 @@ nav {
   overflow: hidden;
   position: relative;
 
-  //&.utilMeasures .item { background: #F9F2FF;}
-  //&.qualityMeasures .item  { background: #FFFAF2;}
+  //&.utilization .item { background: #F9F2FF;}
+  //&.quality .item  { background: #FFFAF2;}
   //&.registry .item { background: #FFF2F4;}
+
+  &[data-hotspot="1"] .item {
+    h3 {
+      @include rem-fallback(font-size, 2);
+    }
+
+    .corner i {
+      color: $blueMedium;
+    }
+
+    .desc {
+      top: 1rem;
+    }
+
+  }
 
   .item {
     border-radius: 5px;
     border: 1px solid $grayDark;
+    overflow: hidden;
   }
 
-  .desc, .number, .date {
+  .desc, .number, .date, .dots, .subStats {
     position: absolute;
     margin: 0;
-    @include rem-fallback(left, 1);
+    @include rem-fallback(left, 1.25);
   }
 
   .desc {
-    top: 0.625rem;
+    top: 2.5rem;
     
     h3 {
-      @include rem-fallback(font-size, 1.6);
+      @include rem-fallback(font-size, 1.25);
       font-weight: 300;
       margin: 0;
     }
   }
 
   .number {
-    @include rem-fallback(font-size, 2);
-    color: #aaa;
-    top: 4.5rem;
+    @include rem-fallback(font-size, 3.75);
+    color: $blueMedium;
+    top: 8rem;
+  }
+
+  .subStats {
+    @include rem-fallback(font-size, 1.25);
+    color: $blueMedium;
+    top: 12.5rem;    
   }
 
   .date {
     bottom: 0.625rem;
     @include rem-fallback(font-size, 0.75);
+  }
+
+  .dots {
+    bottom: 5px;
+    right: 7px;
+    left: auto;
+    padding: 5px;    
+    @include rem-fallback(font-size, 0.4375);
+    color: $grayMedium2;
   }
 
   &.white {
@@ -730,4 +780,17 @@ nav {
     }
   }
 }
+
+.clickable .element:hover {
+  .item {
+    background-color: $grayLight;
+
+    .dots {
+      color: $blackLight;      
+    }
+  }
+
+}
+
+
 

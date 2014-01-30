@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="28px" viewBox="0 0 30 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Fill 1 + Fill 2</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="AllMeasures_CardFlip_3" sketch:type="MSArtboardGroup" transform="translate(-318.000000, -10.000000)" fill="#000000">
+            <g id="Utilization-+-Fill-1-+-Fill-2-+-Fill-2-+-2-+--/-33-copy" sketch:type="MSLayerGroup" transform="translate(303.000000, 10.000000)">
+                <g id="Fill-1-+-Fill-2" transform="translate(15.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <path d="M24.8614904,4.61896024 C23.7898296,2.6470948 21.865002,0 20.1430615,0 L10.1932831,0 C8.57538742,0 6.82223356,2.49541284 5.70375261,4.61896024 L0,4.61896024 L0.00520223696,8 L29.9947978,8 L30,4.61896024 L24.8614904,4.61896024 Z" id="Fill-1"></path>
+                    <path d="M29.971374,28 L29.9826667,19.5677649 L30,9 L0,9 L0.0143129771,28 L29.971374,28 Z M13.0235005,15.6533333 L13.0235005,11.1111111 L16.98141,11.1111111 L16.98141,15.6533333 L22,15.6533333 L22,19.2355556 L16.98141,19.2355556 L16.98141,23.7777778 L13.0235005,23.7777778 L13.0235005,19.2355556 L8,19.2355556 L8,15.6533333 L13.0235005,15.6533333 Z" id="Fill-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
