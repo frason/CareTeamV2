@@ -195,8 +195,11 @@ h6 {
 .icon-user:before {
   content: "\e615";
 }
-.icon-users2:before {
+.icon-registry:before {
   content: "\e616";
+}
+.icon-utilization:before {
+  content: "\e617";
 }
 .icon-search2:before {
   content: "\e608";
@@ -533,9 +536,6 @@ nav {
       clear: both;      
     }
   }
-  .breakpoint {
-    display: none;
-  }
 
   a.close-x {
     position: absolute;
@@ -558,25 +558,25 @@ nav {
 
 .mobile #panel {
   background-color: rgba(0, 0, 255, 0.4);
-  .break-1 {
-    display: inline;
+  .breakpoint:before {
+    content: "mobile";
   } 
 }
 .tablet-ptr #panel {
   background-color: rgba(255, 0, 0, 0.4);
-  .break-2 {
-    display: inline;
+  .breakpoint:before  {
+    content: "tablet (portrait)";
   }  
 }
 .tablet-lnd #panel {
   background-color: rgba(0, 255, 0, 0.4);
-  .break-3 {
-    display: inline;
+  .breakpoint:before  {
+    content: "tablet (landscape)";
   }  
 }
 .desktop #panel {
-  .break-4 {
-    display: inline;
+  .breakpoint:before  {
+    content: "desktop";
   }  
 }
 
