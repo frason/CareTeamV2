@@ -23,7 +23,7 @@
 
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-left">
+        <div class="navbar-left noDropdown">
           <h1><strong>Active</strong><br/> CareTeam</h1>
           <!--h2>Dashboard</h2-->
         </div><!-- .navbar-left -->
@@ -43,10 +43,10 @@
   <div class="option-combo">
     <!--h3>Filter by:</h3-->
     <ul id="filters" class="option-set clearfix" data-option-key="filter">
-      <li><a href="#filter" data-option-value="*" class="selected">All</a></li>
-      <li><a href="#filter" data-option-value=".quality">Quality Measures</a></li>
-      <li><a href="#filter" data-option-value=".utilization">Utlization Measures</a></li>
-      <li><a href="#filter" data-option-value=".registry">Registry</a></li>
+      <!--li><a href="#filter" data-option-value="*" class="selected">All</a></li-->
+      <li><a href="#filter" data-option-value=".quality"><i class="icon-quality"></i> Quality Measures</a></li>
+      <li><a href="#filter" data-option-value=".utilization"><i class="icon-utilization"></i> Utilization Measures</a></li>
+      <li><a href="#filter" data-option-value=".registry"><i class="icon-registry"></i> Registry</a></li>
     </ul>
   </div>
 
@@ -56,9 +56,9 @@
       <li><a href="#sortAscending=true" data-option-value="true" class="selected">Ascending</a></li>
       <li><a href="#sortAscending=false" data-option-value="false">Descending</a></li>
     </ul>
-  </div>
+  </div-->
 
-  <div class="option-combo option-right">
+  <!--div class="option-combo option-right">
     <h3>Sort by:</h3>
     <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy"-->
       <!--li><a href="#sortBy=original-order" data-option-value="original-order" class="selected">Default</a></li>
@@ -85,9 +85,7 @@
           <h3 class="name">ED Use without Hospitalization</h3>
           <p></p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -104,9 +102,7 @@
           <h3 class="name">Bipolar Disorder</h3>
           <p>26,147 Patients</p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -120,12 +116,16 @@
           <i class="icon-hotspot"></i> <i class="icon-quality"></i>
         </div>
         <div class="desc">
-          <h3 class="name">Diabetes HG A1c<br> Control (<8%) (ACO 22)</h3>
+          <h3 class="name">Diabetes HG A1c<br> Control (<8%) <i>(ACO 22)</i>
+</h3>
           <p></p>
         </div>
-        <p class="number">72.07%</p>
-        <p class="subStats">Current Compliance<br> Down 11.23%</p>
-        <p class="date">Aetna: last update 3/12/14 3:30am</p>
+        
+          <p class="number">72.07%</p>
+          <p class="subStats">Current Compliance<br> Down 11.23%
+</p>
+          <p class="date">Aetna: last update 3/12/14 3:30am</p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -142,9 +142,7 @@
           <h3 class="name">Cholesterol Primary</h3>
           <p>26,147 Patients</p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -161,9 +159,7 @@
           <h3 class="name">Bipolar Disorder</h3>
           <p>26,147 Patients</p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -180,9 +176,7 @@
           <h3 class="name">Cholesterol Primary</h3>
           <p>26,147 Patients</p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -199,9 +193,7 @@
           <h3 class="name">Rehospitalization</h3>
           <p></p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -218,9 +210,7 @@
           <h3 class="name">ED Use without Hospitalization</h3>
           <p></p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -237,9 +227,7 @@
           <h3 class="name">Rehospitalization</h3>
           <p></p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -256,9 +244,7 @@
           <h3 class="name">Diabetes LDL-C Control (ACO 23)</h3>
           <p></p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -275,9 +261,7 @@
           <h3 class="name">Atrial Fibrillation</h3>
           <p>71,124 Patients</p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -294,9 +278,7 @@
           <h3 class="name">Bipolar Disorder</h3>
           <p>26,147 Patients</p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -310,12 +292,16 @@
           <i class="icon-hotspot"></i> <i class="icon-quality"></i>
         </div>
         <div class="desc">
-          <h3 class="name">Diabetes HG A1c<br> Poor Control (ACO 27)</h3>
+          <h3 class="name">Diabetes HG A1c<br> Poor Control <i>(ACO 27)</i>
+</h3>
           <p></p>
         </div>
-        <p class="number">13.37%</p>
-        <p class="subStats">Current Compliance<br> Up 2.31%</p>
-        <p class="date">Aetna: last update 4/18/14 1:14pm</p>
+        
+          <p class="number">13.37%</p>
+          <p class="subStats">Current Compliance<br> Up 2.31%
+</p>
+          <p class="date">Aetna: last update 4/18/14 1:14pm</p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -332,9 +318,7 @@
           <h3 class="name">Atrial Fibrillation</h3>
           <p>71,124 Patients</p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -351,9 +335,7 @@
           <h3 class="name">ED Use without Hospitalization</h3>
           <p></p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -370,9 +352,7 @@
           <h3 class="name">High Risk Geriatrics</h3>
           <p>71,124 Patients</p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -389,9 +369,7 @@
           <h3 class="name">Diabetes LDL-C Control (ACO 23)</h3>
           <p></p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -408,9 +386,7 @@
           <h3 class="name">High Risk Geriatrics</h3>
           <p>71,124 Patients</p>
         </div>
-        <p class="number"></p>
-        <p class="subStats"></p>
-        <p class="date"></p>
+        
         <i class="dots icon-dots"></i>
       </div>
     </div> 
@@ -438,10 +414,7 @@
             <dt>font-size:</dt>
             <dd class="fontsize"></dd>
             <dt>breakpoint:</dt>
-            <dd class="breakpoint break-1">mobile</dd>
-            <dd class="breakpoint break-2">tablet (portrait)</dd>
-            <dd class="breakpoint break-3">tablet (landscape)</dd>
-            <dd class="breakpoint break-4">desktop</dd>
+            <dd class="breakpoint"></dd>
         </dl>
     </div>
 

@@ -14,10 +14,10 @@ title: Dashboard
   <div class="option-combo">
     <!--h3>Filter by:</h3-->
     <ul id="filters" class="option-set clearfix" data-option-key="filter">
-      <li><a href="#filter" data-option-value="*" class="selected">All</a></li>
-      <li><a href="#filter" data-option-value=".quality">Quality Measures</a></li>
-      <li><a href="#filter" data-option-value=".utilization">Utlization Measures</a></li>
-      <li><a href="#filter" data-option-value=".registry">Registry</a></li>
+      <!--li><a href="#filter" data-option-value="*" class="selected">All</a></li-->
+      <li><a href="#filter" data-option-value=".quality"><i class="icon-quality"></i> Quality Measures</a></li>
+      <li><a href="#filter" data-option-value=".utilization"><i class="icon-utilization"></i> Utilization Measures</a></li>
+      <li><a href="#filter" data-option-value=".registry"><i class="icon-registry"></i> Registry</a></li>
     </ul>
   </div>
 
@@ -27,9 +27,9 @@ title: Dashboard
       <li><a href="#sortAscending=true" data-option-value="true" class="selected">Ascending</a></li>
       <li><a href="#sortAscending=false" data-option-value="false">Descending</a></li>
     </ul>
-  </div>
+  </div-->
 
-  <div class="option-combo option-right">
+  <!--div class="option-combo option-right">
     <h3>Sort by:</h3>
     <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy"-->
       <!--li><a href="#sortBy=original-order" data-option-value="original-order" class="selected">Default</a></li>
@@ -58,9 +58,11 @@ title: Dashboard
           <h3 class="name"><%= k.title %></h3>
           <p><%= k.subtitle %></p>
         </div>
-        <p class="number"><%= k.percent %></p>
-        <p class="subStats"><%= k.subStats %></p>
-        <p class="date"><%= k.date %></p>
+        <% if (k.hotspot) %>
+          <p class="number"><%= k.percent %></p>
+          <p class="subStats"><%= k.subStats %></p>
+          <p class="date"><%= k.date %></p>
+        <% end %>
         <i class="dots icon-dots"></i>
       </div>
     </div> 

@@ -286,6 +286,14 @@ nav {
     }
   }
 
+  .navbar-left.noDropdown {
+    min-width: 0;
+
+    h1 {
+      border-right: none;
+    }
+  }
+
   .navbar-right {
     float: right !important;
     @include rem-fallback(padding, 0.625);
@@ -298,7 +306,7 @@ nav {
       border-radius: 4px;
       float: left;
       vertical-align: top;
-      @include rem-fallback(margin, 0.375, 1.25, 0, 0);
+      @include rem-fallback(margin, 0.375, 0.75, 0, 0);
       @include rem-fallback(padding, 0.2, 0.75);
       @include rem-fallback(font-size, 1.125);
       //@include sassy-button-gradient("glass");
@@ -321,7 +329,6 @@ nav {
       @include rem-fallback(height, 1.875);
       @include rem-fallback(font-size, 1.375);
       background-color: transparent;
-      @include rem-fallback(margin-left, -0.375);
 
       &:before {
         color: $blueMedium;
@@ -558,9 +565,6 @@ nav {
       clear: both;      
     }
   }
-  .breakpoint {
-    display: none;
-  }
 
   a.close-x {
     position: absolute;
@@ -583,25 +587,25 @@ nav {
 
 .mobile #panel {
   background-color: rgba(0, 0, 255, 0.4);
-  .break-1 {
-    display: inline;
+  .breakpoint:before {
+    content: "mobile";
   } 
 }
 .tablet-ptr #panel {
   background-color: rgba(255, 0, 0, 0.4);
-  .break-2 {
-    display: inline;
+  .breakpoint:before  {
+    content: "tablet (portrait)";
   }  
 }
 .tablet-lnd #panel {
   background-color: rgba(0, 255, 0, 0.4);
-  .break-3 {
-    display: inline;
+  .breakpoint:before  {
+    content: "tablet (landscape)";
   }  
 }
 .desktop #panel {
-  .break-4 {
-    display: inline;
+  .breakpoint:before  {
+    content: "desktop";
   }  
 }
 
@@ -628,6 +632,15 @@ nav {
 @media screen and (min-width: 1254px) { html { font-size: 17px; } }
 @media screen and (min-width: 1328px) { html { font-size: 18px; } }
 
+
+/* --------------------------------------------------------------
+  Media-query for custom breakpoint
+----------------------------------------------------------------- */
+@media only screen and (max-width: 518px) { 
+  #options li a {
+    min-height: 3.333rem;
+  }
+}
 
 /* --------------------------------------------------------------
   Media-query for Mobile breakpoint
@@ -702,6 +715,18 @@ nav {
 }
 
 /*---- dashboard isotope styles ----*/
+#options .option-combo ul#filters {
+  width: 100%;
+  margin-right: 0;
+
+  li {
+    width: 33.11%;
+    text-align: center;    
+  }
+
+}
+
+
 .element {
   float: left;
   overflow: hidden;
@@ -745,6 +770,11 @@ nav {
       @include rem-fallback(font-size, 1.25);
       font-weight: 300;
       margin: 0;
+
+      i {
+        color: $grayMedium;
+        font-style: normal;
+      }
     }
   }
 
@@ -762,6 +792,7 @@ nav {
 
   .date {
     bottom: 0.625rem;
+    color: $blueMedium;
     @include rem-fallback(font-size, 0.75);
   }
 

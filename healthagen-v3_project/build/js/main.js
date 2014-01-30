@@ -112,6 +112,41 @@ jQuery(document).ready(function ($) {
       
       return false;
     });
+
+    /*var $filtersOption = $('#options .option-set#filters'),
+        $filtersLinks = $optionSets.find('a');
+
+    $optionLinks.click(function () {
+      var $this = $(this);
+
+      if ( $this.hasClass('selected') ) {
+        $this.removeClass('selected')
+      } else {
+        $this.addClass('selected');       
+      }
+
+      var $optionSet = $this.parents('.option-set');
+
+      // make option object dynamically, i.e. { filter: '.my-filter-class' }
+      var options = {},
+          selectedItems = [],
+          key = $optionSet.attr('data-option-key'),
+          value = $this.attr('data-option-value');
+      // parse 'false' as false boolean
+      value = value === 'false' ? false : value;
+
+
+      options[ key ] = value;
+
+
+
+      // apply new options
+      //$container.isotope( options );
+      
+      return false;
+    });*/
+
+
   }
 // end .ready        
 });

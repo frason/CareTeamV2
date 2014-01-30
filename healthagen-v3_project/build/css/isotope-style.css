@@ -304,11 +304,11 @@ body {
 #options li a {
   display: block;
   padding: 0.4em 0.5em;
-  color: #222;
+  color: white;
   font-size: 14px;
-  font-size: .875rem;
-  /*background-color: #DDD;
-  text-shadow: 0 1px hsla( 0, 0%, 100%, 0.5 );
+  font-size: 1.25rem;
+  background-color: #4ABAE2;
+  /*text-shadow: 0 1px hsla( 0, 0%, 100%, 0.5 );
   background-image: -webkit-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
   background-image:    -moz-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
   background-image:     -ms-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
@@ -318,6 +318,7 @@ body {
 
 #options li a:hover {
   background-color: #e5e5e5;
+  color: #4A4A4A;
 }
 
 #options li a:active {
@@ -331,31 +332,34 @@ body {
 #options li a {
   /*border-left:  1px solid hsla( 0, 0%, 100%, 0.3 );
   border-right: 1px solid hsla( 0, 0%,   0%, 0.2 );*/
-  border: 1px solid #9b9b9b;
+  border: 1px solid #4ABAE2;
   border-left: none;
+  border-right-color: white;
   text-decoration: none;
 }
 
 #options li:first-child a {
   border-radius: 5px 0 0 5px;
-  border: 1px solid #9b9b9b;
+  border: 1px solid #4ABAE2;
+  border-right-color: white;
 }
 
 #options li:last-child a {
   border-radius: 0 5px 5px 0;
+  border-right-color: #4ABAE2;
 }
 
 #options li a.selected {
-  background-color: #4ABAE2;
+  background-color: white;
   text-shadow: none;
-  color: white;
+  color: black;
 }
 
 /* Combination filter options*/
 
 #options .option-combo {
-  display: inline-block;
-  float: left;
+  /*display: inline-block;
+  float: left;*/
 }
 #options .option-combo:first-child {
   margin-left: 0.625rem;

@@ -652,12 +652,12 @@ textarea.input-lg {
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 260px;
   padding: 0;
   margin: 2px 0 0;
   list-style: none;
   background-color: #ffffff;
-  /*font-size: 16px;
+  /*min-width: 300px;
+  font-size: 16px;
   font-size: 1rem;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -1236,7 +1236,7 @@ textarea.input-lg {
     margin-left: 0;
   }
 }
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {*/
   .navbar-form .form-group {
     margin-bottom: 5px;
   }
@@ -1246,8 +1246,9 @@ textarea.input-lg {
   }*/
   .navbar-form button[type="submit"] {
     float: right;
+    margin-bottom: 5px;
   }
-}
+/*}*/
 @media (min-width: 768px) {
   .navbar-form {
     width: auto;
