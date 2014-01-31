@@ -25,15 +25,15 @@ $grid-padding: 0.625rem;  // grid-padding
 $container-style: fluid;
 
 $whiteMedium: #f5f5f5;
-$grayLight: #e5e5e5;
-$grayMedium2: #d4d4d4;
+$whiteDark: #e5e5e5;
+$grayLight: #d4d4d4;
 $grayMedium: #bbb;
 $grayDark: #9b9b9b;
 $blackLight: #828282;
 $blackMedium: #4A4A4A;
-$blueLight: #0cf;
+$blueLight: #D3EBF5;
 $blueMedium: #4ABAE2;
-
+$hoverBlue: #81C9E3;
 
 /* --------------------------------------------------------------
   Default styles
@@ -59,7 +59,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: $blueLight;
+    color: $hoverBlue;
   }
 }
 
@@ -213,7 +213,7 @@ h6 {
 
 /*---- nav ----*/
 nav {
-  background-color: $grayLight;
+  background-color: $whiteDark;
   width: 100%;
   @include rem-fallback(font-size, 1.25);
   //@include rem-fallback(padding, 0.625, 0);
@@ -260,23 +260,23 @@ nav {
       -moz-box-sizing: border-box;    /* Firefox, other Gecko */
       box-sizing: border-box;         /* all others */
       @include rem-fallback(min-width, 21.75);
-      background-color: $grayLight;
+      background-color: $whiteDark;
     }
  
     &.isActive {
       background-color: $grayDark;
 
       h1 {
-        border-right: 1px solid $grayLight;      
+        border-right: 1px solid $whiteDark;      
       }
 
       h1, h2 {
-        color: $grayLight;      
+        color: $whiteDark;      
       }
 
       button {
         &.dropdown-toggle {
-          background-color: $grayLight;
+          background-color: $whiteDark;
 
           .icon-bar {
             background-color: $grayDark;         
@@ -317,7 +317,7 @@ nav {
       }
 
       &:hover {
-        background-color: $blueLight;
+        background-color: $hoverBlue;
       }
     }
 
@@ -338,7 +338,7 @@ nav {
         background-color: transparent;
 
         &:before {
-          color: $blueLight;
+          color: $hoverBlue;
         }        
       }
     }
@@ -363,7 +363,7 @@ nav {
         display: block;
         @include rem-fallback(height, 0.375);
         border-radius: 3px;
-        background-color: $grayLight;
+        background-color: $whiteDark;
 
         + .icon-bar {
           @include rem-fallback(margin-top, 0.375);
@@ -406,7 +406,7 @@ nav {
 
         &.selected {
           background-color: $grayDark;
-          color: $grayLight; 
+          color: $whiteDark; 
         }
 
         i[class*="icon-"] {
@@ -441,7 +441,7 @@ nav {
   top: 7px;
 
   i {
-    color: $grayMedium2;
+    color: $grayLight;
     @include rem-fallback(font-size, 1);
     line-height: 1;
   }
@@ -501,29 +501,117 @@ nav {
       top: 8px;     
     }
   }
+}
 
-  /*&.dots {
-    &:before {
-      border: none;
-      background-color: none;      
+/*-------- dashboard isotope styles --------*/
+/*--- more styles are in 'isotope-style.css' ---*/
+#options .option-combo ul#filters {
+  width: 100%;
+  margin-right: 0;
+
+  li {
+    width: 33.11%;
+    text-align: center;    
+  }
+
+}
+
+.element {
+  float: left;
+  overflow: hidden;
+  position: relative;
+
+  //&.utilization .item { background: #F9F2FF;}
+  //&.quality .item  { background: #FFFAF2;}
+  //&.registry .item { background: #FFF2F4;}
+
+  &[data-hotspot="1"] .item {
+    background-color: white;
+
+    h3 {
+      @include rem-fallback(font-size, 2);
     }
-    i {
-      @include rem-fallback(font-size, 0.4375);
-      line-height: 0.5;
-      right: 5px;
-      top: 10px;
 
-      a.icon-dots {
-        color: $grayDark;
-        cursor: pointer;
-        padding: 5px;
-
-        &:hover {
-          color: $blueMedium;
-        } 
-      }      
+    .corner i {
+      color: $blueMedium !important;
     }
-  }*/
+
+    .desc {
+      top: 1rem;
+    }
+
+  }
+
+  .item {
+    border-radius: 5px;
+    border: 1px solid $grayDark;
+    overflow: hidden;
+  }
+
+  .desc, .number, .date, .dots, .subStats {
+    position: absolute;
+    margin: 0;
+    @include rem-fallback(left, 1.25);
+  }
+
+  .desc {
+    top: 2.5rem;
+    
+    h3 {
+      @include rem-fallback(font-size, 1.25);
+      font-weight: 300;
+      margin: 0;
+
+      i {
+        color: $grayMedium;
+        font-style: normal;
+      }
+    }
+  }
+
+  .number {
+    @include rem-fallback(font-size, 3.75);
+    color: $blueMedium;
+    top: 8rem;
+  }
+
+  .subStats {
+    @include rem-fallback(font-size, 1.25);
+    color: $blueMedium;
+    top: 12.5rem;    
+  }
+
+  .date {
+    bottom: 0.625rem;
+    color: $blueMedium;
+    @include rem-fallback(font-size, 0.75);
+  }
+
+  .dots {
+    bottom: 5px;
+    right: 7px;
+    left: auto;
+    padding: 5px;    
+    @include rem-fallback(font-size, 0.4375);
+    color: $grayLight;
+  }
+
+}
+
+.clickable .element {
+
+  &[data-hotspot="1"]:hover .item {
+    background-color: $blueLight;
+  }
+
+  &:hover .item {
+    background-color: $whiteDark;
+
+    .dots, .corner i {
+      color: $blackLight;      
+    }
+  }
+
 }
 
 /*---- info-panel ----*/
@@ -713,115 +801,4 @@ nav {
 .omega {
   @include omega;
 }
-
-/*---- dashboard isotope styles ----*/
-#options .option-combo ul#filters {
-  width: 100%;
-  margin-right: 0;
-
-  li {
-    width: 33.11%;
-    text-align: center;    
-  }
-
-}
-
-
-.element {
-  float: left;
-  overflow: hidden;
-  position: relative;
-
-  //&.utilization .item { background: #F9F2FF;}
-  //&.quality .item  { background: #FFFAF2;}
-  //&.registry .item { background: #FFF2F4;}
-
-  &[data-hotspot="1"] .item {
-    h3 {
-      @include rem-fallback(font-size, 2);
-    }
-
-    .corner i {
-      color: $blueMedium;
-    }
-
-    .desc {
-      top: 1rem;
-    }
-
-  }
-
-  .item {
-    border-radius: 5px;
-    border: 1px solid $grayDark;
-    overflow: hidden;
-  }
-
-  .desc, .number, .date, .dots, .subStats {
-    position: absolute;
-    margin: 0;
-    @include rem-fallback(left, 1.25);
-  }
-
-  .desc {
-    top: 2.5rem;
-    
-    h3 {
-      @include rem-fallback(font-size, 1.25);
-      font-weight: 300;
-      margin: 0;
-
-      i {
-        color: $grayMedium;
-        font-style: normal;
-      }
-    }
-  }
-
-  .number {
-    @include rem-fallback(font-size, 3.75);
-    color: $blueMedium;
-    top: 8rem;
-  }
-
-  .subStats {
-    @include rem-fallback(font-size, 1.25);
-    color: $blueMedium;
-    top: 12.5rem;    
-  }
-
-  .date {
-    bottom: 0.625rem;
-    color: $blueMedium;
-    @include rem-fallback(font-size, 0.75);
-  }
-
-  .dots {
-    bottom: 5px;
-    right: 7px;
-    left: auto;
-    padding: 5px;    
-    @include rem-fallback(font-size, 0.4375);
-    color: $grayMedium2;
-  }
-
-  &.white {
-    .item {
-      background-color: white;
-    }
-  }
-}
-
-.clickable .element:hover {
-  .item {
-    background-color: $grayLight;
-
-    .dots {
-      color: $blackLight;      
-    }
-  }
-
-}
-
-
 

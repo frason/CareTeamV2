@@ -82,7 +82,7 @@ jQuery(document).ready(function ($) {
     });
     
     
-    var $optionSets = $('#options .option-set'),
+    var $optionSets = $('#options .option-set:not(#filters)'),
         $optionLinks = $optionSets.find('a');
 
     $optionLinks.click(function () {
@@ -113,10 +113,10 @@ jQuery(document).ready(function ($) {
       return false;
     });
 
-    /*var $filtersOption = $('#options .option-set#filters'),
-        $filtersLinks = $optionSets.find('a');
+    var $filtersOption = $('#options .option-set#filters'),
+        $filtersLinks = $filtersOption.find('a');
 
-    $optionLinks.click(function () {
+    $filtersLinks.click(function () {
       var $this = $(this);
 
       if ( $this.hasClass('selected') ) {
@@ -129,24 +129,27 @@ jQuery(document).ready(function ($) {
 
       // make option object dynamically, i.e. { filter: '.my-filter-class' }
       var options = {},
-          selectedItems = [],
-          key = $optionSet.attr('data-option-key'),
-          value = $this.attr('data-option-value');
-      // parse 'false' as false boolean
-      value = value === 'false' ? false : value;
+          selectedItemsArr = [];
+          $selectedItems = $filtersOption.find('.selected');
 
+      $selectedItems.each(function () {
+        selectedItemsArr.push( $(this).attr('data-option-value') );
+      });
+console.log(selectedItemsArr.length);
 
-      options[ key ] = value;
-
+      if (selectedItemsArr.length < 3) {
+        options['filter'] = '*:not(' + selectedItemsArr.join(", ") + ')';
+      } else {
+        options['filter'] = '*';
+        $filtersLinks.removeClass('selected')
+      }
 
 
       // apply new options
-      //$container.isotope( options );
+      $container.isotope( options );
       
       return false;
-    });*/
-
-
+    });
   }
 // end .ready        
 });
