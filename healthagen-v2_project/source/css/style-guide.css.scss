@@ -77,4 +77,61 @@ pre, code {
   }
 }
 
+.live-style-guide {
+  #panel {
+    display: none;
+  }
+
+  .col .item {
+    min-height: 0;
+  }
+
+}
+
+.mobile .live-style-guide {
+  .breakpoint > span:before {
+    background-color: rgba(0, 0, 255, 0.4);
+    content: "mobile";
+  } 
+  .breakpoint2 > span:before {
+    background-color: rgba(0, 0, 255, 0.4);
+    content: "mobile";
+  } 
+}
+
+.tablet-ptr .live-style-guide {  
+  .breakpoint > span:before  {
+    background-color: rgba(255, 0, 0, 0.4);
+    content: "tablet (portrait)";
+  }  
+  .breakpoint2 > span:before {
+    background-color: rgba(255, 0, 0, 0.4);
+    content: "tablet-ptr";
+  } 
+}
+
+.tablet-lnd .live-style-guide {  
+  .breakpoint > span:before  {
+    background-color: rgba(0, 255, 0, 0.4);
+    content: "tablet (landscape)";
+  }  
+  .breakpoint2 > span:before  {
+    background-color: rgba(0, 255, 0, 0.4);
+    content: "tablet-lnd";
+  } 
+}
+
+.desktop .live-style-guide {
+  .breakpoint > span:before  {
+    background-color: rgba(255, 140, 0, 0.3);
+    content: "desktop";
+  }  
+  .breakpoint2 > span:before  {
+    background-color: rgba(255, 140, 0, 0.3);
+    content: "desktop";
+  } 
+}
+
+
+
 

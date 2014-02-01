@@ -217,5 +217,82 @@ e600
       <% end %>
     </div><!-- .row -->
 
+    <hr/>
+
+    <h2>Grid system</h2>
+    <p>This site uses a 12-column fluid grid constructed with the <a href="http://susy.oddbird.net/" target="_blank">Susy</a> grid plugin for SASS/Compass. CSS classes are prefixed with the breakpoint ("mobile", "tablet", or "desktop"), followed by the number at the end that indicates the number of columns to span within the 12-column grid. Example:</p>
+
+    <p>
+      <span class="breakpoint"><strong>breakpoint:</strong> <span><span></span><br/>
+      <i>(resize the screen to see the divs respond)</i>
+    </p>
+
+    <div class="row clearfix"> 
+      <div class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12" style="border: 1px dashed black;">
+        <div class="item">
+          class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12"
+        </div>
+      </div>
+      <div class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12" style="border: 1px dashed black;">
+        <div class="item">
+          class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12"
+        </div>
+      </div>
+      <div class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12" style="border: 1px dashed black;">
+        <div class="item">
+          class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12"
+        </div>
+      </div>
+      <div class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12" style="border: 1px dashed black;">
+        <div class="item">
+          class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12"
+        </div>
+      </div>
+    </div><!-- .row -->
+
+    <p>&nbsp;</p>
+    
+    <strong>HTML markup</strong>
+<pre>
+  &lt;div class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12"&gt;
+      This div spans 3 columns on the 'desktop' breakpoint,
+      6 columns on the 'tablet' breakpoint,
+      and 12 columns on the 'mobile' breakpoint.
+  &lt;/div&gt;
+</pre> 
+
+    <p>Gutters are created by padding declared in the .col class.</p>  
+    <p>If you're familiar with <a href="http://getbootstrap.com/css/#grid-options" target="_blank">Bootstrap's grid system</a>, the concepts and css class structure above should have sounded very similar.</p>    
+
+    <hr/>
+
+    <h2>Toggling Breakpoint classes in the &lt;html&gt; tag</h2>    
+    <p>To help with targeting any css you may need, a simple script in "/js/main.js" toggles between breakpoint classes in the &lt;html&gt; tag on window 'resize'. This should be a very simple script to add or modify if you need other breakpoints.</p>  
+
+    <p>
+      <span class="breakpoint2"><strong>&lt;html&gt; breakpoint class:</strong> <span><span></span>
+    </p>
+
+<pre>
+  function toggleBreakpoint() {
+    var windowWidth = $window.width();
+     // toggle breakpoint classes
+    $html.toggleClass('desktop', (windowWidth >= 1025));
+    $html.toggleClass('tablet-lnd', ( (windowWidth >= 769) && (windowWidth <= 1024) ));
+    $html.toggleClass('tablet-ptr', ( (windowWidth >= 640) && (windowWidth <= 768) ));          
+    $html.toggleClass('mobile', (windowWidth <= 639) );
+  }
+
+  toggleBreakpoint();   // on initial load
+  
+  $(window).on('resize', function () {
+      toggleBreakpoint();   // on window resize
+  });
+</pre> 
+
+    <hr/>
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
   </div><!-- .col-->
 </div><!-- .row -->

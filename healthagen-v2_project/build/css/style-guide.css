@@ -58,3 +58,46 @@ pre, code {
   /* line 75, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
   pre:first-child, pre:last-child, code:first-child, code:last-child {
     margin-bottom: 0; }
+
+/* line 81, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.live-style-guide #panel {
+  display: none; }
+/* line 85, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.live-style-guide .col .item {
+  min-height: 0; }
+
+/* line 92, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.mobile .live-style-guide .breakpoint > span:before {
+  background-color: rgba(0, 0, 255, 0.4);
+  content: "mobile"; }
+/* line 96, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.mobile .live-style-guide .breakpoint2 > span:before {
+  background-color: rgba(0, 0, 255, 0.4);
+  content: "mobile"; }
+
+/* line 103, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.tablet-ptr .live-style-guide .breakpoint > span:before {
+  background-color: rgba(255, 0, 0, 0.4);
+  content: "tablet (portrait)"; }
+/* line 107, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.tablet-ptr .live-style-guide .breakpoint2 > span:before {
+  background-color: rgba(255, 0, 0, 0.4);
+  content: "tablet-ptr"; }
+
+/* line 114, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.tablet-lnd .live-style-guide .breakpoint > span:before {
+  background-color: rgba(0, 255, 0, 0.4);
+  content: "tablet (landscape)"; }
+/* line 118, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.tablet-lnd .live-style-guide .breakpoint2 > span:before {
+  background-color: rgba(0, 255, 0, 0.4);
+  content: "tablet-lnd"; }
+
+/* line 125, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.desktop .live-style-guide .breakpoint > span:before {
+  background-color: rgba(255, 140, 0, 0.3);
+  content: "desktop"; }
+/* line 129, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v2_project/source/css/style-guide.css.scss */
+.desktop .live-style-guide .breakpoint2 > span:before {
+  background-color: rgba(255, 140, 0, 0.3);
+  content: "desktop"; }
