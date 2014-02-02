@@ -54,15 +54,6 @@ body {
   @include rem-fallback(padding-top, 4.625);  // add padding-top for bootstrap .navbar-fixed-top
 }
 
-a {
-  color: $blueMedium;
-  text-decoration: none;
-
-  &:hover {
-    color: $hoverBlue;
-  }
-}
-
 p, pre, code, h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1rem 0;
 }
@@ -211,6 +202,89 @@ h6 {
 }
 
 
+/*---- links and buttons ----*/
+a {
+  color: $blueMedium;
+  text-decoration: none;
+
+  &:hover {
+    color: $hoverBlue;
+  }
+
+  &.btn-primary {
+    background-color: $blueMedium;     
+    border: 1px solid transparent;
+    border-radius: 4px;
+    float: left;
+    vertical-align: top;
+    @include rem-fallback(margin, 0.375, 0.75, 0, 0);
+    @include rem-fallback(padding, 0.2, 0.75);
+    @include rem-fallback(font-size, 1.125);
+    //@include sassy-button-gradient("glass");
+    color: white;
+
+    &:last-child {
+      @include rem-fallback(margin-right, 0);
+    }
+
+    &:hover {
+      background-color: $hoverBlue;
+    }
+  }
+
+  &.withSidebar {
+    padding: 0;
+    display: block;
+    min-width: 8rem;
+
+    span {
+      float: left;
+      @include rem-fallback(padding, 0.2, 0.75);
+
+      &:last-child {
+        border-left: 1px solid white;
+      }
+    }
+  }
+
+  &.btn-secondary {
+    @extend a.btn-primary;
+    background-color: $whiteMedium;
+    border: 1px solid $grayDark;
+    color: $grayDark;
+
+    &:hover {
+      background-color: $whiteDark;
+    }
+    
+    &.withSidebar span:last-child {
+      border-left: 1px solid $grayDark;
+    }
+  }
+
+  &.icon-search {
+    //@include rem-fallback(padding, 0, 0, 0, 0.375);
+    padding: 0;
+    line-height: 1.25;
+    @include rem-fallback(width, 1.5);
+    @include rem-fallback(height, 1.875);
+    @include rem-fallback(font-size, 1.375);
+    background-color: transparent;
+
+    &:before {
+      color: $blueMedium;
+    }
+
+    &:hover {
+      background-color: transparent;
+
+      &:before {
+        color: $hoverBlue;
+      }        
+    }
+  }
+}
+
 /*---- nav ----*/
 nav {
   background-color: $whiteDark;
@@ -297,51 +371,6 @@ nav {
   .navbar-right {
     float: right !important;
     @include rem-fallback(padding, 0.625);
-  }
-
-  a {
-    &.btn-primary {
-      background-color: $blueMedium;     
-      border: 1px solid transparent;
-      border-radius: 4px;
-      float: left;
-      vertical-align: top;
-      @include rem-fallback(margin, 0.375, 0.75, 0, 0);
-      @include rem-fallback(padding, 0.2, 0.75);
-      @include rem-fallback(font-size, 1.125);
-      //@include sassy-button-gradient("glass");
-      color: white;
-
-      &:last-child {
-        @include rem-fallback(margin-right, 0);
-      }
-
-      &:hover {
-        background-color: $hoverBlue;
-      }
-    }
-
-    &.icon-search {
-      //@include rem-fallback(padding, 0, 0, 0, 0.375);
-      padding: 0;
-      line-height: 1.25;
-      @include rem-fallback(width, 1.5);
-      @include rem-fallback(height, 1.875);
-      @include rem-fallback(font-size, 1.375);
-      background-color: transparent;
-
-      &:before {
-        color: $blueMedium;
-      }
-
-      &:hover {
-        background-color: transparent;
-
-        &:before {
-          color: $hoverBlue;
-        }        
-      }
-    }
   }
 
   button {
@@ -510,8 +539,13 @@ nav {
   margin-right: 0;
 
   li {
-    width: 33.11%;
-    text-align: center;    
+    width: 33.11%;  
+  
+    a {
+      .sideStats {
+        float: right;
+      }
+    }
   }
 
 }
@@ -615,10 +649,6 @@ nav {
 }
 
 /*---- info-panel ----*/
-.live-style-guide #panel {
-  display: none;
-}
-
 #panel {
   z-index: 1050;
   position: fixed;
@@ -722,15 +752,6 @@ nav {
 
 
 /* --------------------------------------------------------------
-  Media-query for custom breakpoint
------------------------------------------------------------------ */
-@media only screen and (max-width: 518px) { 
-  #options li a {
-    min-height: 3.333rem;
-  }
-}
-
-/* --------------------------------------------------------------
   Media-query for Mobile breakpoint
 ----------------------------------------------------------------- */
 @media only screen and (max-width: 639px) {  
@@ -794,6 +815,101 @@ nav {
   }
 
 }
+
+/* --------------------------------------------------------------
+  Media-query for custom breakpoint
+----------------------------------------------------------------- */
+@media only screen and (max-width: 1024px) {  
+
+  body {
+    @include rem-fallback(padding-top, 5.5);  // add padding-top for bootstrap .navbar-fixed-top    
+  }
+
+  nav {
+    @include rem-fallback(font-size, 1.5);
+
+    h1 {
+      @include rem-fallback(font-size, 1.425);     
+
+      strong {
+        @include rem-fallback(font-size, 2.166);       
+      }
+    }
+
+    h2 {
+      @include rem-fallback(font-size, 2.25);       
+    }
+
+    a {
+      &.btn-primary, &.btn-secondary {
+        @include rem-fallback(font-size, 1.5);         
+      }
+
+      &.icon-search {
+        @include rem-fallback(font-size, 1.75); 
+        height: 2rem;
+        width: 1.75rem;
+      }      
+    }
+
+    .navbar-left {
+      @include rem-fallback(min-width, 26);
+
+      .dropdown-menu {
+        @include rem-fallback(min-width, 26);
+        top: 118%;
+      }
+    }
+
+    button.dropdown-toggle {
+      height: 3.5rem;
+      width: 3.5rem;
+      padding: 0.475rem;
+
+      .icon-bar {
+        @include rem-fallback(height, 0.475);
+
+        + .icon-bar {
+          @include rem-fallback(margin-top, 0.475);
+        }
+      }
+    }
+  
+    .dropdown-menu {
+      @include rem-fallback(font-size, 1.083);
+    }
+  }
+
+  #options li a {
+    @include rem-fallback(font-size, 1.5);  
+  }
+
+}
+
+
+@media only screen and (max-width: 750px) { 
+
+  #options li a {
+    min-height: 3.75rem;
+
+    i {
+      float: left;
+      min-height: 3rem;
+      margin-right: 0.5rem; 
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 550px) { 
+
+  #options li a {
+    min-height: 5rem;
+  }
+  
+}
+
 
 /* --------------------------------------------------------------
   other default styles

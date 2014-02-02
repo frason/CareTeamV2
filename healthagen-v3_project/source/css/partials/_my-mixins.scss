@@ -44,7 +44,7 @@
 
 
 // -----------------------------------------------------------------
-//  Generate class for each column-span in a Susy layout in 12-column grid
+//  Generate class for each column-span in a Susy layout
 // -----------------------------------------------------------------
 @mixin make-colSpans-withPrefix($num, $prefix) {
   @for $i from 1 through $num {
@@ -63,6 +63,7 @@
     display: none;
   } 
 }
+
 
 
 

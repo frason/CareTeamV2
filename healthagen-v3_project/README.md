@@ -69,7 +69,7 @@ Then back in the Terminal prompt:
 source .bash_profile
 ```
 
-At this point quit and restart Terminal for rbenv to take effect.
+At this point, quit and restart Terminal for rbenv to take effect.
 
 Some rbenv commands:
 

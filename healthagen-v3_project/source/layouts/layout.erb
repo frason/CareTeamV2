@@ -10,10 +10,10 @@
     <title>Healthagen | <%= current_page.data.title %></title>
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1">
-    <%= stylesheet_link_tag 'boilerplate', 'bootstrap', 'main' %>
     <% if content_for?(:stylesheets) %>  
       <%= yield_content :stylesheets %>
     <% end %>
+    <%= stylesheet_link_tag 'boilerplate', 'bootstrap', 'main' %>
     <%= javascript_include_tag 'vendor/modernizr-2.6.2.min' %>
 </head>
 <body class="<%= page_classes %>">

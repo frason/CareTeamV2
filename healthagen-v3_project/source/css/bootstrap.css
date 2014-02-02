@@ -1359,13 +1359,12 @@ textarea.input-lg {
   background-color: #e7e7e7;
   color: #555555;
 }
-@media (max-width: 767px) {
-  /*.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+/*@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #777777;
-  }*/
+  }
   .navbar-default .navbar-nav .open .dropdown-menu li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu li > a:focus {
-    /*color: #333333;*/
     color: #777;
     background-color: transparent;
   }
@@ -1381,7 +1380,7 @@ textarea.input-lg {
     color: #cccccc;
     background-color: transparent;
   }
-}
+}*/
 .navbar-default .navbar-link {
   color: #777777;
 }
