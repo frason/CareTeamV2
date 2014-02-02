@@ -5,8 +5,14 @@ relativePath: ../
 
 primaryColors:
   -
-    scssVar: $grayLight
+    scssVar: $whiteMedium
+    hexColor: f5f5f5
+  -
+    scssVar: $whiteDark
     hexColor: e5e5e5
+  -
+    scssVar: $grayLight
+    hexColor: d4d4d4
   -
     scssVar: $grayMedium
     hexColor: bbb
@@ -21,10 +27,13 @@ primaryColors:
     hexColor: 4A4A4A
   -
     scssVar: $blueLight
-    hexColor: 0cf
+    hexColor: D3EBF5
   -
     scssVar: $blueMedium
     hexColor: 4ABAE2
+  -
+    scssVar: $hoverBlue
+    hexColor: 81C9E3
 
 fontIcons:
   -
@@ -157,6 +166,56 @@ font-weight: 300;  /* Firefox */
     </div><!-- .row -->
 
 
+    <h2>Buttons</h2>
+    <table class="table-bordered">
+      <tr>
+        <th>Button</th>
+        <th>Usage</th>
+        <th>HTML</th>
+      </tr>
+      <tr>
+        <td class="helvLight"><a href="#" class="btn-primary">Connect</a></td>
+        <td>Primary button</td>
+        <td>
+<pre>
+&lt;a href="#" class="btn-primary"&gt;Connect&lt;/a&gt;
+</pre>          
+        </td>
+      </tr>
+      <tr>
+        <td class="helvLight"><a href="#" class="btn-primary withSidebar clearfix"><span>Watchlist</span> <span>3</span></a></td>
+        <td>Primary button with Sidebar</td>
+        <td>
+<pre>
+&lt;a href="#" class="btn-primary withSidebar clearfix"&gt;
+  &lt;span&gt;Watchlist&lt;/span&gt; &lt;span&gt;3&lt;/span&gt;
+&lt;/a&gt;
+</pre>          
+        </td>
+      </tr>
+      <tr>
+        <td class="helvLight"><a href="#" class="btn-secondary">Connect</a></td>
+        <td>Secondary button</td>
+        <td>
+<pre>
+&lt;a href="#" class="btn-secondary"&gt;Connect&lt;/a&gt;
+</pre>          
+        </td>
+      </tr>
+      <tr>
+        <td class="helvLight"><a href="#" class="btn-secondary withSidebar clearfix"><span>Watchlist</span> <span>3</span></a></td>
+        <td>Secondary button with Sidebar</td>
+        <td>
+<pre>
+&lt;a href="#" class="btn-secondary withSidebar clearfix"&gt;
+  &lt;span&gt;Watchlist&lt;/span&gt; &lt;span&gt;3&lt;/span&gt;
+&lt;/a&gt;
+</pre>          
+        </td>
+      </tr>
+    </table>
+
+
     <h2>Icon Fonts</h2>
     <p>Icon fonts were created with <a href="http://icomoon.io/" target="_blank">IcoMoon</a>.</p>
     <p>The "/fonts/_svg-icons" folder contains the original ".svg" icon files. You can import the ".svg" files, or the "selection.json", back to the <a href="http://icomoon.io/app/" target="_blank">IcoMoon app</a> using the *Import Icons* button (or via Main Menu > Manage Projects) to retrieve the previous icon selection.</p>
@@ -267,7 +326,7 @@ e600
     <hr/>
 
     <h2>Toggling Breakpoint classes in the &lt;html&gt; tag</h2>    
-    <p>To help with targeting any css you may need, a simple script in "/js/main.js" toggles between breakpoint classes in the &lt;html&gt; tag on window 'resize'. This should be a very simple script to add or modify if you need other breakpoints.</p>  
+    <p>In addition to media-queries in the .css, a simple script in "/js/main.js" toggles between breakpoint classes in the &lt;html&gt; tag on window 'resize'. This should be a very simple script to add or modify if you need other breakpoints.</p>  
 
     <p>
       <span class="breakpoint2"><strong>&lt;html&gt; breakpoint class:</strong> <span><span></span>

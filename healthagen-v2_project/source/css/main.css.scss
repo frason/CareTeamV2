@@ -24,14 +24,16 @@ $grid-padding: 0.625rem;  // grid-padding
 
 $container-style: fluid;
 
-$grayLight: #e5e5e5;
+$whiteMedium: #f5f5f5;
+$whiteDark: #e5e5e5;
+$grayLight: #d4d4d4;
 $grayMedium: #bbb;
 $grayDark: #9b9b9b;
 $blackLight: #828282;
 $blackMedium: #4A4A4A;
-$blueLight: #0cf;
+$blueLight: #D3EBF5;
 $blueMedium: #4ABAE2;
-
+$hoverBlue: #81C9E3;
 
 /* --------------------------------------------------------------
   Default styles
@@ -114,7 +116,7 @@ h6 {
 
   .item {
     @include rem-fallback(min-height, 11);
-    background-color: $grayLight;
+    background-color: $whiteDark;
     position: relative;
     width: 100%;
   }
@@ -209,9 +211,92 @@ h6 {
 }
 
 
+/*---- links and buttons ----*/
+a {
+  color: $blueMedium;
+  text-decoration: none;
+
+  &:hover {
+    color: $hoverBlue;
+  }
+
+  &.btn-primary {
+    background-color: $blueMedium;     
+    border: 1px solid transparent;
+    border-radius: 4px;
+    float: left;
+    vertical-align: top;
+    @include rem-fallback(margin, 0.375, 0.75, 0, 0);
+    @include rem-fallback(padding, 0.2, 0.75);
+    @include rem-fallback(font-size, 1.125);
+    //@include sassy-button-gradient("glass");
+    color: white;
+
+    &:last-child {
+      @include rem-fallback(margin-right, 0);
+    }
+
+    &:hover {
+      background-color: $hoverBlue;
+    }
+  }
+
+  &.withSidebar {
+    padding: 0;
+    display: block;
+    min-width: 8rem;
+
+    span {
+      float: left;
+      @include rem-fallback(padding, 0.2, 0.75);
+
+      &:last-child {
+        border-left: 1px solid white;
+      }
+    }
+  }
+
+  &.btn-secondary {
+    @extend a.btn-primary;
+    background-color: $whiteMedium;
+    border: 1px solid $grayDark;
+    color: $grayDark;
+
+    &:hover {
+      background-color: $whiteDark;
+    }
+    
+    &.withSidebar span:last-child {
+      border-left: 1px solid $grayDark;
+    }
+  }
+
+  &.icon-search {
+    //@include rem-fallback(padding, 0, 0, 0, 0.375);
+    padding: 0;
+    line-height: 1.25;
+    @include rem-fallback(width, 1.5);
+    @include rem-fallback(height, 1.875);
+    @include rem-fallback(font-size, 1.375);
+    background-color: transparent;
+
+    &:before {
+      color: $blueMedium;
+    }
+
+    &:hover {
+      background-color: transparent;
+
+      &:before {
+        color: $hoverBlue;
+      }        
+    }
+  }
+}
+
 /*---- nav ----*/
 nav {
-  background-color: $grayLight;
+  background-color: $whiteDark;
   width: 100%;
   @include rem-fallback(font-size, 1.25);
   //@include rem-fallback(padding, 0.625, 0);
@@ -258,23 +343,23 @@ nav {
       -moz-box-sizing: border-box;    /* Firefox, other Gecko */
       box-sizing: border-box;         /* all others */
       @include rem-fallback(min-width, 21.75);
-      background-color: $grayLight;
+      background-color: $whiteDark;
     }
  
     &.isActive {
       background-color: $grayDark;
 
       h1 {
-        border-right: 1px solid $grayLight;      
+        border-right: 1px solid $whiteDark;      
       }
 
       h1, h2 {
-        color: $grayLight;      
+        color: $whiteDark;      
       }
 
       button {
         &.dropdown-toggle {
-          background-color: $grayLight;
+          background-color: $whiteDark;
 
           .icon-bar {
             background-color: $grayDark;         
@@ -284,55 +369,13 @@ nav {
     }
   }
 
+  .navbar-left.noDropdown {
+    min-width: 0;
+  }
+
   .navbar-right {
     float: right !important;
     @include rem-fallback(padding, 0.625);
-  }
-
-  a {
-    &.btn-primary {
-      background-color: $blueMedium;     
-      border: 1px solid transparent;
-      border-radius: 4px;
-      float: left;
-      vertical-align: top;
-      @include rem-fallback(margin, 0.375, 1.25, 0, 0);
-      @include rem-fallback(padding, 0.2, 0.75);
-      @include rem-fallback(font-size, 1.125);
-      //@include sassy-button-gradient("glass");
-      color: white;
-
-      &:last-child {
-        @include rem-fallback(margin-right, 0);
-      }
-
-      &:hover {
-        background-color: $blueLight;
-      }
-    }
-
-    &.icon-search {
-      //@include rem-fallback(padding, 0, 0, 0, 0.375);
-      padding: 0;
-      line-height: 1.25;
-      @include rem-fallback(width, 1.5);
-      @include rem-fallback(height, 1.875);
-      @include rem-fallback(font-size, 1.375);
-      background-color: transparent;
-      @include rem-fallback(margin-left, -0.375);
-
-      &:before {
-        color: $blueMedium;
-      }
-
-      &:hover {
-        background-color: transparent;
-
-        &:before {
-          color: $blueLight;
-        }        
-      }
-    }
   }
 
   button {
@@ -354,7 +397,7 @@ nav {
         display: block;
         @include rem-fallback(height, 0.375);
         border-radius: 3px;
-        background-color: $grayLight;
+        background-color: $whiteDark;
 
         + .icon-bar {
           @include rem-fallback(margin-top, 0.375);
@@ -397,7 +440,7 @@ nav {
 
         &.selected {
           background-color: $grayDark;
-          color: $grayLight; 
+          color: $whiteDark; 
         }
 
         i[class*="icon-"] {

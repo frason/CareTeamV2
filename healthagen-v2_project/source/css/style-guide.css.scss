@@ -15,6 +15,10 @@ table {
   width: 100%;
   margin: 0 0 1rem 0;
 
+  th {
+    background-color: #F2F4F3;
+  }
+
   th, td {
     padding: 8px;
     text-align: left;
@@ -53,7 +57,7 @@ table {
   }
 
   &.table-striped {
-    tr:nth-child(odd) td, tr:nth-child(odd) th {
+    tr:nth-child(odd) td {
       background-color: #F2F4F3;
     }
   }

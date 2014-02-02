@@ -69,9 +69,31 @@ font-weight: 300;  /* Firefox */
         
 
             <tr>
-              <td>$grayLight</td>     
+              <td>$whiteMedium</td>     
+              <td>#f5f5f5</td>
+              <td class="swatch-col" style="background-color:#f5f5f5"></td>
+            </tr>
+
+        
+
+      
+        
+
+            <tr>
+              <td>$whiteDark</td>     
               <td>#e5e5e5</td>
               <td class="swatch-col" style="background-color:#e5e5e5"></td>
+            </tr>
+
+        
+
+      
+        
+
+            <tr>
+              <td>$grayLight</td>     
+              <td>#d4d4d4</td>
+              <td class="swatch-col" style="background-color:#d4d4d4"></td>
             </tr>
 
         
@@ -136,8 +158,8 @@ font-weight: 300;  /* Firefox */
 
             <tr>
               <td>$blueLight</td>     
-              <td>#0cf</td>
-              <td class="swatch-col" style="background-color:#0cf"></td>
+              <td>#D3EBF5</td>
+              <td class="swatch-col" style="background-color:#D3EBF5"></td>
             </tr>
 
         
@@ -152,12 +174,73 @@ font-weight: 300;  /* Firefox */
             </tr>
 
         
+
+      
+        
+
+            <tr>
+              <td>$hoverBlue</td>     
+              <td>#81C9E3</td>
+              <td class="swatch-col" style="background-color:#81C9E3"></td>
+            </tr>
+
+        
             </table>
           </div><!-- .col--> 
         
 
       
     </div><!-- .row -->
+
+
+    <h2>Buttons</h2>
+    <table class="table-bordered">
+      <tr>
+        <th>Button</th>
+        <th>Usage</th>
+        <th>HTML</th>
+      </tr>
+      <tr>
+        <td class="helvLight"><a href="#" class="btn-primary">Connect</a></td>
+        <td>Primary button</td>
+        <td>
+<pre>
+&lt;a href="#" class="btn-primary"&gt;Connect&lt;/a&gt;
+</pre>          
+        </td>
+      </tr>
+      <tr>
+        <td class="helvLight"><a href="#" class="btn-primary withSidebar clearfix"><span>Watchlist</span> <span>3</span></a></td>
+        <td>Primary button with Sidebar</td>
+        <td>
+<pre>
+&lt;a href="#" class="btn-primary withSidebar clearfix"&gt;
+  &lt;span&gt;Watchlist&lt;/span&gt; &lt;span&gt;3&lt;/span&gt;
+&lt;/a&gt;
+</pre>          
+        </td>
+      </tr>
+      <tr>
+        <td class="helvLight"><a href="#" class="btn-secondary">Connect</a></td>
+        <td>Secondary button</td>
+        <td>
+<pre>
+&lt;a href="#" class="btn-secondary"&gt;Connect&lt;/a&gt;
+</pre>          
+        </td>
+      </tr>
+      <tr>
+        <td class="helvLight"><a href="#" class="btn-secondary withSidebar clearfix"><span>Watchlist</span> <span>3</span></a></td>
+        <td>Secondary button with Sidebar</td>
+        <td>
+<pre>
+&lt;a href="#" class="btn-secondary withSidebar clearfix"&gt;
+  &lt;span&gt;Watchlist&lt;/span&gt; &lt;span&gt;3&lt;/span&gt;
+&lt;/a&gt;
+</pre>          
+        </td>
+      </tr>
+    </table>
 
 
     <h2>Icon Fonts</h2>
@@ -529,7 +612,7 @@ e600
     <hr/>
 
     <h2>Toggling Breakpoint classes in the &lt;html&gt; tag</h2>    
-    <p>To help with targeting any css you may need, a simple script in "/js/main.js" toggles between breakpoint classes in the &lt;html&gt; tag on window 'resize'. This should be a very simple script to add or modify if you need other breakpoints.</p>  
+    <p>In addition to media-queries in the .css, a simple script in "/js/main.js" toggles between breakpoint classes in the &lt;html&gt; tag on window 'resize'. This should be a very simple script to add or modify if you need other breakpoints.</p>  
 
     <p>
       <span class="breakpoint2"><strong>&lt;html&gt; breakpoint class:</strong> <span><span></span>
