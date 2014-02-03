@@ -542,6 +542,8 @@ nav {
     width: 33.11%;  
   
     a {
+      //@include sassy-button-gradient("glass");
+      
       .sideStats {
         float: right;
       }
@@ -582,7 +584,7 @@ nav {
     overflow: hidden;
   }
 
-  .desc, .number, .date, .dots, .subStats {
+  .desc, .number, .date, .dots, .subStats, .graphImg {
     position: absolute;
     margin: 0;
     @include rem-fallback(left, 1.25);
@@ -613,6 +615,15 @@ nav {
     @include rem-fallback(font-size, 1.25);
     color: $blueMedium;
     top: 12.5rem;    
+  }
+
+  .graphImg {
+    bottom: 2rem;
+    width: 90%;
+    
+    img {
+      width: 100%;      
+    }    
   }
 
   .date {

@@ -42,7 +42,7 @@ table {
     table.table-bordered tr:first-child th, table.table-bordered tr:first-child td {
       border-top: 0; }
   /* line 60, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v3_project/source/css/style-guide.css.scss */
-  table.table-striped tr:nth-child(odd) td, table.table-striped tr:nth-child(odd) th {
+  table.table-striped tr:nth-child(odd) td {
     background-color: #F2F4F3; }
 
 /* line 67, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v3_project/source/css/style-guide.css.scss */

@@ -57,7 +57,7 @@ table {
   }
 
   &.table-striped {
-    tr:nth-child(odd) td, tr:nth-child(odd) th {
+    tr:nth-child(odd) td {
       background-color: #F2F4F3;
     }
   }
