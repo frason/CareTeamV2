@@ -322,8 +322,8 @@ nav {
     /* Firefox, other Gecko */
     box-sizing: border-box;
     /* all others */
-    min-width: 348px;
-    min-width: 21.75rem;
+    min-width: 353.6px;
+    min-width: 22.1rem;
     float: left !important;
     padding: 10px;
     padding: 0.625rem; }
@@ -335,8 +335,8 @@ nav {
       /* Firefox, other Gecko */
       box-sizing: border-box;
       /* all others */
-      min-width: 348px;
-      min-width: 21.75rem;
+      min-width: 353.6px;
+      min-width: 22.1rem;
       background-color: #e5e5e5; }
     /* line 340, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v3_project/source/css/main.css.scss */
     nav .navbar-left.isActive {
@@ -390,8 +390,8 @@ nav {
       background-color: #e5e5e5; }
       /* line 397, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v3_project/source/css/main.css.scss */
       nav button.dropdown-toggle .icon-bar + .icon-bar {
-        margin-top: 6px;
-        margin-top: 0.375rem; }
+        margin-top: 5.6px;
+        margin-top: 0.35rem; }
   /* line 404, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v3_project/source/css/main.css.scss */
   nav .dropdown-menu {
     font-size: 15px;
@@ -408,7 +408,7 @@ nav {
     nav .dropdown-menu ul.mainLinks {
       list-style: none;
       padding: 0;
-      width: 46%;
+      width: 45%;
       border: 1px solid #9b9b9b;
       border-bottom: none;
       border-top: none; }

@@ -325,7 +325,7 @@ nav {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* all others */
-    @include rem-fallback(min-width, 21.75);
+    @include rem-fallback(min-width, 22.1);
     float:left !important;
     @include rem-fallback(padding, 0.625);
 
@@ -333,7 +333,7 @@ nav {
       -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
       -moz-box-sizing: border-box;    /* Firefox, other Gecko */
       box-sizing: border-box;         /* all others */
-      @include rem-fallback(min-width, 21.75);
+      @include rem-fallback(min-width, 22.1);
       background-color: $whiteDark;
     }
  
@@ -395,7 +395,7 @@ nav {
         background-color: $whiteDark;
 
         + .icon-bar {
-          @include rem-fallback(margin-top, 0.375);
+          @include rem-fallback(margin-top, 0.35);
         }
       }
     }
@@ -417,7 +417,7 @@ nav {
     ul.mainLinks {
       list-style: none;
       padding: 0;
-      width: 46%;
+      width: 45%;
       border: 1px solid $grayDark;
       border-bottom: none;
       border-top: none;

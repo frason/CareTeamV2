@@ -17,7 +17,8 @@
  * limitations under the License.
  * ======================================================================== */
 
-// !! IMPORTANT NOTE !! : Custom edits made on line: 40, 58, 105
+/*---------------- !! IMPORTANT NOTE !! ---------------- */
+/*------- Custom edits made on line: 40, 58, 105 --------*/
 
 +function ($) { "use strict";
 
