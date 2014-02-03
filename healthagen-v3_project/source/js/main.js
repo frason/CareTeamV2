@@ -114,7 +114,24 @@ jQuery(document).ready(function ($) {
     });
 
     var $filtersOption = $('#options .option-set#filters'),
-        $filtersLinks = $filtersOption.find('a');
+        $filtersLinks = $filtersOption.find('a'),
+
+        $qualityStats = $filtersLinks.filter('[data-option-value=".quality"]').find('.sideStats'),
+        $utilStats = $filtersLinks.filter('[data-option-value=".utilization"]').find('.sideStats'),
+        $registryStats = $filtersLinks.filter('[data-option-value=".registry"]').find('.sideStats'),
+
+        $qualityEls = $container.find('.quality'),
+        $utilEls = $container.find('.utilization'),
+        $registryEls = $container.find('.registry'),
+
+        $qualityHotspot = $qualityEls.filter('[data-hotspot="1"]').length,
+        $utilHotspot = $utilEls.filter('[data-hotspot="1"]').length,
+        $registryHotspot = $registryEls.filter('[data-hotspot="1"]').length;
+
+    // counts for isotope navbar         
+    $qualityStats.append( $qualityHotspot + '/' + $qualityEls.length);
+    $utilStats.append( $utilHotspot + '/' + $utilEls.length);
+    $registryStats.append( $registryHotspot + '/' + $registryEls.length);
 
     $filtersLinks.click(function () {
       var $this = $(this);
@@ -135,7 +152,6 @@ jQuery(document).ready(function ($) {
       $selectedItems.each(function () {
         selectedItemsArr.push( $(this).attr('data-option-value') );
       });
-console.log(selectedItemsArr.length);
 
       if (selectedItemsArr.length < 3) {
         options['filter'] = '*:not(' + selectedItemsArr.join(", ") + ')';

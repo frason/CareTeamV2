@@ -247,15 +247,15 @@ a {
         border-left: 1px solid white; }
   /* line 250, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v3_project/source/css/main.css.scss */
   a.btn-secondary {
-    background-color: whitesmoke;
-    border: 1px solid #9b9b9b;
-    color: #9b9b9b; }
+    background-color: white;
+    border: 1px solid #4abae2;
+    color: #4abae2; }
     /* line 256, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v3_project/source/css/main.css.scss */
     a.btn-secondary:hover {
-      background-color: #e5e5e5; }
+      background-color: whitesmoke; }
     /* line 260, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v3_project/source/css/main.css.scss */
     a.btn-secondary.withSidebar span:last-child {
-      border-left: 1px solid #9b9b9b; }
+      border-left: 1px solid #4abae2; }
   /* line 265, /Users/designmap/Desktop/Projects/CareTeamV2/healthagen-v3_project/source/css/main.css.scss */
   a.icon-search {
     padding: 0;

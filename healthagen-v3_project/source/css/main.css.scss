@@ -249,16 +249,16 @@ a {
 
   &.btn-secondary {
     @extend a.btn-primary;
-    background-color: $whiteMedium;
-    border: 1px solid $grayDark;
-    color: $grayDark;
+    background-color: white;
+    border: 1px solid $blueMedium;
+    color: $blueMedium;
 
     &:hover {
-      background-color: $whiteDark;
+      background-color: $whiteMedium;
     }
     
     &.withSidebar span:last-child {
-      border-left: 1px solid $grayDark;
+      border-left: 1px solid $blueMedium;
     }
   }
 
