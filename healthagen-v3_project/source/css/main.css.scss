@@ -34,6 +34,7 @@ $blackMedium: #4A4A4A;
 $blueLight: #D3EBF5;
 $blueMedium: #4ABAE2;
 $hoverBlue: #81C9E3;
+$orange: #F5A623;
 
 /* --------------------------------------------------------------
   Default styles
@@ -42,14 +43,15 @@ html {
   // Susy 'at-breakpoint' calculates with base of 1rem = 16px, so do not use base of 62.5% below:
   //set baseline to 1rem = 10px ... http://snook.ca/archives/html_and_css/font-size-with-rem
   //font-size: 62.5%;
+  overflow-y: auto;
 }
 
 body {
+  font-size: 90%;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;  /* Firefox */
   color: #000;
-  overflow-x: hidden;
-  line-height: 1.3;
+  line-height: 1;
   //@include rem-fallback(font-size, 1.3);
   @include rem-fallback(padding-top, 4.625);  // add padding-top for bootstrap .navbar-fixed-top
 }
@@ -82,34 +84,37 @@ h6 {
   @include rem-fallback(font-size, 0.8125);
 }
 
-.container { 
+.page-wrapper { 
+  // @include susy-grid-background;
   @include container($total-columns);  // establish the outer grid-containing element
-  //@include susy-grid-background;
-  //border: 1px solid red;
+  margin-top: 1.1em;
+  padding: 0.4em 3em;
+  min-width: 640px;
 
   ol, ul {
     text-align:left;
   }
 }
 
-.row {
+.isotope-container {
   width: 100%;
-  //background-color: #999;
-  //@include rem-fallback(margin, 1, 0);
 }
 
 .col {
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;         /* all others */
-  @include rem-fallback(padding, 0.625);
+  padding: 0.5em;
+  // @include rem-fallback(padding, 0.625);
   //background-color: #ccc;
 
   .item {
-    @include rem-fallback(min-height, 11);
-    background-color: $whiteMedium;
+    // @include rem-fallback(min-height, 11);
+    
     position: relative;
     width: 100%;
+    height: 10.5em;
+    background-color: $whiteMedium;
+    background-image: url(../img/icon-arrow.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
   }
 }
 
@@ -202,34 +207,75 @@ h6 {
 }
 
 
-/*---- links and buttons ----*/
+// Boostrap + Boilerplate overrides
+
+.btn {
+  padding: 0.2em 1.1em;
+  font-weight: 300;
+}
+.btn-primary {
+  background-color: $blueMedium;     
+  border: 1px solid transparent;
+  border-radius: 4px;
+  vertical-align: middle;
+  color: white;
+
+  &:last-child {
+    @include rem-fallback(margin-right, 0);
+  }
+
+  &:hover {
+    background-color: $hoverBlue;
+  }
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+  border: 1px solid transparent;
+}
+
+.btn-secondary {
+  @extend .btn-primary;
+  background-color: white;
+  border: 1px solid $blueMedium;
+  color: $blueMedium;
+
+  &:hover {
+    color: $blueMedium;
+    background-color: white;
+    border: 1px solid $blueMedium;
+  }
+}
+
+label {
+  color: #777;
+  font: {
+    weight: 300;
+  }
+}
+
+sup {
+  top: -0.4em;
+  font-size: 65%;
+}
+
+// end Bootstrap overrides -- mostly
+
+.btn-watchlist-group {
+  margin-left: 0.3em;
+  .btn-watchlist {
+    padding: 0.2em 1.35em;
+  }
+  .btn-watchlist-number {
+    border-left: 1px solid $whiteDark;
+  }
+}
+
 a {
   color: $blueMedium;
   text-decoration: none;
 
   &:hover {
-    color: $hoverBlue;
-  }
-
-  &.btn-primary {
-    background-color: $blueMedium;     
-    border: 1px solid transparent;
-    border-radius: 4px;
-    float: left;
-    vertical-align: top;
-    @include rem-fallback(margin, 0.375, 0.75, 0, 0);
-    @include rem-fallback(padding, 0.2, 0.75);
-    @include rem-fallback(font-size, 1.125);
-    //@include sassy-button-gradient("glass");
-    color: white;
-
-    &:last-child {
-      @include rem-fallback(margin-right, 0);
-    }
-
-    &:hover {
-      background-color: $hoverBlue;
-    }
+    // color: $hoverBlue;
   }
 
   &.withSidebar {
@@ -239,7 +285,7 @@ a {
 
     span {
       float: left;
-      @include rem-fallback(padding, 0.2, 0.75);
+      //@include rem-fallback(padding, 0.2, 0.75);
 
       &:last-child {
         border-left: 1px solid white;
@@ -247,28 +293,12 @@ a {
     }
   }
 
-  &.btn-secondary {
-    @extend a.btn-primary;
-    background-color: white;
-    border: 1px solid $blueMedium;
-    color: $blueMedium;
-
-    &:hover {
-      background-color: $whiteMedium;
-    }
-    
-    &.withSidebar span:last-child {
-      border-left: 1px solid $blueMedium;
-    }
-  }
-
   &.icon-search {
-    //@include rem-fallback(padding, 0, 0, 0, 0.375);
+    margin-left: 0.5em;
     padding: 0;
-    line-height: 1.25;
-    @include rem-fallback(width, 1.5);
-    @include rem-fallback(height, 1.875);
-    @include rem-fallback(font-size, 1.375);
+    font-size: 16px;
+    line-height: 1;
+    vertical-align: middle;
     background-color: transparent;
 
     &:before {
@@ -287,31 +317,33 @@ a {
 
 /*---- nav ----*/
 nav {
-  background-color: $whiteDark;
+  padding: 0 2.8em;
   width: 100%;
-  @include rem-fallback(font-size, 1.25);
-  //@include rem-fallback(padding, 0.625, 0);
+  background-color: $whiteDark;
+  // @include rem-fallback(font-size, 1.25);
+  // @include rem-fallback(padding, 0.625, 0);
 
-  .container {
-    @include rem-fallback(padding, 0 ,1);    
+  .page-wrapper {
+    // @include rem-fallback(padding, 0 ,1);    
   }
 
   h1, h2 {
     color: $grayDark; 
     font-weight: normal;
     font-weight: 300;
-    float: left;
-    @include rem-fallback(margin, 0, 1.25, 0, 0);
+    // @include rem-fallback(margin, 0, 1.25, 0, 0);
   }
 
   h1 {
+    font-size: 1.3em;
     line-height: 1;
-    @include rem-fallback(font-size, 1.0625);  
-    @include rem-fallback(padding-right, 1.25);
-    border-right: 1px solid $grayDark;
+    // @include rem-fallback(font-size, 1.0625);  
+    // @include rem-fallback(padding-right, 1.25);
+    // border-right: 1px solid $grayDark;
 
     strong {
-     @include rem-fallback(font-size, 1.5625);    
+      display: block;
+     // @include rem-fallback(font-size, 1.5625);    
     }
   }
 
@@ -321,13 +353,14 @@ nav {
     @include rem-fallback(font-size, 1.875);
   }
 
+  .nav-container {
+    line-height: 70px;
+  }
+
   .navbar-left {
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* all others */
-    @include rem-fallback(min-width, 22.1);
-    float:left !important;
-    @include rem-fallback(padding, 0.625);
+    // @include rem-fallback(min-width, 22.1);
+    // float:left !important;
+    // @include rem-fallback(padding, 0.625);
 
     .dropdown-menu {
       -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -370,7 +403,7 @@ nav {
 
   .navbar-right {
     float: right !important;
-    @include rem-fallback(padding, 0.625);
+    // @include rem-fallback(padding, 0.625);
   }
 
   button {
@@ -539,13 +572,20 @@ nav {
   margin-right: 0;
 
   li {
-    width: 33.11%;  
+    width: 33.33333%;  
   
     a {
       //@include sassy-button-gradient("glass");
       
       .sideStats {
         float: right;
+      }
+
+      [class^="icon-"], [class*=" icon-"] {
+        position: relative;
+        top: 3px;
+        left: -3px;
+        font-size: 1.4em;
       }
     }
   }
@@ -562,10 +602,17 @@ nav {
   //&.registry .item { background: #FFF2F4;}
 
   &[data-hotspot="1"] .item {
+    padding: 1.35em 1em;
     background-color: white;
+    background-size: 47px auto;
+    border: 1px solid $blueMedium;
 
     h3 {
-      @include rem-fallback(font-size, 2);
+      font: {
+        size: 1.8em;
+      }
+      line-height: 1.25;
+      // @include rem-fallback(font-size, 2);
     }
 
     .corner i {
@@ -573,31 +620,39 @@ nav {
     }
 
     .desc {
-      top: 1rem;
-    }
+      margin-bottom: 3.35em;
 
+      h3 {
+        font: {
+          // size: 2em;
+          weight: 300;
+        }
+        // line-height: 1;
+      }
+    }
   }
 
   .item {
+    padding: 2em 1.2em;
     border-radius: 5px;
-    border: 1px solid $grayDark;
+    border: 1px solid $grayMedium;
     overflow: hidden;
+    background-size: 27px auto;
   }
 
   .desc, .number, .date, .dots, .subStats, .graphImg {
-    position: absolute;
     margin: 0;
-    @include rem-fallback(left, 1.25);
+    // @include rem-fallback(left, 1.25);
   }
 
   .desc {
-    top: 2.5rem;
     
     h3 {
-      @include rem-fallback(font-size, 1.25);
-      font-weight: 300;
       margin: 0;
-
+      font-size: 1em;
+      line-height: 1.4;
+      // @include rem-fallback(font-size, 1.25);
+      
       i {
         color: $grayMedium;
         font-style: normal;
@@ -606,30 +661,44 @@ nav {
   }
 
   .number {
-    @include rem-fallback(font-size, 3.75);
+    font-size: 3.5em;
+    // @include rem-fallback(font-size, 3.75);
     color: $blueMedium;
-    top: 8rem;
+    // top: 8rem;
   }
 
   .subStats {
-    @include rem-fallback(font-size, 1.25);
+    margin-bottom: .2em;
+    // @include rem-fallback(font-size, 1.25);
     color: $blueMedium;
-    top: 12.5rem;    
+    font-size: 1.2em;
+    // top: 12.5rem;    
   }
 
   .graphImg {
-    bottom: 2rem;
-    width: 90%;
-    
+    text-align: center;
     img {
-      width: 100%;      
+      max-width: 100%;      
     }    
   }
 
-  .date {
-    bottom: 0.625rem;
+  .subtitle {
+    margin-top: 0.4em;
+    font-size: 0.9em;
+  }
+
+  figure {
+    margin-top: 1em;
+  }
+
+  figure img {
+    max-width: 100%;
+  }
+
+  figcaption {
+    margin-top: 0.625em;
     color: $blueMedium;
-    @include rem-fallback(font-size, 0.75);
+    font-size: 0.7em;
   }
 
   .dots {
@@ -738,44 +807,66 @@ nav {
   }  
 }
 
-
 /* mobile */
-@media screen and (max-width: 479px) { html { font-size: 11px; } }
-@media screen and (min-width: 480px) { html { font-size: 12px; } }
+
+@media screen and (max-width: 479px) { body { font-size: 70%; } }
 
 /* tablet */
-@media screen and (min-width: 576px) { html { font-size: 12px; } }
-//@media screen and (min-width: 624px) { html { font-size: 13px; } }
-//@media screen and (min-width: 672px) { html { font-size: 14px; } }
-//@media screen and (min-width: 720px) { html { font-size: 15px; } }
-//@media screen and (min-width: 768px) { html { font-size: 16px; } }
-//@media screen and (min-width: 816px) { html { font-size: 17px; } }
-//@media screen and (min-width: 864px) { html { font-size: 18px; } }
 
-/* desktop / tablet-landscape */
-//@media screen and (min-width: 885px) { html { font-size: 12px; } }
-@media screen and (min-width: 959px) { html { font-size: 13px; } }
-@media screen and (min-width: 1033px) { html { font-size: 14px; } }
-@media screen and (min-width: 1106px) { html { font-size: 15px; } }
-@media screen and (min-width: 1180px) { html { font-size: 16px; } }
-@media screen and (min-width: 1254px) { html { font-size: 17px; } }
-@media screen and (min-width: 1328px) { html { font-size: 18px; } }
-
-
-/* --------------------------------------------------------------
-  Media-query for Mobile breakpoint
------------------------------------------------------------------ */
-@media only screen and (max-width: 639px) {  
-  @include make-colSpans-withPrefix($total-columns, $mobile);
-
-  .element {
-    &.#{$mobile}-12col-span4, &.#{$mobile}-12col-span8, &.#{$mobile}-12col-span12 {
-      &.height2 .item {
-        height: 23.45rem;
+@media screen and (min-width: 480px) and (max-width: 768px) { 
+  body { 
+    font-size: 70%; 
+  }
+  #options li a {
+    padding: 0.4em 0.8em 0.8em;
+  }
+  .isotope-item[data-hotspot="1"] {
+    //min-width: 36em;
+    .item {
+      //min-height: 23em;
+    }
+  }
+  .isotope-item[data-hotspot="5"] {
+    //width: 12em;
+    .item {
+      //height: 7em;
+      .subtitle {
+        margin-bottom: 0;
       }
     }
   }
+  .element .desc h3 i {
+    font-size: 90%;
+  }
+}
 
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
+    .isotope-item[data-hotspot="1"] {
+      min-width: 0;
+      min-height: 0;
+      width: 354px;
+      height: 285px;
+      .item {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .isotope-item[data-hotspot="5"] {
+      min-width: 0;
+      min-height: 0;
+      width: 165px;
+      height: 95px;
+      .item {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
 }
 
 /* --------------------------------------------------------------
@@ -783,141 +874,107 @@ nav {
 ----------------------------------------------------------------- */
 /* iPads (portrait and landscape) */
 //@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-@media only screen and (min-width: 640px) and (max-width: 1024px) {
+
+@media only screen and (min-width: 885px) and (max-width: 1024px) {
   @include make-colSpans-withPrefix($total-columns, $tablet);
 
-  .element {
-    &.#{$tablet}-12col-span2, &.#{$tablet}-12col-span4, &.#{$tablet}-12col-span6 {
-      &.height2 .item {
-        height: 23.35rem;
-      }
-    }
-  }
+  
 
 }
 
 /* iPads (portrait) */
 //@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
 @media only screen and (min-width: 360px) and (max-width: 768px) {
-  /* Styles */
-  //body {background-color:red;}
+ 
+
+
 }
 
 /* iPads (landscape) */
 //@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  /* Styles */
-  //body {background-color:green;}
+
+    .isotope-item[data-hotspot="1"] {
+      min-width: 0;
+      min-height: 0;
+      width: 312px;
+      height: 330px;
+      .item {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .isotope-item[data-hotspot="5"] {
+      min-width: 0;
+      min-height: 0;
+      width: 154px;
+      height: 130px;
+      .item {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
 }
 
 
 /* --------------------------------------------------------------
   Media-query for Desktop breakpoint
 ----------------------------------------------------------------- */
+
 @media only screen and (min-width: 1025px) {
   @include make-colSpans-withPrefix($total-columns, $desktop); 
 
-  .element {
-    &.#{$desktop}-12col-span2, &.#{$desktop}-12col-span4, &.#{$desktop}-12col-span6 {
-      &.height2 .item {
-          height: 23.35rem;
+    .isotope-item[data-hotspot="1"] {
+      min-width: 0;
+      min-height: 0;
+      width: 308px;
+      height: 330px;
+      .item {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: 100%;
       }
     }
-  }
 
+    .isotope-item[data-hotspot="5"] {
+      min-width: 0;
+      min-height: 0;
+      width: 154px;
+      height: 130px;
+      .item {
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
 }
+
 
 /* --------------------------------------------------------------
   Media-query for custom breakpoint
 ----------------------------------------------------------------- */
 @media only screen and (max-width: 1024px) {  
 
-  body {
-    @include rem-fallback(padding-top, 5.5);  // add padding-top for bootstrap .navbar-fixed-top    
-  }
-
-  nav {
-    @include rem-fallback(font-size, 1.5);
-
-    h1 {
-      @include rem-fallback(font-size, 1.425);     
-
-      strong {
-        @include rem-fallback(font-size, 2.166);       
-      }
-    }
-
-    h2 {
-      @include rem-fallback(font-size, 2.25);       
-    }
-
-    a {
-      &.btn-primary, &.btn-secondary {
-        @include rem-fallback(font-size, 1.5);         
-      }
-
-      &.icon-search {
-        @include rem-fallback(font-size, 1.75); 
-        height: 2rem;
-        width: 1.75rem;
-      }      
-    }
-
-    .navbar-left {
-      @include rem-fallback(min-width, 26);
-
-      .dropdown-menu {
-        @include rem-fallback(min-width, 26);
-        top: 118%;
-      }
-    }
-
-    button.dropdown-toggle {
-      height: 3.5rem;
-      width: 3.5rem;
-      padding: 0.475rem;
-
-      .icon-bar {
-        @include rem-fallback(height, 0.475);
-
-        + .icon-bar {
-          @include rem-fallback(margin-top, 0.475);
-        }
-      }
-    }
-  
-    .dropdown-menu {
-      @include rem-fallback(font-size, 1.083);
-    }
-  }
-
-  #options li a {
-    @include rem-fallback(font-size, 1.5);  
-  }
-
+ 
 }
 
 
 @media only screen and (max-width: 750px) { 
 
-  #options li a {
-    min-height: 3.75rem;
-
-    i {
-      float: left;
-      min-height: 3rem;
-      margin-right: 0.5rem; 
-    }
-  }
+  
 
 }
 
 
 @media only screen and (max-width: 550px) { 
-
-  #options li a {
-    min-height: 5rem;
-  }
   
 }
 
@@ -928,4 +985,318 @@ nav {
 .omega {
   @include omega;
 }
+
+.number-percentage {
+  font: {
+    size: 2.8em;
+  }
+}
+.number-out-of {
+  font: {
+    size: 1em;
+  }
+}
+.number-blue {
+  color: $blueMedium;
+}
+.number-grey {
+  color: $grayDark;
+}
+.number-orange {
+  color: $orange;
+}
+.benchmark {
+  text-align: left;
+  background: $whiteMedium;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  .number-percentage {
+    font-size: 1.8em;
+  }
+  label {
+    margin: 0;
+    font-size: 0.7em;
+  }
+  small {
+    font-size: 0.6em;
+  }
+}
+.compliance, .compare {
+  margin: 0 auto;
+}
+.divider-slash {
+  padding-top: 0.25em;
+  color: #777;
+  font-size: 3em;
+  vertical-align: top;
+}
+.number-change {
+  span {
+    text-indent: 2px;
+    display: block;
+    font-size: 0.33333em;
+  }
+}
+.inline-block {
+  display: inline-block;
+  text-align: left;
+}
+.center-block {
+  max-width: 100%;
+}
+
+// Modals 
+
+.md-close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font: {
+    size: 3.2em;
+    weight: 300;
+  }
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.md-footer {
+  padding: 1.125em 1.75em; // 18px 28px
+  background: $whiteMedium;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  .btn-margin-left {
+    margin-left: 2.375em; // 38px
+  }
+}
+.md-content {
+  line-height: 1;
+  .md-top {
+    padding: 2.2em 1.875em; // 42px 30px
+  }
+  h1 {
+    margin: 0 0 1.1em;
+    font: {
+      size: 1.8em;
+      weight: normal;
+    }
+    i {
+      color: #aaa;
+      font-style: normal;
+    }
+  }
+  .table {
+    display: table;
+    width: 100%;
+    min-height: 7.8em;
+    border: 1px solid $grayLight;
+    border-radius: 5px;
+  }
+  .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    label {
+      margin: 0 0 .35em;
+      display: block;
+      color: $grayDark;
+      font: {
+        size: 1em;
+        weight: normal;
+      }
+    }
+    p {
+      margin: 0;
+    }
+    &.benchmark {
+      width: 20%;
+    }
+    &.number-change {
+      width: 30%;
+      border-left: 1px solid $grayLight;
+    }
+  }
+}
+
+
+.navbar-fixed-top {
+  height: 70px;
+  background: $whiteDark;
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 2.25em;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+.table {
+  display: table;
+  vertical-align: middle;
+  text-align: center;
+}
+.table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+.margin-top-bottom {
+  margin: 1.2em 0;
+}
+.btn-back {
+  margin-left: 9em;
+}
+
+// Page ID 
+
+.page-top {
+  margin-bottom: 2em;
+  .pull-left {
+    width: 45%;
+  }
+  .pull-right {
+    width: 55%;
+    text-align: right;
+  }
+  h1 {
+    font-size: 1.8em;
+    i {
+      color: #bbb;
+      font-style: normal;
+    }
+  }
+}
+.page-content {
+  margin-bottom: 2.25em;
+}
+.page-stats {
+  margin-bottom: 2.25em;
+  width: 100%;
+  .pull-left {
+    width: 40%;
+    .benchmark {
+      padding: 0.4em 0.8em;
+      display: inline-block;
+      font-size: 1.35em;
+      vertical-align: middle;
+      border-radius: 5px;
+      .number-percentage {
+        font-size: 1em;
+      }
+    }
+    .compliance {
+      padding-left: 1.1em;
+      padding-right: 0.5em;
+    }
+    .divider-slash {
+      margin-right: .25em;
+      padding-top: 0.4em;
+    }
+    .number-change {
+      padding-left: 1em;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  .pull-right {
+    width: 60%;
+    text-align: right;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+
+.btn {
+  position: relative;
+}
+.btn-back {
+  padding-left: 1.6em;
+}
+.btn-back:before {
+  content: "<";
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  margin-top: -0.1em;
+  font-size: 70%;
+  z-index: 1;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.number-change .number-greater-than, .number-change .number-lesser-than {
+  position: relative;
+  padding-left: 0.6em;
+  display: inline-block;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 21px;
+    height: 55px;
+    z-index: 1;
+    background: url(../img/arrow-down.png) no-repeat;
+    background-size: 14px auto;
+  }
+
+  &.number-lesser-than:before {
+    top: 5px;
+    background-position: bottom left;
+    -webkit-transform: scale(-1);
+       -moz-transform: scale(-1);
+        -ms-transform: scale(-1);
+            transform: scale(-1);
+  }
+}
+
+.table .number-change .number-greater-than, .number-change .number-lesser-than { 
+  padding-left: 0.5em;
+
+  &:before {
+    top: 8px;
+    background-size: 17px auto;
+  }
+}
+
+.number-change .number-lesser-than {
+  padding-left: 0.85em;
+}
+
+.benchmark .number-percentage {
+  position: relative;
+  padding-left: 0.1em;
+
+  &.number-greater-than:before, &.number-lesser-than:before {
+    content: ">";
+    position: absolute;
+    top: 50%;
+    left: -0.625em;
+    margin-top: -0.1em;
+    font-size: 70%;
+    z-index: 1;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  &.number-lesser-than:before {
+    content: "<";
+  }
+}
+
+.page-stats .benchmark .number-percentage {
+  margin-left: 1em;
+}
+
 

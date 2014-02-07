@@ -3,6 +3,23 @@ $.fn.exists = function () {
     return this.length !== 0;
 }
 
+$.extend({
+  getUrlVars: function(){
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+      hash = hashes[i].split('=');
+      vars.push(hash[0]);
+      vars[hash[0]] = hash[1];
+    }
+    return vars;
+  },
+  getUrlVar: function(name){
+    return $.getUrlVars()[name];
+  }
+});
+
 // info-panel
 jQuery(document).ready(function ($) {  
 
@@ -167,6 +184,25 @@ jQuery(document).ready(function ($) {
       return false;
     });
   }
+
+  // set "active" state to this on Modal open
+  $('.isotope-item').on('click', function() {
+    $(this).addClass('active').hide();
+  });
+
+  $('.md-close, .md-overlay').on('click', function() {
+    $('.isotope-item').removeClass('active').show();
+  });
+
+
+  // Getting URL var
+  if ( $('body').hasClass('page') ) {
+    var byName = $.getUrlVar('id');
+    $('#page-' + byName).show();
+
+    $('.btn-back').show();
+  }
+
 // end .ready        
 });
 

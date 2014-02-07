@@ -1,4 +1,5 @@
 -
+  id: 1
   title: ED Use without Hospitalization
   subtitle:
   icon: utilization
@@ -7,7 +8,19 @@
   subStats: 
   date:
   graphImg:
+  benchmarkPercent: 55
+  benchmarkOperator: greater-than
+  compliancePercent: "23.27"
+  complianceNumberCount: "224,015"
+  complianceNumberTotal: "408,212"
+  comparePercent: "67.03"
+  compareNumberCount: "312,693"
+  compareNumberTotal: "539,845"
+  differentialPercent: "31.91"
+  differentialQuarter: "From Q3 2013 Avg"
+  differentialOperator: greater-than
 -
+  id: 2
   title: Bipolar Disorder
   subtitle: "26,147 Patients"
   icon: registry
@@ -16,120 +29,107 @@
   subStats: 
   date:
   graphImg:
+  benchmarkPercent: 26
+  benchmarkOperator: lesser-than
+  compliancePercent: "72.91"
+  complianceNumberCount: "446,921"
+  complianceNumberTotal: "650,302"
+  comparePercent: "81.40"
+  compareNumberCount: "704,225"
+  compareNumberTotal: "861,549"
+  differentialPercent: "68.26"
+  differentialQuarter: "From Q2 2012 Avg"
+  differentialOperator: lesser-than
 -
+  id: 3
   title: >
-    Diabetes HG A1c<br> Control (<8%) <i>(ACO 22)</i>
-  subtitle: 
-  icon: quality
-  hotspot: true
-  percent: "72.07%"
-  subStats: >
-    Current Compliance<br> Down 11.23%
-  date: "Aetna: last update 3/12/14 3:30am"
-  graphImg: graph-2.png
--
-  title: Cholesterol Primary
-  subtitle: "26,147 Patients"
-  icon: registry
-  hotspot: false
-  percent:
-  subStats: 
-  date:
-  graphImg:
--
-  title: Bipolar Disorder
-  subtitle: "26,147 Patients"
-  icon: registry
-  hotspot: false
-  percent:
-  subStats: 
-  date:
-  graphImg:
--
-  title: Cholesterol Primary
-  subtitle: "26,147 Patients"
-  icon: registry
-  hotspot: false
-  percent:
-  subStats: 
-  date:
-  graphImg:
--
-  title: Rehospitalization
-  subtitle: 
-  icon: utilization
-  hotspot: false
-  percent:
-  subStats: 
-  date:
-  graphImg:
--
-  title: ED Use without Hospitalization
-  subtitle:
-  icon: utilization
-  hotspot: false
-  percent:
-  subStats: 
-  date:
-  graphImg:
--
-  title: Rehospitalization
-  subtitle: 
-  icon: utilization
-  hotspot: false
-  percent:
-  subStats: 
-  date:
-  graphImg:
--
-  title: "Diabetes LDL-C Control (ACO 23)"
-  subtitle: 
-  icon: quality
-  hotspot: false
-  percent:
-  subStats: 
-  date:
-  graphImg:
--
-  title: Atrial Fibrillation
-  subtitle: "71,124 Patients"
-  icon: registry
-  hotspot: false
-  percent:
-  subStats: 
-  date:
-  graphImg:
--
-  title: Bipolar Disorder
-  subtitle: "26,147 Patients"
-  icon: registry
-  hotspot: false
-  percent:
-  subStats: 
-  date:
-  graphImg:
--
-  title: >
-    Diabetes HG A1c<br> Poor Control <i>(ACO 27)</i>
+    Diabetes &ndash; HG A1c Poor Control <i>(ACO 27)</i>
   subtitle: 
   icon: quality
   hotspot: true
   percent: "13.37%"
   subStats: >
-    Current Compliance<br> Up 2.31%
+    Current Compliance
+  percentChange: "Up 2.31%"
   date: "Aetna: last update 4/18/14 1:14pm"
   graphImg: graph-1.png
+  benchmarkPercent: 51
+  benchmarkOperator: greater-than
+  compliancePercent: "48.55"
+  complianceNumberCount: "312,153"
+  complianceNumberTotal: "650,302"
+  comparePercent: "44.84"
+  compareNumberCount: "322,704"
+  compareNumberTotal: "901,206"
+  differentialPercent: "12.05"
+  differentialQuarter: "From Q2 2012 Avg"
+  differentialOperator: greater-than
 -
-  title: Atrial Fibrillation
-  subtitle: "71,124 Patients"
+  id: 4
+  title: Cholesterol Primary
+  subtitle: "26,147 Patients"
   icon: registry
   hotspot: false
   percent:
   subStats: 
   date:
   graphImg:
+  benchmarkPercent: 92
+  benchmarkOperator: greater-than
+  compliancePercent: "88.41"
+  complianceNumberCount: "794,409"
+  complianceNumberTotal: "899,140"
+  comparePercent: "56.09"
+  compareNumberCount: "488,017"
+  compareNumberTotal: "811,805"
+  differentialPercent: "48.67"
+  differentialQuarter: "From Q3 2011 Avg"
+  differentialOperator: greater-than
 -
-  title: ED Use without Hospitalization
+  id: 5
+  title: Bipolar Disorder
+  subtitle: "26,147 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+  benchmarkPercent: 26
+  benchmarkOperator: lesser-than
+  compliancePercent: "72.91"
+  complianceNumberCount: "446,921"
+  complianceNumberTotal: "650,302"
+  comparePercent: "81.40"
+  compareNumberCount: "704,225"
+  compareNumberTotal: "861,549"
+  differentialPercent: "68.26"
+  differentialQuarter: "From Q2 2012 Avg"
+  differentialOperator: lesser-than
+-
+  id: 6
+  title: Cholesterol Primary
+  subtitle: "26,147 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+  benchmarkPercent: 92
+  benchmarkOperator: greater-than
+  compliancePercent: "88.41"
+  complianceNumberCount: "794,409"
+  complianceNumberTotal: "899,140"
+  comparePercent: "56.09"
+  compareNumberCount: "488,017"
+  compareNumberTotal: "811,805"
+  differentialPercent: "28.93"
+  differentialQuarter: "From Q3 2011 Avg"
+  differentialOperator: greater-than
+-
+  id: 7
+  title: Rehospitalization
   subtitle: 
   icon: utilization
   hotspot: false
@@ -137,16 +137,61 @@
   subStats: 
   date:
   graphImg:
+  benchmarkPercent: 33
+  benchmarkOperator: lesser-than
+  compliancePercent: "59.33"
+  complianceNumberCount: "535,220"
+  complianceNumberTotal: "900,408"
+  comparePercent: "44.98"
+  compareNumberCount: "409,883"
+  compareNumberTotal: "981,440"
+  differentialPercent: "11.66"
+  differentialQuarter: "From Q4 2012 Avg"
+  differentialOperator: lesser-than
 -
-  title: High Risk Geriatrics
-  subtitle: "71,124 Patients"
-  icon: registry
+  id: 8
+  title: ED Use without Hospitalization
+  subtitle:
+  icon: utilization
   hotspot: false
   percent:
   subStats: 
   date:
   graphImg:
+  benchmarkPercent: 55
+  benchmarkOperator: greater-than
+  compliancePercent: "23.27"
+  complianceNumberCount: "224,015"
+  complianceNumberTotal: "408,212"
+  comparePercent: "67.03"
+  compareNumberCount: "312,693"
+  compareNumberTotal: "539,845"
+  differentialPercent: "31.91"
+  differentialQuarter: "From Q3 2013 Avg"
+  differentialOperator: greater-than
 -
+  id: 9
+  title: Rehospitalization
+  subtitle: 
+  icon: utilization
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+  benchmarkPercent: 33
+  benchmarkOperator: lesser-than
+  compliancePercent: "59.33"
+  complianceNumberCount: "535,220"
+  complianceNumberTotal: "900,408"
+  comparePercent: "44.98"
+  compareNumberCount: "409,883"
+  compareNumberTotal: "981,440"
+  differentialPercent: "11.66"
+  differentialQuarter: "From Q4 2012 Avg"
+  differentialOperator: lesser-than
+-
+  id: 10
   title: "Diabetes LDL-C Control (ACO 23)"
   subtitle: 
   icon: quality
@@ -155,7 +200,127 @@
   subStats: 
   date:
   graphImg:
+  benchmarkPercent: 55
+  benchmarkOperator: greater-than
+  compliancePercent: "23.27"
+  complianceNumberCount: "224,015"
+  complianceNumberTotal: "408,212"
+  comparePercent: "67.03"
+  compareNumberCount: "312,693"
+  compareNumberTotal: "539,845"
+  differentialPercent: "31.91"
+  differentialQuarter: "From Q3 2013 Avg"
+  differentialOperator: greater-than
 -
+  id: 11
+  title: Atrial Fibrillation
+  subtitle: "71,124 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+  benchmarkPercent: 55
+  benchmarkOperator: greater-than
+  compliancePercent: "23.27"
+  complianceNumberCount: "224,015"
+  complianceNumberTotal: "408,212"
+  comparePercent: "67.03"
+  compareNumberCount: "312,693"
+  compareNumberTotal: "539,845"
+  differentialPercent: "31.91"
+  differentialQuarter: "From Q3 2013 Avg"
+  differentialOperator: greater-than
+-
+  id: 12
+  title: Bipolar Disorder
+  subtitle: "26,147 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+  benchmarkPercent: 26
+  benchmarkOperator: lesser-than
+  compliancePercent: "72.91"
+  complianceNumberCount: "446,921"
+  complianceNumberTotal: "650,302"
+  comparePercent: "81.40"
+  compareNumberCount: "704,225"
+  compareNumberTotal: "861,549"
+  differentialPercent: "68.26"
+  differentialQuarter: "From Q2 2012 Avg"
+  differentialOperator: lesser-than
+-
+  id: 13
+  title: >
+    Diabetes HG A1c Control (<8%) <i>(ACO 22)</i>
+  subtitle: 
+  icon: quality
+  hotspot: true
+  percent: "72.07%"
+  subStats: >
+    Current Compliance
+  percentChange: "Down 11.23%"
+  date: "Aetna: last update 3/12/14 3:30am"
+  graphImg: graph-2.png
+  benchmarkPercent: 80
+  benchmarkOperator: greater-than
+  compliancePercent: "72.07"
+  complianceNumberCount: "116,050"
+  complianceNumberTotal: "161,203"
+  comparePercent: "83.33"
+  compareNumberCount: "129,958"
+  compareNumberTotal: "156,012"
+  differentialPercent: "11.23"
+  differentialQuarter: "From Q1 2013 Avg"
+  differentialOperator: greater-than
+-
+  id: 14
+  title: Atrial Fibrillation
+  subtitle: "71,124 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+  benchmarkPercent: 55
+  benchmarkOperator: greater-than
+  compliancePercent: "23.27"
+  complianceNumberCount: "224,015"
+  complianceNumberTotal: "408,212"
+  comparePercent: "67.03"
+  compareNumberCount: "312,693"
+  compareNumberTotal: "539,845"
+  differentialPercent: "31.91"
+  differentialQuarter: "From Q3 2013 Avg"
+  differentialOperator: greater-than
+-
+  id: 15
+  title: ED Use without Hospitalization
+  subtitle: 
+  icon: utilization
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+  benchmarkPercent: 55
+  benchmarkOperator: greater-than
+  compliancePercent: "23.27"
+  complianceNumberCount: "224,015"
+  complianceNumberTotal: "408,212"
+  comparePercent: "67.03"
+  compareNumberCount: "312,693"
+  compareNumberTotal: "539,845"
+  differentialPercent: "31.91"
+  differentialQuarter: "From Q3 2013 Avg"
+  differentialOperator: greater-than
+-
+  id: 16
   title: High Risk Geriatrics
   subtitle: "71,124 Patients"
   icon: registry
@@ -164,4 +329,57 @@
   subStats: 
   date:
   graphImg:
+  benchmarkPercent: 92
+  benchmarkOperator: greater-than
+  compliancePercent: "88.41"
+  complianceNumberCount: "794,409"
+  complianceNumberTotal: "899,140"
+  comparePercent: "56.09"
+  compareNumberCount: "488,017"
+  compareNumberTotal: "811,805"
+  differentialPercent: "28.93"
+  differentialQuarter: "From Q3 2011 Avg"
+  differentialOperator: greater-than
+-
+  id: 17
+  title: "Diabetes LDL-C Control (ACO 23)"
+  subtitle: 
+  icon: quality
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+  benchmarkPercent: 55
+  benchmarkOperator: greater-than
+  compliancePercent: "23.27"
+  complianceNumberCount: "224,015"
+  complianceNumberTotal: "408,212"
+  comparePercent: "67.03"
+  compareNumberCount: "312,693"
+  compareNumberTotal: "539,845"
+  differentialPercent: "31.91"
+  differentialQuarter: "From Q3 2013 Avg"
+  differentialOperator: greater-than
+-
+  id: 18
+  title: High Risk Geriatrics
+  subtitle: "71,124 Patients"
+  icon: registry
+  hotspot: false
+  percent:
+  subStats: 
+  date:
+  graphImg:
+  benchmarkPercent: 92
+  benchmarkOperator: greater-than
+  compliancePercent: "88.41"
+  complianceNumberCount: "794,409"
+  complianceNumberTotal: "899,140"
+  comparePercent: "56.09"
+  compareNumberCount: "488,017"
+  compareNumberTotal: "811,805"
+  differentialPercent: "28.93"
+  differentialQuarter: "From Q3 2011 Avg"
+  differentialOperator: greater-than
 ...
