@@ -43,7 +43,7 @@
 -
   id: 3
   title: >
-    Diabetes &ndash; HG A1c<br>Poor Control <i>(ACO 27)</i>
+    Diabetes &ndash; HG A1c Poor Control <i>(ACO 27)</i>
   subtitle: 
   icon: quality
   hotspot: true
@@ -256,7 +256,7 @@
 -
   id: 13
   title: >
-    Diabetes HG A1c<br>Control (<8%) <i>(ACO 22)</i>
+    Diabetes HG A1c Control (<8%) <i>(ACO 22)</i>
   subtitle: 
   icon: quality
   hotspot: true
