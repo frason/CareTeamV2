@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'healthagen';
+  src:url('../fonts/healthagen.eot');
+  src:url('../fonts/healthagen.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/healthagen.woff') format('woff'),
+    url('../fonts/healthagen.ttf') format('truetype'),
+    url('../fonts/healthagen.svg#healthagen') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$mobile: "mobile";
+$tablet: "tablet";
+$desktop: "desktop";
+
+$total-columns: 12;       // min default grid
+$column-width: 6.25rem;   // width each column
+$gutter-width: 0rem;      // width of each gutter
+$grid-padding: 0.625rem;  // grid-padding
+
+$container-style: fluid;
+
+$whiteMedium: #f5f5f5;
+$whiteDark: #e5e5e5;
+$grayLight: #d4d4d4;
+$grayMedium: #bbb;
+$grayDark: #9b9b9b;
+$blackLight: #828282;
+$blackMedium: #4A4A4A;
+$blueLight: #D3EBF5;
+$blueMedium: #4ABAE2;
+$hoverBlue: #81C9E3;
+$orange: #F5A623;

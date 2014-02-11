@@ -1,0 +1,135 @@
+---
+title: Dashboard
+---
+
+<% content_for :scripts do %>
+  <%= javascript_include_tag 'vendor/jquery.isotope.min', 'classie', 'modalEffects', 'cssParser' %>
+<% end %>
+
+<section id="options" class="clearfix"> 
+  <div class="option-combo">
+    <!--h3>Filter by:</h3-->
+    <ul id="filters" class="option-set clearfix" data-option-key="filter">
+      <!-- <li><a href="#filter" data-option-value="*"><i class="icon-hide"></i> All</a></li> -->
+      <li><a href="#filter" data-option-value=".quality"><i class="icon-quality"></i> Quality Measures <span class="sideStats"><i class="icon-hotspot"></i> </span></a></li>
+      <li><a href="#filter" data-option-value=".utilization"><i class="icon-utilization"></i> Utilization Measures <span class="sideStats"><i class="icon-hotspot"></i> </span></a></li>
+      <li><a href="#filter" data-option-value=".registry"><i class="icon-registry"></i> Registry <span class="sideStats"><i class="icon-hotspot"></i> </span></a></li>
+    </ul>
+  </div>
+
+  <!--div class="option-combo option-right">
+    <h3>Sort order:</h3>
+    <ul id="sort-direction" class="option-set clearfix" data-option-key="sortAscending">
+      <li><a href="#sortAscending=true" data-option-value="true" class="selected">Ascending</a></li>
+      <li><a href="#sortAscending=false" data-option-value="false">Descending</a></li>
+    </ul>
+  </div-->
+
+  <!--div class="option-combo option-right">
+    <h3>Sort by:</h3>
+    <ul id="sort-by" class="option-set clearfix" data-option-key="sortBy"-->
+      <!--li><a href="#sortBy=original-order" data-option-value="original-order" class="selected">Default</a></li>
+      <li><a href="#sortBy=number" data-option-value="number">Percentage</a></li-->
+      <!--li><a href="#sortBy=hotspot" data-option-value="hotspot" class="selected">Hotspot</a></li>
+      <li><a href="#sortBy=date" data-option-value="date">Date</a></li>
+      <li><a href="#sortBy=name" data-option-value="name">Name</a></li>
+    </ul>
+  </div-->
+</section><!-- #options -->
+
+<div class="isotope-wrapper">
+
+<div id="isotope-container" class="clearfix clickable">
+
+  <% data.isotope.each do |k| %>
+
+    <% if (k.hotspot) %>
+      <div id="<%= k.id %>" class="col md-trigger desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 <%= k.icon %> height2 element" data-hotspot="1" data-date="" data-modal="modal-<%= k.id %>">
+    <% else %>
+      <div id="<%= k.id %>" class="col md-trigger desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 <%= k.icon %> element" data-hotspot="5" data-date="" data-modal="modal-<%= k.id %>">
+    <% end %>
+
+      <div class="item">
+        <div class="corner">
+          <% if (k.hotspot) %><i class="icon-hotspot"></i><% end %> <i class="icon-<%= k.icon %>"></i>
+        </div>
+
+        <div class="desc">
+          <h3 class="name"><%= k.title %></h3>
+          <p class="subtitle"><%= k.subtitle %></p>
+        </div>
+
+        <% if (k.hotspot) %>
+        <div class="hotsprocket">
+          <p class="number"><%= k.percent %></p>
+          <p class="subStats"><%= k.subStats %></p>
+          <p class="subStats"><%= k.percentChange %></p>
+          <figure>
+            <img src="img/image-graph.png" class="center-block">
+            <figcaption><%= k.date %></figcaption>
+          </figure>
+        </div>
+        <% end %>
+
+      </div>
+    </div> 
+  <% end %>
+
+</div><!-- #isotope-container -->
+</div>
+
+<!-- Modals -->
+<% data.isotope.each do |k| %>
+  <div class="md-modal md-effect-8" id="modal-<%= k.id %>">
+    <div class="md-content">
+      <div class="md-top">
+        <a class="md-close" aria-hidden="true">&times;</a>
+        <h1><%= k.title %></h1>
+        <div class="table">
+          
+            <div class="benchmark table-cell">
+              <label>Benchmark</label>
+              <span class="number-percentage number-<%= k.benchmarkOperator %> number-grey"><%= k.benchmarkPercent %><sup>%</sup></span>
+            </div>
+            <div class="compliance table-cell">
+              <div class="inline-block">
+                <label>Compliance</label>
+                <p class="number-percentage number-blue"><%= k.compliancePercent %><sup>%</sup></p>
+                <span class="number-out-of number-blue"><%= k.complianceNumberCount %></span> / <span class="number-out-of number-grey"><%= k.complianceNumberTotal %></span>
+              </div>
+            </div>
+            <div class="divider-slash table-cell">/</div>
+            <div class="compare table-cell">
+              <div class="inline-block">
+                <label>Compare
+                  <!-- <select>
+                    <option>Something</option>
+                  </select>
+                -->
+                </label>
+                <p class="number-percentage number-orange"><%= k.comparePercent %><sup>%</sup></p>
+                <span class="number-out-of number-orange"><%= k.compareNumberCount %></span> / <span class="number-out-of number-grey"><%= k.compareNumberTotal %></span>
+              </div>
+            </div>
+            <div class="number-change table-cell">
+                <p class="number-percentage number-grey number-<%= k.differentialOperator %>"><%= k.differentialPercent %><sup>%</sup>
+                  <span class="number-grey"><%= k.differentialQuarter %></span>
+                </p>
+            </div>
+
+        </div> 
+        <img src="img/modal-image.png" class="center-block">
+      </div>
+      <div class="md-footer clearfix">
+        <div class="pull-right">
+          <button class="btn btn-secondary">Print Report</button>
+          <button class="btn btn-secondary">Watchlist</button>
+          <a href="/page.html?id=<%= k.id %>" class="btn btn-primary btn-margin-left view-more">View More</a>
+        </div>
+      </div>
+   </div>
+  </div>
+<% end %>
+<!-- // Modals -->
+
+

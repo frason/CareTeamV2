@@ -1,0 +1,58 @@
+---
+title: Details
+---
+
+<% content_for :scripts do %>
+  <%= javascript_include_tag 'vendor/jquery.isotope.min' %>
+<% end %>
+
+<% data.isotope.each do |k| %>
+  <div id="page-<%= k.id %>" style="display: none;">
+    <div class="page-content">
+      <div class="page-top clearfix">
+        <div class="pull-left">
+          <h1><%= k.title %></h1> 
+        </div>
+        <div class="pull-right">
+          <button class="btn btn-secondary">Export XLS</button>
+          <button class="btn btn-secondary">Print Report</button>
+          <button class="btn btn-secondary">Adjust Bookmark</button>
+        </div>
+      </div>
+      <div class="page-stats clearfix">
+        <div class="pull-left">
+          <div class="benchmark number-grey">
+              Benchmark:
+              <span class="number-percentage number-<%= k.benchmarkOperator %> number-grey"><%= k.benchmarkPercent %><sup>%</sup></span>
+          </div>
+          <div class="margin-top-bottom">
+            <div class="compliance inline-block">
+              <div class="inline-block">
+                <label>Compliance</label>
+                <p class="number-percentage number-blue"><%= k.compliancePercent %><sup>%</sup></p>
+                <span class="number-out-of number-blue"><%= k.complianceNumberCount %></span> / <span class="number-out-of number-grey"><%= k.complianceNumberTotal %></span>
+              </div>
+            </div>
+            <div class="divider-slash inline-block">/</div>
+            <div class="compare inline-block">
+              <div class="inline-block">
+                <label>Compare</label>
+                <p class="number-percentage number-orange"><%= k.comparePercent %><sup>%</sup></p>
+                <span class="number-out-of number-orange"><%= k.compareNumberCount %></span> / <span class="number-out-of number-grey"><%= k.compareNumberTotal %></span>
+              </div>
+            </div>
+          </div>
+          <div class="number-change">
+            <p class="number-percentage number-grey number-<%= k.differentialOperator %>"><%= k.differentialPercent %><sup>%</sup>
+              <span class="number-grey"><%= k.differentialQuarter %></span>
+            </p>
+          </div>
+        </div>
+        <div class="pull-right">
+          <img src="img/modal-image.png" class="center-block">
+        </div>
+      </div>
+      <img src="img/page-image.png" class="center-block">
+   </div>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>Fill 1 + Fill 2</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ObjectPage-copy" sketch:type="MSArtboardGroup" transform="translate(-1142.000000, -119.000000)" fill="#D0011B">
+            <g id="Save-+-Fill-1-+-Fill-2" sketch:type="MSLayerGroup" transform="translate(1142.000000, 120.000000)">
+                <g id="Fill-1-+-Fill-2" sketch:type="MSShapeGroup">
+                    <path d="M9.73292825,-0.11875 L0.822688934,-0.11875 C0.267096158,-0.11875 0.10425,0.0440961585 0.10425,0.598092404 L0.10425,8.50730681 L1.82690691,10.2283672 L2.3058662,10.2283672 L2.3058662,7.19016876 L7.14974115,7.19016876 L7.14974115,10.2283672 L9.73292825,10.2283672 C10.288521,10.2283672 10.4513672,10.065521 10.4513672,9.50992825 L10.4513672,0.598092404 C10.4513672,0.0440961585 10.288521,-0.11875 9.73292825,-0.11875 L9.73292825,-0.11875 Z M1.68321912,0.395332971 L8.84685357,0.395332971 L8.84685357,5.08274789 L1.68321912,5.08274789 L1.68321912,0.395332971 Z" id="Fill-1"></path>
+                    <path d="M3.33403214,8.24228267 L4.48193791,8.24228267 L4.48193791,10.2267707 L3.33403214,10.2267707 L3.33403214,8.24228267 Z" id="Fill-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
