@@ -1,0 +1,76 @@
+// btn-outline
+
+.btn.btn-outline {
+  padding: 0.2rem 0.6rem;
+  color: $blueMedium;
+  font-size: 0.875rem;
+  background: transparent;
+  border: 1px solid $blueMedium;
+  border-radius: 5px;
+
+  &:active, &.active, &:focus {
+    color: #fff;
+    background: $blueMedium;
+  }
+
+  &.dropdown-toggle {
+    position: relative;
+    min-width: 90px;
+    text-align: left;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0.6rem;
+      right: 0.6rem;
+      height: 0;
+      width: 0;
+      pointer-events: none;
+      border: solid transparent;
+      border-color: rgba(74, 186, 226, 0);
+      border-top-color: $blueMedium;
+      border-width: 6px;
+    }
+  }
+
+  &.dropdown-toggle:active, &.dropdown-toggle.active, &.dropdown-toggle:focus {
+    &:after {
+      border-top-color: #fff;
+    }
+  }
+}
+
+// profile toggle 
+
+/*
+.profile-top {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    right: 22px;
+    width: 25px;
+    height: 25px;
+    background: $grayDark;
+    border-radius: 3px;
+    z-index: 1;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 26px;
+    right: 29px;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    z-index: 5;
+    border: solid transparent;
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #fff;
+    border-width: 6px;
+  }
+}
+*/

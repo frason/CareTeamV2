@@ -1,0 +1,261 @@
+/////////// PROFILE ///////////
+
+.ha-outer-wrapper {
+
+  &.ha-large {
+
+    .ha-inner-wrapper {
+      padding: 1rem 0 0;
+      z-index: 1;
+
+      .profile-top {
+      }
+    }
+  }
+}
+
+.profile-person {
+  @include justify-no-float(div, div);
+
+  .profile-top {
+    @include justify-no-float(div, div);
+    position: relative;
+    width: 80%;
+    background: url(../img/profile-female.png) no-repeat 22px 18px;
+    background-size: 91px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    @include responsive(tablet-ipad) {
+      width: 100%;
+      background-size: 40px;
+    }
+
+    .profile-name {
+      padding: 0 10px 5px 130px;
+      width: 48%;
+      vertical-align: top;
+      text-align: left;
+
+      @include responsive(tablet-ipad) {
+        width: 100%;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: 2rem;
+      }
+
+      span {
+        padding-left: 29px;
+        font-size: 1.25rem;
+        background: url(../img/icon-phone.png) no-repeat;
+        background-size: 19px;
+      }
+    }
+
+    .profile-info {
+      padding: 0 0 5px;
+      width: 48%;
+
+      @include responsive(tablet-ipad) {
+        display: none;
+      }
+
+      li {
+        float: left;
+        margin: 0 1.4rem 0.5rem 0;
+        list-style: none;
+        font-size: 0.875rem;
+        line-height: 1.5;
+
+        em {
+          display: block;
+          color: #999;
+          font-size: 0.75rem;
+          font-style: normal;
+          text-transform: uppercase;
+        }
+      }
+
+      .profile-info-primary, .profile-info-manager {
+        @include truncate(140px);
+      }
+
+      .profile-info-address {
+        @include truncate(300px);
+      }
+    }
+  }
+
+  .profile-top-buttons {
+    width: 18%;
+    text-align: right;
+
+    @include responsive(tablet-ipad) {
+      display: none;
+    }
+
+    button {
+      margin-left: 5px;
+      width: 3rem;
+      height: 40px;
+
+      img, span {
+        display: none;
+      }
+    }
+  }
+}
+
+// Aside
+
+.aside-profile {
+  @include span-columns(4, $total-columns);
+
+  @include responsive(tablet-ipad) {
+    display: none;
+  }
+
+  li {
+    position: relative;
+    float: left;
+    margin-bottom: 4%;
+    padding: 15px;
+    width: 48%;
+    height: 152px;
+    list-style: none; 
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -moz-box-shadow:    0px 2px 0px 0px rgba(212,212,212,0.25);
+    -webkit-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
+    box-shadow:         0px 2px 0px 0px rgba(212,212,212,0.25);
+
+    &:nth-child(odd) {
+      margin-right: 4%;
+    }
+
+    a {
+      color: #333;
+      display: block;
+      height: 100%;
+    }
+
+    &.active {
+      padding: 8px 15px 15px;
+      color: #fff;
+      background: $blueMedium;
+      border: 1px solid transparent;
+      @include border-top-pad(7px, $blueBand);
+      border-radius: 0 0 5px 5px;
+
+      a {
+        color: #fff;
+      }
+    }
+
+    h3 span {
+      margin-top: 0.25rem;
+      display: block;
+      font-size: 0.875rem;
+    }
+
+    small, span {
+      display: block;
+    }
+
+    p {
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      margin: 0;
+      font-size: 0.75rem;
+      line-height: 0.875rem;
+    }
+
+    &.tiles-hotspot {
+      h3 {
+        color: $blueMedium;
+      }
+    }
+  }
+}
+
+// Content 
+
+.content-profile {
+  @include span-columns(8 omega, $total-columns);
+  @include border-top-pad($blueBand);
+
+  @include responsive(tablet-ipad) {
+    @include span-columns(12, $total-columns);
+  }
+
+  .head-content {
+    @include justify-no-float(h2, form);
+
+    label {
+      margin-right: 5px;
+      font-size: 0.875rem;
+    }
+  }
+
+  article {
+    margin-top: 20px;
+    padding: 15px 15px 5px;
+    color: $greyText;
+    background: $whiteMedium;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -moz-box-shadow:    0px 2px 0px 0px rgba(212,212,212,0.25);
+    -webkit-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
+    box-shadow:         0px 2px 0px 0px rgba(212,212,212,0.25);
+
+    &.no-data {
+      padding: 0;
+      height: 116px;
+      text-align: center;
+      border: 1px solid transparent;
+
+      p {
+        line-height: 116px;
+      }
+    }
+
+    header {
+      @include justify-no-float(h3, span);
+
+      h3, span {
+        margin: 0;
+        font-size: 1.125rem;
+      }
+    }
+
+    footer {
+      @include justify-no-float(ul, div);
+      margin-top: -4px;
+
+      ul {
+        
+        li {
+          margin-right: 20px;
+          display: inline-block;
+          list-style: none;
+          font-size: 1.125rem;
+          line-height: 1.25;
+
+          em {
+            display: block;
+            color: $greyTextLighter;
+            font-size: 0.875rem;
+            font-style: normal;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
+
+

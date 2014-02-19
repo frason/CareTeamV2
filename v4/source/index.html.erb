@@ -3,7 +3,7 @@ title: Dashboard
 ---
 
 <% content_for :scripts do %>
-  <%= javascript_include_tag 'vendor/jquery.isotope.min', 'classie', 'modalEffects', 'cssParser' %>
+  <%= javascript_include_tag 'isotope-docs.min', 'classie', 'modalEffects', 'cssParser' %>
 <% end %>
 
 <section id="options" class="clearfix"> 
@@ -37,28 +37,26 @@ title: Dashboard
   </div-->
 </section><!-- #options -->
 
-<div class="isotope-wrapper">
+<div class="isotope js-isotope clearfix clickable" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": ".grid-sizer" } }'>
 
-<div id="isotope-container" class="clearfix clickable">
+  <div class="grid-sizer"></div>
 
   <% data.isotope.each do |k| %>
 
     <% if (k.hotspot) %>
-      <div id="<%= k.id %>" class="col md-trigger desktop-12col-span4 tablet-12col-span4 mobile-12col-span8 <%= k.icon %> height2 element" data-hotspot="1" data-date="" data-modal="modal-<%= k.id %>">
+      <div id="<%= k.id %>" class="md-trigger <%= k.icon %> item width2" data-hotspot="1" data-date="" data-modal="modal-<%= k.id %>">
     <% else %>
-      <div id="<%= k.id %>" class="col md-trigger desktop-12col-span2 tablet-12col-span2 mobile-12col-span4 <%= k.icon %> element" data-hotspot="5" data-date="" data-modal="modal-<%= k.id %>">
+      <div id="<%= k.id %>" class="md-trigger <%= k.icon %> item" data-hotspot="5" data-date="" data-modal="modal-<%= k.id %>">
     <% end %>
 
-      <div class="item">
+      <div class="item-content">
         <div class="corner">
           <% if (k.hotspot) %><i class="icon-hotspot"></i><% end %> <i class="icon-<%= k.icon %>"></i>
         </div>
 
-        <div class="desc">
-          <h3 class="name"><%= k.title %></h3>
-          <p class="subtitle"><%= k.subtitle %></p>
-        </div>
-
+        <h3 class="name"><%= k.title %></h3>
+        <p class="subtitle"><%= k.subtitle %></p>
+        
         <% if (k.hotspot) %>
         <div class="hotsprocket">
           <p class="number"><%= k.percent %></p>
@@ -70,13 +68,12 @@ title: Dashboard
           </figure>
         </div>
         <% end %>
-
       </div>
     </div> 
   <% end %>
 
-</div><!-- #isotope-container -->
 </div>
+
 
 <!-- Modals -->
 <% data.isotope.each do |k| %>
@@ -131,5 +128,6 @@ title: Dashboard
   </div>
 <% end %>
 <!-- // Modals -->
+
 
 

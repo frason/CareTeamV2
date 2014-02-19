@@ -14,7 +14,8 @@
       <%= yield_content :stylesheets %>
     <% end %>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <%= stylesheet_link_tag 'boilerplate', 'isotope-style', 'main' %>
+    <%= stylesheet_link_tag 'boilerplate', 'main' %>
+    <!-- 'isotope-style',  -->
     <%= javascript_include_tag 'vendor/modernizr-2.6.2.min' %>
 </head>
 <body class="<%= page_classes %>">
@@ -24,15 +25,6 @@
     <div class="page-wrapper">
       <%= yield %>
       <div class="md-overlay"></div>
-    </div><!-- .container -->
-
-
-
-    <div style="padding:8px; margin:0 auto; text-align:center; display:none;">
-        <span style="font-size:16px;">Font size: 16px | </span> 
-        <span style="font-size:10px;">Font size: 10px | </span>
-        <span style="font-size:1rem;">Font size: 1rem | </span>
-        <span style="font-size:1em;">Font size: 1em | </span>
     </div>
 
     <div id="panel" style="display: none;"><!-- info-panel -->
@@ -55,6 +47,6 @@
       <%= yield_content :scripts %>
     <% end %>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <%= javascript_include_tag 'plugins', 'main' %>
+    <%= javascript_include_tag 'waypoints.min', 'plugins', 'main' %>
 </body>
 </html>

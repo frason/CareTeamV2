@@ -1,94 +1,76 @@
-// -----------------------------------------------------------------
-//  Mixin for rem units
-//  http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
-//
-//  example:
-//    @include rem-fallback(margin, 10, 20, 30, 40);
-//
-//  returns:
-//     body {
-//       margin: 100px 200px 300px 400px;
-//       margin: 10rem 20rem 30rem 40rem; 
-//     }
-// -----------------------------------------------------------------
-@function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+// General 
+
+@mixin border-top-pad($color: transparent, $px: 7px) {
+  border-top: $px solid $color;
 }
 
-@mixin rem-fallback($property, $values...) {
-  $max: length($values);
-  $pxValues: '';
-  $remValues: '';
+@mixin justify-no-float($left, $right) {
+  text-align: justify;
 
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $pxValues: #{$pxValues + $value*16}px;  //base font-size of 16px
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
 
-    @if $i < $max {
-      $pxValues: #{$pxValues + " "};
+  #{$left}, #{$right} {
+    display: inline-block;
+    vertical-align: middle;
+
+    #{$left}:before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
     }
-  } 
-
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $remValues: #{$remValues + $value}rem;
-
-    @if $i < $max {
-      $remValues: #{$remValues + " "};
-    }
-  } 
-  
-  #{$property}: $pxValues; 
-  #{$property}: $remValues; 
+  }
 }
 
+// Media Queries
 
-// -----------------------------------------------------------------
-//  Generate class for each column-span in a Susy layout
-// -----------------------------------------------------------------
-@mixin make-colSpans-withPrefix($num, $prefix) {
-  @for $i from 1 through $num {
-    .#{$prefix}-#{$num}col-span#{$i} {
-      @include span-columns($i);
-    }
-  }
-  .#{$prefix}-#{$num}col-hide {
-    display: none !important;
-  }
-  .#{$prefix}-#{$num}col-omega {
-    @include omega;
-  }
-  html:after { 
-    content: "#{$prefix}";
-    display: none;
-  } 
-}
-
-// Mediq Queries
-
-$width-small: 480px;
-$width-medium: 768px;
-$width-large: 1024px;
+$mobile: 480px;
+$tablet-sm: 600px;
+$tablet-ipad: 768px;
+$tablet-lg: 880px;
+$desktop-sm: 960px;
+$desktop-lg: 1200px;
 
 @mixin responsive($width) {
-  @if $width == wide-screen {
-    @media only screen and (max-width: $width-large) {
+  @if $width == desktop-lg {
+    @media only screen and (max-width: $desktop-lg) {
       @content;
     }
   }
-  @else if $width == medium-screen {
-    @media only screen and (max-width: $width-medium) {
+  @else if $width == desktop-sm {
+    @media only screen and (max-width: $desktop-sm) {
       @content;
     }
   }
-  @else if $width == small-screen {
-    @media only screen and (max-width: $width-small) {
+  @else if $width == tablet-lg {
+    @media only screen and (max-width: $tablet-lg) {
+      @content;
+    }
+  }
+  @else if $width == tablet-ipad {
+    @media only screen and (max-width: $tablet-ipad) {
+      @content;
+    }
+  }
+  @else if $width == tablet-sm {
+    @media only screen and (max-width: $tablet-sm) {
+      @content;
+    }
+  }
+  @else if $width == mobile {
+    @media only screen and (max-width: $mobile) {
       @content;
     }
   }
 }
 
-
-
-
-
+@mixin truncate($width) {
+  width: $width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

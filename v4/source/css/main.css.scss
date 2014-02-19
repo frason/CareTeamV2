@@ -1,106 +1,83 @@
+@import "compass";
 @import "susy";
-@import "sassy-buttons";
 @import "partials/variables";
 @import "partials/my-mixins";
+@import "partials/buttons";
 @import "partials/modals";
+@import "partials/profile";
 
 
 /* --------------------------------------------------------------
   Default styles
 ----------------------------------------------------------------- */
+
+html, body {
+  position: relative;
+}
+
 html {
-  // Susy 'at-breakpoint' calculates with base of 1rem = 16px, so do not use base of 62.5% below:
-  //set baseline to 1rem = 10px ... http://snook.ca/archives/html_and_css/font-size-with-rem
   overflow-y: auto;
+  font-size: 100%;
 }
 
 body {
-  padding-top: 70px;
-  font-size: 90%;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300; 
   color: #000;
+  font-size: 1rem;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  font-weight: 300; 
   line-height: 1;
 }
 
+a {
+  text-decoration: none;
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+  }
+}
+
 p, pre, code, h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 1em 0;
+  margin: 0;
 }
 
 h1 {
-  @include rem-fallback(font-size, 2);
+  font-size: 2rem;
 }
 
 h2 {
-  @include rem-fallback(font-size, 1.5);
+  font-size: 1.5rem;
 }
 
 h3 {
-  @include rem-fallback(font-size, 1.1875);
+  font-size: 1.1875rem;
 }
 
 h4 {
-  @include rem-fallback(font-size, 1);
+  font-size: 1rem;
 }
 
-h5 {
-  @include rem-fallback(font-size, 0.8125);
-}
-
-h6 {
-  @include rem-fallback(font-size, 0.8125);
+h5, h6 {
+  font-size: 0.8125rem;
 }
 
 .page-wrapper { 
+  @include container($total-columns);  
   // @include susy-grid-background;
-  @include container($total-columns);  // establish the outer grid-containing element
-  margin-top: 1.1em;
-  padding: 0.4em 0;
-  min-width: 640px;
+  margin: 0;
+  padding-top: 70px;
+  overflow: hidden;
 
   ol, ul {
+    padding: 0;
+    list-style: none;
     text-align:left;
   }
 }
 
-.isotope-wrapper {
-  padding: 0 3em 2em;
-}
+// arrow
+// background-image: url(../img/icon-arrow.png);
 
-.isotope-container {
-  width: 100%;
-}
-
-.element.desktop-12col-span2.height2 .item, .element.desktop-12col-span4.height2 .item, .element.desktop-12col-span6.height2 .item {
-  height: 320px;
-}
-
-.desktop-12col-span4 {
-  float: left;
-  width: 30%;
-  display: inline;
-}
-
-.desktop-12col-span2 {
-  float: left;
-  width: 20%;
-  display: inline;
-}
-
-.col {
-  margin: 0;
-  padding: 0;
-
-  .item {
-    position: relative;
-    width: 100%;
-    height: 160px;
-    background-color: $whiteMedium;
-    background-image: url(../img/icon-arrow.png);
-    background-repeat: no-repeat;
-    background-position: bottom right;
-  }
-}
 
 /*---- icons ----*/
 [class^="icon-"], [class*=" icon-"] {
@@ -111,8 +88,6 @@ h6 {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -190,11 +165,10 @@ h6 {
   content: "\e612";
 }
 
-
 // Boostrap + Boilerplate overrides
 
 .btn {
-  padding: 0.2em 1.1em;
+  padding: 0.2rem 1.1rem;
   font-weight: 300;
 }
 .btn-primary {
@@ -205,7 +179,7 @@ h6 {
   color: white;
 
   &:last-child {
-    @include rem-fallback(margin-right, 0);
+    margin-right: 0;
   }
 
   &:hover {
@@ -245,9 +219,9 @@ sup {
 // end Bootstrap overrides -- mostly
 
 .btn-watchlist-group {
-  margin-left: 0.3em;
+  margin-left: 0.3rem;
   .btn-watchlist {
-    padding: 0.2em 1.35em;
+    padding: 0.2rem 1.35rem;
   }
   .btn-watchlist-number {
     border-left: 1px solid $whiteDark;
@@ -265,7 +239,7 @@ a {
 
     span {
       float: left;
-      //@include rem-fallback(padding, 0.2, 0.75);
+     
 
       &:last-child {
         border-left: 1px solid white;
@@ -274,7 +248,7 @@ a {
   }
 
   &.icon-search {
-    margin-left: 0.5em;
+    margin-left: 0.5rem;
     padding: 0;
     font-size: 16px;
     line-height: 1;
@@ -297,57 +271,54 @@ a {
 
 /*---- nav ----*/
 nav {
-  padding: 0 2em;
+  padding: 0 2rem;
   width: 100%;
   background-color: $whiteDark;
-  // @include rem-fallback(font-size, 1.25);
-  // @include rem-fallback(padding, 0.625, 0);
+  // @include em-fallback(font-size, 1.25);
+  // @include em-fallback(padding, 0.625, 0);
 
   .page-wrapper {
-    // @include rem-fallback(padding, 0 ,1);    
+    // @include em-fallback(padding, 0 ,1);    
   }
 
   h1, h2 {
     color: $grayDark; 
     font-weight: normal;
     font-weight: 300;
-    // @include rem-fallback(margin, 0, 1.25, 0, 0);
+    // @include em-fallback(margin, 0, 1.25, 0, 0);
   }
 
   h1 {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     line-height: 1;
-    // @include rem-fallback(font-size, 1.0625);  
-    // @include rem-fallback(padding-right, 1.25);
+    // @include em-fallback(font-size, 1.0625);  
+    // @include em-fallback(padding-right, 1.25);
     // border-right: 1px solid $grayDark;
 
     strong {
       display: block;
-     // @include rem-fallback(font-size, 1.5625);    
+     // @include em-fallback(font-size, 1.5625);    
     }
   }
 
   h2 {
     vertical-align: top;
     line-height: 1.5;
-    @include rem-fallback(font-size, 1.875);
+    font-size: 1.875rem;
   }
 
   .nav-container {
-    padding-right: 1em;
+    padding-right: 1rem;
     line-height: 70px;
   }
 
   .navbar-left {
-    // @include rem-fallback(min-width, 22.1);
+    // @include em-fallback(min-width, 22.1);
     // float:left !important;
-    // @include rem-fallback(padding, 0.625);
+    // @include em-fallback(padding, 0.625);
 
     .dropdown-menu {
-      -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-      -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-      box-sizing: border-box;         /* all others */
-      @include rem-fallback(min-width, 22.1);
+      min-width: 22.1rem;
       background-color: $whiteDark;
     }
  
@@ -384,19 +355,19 @@ nav {
 
   .navbar-right {
     float: right !important;
-    // @include rem-fallback(padding, 0.625);
+    // @include em-fallback(padding, 0.625);
   }
 
   button {
     &.dropdown-toggle {
-      @include rem-fallback(padding, 0.375);
-      @include rem-fallback(margin-right, 0.625);
+      padding: 0.375rem;
+      margin-right: 0.625rem;
       background-color: $grayDark;
       background-image: none;
       border: 1px solid transparent;
       border-radius: 4px;
-      @include rem-fallback(width, 2.75);
-      @include rem-fallback(height, 2.75);
+      width: 2.75rem;
+      height: 2.75rem;
 
       &:hover {
         background-color: $grayMedium;
@@ -404,19 +375,19 @@ nav {
 
       .icon-bar {
         display: block;
-        @include rem-fallback(height, 0.375);
+        height: 0.375rem;
         border-radius: 3px;
         background-color: $whiteDark;
 
         + .icon-bar {
-          @include rem-fallback(margin-top, 0.35);
+          margin-top: 0.35rem;
         }
       }
     }
   }
 
   .dropdown-menu {
-    @include rem-fallback(font-size, 0.9375);
+    font-size: 0.9375rem;
     font-weight: 300;
     color: $blackLight;
 
@@ -485,7 +456,7 @@ nav {
 
   i {
     color: $grayLight;
-    @include rem-fallback(font-size, 1);
+    font-size: 1rem;
     line-height: 1;
   }
 
@@ -494,7 +465,7 @@ nav {
     top: 0;    
 
     i {
-      @include rem-fallback(font-size, 2.75);
+      font-size: 2.75rem;
       line-height: 3rem;
       color: white;
     }
@@ -521,19 +492,19 @@ nav {
   &.ribbon:before {
     border-color: rgba(74, 186, 226, 0.7) rgba(74, 186, 226, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
     border-style: solid;
-    @include rem-fallback(border-width, 3);
+    border-width: 3px;
   }
 
   &.warning:before {
     border-color: rgba(255, 187, 77, 0.7) rgba(255, 187, 77, 0.7) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
     border-style: solid;
-    @include rem-fallback(border-width, 3);
+    border-width: 3px;
   }  
 
   &.hotspot {
     &:before {
-      @include rem-fallback(width, 1.875);
-      @include rem-fallback(height, 1.875);
+      width: 1.875rem;
+      height: 1.875rem;
       background-color: $blueMedium;
       right:10px;
       top:10px;
@@ -549,7 +520,7 @@ nav {
 /*-------- dashboard isotope styles --------*/
 /*--- more styles are in 'isotope-style.css' ---*/
 #options .option-combo ul#filters {
-  padding: 0 3em;
+  padding: 0 3rem;
   width: 100%;
   margin-right: 0;
 
@@ -567,13 +538,14 @@ nav {
         position: relative;
         top: 3px;
         left: -3px;
-        font-size: 1.4em;
+        font-size: 1.4rem;
       }
     }
   }
 
 }
 
+/*
 .element {
   float: left;
   overflow: hidden;
@@ -594,7 +566,7 @@ nav {
         size: 1.675em;
       }
       line-height: 1.25;
-      // @include rem-fallback(font-size, 2);
+      // @include em-fallback(font-size, 2);
     }
 
     .corner i {
@@ -624,7 +596,7 @@ nav {
 
   .desc, .number, .date, .dots, .subStats, .graphImg {
     margin: 0;
-    // @include rem-fallback(left, 1.25);
+    // @include em-fallback(left, 1.25);
   }
 
   .desc {
@@ -633,7 +605,7 @@ nav {
       margin: 0;
       font-size: 1em;
       line-height: 1.4;
-      // @include rem-fallback(font-size, 1.25);
+      // @include em-fallback(font-size, 1.25);
       
       i {
         color: $grayMedium;
@@ -644,17 +616,17 @@ nav {
 
   .number {
     font-size: 3.5em;
-    // @include rem-fallback(font-size, 3.75);
+    // @include em-fallback(font-size, 3.75);
     color: $blueMedium;
-    // top: 8rem;
+    // top: 8em;
   }
 
   .subStats {
     margin-bottom: .2em;
-    // @include rem-fallback(font-size, 1.25);
+    // @include em-fallback(font-size, 1.25);
     color: $blueMedium;
     font-size: 1.2em;
-    // top: 12.5rem;    
+    // top: 12.5em;    
   }
 
   .graphImg {
@@ -688,11 +660,12 @@ nav {
     right: 7px;
     left: auto;
     padding: 5px;    
-    @include rem-fallback(font-size, 0.4375);
+    @include em-fallback(font-size, 0.4375);
     color: $grayLight;
   }
 
 }
+*/
 
 .clickable .element {
 
@@ -809,12 +782,12 @@ nav {
 
 .number-percentage {
   font: {
-    size: 2.8em;
+    size: 2.8rem;
   }
 }
 .number-out-of {
   font: {
-    size: 1em;
+    size: 1rem;
   }
 }
 .number-blue {
@@ -832,23 +805,23 @@ nav {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   .number-percentage {
-    font-size: 1.8em;
+    font-size: 1.8rem;
   }
   label {
     margin: 0;
-    font-size: 0.7em;
+    font-size: 0.7rem;
   }
   small {
-    font-size: 0.6em;
+    font-size: 0.6rem;
   }
 }
 .compliance, .compare {
   margin: 0 auto;
 }
 .divider-slash {
-  padding-top: 0.25em;
+  padding-top: 0.25rem;
   color: #777;
-  font-size: 3em;
+  font-size: 3rem;
   vertical-align: top;
 }
 .number-change {
@@ -873,7 +846,7 @@ nav {
   h1 {
     position: absolute;
     top: 50%;
-    left: 2.375em;
+    left: 2.375rem;
     -webkit-transform: translateY(-50%);
        -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
@@ -891,16 +864,16 @@ nav {
   text-align: left;
 }
 .margin-top-bottom {
-  margin: 1.2em 0;
+  margin: 1.2rem 0;
 }
 .btn-back {
-  margin-left: 9em;
+  margin-left: 9rem;
 }
 
 // Page ID 
 
 .page-top {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
   .pull-left {
     width: 45%;
   }
@@ -909,7 +882,7 @@ nav {
     text-align: right;
   }
   h1 {
-    font-size: 1.8em;
+    font-size: 1.8rem;
     i {
       color: #bbb;
       font-style: normal;
@@ -917,34 +890,34 @@ nav {
   }
 }
 .page-content {
-  margin-bottom: 2.25em;
-  padding: 0 3em;
+  margin-bottom: 2.25rem;
+  padding: 0 3rem;
 }
 .page-stats {
-  margin-bottom: 2.25em;
+  margin-bottom: 2.25rem;
   width: 100%;
   .pull-left {
     width: 40%;
     .benchmark {
-      padding: 0.4em 0.8em;
+      padding: 0.4rem 0.8rem;
       display: inline-block;
-      font-size: 1.35em;
+      font-size: 1.35rem;
       vertical-align: middle;
       border-radius: 5px;
       .number-percentage {
-        font-size: 1em;
+        font-size: 1rem;
       }
     }
     .compliance {
-      padding-left: 1.1em;
-      padding-right: 0.5em;
+      padding-left: 1.1rem;
+      padding-right: 0.5rem;
     }
     .divider-slash {
-      margin-right: .25em;
-      padding-top: 0.4em;
+      margin-right: 0.25rem;
+      padding-top: 0.4rem;
     }
     .number-change {
-      padding-left: 1em;
+      padding-left: 1rem;
     }
     p {
       margin: 0;
@@ -964,14 +937,14 @@ nav {
   position: relative;
 }
 .btn-back {
-  padding-left: 1.6em;
+  padding-left: 1.6rem;
 }
 .btn-back:before {
   content: "<";
   position: absolute;
   top: 50%;
-  left: 1em;
-  margin-top: -0.1em;
+  left: 1rem;
+  margin-top: -0.1rem;
   font-size: 70%;
   z-index: 1;
   -webkit-transform: translateY(-50%);
@@ -982,7 +955,7 @@ nav {
 
 .number-change .number-greater-than, .number-change .number-lesser-than {
   position: relative;
-  padding-left: 0.6em;
+  padding-left: 0.6rem;
   display: inline-block;
 
   &:before {
@@ -1008,7 +981,7 @@ nav {
 }
 
 .table .number-change .number-greater-than, .number-change .number-lesser-than { 
-  padding-left: 0.5em;
+  padding-left: 0.5rem;
 
   &:before {
     top: 8px;
@@ -1017,19 +990,19 @@ nav {
 }
 
 .number-change .number-lesser-than {
-  padding-left: 0.85em;
+  padding-left: 0.85rem;
 }
 
 .benchmark .number-percentage {
   position: relative;
-  padding-left: 0.1em;
+  padding-left: 0.1rem;
 
   &.number-greater-than:before, &.number-lesser-than:before {
     content: ">";
     position: absolute;
     top: 50%;
-    left: -0.625em;
-    margin-top: -0.1em;
+    left: -0.625rem;
+    margin-top: -0.1rem;
     font-size: 70%;
     z-index: 1;
     -webkit-transform: translateY(-50%);
@@ -1044,7 +1017,169 @@ nav {
 }
 
 .page-stats .benchmark .number-percentage {
-  margin-left: 1em;
+  margin-left: 1rem;
 }
+
+
+
+
+/////////// ISOTOPE ///////////
+
+
+.isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.item,
+.grid-sizer {
+  width: 20%;
+}
+
+.item {
+  float: left;
+  margin: 0;
+  overflow: hidden;
+  height: 200px;
+  font-size: 0.875rem;
+  border: 10px solid transparent;
+
+  .item-content {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+  }
+}
+
+.gutter-sizer { width: 0; }
+
+.item.width2 { 
+  width: 40%;
+  height: 400px;
+}
+
+.head-content {
+  margin-bottom: -15px;
+  padding: 15px 0 0;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+
+  h2 {
+    margin: 0;
+    width: 50%;
+
+    a {
+      margin-left: 15px;
+    }
+  }
+}
+
+/////////// OVERVIEW ///////////
+
+.content-overview .head-content {
+  @include justify-no-float(h2, div);
+}
+
+
+.aside-overview {
+  @include span-columns(3, $total-columns);
+
+  li {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 8px 15px 15px;
+    height: 9rem;
+    color: $greyText;
+    background: #eee;
+    @include border-top-pad;
+    border-radius: 0 0 4px 4px;
+
+    h3 {
+      margin: 0 0 0.25em;
+      font-size: 1.75rem;
+      font-weight: normal;
+    }
+
+    p {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    span {
+      color: $blueMedium;
+      font-size: 1.125rem;
+    }
+
+    &.active {
+      color: #fff;
+      background: $blueMedium;
+      @include border-top-pad($blueBand);
+
+      p {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.content-overview {
+  @include span-columns(6, $total-columns);
+
+  li {
+    float: left;
+    margin-bottom: 3%;
+    width: 48.5%;
+
+    .inner {
+      padding: 15px;
+      height: 12rem;
+      color: $greyText;
+      background: #fff;
+      border: 1px solid #D4D4D4;
+      border-radius: 8px;
+      -moz-box-shadow:    0px 2px 0px 0px rgba(212,212,212,0.25);
+      -webkit-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
+      box-shadow:         0px 2px 0px 0px rgba(212,212,212,0.25);
+
+      h3 {
+        margin: 0 0 0.2rem;
+        color: $blueMedium;
+        font-size: 1.5rem;
+        line-height: 1.8125rem;
+      }
+
+      em {
+        color: $grayDark;
+        font-size: 0.75rem;
+        line-height: 0.9375rem;
+        display: block;
+        font-style: normal;
+        text-transform: uppercase;
+      }
+
+      .justify-no-float {
+        @include justify-no-float(p,p);
+
+      }
+    }
+  }
+
+  li:nth-child(even) {
+    margin-left: 3%;
+  }
+}
+
+
+
 
 

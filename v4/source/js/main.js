@@ -195,7 +195,6 @@ jQuery(document).ready(function ($) {
     $('.isotope-item').removeClass('active').show();
   });
 
-
   // Getting URL var
   if ( $('body').hasClass('page') ) {
     var byName = $.getUrlVar('id');
@@ -203,6 +202,25 @@ jQuery(document).ready(function ($) {
 
     $('.btn-back').show();
   }
+
+  var $head = $( '.ha-outer-wrapper' );
+  $( '.ha-waypoint' ).each( function(i) {
+    var $el = $( this ),
+      animClassDown = $el.data( 'animateDown' ),
+      animClassUp = $el.data( 'animateUp' );
+
+    $el.waypoint( function( direction ) {
+      if( direction === 'down' && animClassDown ) {
+        $head.attr('class', 'ha-outer-wrapper ' + animClassDown);
+        $('.navbar-fixed-top').hide();
+      }
+      else if( direction === 'up' && animClassUp ){
+        $head.attr('class', 'ha-outer-wrapper ' + animClassUp);
+        $('.navbar-fixed-top').show();
+      }
+    });
+  } );
+
 
 // end .ready        
 });
