@@ -1,89 +1,105 @@
 ---
 title: Dashboard
+aside: partials/profile-aside
+modal: partials/modal-meds
 ---
 
-<header class="profile-person">
-  <div class="profile-top">
-    <div class="profile-name">
-      <!-- <img src="img/profile-female.png"> -->
-      <h1>Schwarzenegger, Arnold</h1>
-      <span><a href="tel:01234567890">212-123-4567</a></span>
-    </div>
+<div class="profile-header clearfix" data-spy="affix" data-offset-top="60">
 
-    <div class="profile-info">
-      <ol class="clearfix">
-        <li><em>Age</em>74</li>
-        <li class="profile-info-primary"><em>Primary Contact</em>Arnold Schwarzenegger</li>
-        <li class="profile-info-manager"><em>Case Manager</em>Miriam Makeba</li>
-        <li class="profile-info-address"><em>Address : Home</em>12345 Grabel Ln, Folkston, GA 80435</li>
+  <div class="profile-person pull-left"><!-- the 1px border -->
+
+    <div class="profile-top">
+      <div class="profile-name">
+        <h1>Schwarzenegger, Arnold</h1>
+        <span><a href="#">212-123-4567</a></span>
+      </div>
+
+      <div class="profile-info">
+        <ol class="clearfix">
+          <li class="profile-phone">
+            <h1>Schwarzenegger, Arnold</h1>
+            <span><a href="#">212-123-4567</a></span>
+          </li>
+          <li class="profile-info-age"><strong>Age</strong>74</li>
+          <li class="profile-info-address"><strong>Address : Home</strong>12345 Grabel Ln, Folkston, GA 80435</li>
+          <li class="profile-info-dob"><strong>DOB</strong>05/21/1940</li>
+          <li class="profile-info-program"><strong>Program</strong>Care Management</li>
+          <li class="profile-info-manager"><strong>Case Manager</strong>Miriam Makeba <a href="#">edit</a></li>
+        </ol>
+      </div>
+    </div><!-- /profile-top -->
+
+    <div class="profile-bottom clearfix">
+
+      <ol class="profile-info-expanded clearfix">
+        <li class="profile-info-team"><strong>Care Team ID</strong>5886201</li>
+        <li class="profile-info-insurer"><strong>Insurer</strong>Aetna PPO, Basic 70/30</li>
+        <li class="profile-info-eligibility"><strong>Eligibility</strong>1/01/2011</li>
+        <li class="profile-info-doctor"><strong>Primary Care Doctor</strong>Harry N. David, MD<span>602-752-5876</li>
+        <li class="profile-info-contact"><strong>Primary Contact</strong>Arnold Schwarzenegger</li>
       </ol>
-    </div>
-  </div>
 
-  <div class="profile-top-buttons">
+      <div class="profile-playlists pull-left">
+
+        <div class="profile-justify">
+          <h2>PlayLists</h2>
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline">All</button>
+            <button type="button" class="btn btn-outline">Running</button>
+            <button type="button" class="btn btn-outline">Completed</button>
+          </div>
+        </div>
+
+        <ul class="profile-playlistings">
+          <li>
+            <div class="playlist-justify">
+              <h4>HgA1c Control</h4>
+              <span>Started Dec. 20 2013</span>
+            </div>
+            <img src="img/playlists.png" width="294" height="52">
+          </li>
+          <li>
+            <div class="playlist-justify">
+              <h4>Beginning Weight Loss</h4>
+              <span>Started Feb. 13 2014</span>
+            </div>
+            <img src="img/playlists.png" width="294" height="52">
+          </li>
+        </ul>
+      </div>
+
+      <div class="profile-notes pull-right">
+
+        <div class="profile-justify">
+          <h2>Recent Notes</h2>
+          <div>
+            <button type="button" class="btn btn-outline">&lt;</button>
+            <button type="button" class="btn btn-outline">&gt;</button>
+          </div>
+        </div>
+
+        <div class="profile-recent-note">
+          <small>Jan. 23 2014 - 8:15am</small>
+          <p>Her HgA1c results recently spiked. They’re over 7%. Called her to talk about what happened. Blizzard in her area prevented her from leaving the house and going to the grocery store. As a result, she ended up eating poorly and not exercising. Have a feeling her medication ... <a href="#">More</a></p>
+        </div>
+      </div>
+
+    </div><!-- /profile-bottom -->
+
+  </div><!-- /profile-person -->
+
+  <div class="profile-buttons pull-right">
     <button class="btn btn-primary"><img src="img/icon-activity.png" class="icon-activity"><span>New Activity</span></button>
     <button class="btn btn-primary"><img src="img/icon-note.png" class="icon-note"><span>New Note</span></button>
     <button class="btn btn-primary"><img src="img/icon-encounter.png" class="icon-encounter"><span>New Encounter</span></button>
   </div>
-</header>
+</div>
 
-<aside class="aside-profile">
-  <ul class="clearfix">
-    <li class="tiles active">
-      <a href="#">
-        <h3>Meds &amp; Allergies</h3>
-        <p>Aetna: last update <span>3/12/14 3:00am</span></p>
-      </a>
-    </li>
-    <li class="tiles">
-      <a href="#">
-        <h3>Patient History</h3>
-        <p>Aetna: last update <span>3/12/14 3:00am</span></p>
-      </a>
-    </li>
-    <li class="tiles tiles-hotspot">
-      <a href="#">
-        <h3>Procedures &amp; Immunizations <span>Neg. Screen Clin. Depression</span></h3>
-        <p>Aetna: last update <span>3/12/14 3:00am</span></p>
-      </a>
-    </li>
-    <li class="tiles">
-      <a href="#">
-        <h3>Encounters &amp; Assessments</h3>
-        <p>Aetna: last update <span>3/12/14 3:00am</span></p>
-      </a>
-    </li>
-    <li class="tiles tiles-hotspot">
-      <a href="#"> 
-        <h3>Vitals &amp; Labs</h3>
-        <p>Aetna: last update <span>3/12/14 3:00am</span></p>
-      </a>
-    </li>
-    <li class="tiles">
-      <a href="#">  
-        <h3>Goals &amp; Playlists</h3>
-        <p>Aetna: last update <span>3/12/14 3:00am</span></p>
-      </a>
-    </li>
-    <li class="tiles">
-      <a href="#">  
-        <h3>Conditions &amp; Diagnoses</h3>
-        <p>Aetna: last update <span>3/12/14 3:00am</span></p>
-      </a>
-    </li>
-    <li class="tiles">
-      <a href="#"> 
-        <h3>Notes &amp; Docs</h3>
-        <p>Aetna: last update <span>3/12/14 3:00am</span></p>
-      </a>
-    </li>
-  </ul>
-</aside>
-
+<%= partial current_page.data.aside || "partials/profile-aside" %>
 
 <section class="content-profile">
   <div class="head-content">
-    <h2>Medications <a class="btn btn-outline">Add Medication</a></h2>
+    <h2>Medications <a class="page-trigger btn btn-outline">Add Medication</a></h2>
     <form>
       <label>Sort by</label>
       <div class="btn-group">
@@ -99,15 +115,15 @@ title: Dashboard
     </form>
   </div>
 
-  <article>
-    <header>
+  <article class="panel-trigger" data-name="CELECOXIB &ndash; Capsule (hard, soft, etc.) 200 MG">
+    <header class="clearfix">
       <h3>CELECOXIB &ndash; Capsule (hard, soft, etc.) 200 MG</h3>
       <span>1 Tablet Daily</span>
     </header>
-    <footer>
+    <footer class="clearfix">
       <ul>
-        <li><em>Started</em>June 7th, 2013</li>
-        <li><em>Ended</em>May 28th, 2014</li>
+        <li><strong>Started</strong>June 7th, 2013</li>
+        <li><strong>Ended</strong>May 28th, 2014</li>
       </ul>
 
       <div class="btn-group">
@@ -117,15 +133,15 @@ title: Dashboard
       </div>
     </footer>
   </article>
-  <article>
-    <header>
+  <article class="panel-trigger" data-name="GLIPIZIDE/METFORMIN HCL &ndash; Tablet 2.5-250 MG">
+    <header class="clearfix">
       <h3>GLIPIZIDE/METFORMIN HCL &ndash; Tablet 2.5-250 MG</h3>
       <span>1 Tablet Daily</span>
     </header>
-    <footer>
+    <footer class="clearfix">
       <ul>
-        <li><em>Started</em>June 7th, 2013</li>
-        <li><em>Ended</em>May 28th, 2014</li>
+        <li><strong>Started</strong>June 7th, 2013</li>
+        <li><strong>Ended</strong>May 28th, 2014</li>
       </ul>
 
       <div class="btn-group">
@@ -135,15 +151,15 @@ title: Dashboard
       </div>
     </footer>
   </article>
-  <article>
-    <header>
+  <article class="panel-trigger" data-name="METFORMIN HCL &ndash; Tablet 1000 MG">
+    <header class="clearfix">
       <h3>METFORMIN HCL &ndash; Tablet 1000 MG</h3>
       <span>1 Tablet Daily</span>
     </header>
-    <footer>
+    <footer class="clearfix">
       <ul>
-        <li><em>Started</em>June 7th, 2013</li>
-        <li><em>Ended</em>May 28th, 2014</li>
+        <li><strong>Started</strong>June 7th, 2013</li>
+        <li><strong>Ended</strong>May 28th, 2014</li>
       </ul>
 
       <div class="btn-group">
@@ -161,9 +177,10 @@ title: Dashboard
       <p>No Known Allergies</p>
     </article>
   </div>
-
+ 
+  </article>
 </section>
 
 
-
-
+<!-- Sliding panel items -->
+<%= partial current_page.data.modal || "partials/modal" %>

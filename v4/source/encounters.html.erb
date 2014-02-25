@@ -1,0 +1,93 @@
+---
+title: Dashboard
+aside: partials/profile-aside
+panel: partials/modal
+paginate: partials/paginate
+---
+
+<%= partial current_page.data.aside || "partials/profile-aside" %>
+
+<section class="content-profile content-encounters">
+  <div class="head-content clearfix">
+    <a class="btn btn-outline pull-right">Add Procedure</a>
+  </div>
+
+  <ol class="today-encounters clearfix">
+    <li>Today</li>
+    <li>Followup</li>
+    <li><strong>Program</strong>Condition Management</li>
+    <li><button type="button" class="btn btn-primary">Begin Encounter</button></li>
+  </ol>
+
+  <article class="clearfix">
+    <div class="pull-left"> 
+      <span class="enc-calendar">11/10/13</span>
+      <span class="enc-time">1 hour 15 minutes</span>
+      <ul class="clearfix">
+        <li>
+          <strong>Chronic Kidney Disease</strong>
+          <img>
+          <small>82% Complete</small>
+        </li>
+        <li>
+          <strong>Diabetes Adult</strong>
+          <img>
+          <small>32% Complete</small>
+        </li>
+        <li>
+          <strong>Cancer &ndash; General</strong>
+          <img>
+          <small>50% Complete</small>
+        </li>
+      </ul>
+    </div>
+    <div class="pull-right">
+      <img>
+    </div>
+  </article>
+
+  <article class="clearfix">
+    <div class="pull-left"> 
+      <span class="enc-calendar">9/2/13</span>
+      <span class="enc-time">1 hour 15 minutes</span>
+      <ul class="clearfix">
+        <li>
+          <strong>Chronic Kidney Disease</strong>
+          <img>
+          <small>45% Complete</small>
+        </li>
+        <li>
+          <strong>Diabetes Adult</strong>
+          <img>
+          <small>10% Complete</small>
+        </li>
+      </ul>
+    </div>
+    <div class="pull-right">
+      <img>
+    </div>
+  </article>
+
+  <article class="clearfix">
+    <div class="pull-left"> 
+      <span class="enc-calendar">6/22/13</span>
+      <span class="enc-time">1 hour 15 minutes</span>
+      <ul class="clearfix">
+        <li>
+          <strong>Diabetes - Vascular...</strong>
+          <img>
+          <small>Completed</small>
+        </li>
+        <li>
+          <strong>Diabetes Adult</strong>
+          <img>
+          <small>Completed</small>
+        </li>
+      </ul>
+    </div>
+    <div class="pull-right">
+      <img>
+    </div>
+  </article>
+
+  <%= partial current_page.data.paginate || "partials/paginate" %>

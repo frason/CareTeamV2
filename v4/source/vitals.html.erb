@@ -1,0 +1,119 @@
+---
+title: Vitals
+aside: partials/profile-aside
+panel: partials/modal
+paginate: partials/paginate
+---
+
+<%= partial current_page.data.aside || "partials/profile-aside" %>
+
+<section class="content-profile">
+  <div class="head-content">
+    <h2>Vitals <a class="btn btn-outline">Add Vitals</a></h2>
+    <form>
+      <label>Filter by</label>
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline dropdown-toggle" data-toggle="dropdown">
+          All
+        </button>
+        <ul class="dropdown-menu pull-right" role="menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </form>
+  </div>
+
+  <table class="table-vitals table-grey">
+    <tr>
+      <th class="name">Name</th>
+      <th>Result</th>
+      <th>Healthy Range</th>
+      <th>Date</th>
+      <th class="source">Source</th>
+    </tr>
+    <tr>
+      <td>Body mass index (BMI) [Ratio]</td>
+      <td><span>25</span></td>
+      <td><span>10-20</span></td>
+      <td>1/21/2014</td>
+      <td class="hot">CT</td>
+    </tr>
+    <tr>
+      <td>Body weight Stated</td>
+      <td>120</td>
+      <td>110-130</td>
+      <td>8/2/2013</td>
+      <td>PCP</td>
+    </tr>
+    <tr>
+      <td>Body height Stated</td>
+      <td>64</td>
+      <td>N/A</td>
+      <td>6/2/2013</td>
+      <td>CT</td>
+    </tr>
+    <tr>
+      <td>Diastolic blood pressure</td>
+      <td>70</td>
+      <td>&gt;80</td>
+      <td>4/6/2013</td>
+      <td>CT</td>
+    </tr>
+    <tr>
+      <td>Systolic blood pressure</td>
+      <td>115</td>
+      <td>&gt;120</td>
+      <td>3/2/2013</td>
+      <td>CT</td>
+    </tr>
+  </table>
+
+  <%= partial current_page.data.paginate || "partials/paginate" %>
+
+  <div class="head-content">
+    <h2>Lab Data <a class="btn btn-outline">Add Labs</a></h2>
+  </div>
+
+  <article class="panel-trigger table table-conditions" data-name="HgA1C Blood Sugar Test" data-date="On 3/15/13 via Aetna" data-result="6.9" data-range="4-5.6%" data-notes="3">
+    <div class="table-th table-cell">
+      <h2>HgA1C Blood Sugar Test <small>On 3/15/13 via Aetna</small></h2>
+    </div>
+    <div class="table-td table-cell vital-stats">
+      <span class="vitals-blue"><strong>Result</strong>6.9</span>
+      <span class="vitals-blue"><strong>Healthy Range</strong>4-5.6%</span>
+    </div>
+    <div class="table-td table-cell vital-notes">
+      <span>3</span>
+    </div>
+  </article>
+
+  <article class="panel-trigger table table-conditions" data-name="Lipoprotein.beta.subparticle [Entitic length] in Serum or Plasma" data-date="On 3/15/13 via Aetna" data-result="20.8" data-range="20.8" data-notes="3">
+    <div class="table-th table-cell">
+      <h2>Lipoprotein.beta.subparticle [Entitic length] in Serum or Plasma <small>On 3/15/13 via Aetna</small></h2>
+    </div>
+    <div class="table-td table-cell vital-stats">
+      <span>20.8</span>
+      <span>20.8</span>
+    </div>
+    <div class="table-td table-cell vital-notes">
+      <span>3</span>
+    </div>
+  </article>
+
+  <article class="panel-trigger table table-conditions" data-name="Lipoprotein.beta.subparticle [Entitic length] in Serum or Plasma" data-date="On 3/15/13 via Aetna" data-result="20.8" data-range="20.8" data-notes="3">
+    <div class="table-th table-cell">
+      <h2>Lipoprotein.beta.subparticle [Entitic length] in Serum or Plasma <small>On 3/15/13 via Aetna</small></h2>
+    </div>
+    <div class="table-td table-cell vital-stats">
+      <span>20.8</span>
+      <span>20.8</span>
+    </div>
+    <div class="table-td table-cell vital-notes">
+      <span>3</span>
+    </div>
+  </article>
+
+<!-- Sliding panel items -->
+<%= partial current_page.data.modal || "partials/modal" %>

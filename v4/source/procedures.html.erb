@@ -1,0 +1,100 @@
+---
+title: Vitals
+aside: partials/profile-aside
+panel: partials/modal
+paginate: partials/paginate
+---
+
+<%= partial current_page.data.aside || "partials/profile-aside" %>
+
+<section class="content-profile">
+  <div class="head-content">
+    <h2>Procedures <a class="btn btn-outline">Add Procedure</a></h2>
+    <form>
+      <label>Filter by</label>
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline dropdown-toggle" data-toggle="dropdown">
+          All
+        </button>
+        <ul class="dropdown-menu pull-right" role="menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </form>
+  </div>
+
+  <table class="table-procedures table-grey">
+    <tr>
+      <th>Name</th>
+      <th>Most Recent</th>
+      <th>Total</th>
+    </tr>
+    <tr>
+      <td>Screen Clinical Depression</td>
+      <td>2/4/14</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Assay of Glycated Protein</td>
+      <td>1/31/14</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Collection of Venous Blood Venipuncture</td>
+      <td>1/15/14</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Comprehensive Metabolic Panel</td>
+      <td>11/17/13</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Creatine Other Source</td>
+      <td>10/15/13</td>
+      <td>1</td>
+    </tr>
+  </table>
+
+  <%= partial current_page.data.paginate || "partials/paginate" %>
+
+  <div class="head-content">
+    <h2>Immunizations <a class="btn btn-outline">Add Immunization</a></h2>
+  </div>
+
+  <table class="table-immunizations table-grey">
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Total</th>
+    </tr>
+    <tr>
+      <td>Administration of Influenze Vaccine</td>
+      <td>2/4/14</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Imadm Prq id subq/im njxs 1 vaccine</td>
+      <td>1/31/14</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>Influenze virus vaccine trivalent 3 yrs plus im</td>
+      <td>11/17/13</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Pneumoccoal polysac vaccine 23-v 2...</td>
+      <td>11/17/13</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>imadm intransl/oral 1 vaccine</td>
+      <td>10/15/13</td>
+      <td>1</td>
+    </tr>
+  </table>
+
+  <%= partial current_page.data.paginate || "partials/paginate" %>

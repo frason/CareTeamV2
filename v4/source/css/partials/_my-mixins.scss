@@ -16,6 +16,7 @@
   #{$left}, #{$right} {
     display: inline-block;
     vertical-align: middle;
+    text-align: left;
 
     #{$left}:before {
       content: "";

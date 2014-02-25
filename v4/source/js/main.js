@@ -21,6 +21,116 @@ $.extend({
   }
 });
 
+/**
+ * boxlayout.js v1.0.0
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Copyright 2013, Codrops
+ * http://www.codrops.com
+ */
+var Boxlayout = (function() {
+
+  var $workPanelsContainer = $( '#bl-panel-work-items' ),
+    $workPanels = $workPanelsContainer.children( 'div' ),
+    // if currently navigating the work items
+    isAnimating = false,
+    // close work panel trigger
+    $closeWorkItem = $workPanelsContainer.find( 'nav > span.bl-icon-close' ),
+    transEndEventNames = {
+      'WebkitTransition' : 'webkitTransitionEnd',
+      'MozTransition' : 'transitionend',
+      'OTransition' : 'oTransitionEnd',
+      'msTransition' : 'MSTransitionEnd',
+      'transition' : 'transitionend'
+    },
+    // transition end event name
+    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+    // support css transitions
+    supportTransitions = Modernizr.csstransitions;
+
+  function init() {
+    initEvents();
+  }
+
+  function initEvents() {
+
+    // navigating the work items: current work panel scales down and the next work panel slides up
+    $('.panel-trigger').on( 'click', function( event ) {
+
+      var getName = $(this).data('name');
+      
+      if( isAnimating ) {
+        return false;
+      }
+
+      // isAnimating = true;
+
+      /*
+      $currentPanel.removeClass( 'bl-show-work' ).addClass( 'bl-hide-current-work' ).on( transEndEventName, function( event ) {
+        if( !$( event.target ).is( 'div' ) ) return false;
+        $( this ).off( transEndEventName ).removeClass( 'bl-hide-current-work' );
+        isAnimating = false;
+      } );
+
+      if( !supportTransitions ) {
+        $currentPanel.removeClass( 'bl-hide-current-work' );
+        isAnimating = false;
+      }
+      */
+
+      $('.profile-modal header h1').html( getName );
+
+      /*
+      if ( getRisk !="undefined" ) {
+        $('.profile-modal header div').html( '<strong>Risk Level</strong>' + getRisk + ' Risk');
+      } 
+
+      if ( getParagraph !="undefined" ) {
+        $('.note-group p').hide();
+        $('.profile-modal .' + getParagraph).show();
+      }
+      */
+
+      $('.panel-slide').addClass( 'bl-show-work' );
+
+      return false;
+
+    } );
+
+    $('.panel-close').on( 'click', function( event ) {
+
+      //$sectionWork.removeClass( 'bl-scale-down' );
+      //$workPanelsContainer.removeClass( 'bl-panel-items-show' );
+      $('.panel-slide').removeClass( 'bl-show-work' );
+      
+      return false;
+
+    });
+
+    // clicking the work panels close button: the current work panel slides down and the section scales up again
+    /*
+    $closeWorkItem.on( 'click', function( event ) {
+
+      // scale up main section
+      $sectionWork.removeClass( 'bl-scale-down' );
+      $workPanelsContainer.removeClass( 'bl-panel-items-show' );
+      $workPanels.eq( currentWorkPanel ).removeClass( 'bl-show-work' );
+      
+      return false;
+
+    } );
+    */
+
+  }
+
+  return { init : init };
+
+})();
+
+
 jQuery(document).ready(function ($) {  
 
     var $window = $(window),
@@ -202,25 +312,8 @@ jQuery(document).ready(function ($) {
 
     $('.btn-back').show();
   }
-
-  var $head = $( '.ha-outer-wrapper' );
-  $( '.ha-waypoint' ).each( function(i) {
-    var $el = $( this ),
-      animClassDown = $el.data( 'animateDown' ),
-      animClassUp = $el.data( 'animateUp' );
-
-    $el.waypoint( function( direction ) {
-      if( direction === 'down' && animClassDown ) {
-        $head.attr('class', 'ha-outer-wrapper ' + animClassDown);
-        $('.navbar-fixed-top').hide();
-      }
-      else if( direction === 'up' && animClassUp ){
-        $head.attr('class', 'ha-outer-wrapper ' + animClassUp);
-        $('.navbar-fixed-top').show();
-      }
-    });
-  } );
-
+  
+  Boxlayout.init();
 
 // end .ready        
 });

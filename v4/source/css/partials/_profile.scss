@@ -1,45 +1,35 @@
 /////////// PROFILE ///////////
 
-.ha-outer-wrapper {
+.profile-header {
+  margin-bottom: 1em;
 
-  &.ha-large {
-
-    .ha-inner-wrapper {
-      padding: 1rem 0 0;
-      z-index: 1;
-
-      .profile-top {
-      }
+  .profile-person {
+    padding: 20px;
+    width: 100%;
+    background: {
+      color: #fff;
+      image: url(../img/profile-female.png);
+      repeat: no-repeat;
+      position: 22px 18px;
+      size: 91px;
     }
-  }
-}
-
-.profile-person {
-  @include justify-no-float(div, div);
-
-  .profile-top {
-    @include justify-no-float(div, div);
-    position: relative;
-    width: 80%;
-    background: url(../img/profile-female.png) no-repeat 22px 18px;
-    background-size: 91px;
     border: 1px solid #ccc;
     border-radius: 4px;
 
     @include responsive(tablet-ipad) {
       width: 100%;
-      background-size: 40px;
+      background: {
+        position: 15px 15px;
+        size: 70px;
+      }
+    }
+
+    .profile-top, .profile-bottom {
+      width: 100%;
     }
 
     .profile-name {
-      padding: 0 10px 5px 130px;
-      width: 48%;
-      vertical-align: top;
-      text-align: left;
-
-      @include responsive(tablet-ipad) {
-        width: 100%;
-      }
+      display: none;
 
       h1 {
         margin: 0 0 10px;
@@ -50,13 +40,17 @@
         padding-left: 29px;
         font-size: 1.25rem;
         background: url(../img/icon-phone.png) no-repeat;
-        background-size: 19px;
+        background-size: 19px 19px;
+      }
+
+      @include responsive(tablet-ipad) {
+        padding-left: 85px;
+        display: block;
       }
     }
 
     .profile-info {
-      padding: 0 0 5px;
-      width: 48%;
+      width: 100%;
 
       @include responsive(tablet-ipad) {
         display: none;
@@ -64,31 +58,158 @@
 
       li {
         float: left;
-        margin: 0 1.4rem 0.5rem 0;
+        margin: 0 0 1rem 0;
+        width: 20%;
         list-style: none;
         font-size: 0.875rem;
         line-height: 1.5;
+        border-right: 10px solid transparent;
 
-        em {
+        strong {
           display: block;
           color: #999;
           font-size: 0.75rem;
-          font-style: normal;
+          font-weight: normal;
           text-transform: uppercase;
         }
-      }
 
-      .profile-info-primary, .profile-info-manager {
-        @include truncate(140px);
-      }
+        &.profile-phone {
+          padding-left: 110px;
+          width: 40%;
 
-      .profile-info-address {
-        @include truncate(300px);
+          h1 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+          }
+
+          span {
+            padding-left: 29px;
+            font-size: 1.25rem;
+            background: url(../img/icon-phone.png) no-repeat;
+            background-size: 19px 19px;
+          }
+        }
+
+        &.profile-info-primary, &.profile-info-manager {
+          // @include truncate(140px);
+        }
+
+        &.profile-info-address {
+          // @include truncate(140px);
+          width: 40%;
+        }
       }
     }
   }
 
-  .profile-top-buttons {
+  &.affix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+
+    .profile-person {
+      width: 100%;
+      background: {
+        position: 15px 15px;
+        size: 70px;
+      }
+      border: none;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0;
+    }
+
+    .profile-name {
+      padding: 0 10px 0 80px;
+      display: block;
+    }
+
+    .profile-info, .profile-bottom, .profile-person-buttons {
+      display: none;
+    }
+  }
+
+  .profile-bottom {
+    @include responsive(tablet-ipad) {
+      display: none;
+    }
+  }
+
+  .profile-info-expanded {
+    margin-bottom: 1.5rem;
+    width: 100%;
+
+    li {
+      float: left;
+      width: 20%;
+      list-style: none;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      border-right: 10px solid transparent;
+
+      strong {
+        display: block;
+        color: #999;
+        font-size: 0.75rem;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .profile-justify {
+    @include justify-no-float(h2,div);
+
+    h2 {
+      color: $grayDark;
+      font-size: 1.5rem;
+    }
+  }
+
+  .profile-playlists {
+    width: 63%;
+
+    .profile-playlistings li {
+      margin-bottom: 0.5rem;
+      padding: 1rem;
+      color: $greyText;
+      border: 1px solid $grayDark;
+      border-radius: 4px;
+
+      .playlist-justify {
+        @include justify-no-float(h4,span);
+      }
+
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .profile-notes {
+    width: 35%;
+
+    .profile-recent-note {
+      padding: 1.5rem;
+      color: $blackMedium;
+      font-size: 0.875rem;
+      line-height: 1.25;
+      background: $whiteMedium;
+
+      small {
+        font-size: 0.75rem;
+        line-height: 1.1875;
+      }
+    }
+  }
+
+  .profile-buttons {
+    display: none;
     width: 18%;
     text-align: right;
 
@@ -106,6 +227,7 @@
       }
     }
   }
+
 }
 
 // Aside
@@ -182,11 +304,29 @@
   }
 }
 
+%active-tile {
+  padding: 8px 15px 15px;
+  color: #fff;
+  background: $blueMedium;
+  border: 1px solid transparent;
+  @include border-top-pad(7px, $blueBand);
+  border-radius: 0 0 5px 5px; 
+
+  a, h3 {
+    color: #fff;
+  }
+}
+
+body.conditions .aside-profile li.tiles-conditions, body.profile .aside-profile li.tiles-meds, body.vitals .aside-profile li.tiles-vitals, body.encounters .aside-profile li.tiles-encounters {
+  @extend %active-tile;
+}
+
 // Content 
 
 .content-profile {
   @include span-columns(8 omega, $total-columns);
   @include border-top-pad($blueBand);
+  margin-bottom: 2rem;
 
   @include responsive(tablet-ipad) {
     @include span-columns(12, $total-columns);
@@ -205,6 +345,7 @@
     margin-top: 20px;
     padding: 15px 15px 5px;
     color: $greyText;
+    cursor: pointer;
     background: $whiteMedium;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -245,11 +386,11 @@
           font-size: 1.125rem;
           line-height: 1.25;
 
-          em {
+          strong {
             display: block;
             color: $greyTextLighter;
             font-size: 0.875rem;
-            font-style: normal;
+            font-weight: normal;
             text-transform: uppercase;
           }
         }
@@ -259,3 +400,211 @@
 }
 
 
+// Panel slide up
+
+div.bl-panel-items,
+div.bl-panel-items > div {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+div.bl-panel-items > div > div {
+  bottom: 0;
+  top: 90px;
+  margin: 0 auto;
+  padding: 25px 0 90px;
+  width: 94%;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+div.bl-panel-items > div > div h3 {
+  margin: 0 0 20px 0;
+  font-size: 2.4em;
+  font-weight: 300;
+}
+
+div.bl-panel-items {
+  top: 100%;
+  z-index: 99999;
+}
+
+div.bl-panel-items > div {
+  background: #fff;
+  border: 1px solid #ccc;
+  z-index: 0;
+  opacity: 0;
+  -webkit-transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 0s linear 0.5s;
+  -moz-transform: translateY(0);
+  -moz-transition: -moz-transform 0.5s ease-in-out, opacity 0s linear 0.5s;
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out, opacity 0s linear 0.5s;
+  -ms-transform: translateY(0);
+}
+
+div.bl-panel-items nav {
+  position: absolute;
+  z-index: 9999;
+  width: 216px;
+  left: 50%;
+  top: 0px;
+  margin-left: -108px;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out 0.5s;
+  -moz-transition: opacity 0.2s ease-in-out 0.5s;
+  transition: opacity 0.2s ease-in-out 0.5s;
+}
+
+div.bl-panel-items.bl-panel-items-show nav span {
+  float: left;
+  margin: 5px;
+}
+
+div.bl-panel-items nav span.bl-next-work {
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: block;
+  text-transform: uppercase;
+  line-height: 2em;
+  cursor: pointer;
+  margin-right: 2em;
+}
+
+div.bl-panel-items.bl-panel-items-show nav {
+  opacity: 1;
+  top: -70px;
+}
+
+div.bl-panel-items > div.bl-show-work {
+  overflow-y: auto;
+  z-index: 99999;
+  opacity: 1;
+  -webkit-transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  -moz-transform: translateY(-100%);
+  -moz-transition: -moz-transform 0.5s ease-in-out;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+  -ms-transform: translateY(-100%);
+}
+
+div.bl-panel-items > div.bl-hide-current-work {
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  -webkit-transform: translateY(-100%) scale(0.5);
+  -moz-transition: -moz-transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  -moz-transform: translateY(-100%) scale(0.5);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateY(-100%) scale(0.5);
+  -ms-transform: translateY(-100%) scale(0.5);
+  z-index: 0;
+}
+
+
+
+.table-grey {
+  margin-top: 20px;
+  width: 100%;
+  background: $whiteMedium;
+
+  .date, .code {
+    width: 18%;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  th {
+    color: $blackLight;
+    font-size: 0.875rem;
+    font-weight: normal;
+  }
+
+  td {
+    color: $grayDark;
+    background: #fff;
+    border-bottom: 10px solid $whiteMedium;
+  }
+}
+
+.paginate {
+  margin: 10px 0;
+
+  span {
+    float: left;
+    margin-left: 10px;
+  }
+
+  .btn-toolbar {
+    float: right;
+  }
+}
+
+
+.profile-modal {
+
+  header {
+    h1, div {
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 2rem;
+
+      small {
+        display: block;
+        font-size: 0.75rem;
+      }
+    }
+
+    @include responsive(tablet-ipad) {
+      display: none;
+    }
+
+    div {
+      margin-left: 4rem;
+      vertical-align: top;
+      color: #c4c4c4;
+      font-size: 1.125rem;
+
+      strong {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .head-content {
+    @include justify-no-float(h2,div);
+  }
+
+  .note-box {
+    margin-top: 1.5rem;
+    padding: 2rem 1.5rem;
+    background: $whiteMedium;
+
+    .note-group {
+      width: 80%;
+
+      .note-author {
+        float: left;
+        width: 10%;
+      }
+
+      p {
+        float: right;
+        padding: 2rem;
+        width: 80%;
+        background: #fff;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,61 @@
+
+.page-wrapper .today-encounters {
+  margin-top: 15px;
+  padding: 20px;
+  width: 100%;
+  border: 1px solid $blueMedium;
+  border-radius: 5px;
+
+  li {
+    float: left;
+    width: 25%;
+
+    &:last-child {
+      text-align: right;
+    }
+
+    strong {
+      display: block;
+    }
+  }
+}
+
+.content-encounters {
+
+  .pull-left {
+    width: 80%;
+
+    .enc-calendar {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+
+    .enc-time {
+      position: absolute;
+      top: 15px;
+      left: 120px;
+    }
+  }
+
+  article {
+    position: relative;
+    padding: 40px 15px 15px;
+    cursor: auto;
+
+    li {
+      float: left;
+      margin-right: 3%;
+      
+      width: 30%;
+
+      img, strong {
+        display: block;
+      }
+
+      strong {
+        font-weight: normal;
+      }
+    }
+  }
+}

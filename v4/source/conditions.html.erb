@@ -1,0 +1,113 @@
+---
+title: Dashboard
+aside: partials/profile-aside
+panel: partials/modal
+paginate: partials/paginate
+nav: partials/nav-1
+---
+
+<%= partial current_page.data.aside || "partials/profile-aside" %>
+
+<section class="content-profile">
+  <div class="head-content">
+    <h2>Conditions <a class="btn btn-outline">Add Condition</a></h2>
+    <form>
+      <label>Filter by</label>
+      <div class="btn-group">
+        <button type="button" class="btn btn-outline dropdown-toggle" data-toggle="dropdown">
+          Current
+        </button>
+        <ul class="dropdown-menu pull-right" role="menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </form>
+  </div>
+
+  <article class="panel-trigger table table-conditions" data-name="Cholesterol Secondary <small>Since 1/14/13</small>" data-risk="Moderate" data-paragraph="cholesterol">
+    <div class="table-th table-cell">
+      <h2>Cholesterol Secondary <small>Since 1/14/13</small></h2>
+    </div>
+    <div class="table-td table-cell">
+      <span class="note">3</span>
+      <span class="score">6</span>
+    </div>
+    <div class="table-td table-cell">
+      <strong>Risk Level</strong>
+      Moderate Risk
+    </div>
+  </article>
+
+  <article class="panel-trigger table table-conditions" data-name="Coronary Artery Disease <small>Since 3/15/13</small>" data-risk="High" data-paragraph="coronary">
+    <div class="table-th table-cell">
+      <h2>Coronary Artery Disease <small>Since 3/15/13</small></h2>
+    </div>
+    <div class="table-td table-cell">
+      <span class="note">6</span>
+      <span class="score">9</span>
+    </div>
+    <div class="table-td table-cell">
+      <strong>Risk Level</strong>
+      High Risk
+    </div>
+  </article>
+
+  <article class="panel-trigger table table-conditions" data-name="Hypertension Adult <small>Since 5/6/13</small>" data-risk="Low" data-paragraph="hypertension">
+    <div class="table-th table-cell">
+      <h2>Hypertension Adult <small>Since 5/6/13</small></h2>
+    </div>
+    <div class="table-td table-cell">
+      <span class="note">6</span>
+      <span class="score">9</span>
+    </div>
+    <div class="table-td table-cell">
+      <strong>Risk Level</strong>
+      Low Risk
+    </div>
+  </article>
+
+  <div class="head-content">
+    <h2>Diagnoses <a class="btn btn-outline">Add Diagnoses</a></h2>
+  </div>
+
+  <table class="table-diagnoses table-grey">
+    <tr>
+      <th class="date">Onset Date</th>
+      <th class="code">Code</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>1/21/2014</td>
+      <td>ICD9M-626.8</td>
+      <td>Other disorder of menstruation and other abnormal bleeding from female gen...</td>
+    </tr>
+    <tr>
+      <td>1/21/2014</td>
+      <td>ICD9M-725.4</td>
+      <td>Lumbosacral spondylosis without myelopathy</td>
+    </tr>
+    <tr>
+      <td>1/21/2014</td>
+      <td>ICD9M-818.2</td>
+      <td>Malignant neoplasm of bladder, part unspecified</td>
+    </tr>
+    <tr>
+      <td>1/21/2014</td>
+      <td>ICD9M-326.09</td>
+      <td>Spinal stenosis of lumbar region, without neurogenic claudication</td>
+    </tr>
+    <tr>
+      <td>1/21/2014</td>
+      <td>ICD9M-503.4</td>
+      <td>Paroxysmal supraventricular tachycardia</td>
+    </tr>
+  </table>
+
+  <%= partial current_page.data.paginate || "partials/paginate" %>
+
+</section>
+
+<!-- Sliding panel items -->
+<%= partial current_page.data.modal || "partials/modal" %>

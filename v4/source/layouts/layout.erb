@@ -20,25 +20,24 @@
 </head>
 <body class="<%= page_classes %>">
 
-    <%= partial current_page.data.nav || "partials/nav-1" %>
+    <div class="wrapper">
 
-    <div class="page-wrapper">
-      <%= yield %>
-      <div class="md-overlay"></div>
-    </div>
+        <%= partial current_page.data.nav || "partials/nav-1" %>
 
-    <div id="panel" style="display: none;"><!-- info-panel -->
-        <a class="close-x" id="close-x">x</a>
-        <dl>
-            <dt>window-width:</dt>
-            <dd class="win"></dd>
-            <dt>body-width:</dt>
-            <dd class="width"></dd>
-            <dt>font-size:</dt>
-            <dd class="fontsize"></dd>
-            <dt>breakpoint:</dt>
-            <dd class="breakpoint"></dd>
-        </dl>
+        <div class="page-wrapper">
+          <%= yield %>
+        </div>
+
+        <div id="panel" style="display: none;"><!-- info-panel -->
+            <a class="close-x" id="close-x">x</a>
+            <dl>
+                <dt>window-width:</dt>
+                <dd class="win"></dd>
+                <dt>breakpoint:</dt>
+                <dd class="breakpoint"></dd>
+            </dl>
+        </div>
+
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -47,6 +46,6 @@
       <%= yield_content :scripts %>
     <% end %>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <%= javascript_include_tag 'waypoints.min', 'plugins', 'main' %>
+    <%= javascript_include_tag 'classie', 'modalEffects', 'cssParser', 'plugins', 'main' %>
 </body>
 </html>
