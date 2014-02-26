@@ -233,6 +233,10 @@ sup {
   font-size: 65%;
 }
 
+ul {
+  margin: 0;
+}
+
 // end Bootstrap overrides -- mostly
 
 .btn-watchlist-group {
@@ -879,6 +883,10 @@ nav {
   display: table-cell;
   vertical-align: middle;
   text-align: left;
+
+  strong {
+    @extend %strongLabel;
+  }
 }
 .margin-top-bottom {
   margin: 1.2rem 0;
@@ -1079,6 +1087,7 @@ nav {
 }
 
 .head-content {
+  /*
   margin-bottom: -15px;
   padding: 15px 0 0;
 
@@ -1086,6 +1095,12 @@ nav {
     content: "";
     display: inline-block;
     width: 100%;
+  }
+  */
+
+  label {
+    margin-right: 5px;
+    font-size: 0.875rem;
   }
 
   h2 {
@@ -1197,8 +1212,15 @@ nav {
 }
 
 
-.content-profile .table-conditions {
+.table-conditions {
   padding: 15px;
+
+  h2 {
+
+    small {
+      display: block;
+    }
+  }
 
   .table-th {
     width: 50%;
@@ -1212,13 +1234,6 @@ nav {
 
   .table-td {
     width: 25%; 
-
-    strong {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: normal;
-      text-transform: uppercase;
-    }
   }
 
 }

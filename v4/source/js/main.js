@@ -315,6 +315,17 @@ jQuery(document).ready(function ($) {
   
   Boxlayout.init();
 
+  $('.aside-collapsed').on('click', 'li', function() {
+    if (!$(this).attr('data-toggled') || $(this).attr('data-toggled') == 'off') {
+      $(this).attr('data-toggled','on');
+      $('.ul-tiles').toggleClass('expanded');
+    }
+    else if ($(this).attr('data-toggled') == 'on') {
+      $(this).attr('data-toggled','off');
+      $('.ul-tiles').toggleClass('expanded');
+    }
+  });
+
 // end .ready        
 });
 

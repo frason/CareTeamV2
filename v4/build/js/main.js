@@ -203,6 +203,15 @@ jQuery(document).ready(function ($) {
     $('.btn-back').show();
   }
 
+  // reveal Profile tiles
+  $(window).on('click', function() {
+    
+      alert('clicked');
+    
+  });
+
+
+
 // end .ready        
 });
 

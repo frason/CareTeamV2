@@ -1,3 +1,14 @@
+// strong placeholder 
+
+%strongLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+
+
 /////////// PROFILE ///////////
 
 .profile-header {
@@ -235,8 +246,32 @@
 .aside-profile {
   @include span-columns(4, $total-columns);
 
-  @include responsive(tablet-ipad) {
+  @include responsive(tablet-lg) {
+    @include span-columns(12, $total-columns);
+  }
+
+  .aside-collapsed {
     display: none;
+  }
+
+  @include responsive(tablet-lg) {
+
+    .aside-collapsed {
+      margin-bottom: 1rem;
+      display: block;
+      width: 100%;
+
+      li {
+        cursor: pointer;
+        color: #fff;
+        background: $blueMedium;
+        border-top: 7px solid #3391b9;
+        border-radius: 0 0 5px 5px;
+        -webkit-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
+           -moz-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
+                box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
+      }
+    }
   }
 
   li {
@@ -301,14 +336,64 @@
         color: $blueMedium;
       }
     }
+
+    @include responsive(tablet-lg) {
+      float: none;
+      margin-bottom: 0;
+      width: 100%;
+      height: auto;
+      border: none;
+      -webkit-box-shadow: none;
+         -moz-box-shadow: none;
+              box-shadow: none;
+
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
+
+      &.tiles-hotspot {
+
+        h3 {
+          color: #333;
+        }
+      }
+
+      h3 {
+        width: 60%;
+        display: inline-block;
+        vertical-align: top;
+
+        span {
+          display: none;
+        }
+      }
+
+      p {
+        position: static;
+        width: 25%;
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
   }
+
+  @include responsive(tablet-lg) {
+    .ul-tiles {
+      display: none;
+
+      &.expanded {
+        display: block;
+      }
+    }
+  }
+
 }
 
 %active-tile {
   padding: 8px 15px 15px;
   color: #fff;
   background: $blueMedium;
-  border: 1px solid transparent;
+  border: none;
   @include border-top-pad(7px, $blueBand);
   border-radius: 0 0 5px 5px; 
 
@@ -317,39 +402,30 @@
   }
 }
 
-body.conditions .aside-profile li.tiles-conditions, body.profile .aside-profile li.tiles-meds, body.vitals .aside-profile li.tiles-vitals, body.encounters .aside-profile li.tiles-encounters {
+body.conditions .aside-profile li.tiles-conditions, body.meds .aside-profile li.tiles-meds, body.vitals .aside-profile li.tiles-vitals, body.encounters .aside-profile li.tiles-encounters, body.procedures .aside-profile li.tiles-procedures, body.goals .aside-profile li.tiles-goals {
   @extend %active-tile;
 }
 
 // Content 
 
-.content-profile {
+.content-module {
   @include span-columns(8 omega, $total-columns);
   @include border-top-pad($blueBand);
-  margin-bottom: 2rem;
+  padding-top: 1rem;
 
-  @include responsive(tablet-ipad) {
+  @include responsive(tablet-lg) {
     @include span-columns(12, $total-columns);
-  }
-
-  .head-content {
-    @include justify-no-float(h2, form);
-
-    label {
-      margin-right: 5px;
-      font-size: 0.875rem;
-    }
   }
 
   article {
     margin-top: 20px;
-    padding: 15px 15px 5px;
+    padding: 15px;
     color: $greyText;
     cursor: pointer;
     background: $whiteMedium;
     border: 1px solid #ccc;
     border-radius: 5px;
-    -moz-box-shadow:    0px 2px 0px 0px rgba(212,212,212,0.25);
+    -moz-box-shadow:    0px 2px 0px 0px rgba(212,212,212,0.25); 
     -webkit-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
     box-shadow:         0px 2px 0px 0px rgba(212,212,212,0.25);
 
@@ -505,6 +581,7 @@ div.bl-panel-items > div.bl-hide-current-work {
 }
 
 
+// .content-listing tables
 
 .table-grey {
   margin-top: 20px;
@@ -532,6 +609,10 @@ div.bl-panel-items > div.bl-hide-current-work {
   }
 }
 
+// end /.content-listing tables
+
+// paginate
+
 .paginate {
   margin: 10px 0;
 
@@ -545,6 +626,10 @@ div.bl-panel-items > div.bl-hide-current-work {
   }
 }
 
+// end /paginate
+
+
+// page modals
 
 .profile-modal {
 
@@ -582,7 +667,11 @@ div.bl-panel-items > div.bl-hide-current-work {
   }
 
   .head-content {
-    @include justify-no-float(h2,div);
+    // @include justify-no-float(h2,div);
+
+    .pull-right {
+      text-align: right;
+    }
   }
 
   .note-box {
@@ -607,4 +696,62 @@ div.bl-panel-items > div.bl-hide-current-work {
     }
   }
 
+}
+
+// end /modals
+
+
+// Page specific 
+
+.content-goals {
+
+  &.content-listing {
+    position: relative;
+    padding: 0;
+
+    header {
+      padding: 1rem;
+      width: 60%;
+
+      h2 {
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        margin-top: 1rem;
+      }
+    }
+
+    footer {
+      position: absolute;
+      top: 4px;
+      right: 0;
+      bottom: 0;
+      padding: 1rem;
+      width: 40%;
+      background: #fff;
+      border-left: 1px solid #ccc;
+      border-radius: 0 5px 5px 0;
+
+      p {
+        margin-bottom: 1rem;
+        color: $blueMedium;
+
+        strong {
+          color: #777;
+        }
+      }
+    }
+
+    strong {
+      @extend %strongLabel;
+    }
+  }
+}
+
+.today-encounters {
+
+  strong {
+    @extend %strongLabel;
+  }
 }
