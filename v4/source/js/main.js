@@ -131,53 +131,6 @@ var Boxlayout = (function() {
 })();
 
 
-jQuery(document).ready(function ($) {  
-
-    var $window = $(window),
-        $body = $('body'),
-        $html = $('html');
-
-    function toggleBreakpoint() {
-      var windowWidth = $window.width();
-       // toggle breakpoint classes
-      $html.toggleClass('desktop', (windowWidth >= 1025));
-      $html.toggleClass('tablet-lnd', ( (windowWidth >= 769) && (windowWidth <= 1024) ));
-      $html.toggleClass('tablet-ptr', ( (windowWidth >= 640) && (windowWidth <= 768) ));          
-      $html.toggleClass('mobile', (windowWidth <= 639) );
-    }
-
-    toggleBreakpoint();
-
-    if ( $('#panel').exists() ) {
-      var $panel = $('#panel'),
-          $win = $('.win', $panel),
-          $width = $('.width', $panel),
-          $fontsize = $('.fontsize', $panel),
-          $closeBtn = $('.close-x', $panel);
-
-      $closeBtn.click(function () {
-        $panel.hide();
-      });
-
-      $win.html($window.width() + 'px');
-      $width.html($body.outerWidth() + 'px');
-      $fontsize.html($html.css('font-size'));
-    }
-
-    $(window).on('resize', function () {
-        //console.log($window.width());
-        toggleBreakpoint();
-
-        if ( $('#panel').exists() ) {
-          $win.html($window.width() + 'px');
-          $width.html($body.outerWidth() + 'px');
-          $fontsize.html($html.css('font-size'));
-        }
-    });
-// end .ready        
-});
-
-
 // dashboard isotope
 jQuery(document).ready(function ($) {  
   if ( $('#isotope-container').exists() ) {  
@@ -325,6 +278,43 @@ jQuery(document).ready(function ($) {
       $('.ul-tiles').toggleClass('expanded');
     }
   });
+
+  function openProfile () {
+    $('.profile-header').removeClass('closed').addClass('open');
+  }
+
+  function changeProfile () {
+    $('.profile-btn-group button').removeClass('active');
+    $('.profile-temp p').hide();
+  }
+
+  $('.btn-first').on('click', function() {
+    //openProfile();
+    changeProfile();
+    $(this).addClass('active');
+    $('.box-1').show();
+  });
+
+  $('.btn-second').on('click', function() {
+    //openProfile();
+    changeProfile();
+    $(this).addClass('active');
+    $('.box-2').show();
+  });
+
+  $('.btn-third').on('click', function() {
+    //openProfile();
+    changeProfile();
+    $(this).addClass('active');
+    $('.box-3').show();
+  });
+
+  $('.profile-header').waypoint('sticky', {
+    context: '.page-wrapper',
+    offset: 10 // Apply "stuck" when element 30px from top
+  });
+
+
 
 // end .ready        
 });

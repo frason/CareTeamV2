@@ -4,40 +4,73 @@ aside: partials/profile-aside
 modal: partials/modal-meds
 ---
 
-<div class="profile-header clearfix" data-spy="affix" data-offset-top="60">
+<div class="profile-header open clearfix">
 
-  <div class="profile-person pull-left"><!-- the 1px border -->
+  <div class="profile-person"><!-- the 1px border -->
 
     <div class="profile-top">
-      <div class="profile-name">
-        <h1>Schwarzenegger, Arnold</h1>
-        <span><a href="#">212-123-4567</a></span>
-      </div>
 
-      <div class="profile-info">
-        <ol class="clearfix">
-          <li class="profile-phone">
-            <h1>Schwarzenegger, Arnold</h1>
-            <span><a href="#">212-123-4567</a></span>
-          </li>
-          <li class="profile-info-age"><strong>Age</strong>74</li>
-          <li class="profile-info-address"><strong>Address : Home</strong>12345 Grabel Ln, Folkston, GA 80435</li>
-          <li class="profile-info-dob"><strong>DOB</strong>05/21/1940</li>
-          <li class="profile-info-program"><strong>Program</strong>Care Management</li>
-          <li class="profile-info-manager"><strong>Case Manager</strong>Miriam Makeba <a href="#">edit</a></li>
-        </ol>
+      <ul class="profile-btn-group">
+        <li class="active"><a href="#home" class="btn btn-primary" data-toggle="tab">Patient Information</a></li>
+        <li><a href="#profile" class="btn btn-primary" data-toggle="tab">Tasks</a></li>
+        <li><a href="#messages" class="btn btn-primary" data-toggle="tab">Messages</a></li>
+        <li><a href="#settings" class="btn btn-primary" data-toggle="tab">Encounters</a></li>
+      </ul>
+
+      <div class="profile-info tab-content">
+        
+        <div class="tab-pane fade in active" id="home">
+
+          <ol class="clearfix profile-info-top">
+            <li>Schwarzenegger, Arnold</li>
+            <li>212-123-4567</li>
+            <li>
+              <strong>Age</strong> 74 years old
+              <div>
+                <strong>DOB</strong> 05/21/1940
+              </div>
+            </li>
+          </ol>
+
+          <ol class="clearfix profile-info-middle">
+            <li class="">
+              <strong>Case Managers</strong>
+              <ol>
+                <li>Miriam Makeba <a href="#">edit</a></li>
+                <li>Joyce Rosenovich <a href="#">edit</a></li>
+              </ol>
+            </li>
+            <li class=""><strong>Care Team ID</strong>5886201</li>
+            <li class=""><strong>Program</strong>Care Management</li>
+            <li class=""><strong>Address : Home</strong>12345 Grabel Ln, Folkston, GA 80435</li>
+          </ol>
+
+          <ol class="clearfix profile-info-bottom">
+            <li class=""><strong>Primary Contact</strong>Arnold Schwarzenegger</li>
+            <li class=""><strong>Insurer</strong>Aetna PPO, Basic 70/30</li>
+            <li class=""><strong>Eligibility</strong>1/01/2011</li>
+            <li class=""><strong>Primary Care Doctor</strong>Harry N. David, MD<span>602-752-5876</span></li>
+          </ol>
+
+        </div>
+
+        <div class="tab-pane fade" id="profile">
+          <p>Profile</p>
+        </div>
+
+        <div class="tab-pane fade" id="messages">
+          <p>Messages</p>
+        </div>       
+
+        <div class="tab-pane fade" id="settings">
+          <p>Settings</p>
+        </div>  
+
       </div>
     </div><!-- /profile-top -->
 
+    <!--
     <div class="profile-bottom clearfix">
-
-      <ol class="profile-info-expanded clearfix">
-        <li class="profile-info-team"><strong>Care Team ID</strong>5886201</li>
-        <li class="profile-info-insurer"><strong>Insurer</strong>Aetna PPO, Basic 70/30</li>
-        <li class="profile-info-eligibility"><strong>Eligibility</strong>1/01/2011</li>
-        <li class="profile-info-doctor"><strong>Primary Care Doctor</strong>Harry N. David, MD<span>602-752-5876</li>
-        <li class="profile-info-contact"><strong>Primary Contact</strong>Arnold Schwarzenegger</li>
-      </ol>
 
       <div class="profile-playlists pull-left">
 
@@ -83,16 +116,11 @@ modal: partials/modal-meds
           <p>Her HgA1c results recently spiked. They’re over 7%. Called her to talk about what happened. Blizzard in her area prevented her from leaving the house and going to the grocery store. As a result, she ended up eating poorly and not exercising. Have a feeling her medication ... <a href="#">More</a></p>
         </div>
       </div>
+      
 
-    </div><!-- /profile-bottom -->
+    </div>--> <!-- /profile-bottom -->
 
   </div><!-- /profile-person -->
-
-  <div class="profile-buttons pull-right">
-    <button class="btn btn-primary"><img src="img/icon-activity.png" class="icon-activity"><span>New Activity</span></button>
-    <button class="btn btn-primary"><img src="img/icon-note.png" class="icon-note"><span>New Note</span></button>
-    <button class="btn btn-primary"><img src="img/icon-encounter.png" class="icon-encounter"><span>New Encounter</span></button>
-  </div>
 </div>
 
 <%= partial current_page.data.aside || "partials/profile-aside" %>

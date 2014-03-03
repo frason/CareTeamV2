@@ -11,6 +11,13 @@
   Default styles
 ----------------------------------------------------------------- */
 
+* {
+    -webkit-transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 html, body {
   position: relative;
   height: 100%;
@@ -1238,8 +1245,130 @@ nav {
 
 }
 
+//// profile temp 
+
+.profile-top, .profile-header {
+  position: relative;
+}
+
+.profile-temp {
+  margin-left: 108px;
+
+  @include responsive(tablet-ipad) {
+    margin-left: 80px;
+  }
+
+  p {
+    margin-top: 15px;
+    height: 200px;
+  }
+}
+
+.profile-btn-group {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  // border: 1px solid red;
+
+  .btn-primary.active:hover {
+    background-color: #3276b1;
+    border-color: #285e8e;
+  }
 
 
+}
+
+.profile-header {
+
+  &.affix-top, &.affix-bottom {
+    position: relative;
+  }
+
+  &.open {
+
+    .profile-btn-group {
+      width: 140px;
+
+      button {
+        margin-bottom: 5px;
+        width: 100%;
+      }
+    }
+  }
+
+  &.closed {
+
+    .profile-temp {
+
+      p {
+        display: none !important;
+      }
+    }
+  }
+}
+
+
+header[role="fixed-header"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 140px 0 4rem;
+  height: 65px;
+  display: table;
+  z-index: 900;
+  background: #eee;
+  border-bottom: 1px solid #999;
+
+  @include responsive(tablet-lg) {
+
+    .form-search {
+      display: none;
+    }
+  }
+
+  &.table {
+    margin-bottom: 0;
+  }
+
+  .logo {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);   
+  }
+
+  .nav-pills {
+    text-align: right;
+  }
+
+  .nav-search {
+    display: none;
+
+    @include responsive(tablet-lg) {
+      display: inline-block;
+    }
+  }
+
+  .dropdown-menu {
+    text-align: left;
+  }
+
+}
 
 
 

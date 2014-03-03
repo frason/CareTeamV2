@@ -1,16 +1,30 @@
-  <nav class="navbar-fixed-top" role="navigation">
-      <div class="nav-container clearfix">
-        <div class="pull-left">
-          <h1><img src="img/logo-careteam.png" width="81" height="37"></h1>
-          <a href="/careteam/index.html" type="button" class="btn btn-primary btn-back" style="display: none;">Back</a>
-        </div>
-        <div class="pull-right">
-          <button href="#" class="btn btn-primary">Connect</button>
-          <div class="btn-group btn-watchlist-group">
-            <button type="button" class="btn btn-primary btn-watchlist">Watchlist</button>
-            <button type="button" class="btn btn-primary btn-watchlist-number">3</button>
-          </div>
-          <a href="#" class="btn btn-primary icon-search"></a>
-        </div><!-- .navbar-right -->
-      </div><!-- .nav-container -->            
-  </nav>
+
+<header class="table clearfix" role="fixed-header">
+
+  <img src="" width="40" height="40" class="hamburger">
+
+  <h1 class="table-cell">Patients</h1>
+
+  <form class="table-cell form-search" role="search">
+    <input type="text" class="form-control">
+  </form>
+
+  <div class="table-cell nav nav-pills">
+    <button type="button" class="nav-search btn btn-link">Search</button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+        New <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-link">Messages <span class="badge">3</span></button>
+    <button type="button" class="btn btn-link">Watchlist <span class="badge">5</span></button>
+  </div> 
+
+  <a href="/" class="logo"><img src="" width="120" height="40"></a>
+
+</header>
