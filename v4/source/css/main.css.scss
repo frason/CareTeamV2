@@ -11,14 +11,17 @@
   Default styles
 ----------------------------------------------------------------- */
 
+/*
 * {
     -webkit-transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
   -moz-transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
   -o-transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+*/
 
-html, body {
+html, 
+body {
   position: relative;
   height: 100%;
 }
@@ -37,12 +40,15 @@ body {
   line-height: 1;
 }
 
-a, a:visited {
+a, 
+a:visited {
   color: $blueMedium;
   text-decoration: none;
   outline: none;
 
-  &:hover, &:active, &:focus {
+  &:hover, 
+  &:active, 
+  &:focus {
     text-decoration: none;
   }
 }
@@ -88,6 +94,7 @@ h5, h6 {
   overflow: auto;
 
   ol, ul {
+    margin: 0;
     padding: 0;
     list-style: none;
     text-align:left;
@@ -190,9 +197,7 @@ h5, h6 {
   padding: 0.2rem 1.1rem;
   font-weight: 300;
 
-  &.btn:focus {
-    outline: none;
-  }
+  &.btn:focus { outline: none; }
 }
 
 .btn-primary {
@@ -202,16 +207,16 @@ h5, h6 {
   vertical-align: middle;
   color: white;
 
-  &:last-child {
-    margin-right: 0;
-  }
+  &:last-child { margin-right: 0; }
 
-  &:hover {
-    background-color: $hoverBlue;
-  }
+  &:hover { background-color: $hoverBlue; }
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open .dropdown-toggle.btn-primary {
   border: 1px solid transparent;
 }
 
@@ -240,20 +245,18 @@ sup {
   font-size: 65%;
 }
 
-ul {
-  margin: 0;
-}
+ul { margin: 0; }
 
 // end Bootstrap overrides -- mostly
 
 .btn-watchlist-group {
   margin-left: 0.3rem;
+
   .btn-watchlist {
     padding: 0.2rem 1.35rem;
   }
-  .btn-watchlist-number {
-    border-left: 1px solid $whiteDark;
-  }
+
+  .btn-watchlist-number { border-left: 1px solid $whiteDark; }
 }
 
 a {
@@ -268,7 +271,6 @@ a {
     span {
       float: left;
      
-
       &:last-child {
         border-left: 1px solid white;
       }
@@ -283,16 +285,12 @@ a {
     vertical-align: middle;
     background-color: transparent;
 
-    &:before {
-      color: $blueMedium;
-    }
+    &:before { bcolor: $blueMedium; }
 
     &:hover {
       background-color: transparent;
 
-      &:before {
-        color: $hoverBlue;
-      }        
+      &:before { color: $hoverBlue; }        
     }
   }
 }
@@ -309,7 +307,8 @@ nav {
     // @include em-fallback(padding, 0 ,1);    
   }
 
-  h1, h2 {
+  h1, 
+  h2 {
     color: $grayDark; 
     font-weight: normal;
     font-weight: 300;
@@ -353,11 +352,10 @@ nav {
     &.isActive {
       background-color: $grayDark;
 
-      h1 {
-        border-right: 1px solid $whiteDark;      
-      }
+      h1 { border-right: 1px solid $whiteDark; }
 
-      h1, h2 {
+      h1, 
+      h2 {
         color: $whiteDark;      
       }
 
@@ -376,9 +374,7 @@ nav {
   .navbar-left.noDropdown {
     min-width: 0;
 
-    h1 {
-      border-right: none;
-    }
+    h1 { border-right: none; }
   }
 
   .navbar-right {
@@ -509,7 +505,9 @@ nav {
     height: 0;
   }
 
-  &.ribbon, &.warning, &.hotspot {
+  &.ribbon, 
+  &.warning, 
+  &.hotspot {
     i {
       position: absolute;
       right: 7px;
@@ -985,7 +983,8 @@ nav {
           transform: translateY(-50%);
 }
 
-.number-change .number-greater-than, .number-change .number-lesser-than {
+.number-change .number-greater-than, 
+.number-change .number-lesser-than {
   position: relative;
   padding-left: 0.6rem;
   display: inline-block;
@@ -1012,7 +1011,8 @@ nav {
   }
 }
 
-.table .number-change .number-greater-than, .number-change .number-lesser-than { 
+.table .number-change .number-greater-than, 
+.number-change .number-lesser-than { 
   padding-left: 0.5rem;
 
   &:before {
@@ -1029,7 +1029,8 @@ nav {
   position: relative;
   padding-left: 0.1rem;
 
-  &.number-greater-than:before, &.number-lesser-than:before {
+  &.number-greater-than:before, 
+  &.number-lesser-than:before {
     content: ">";
     position: absolute;
     top: 50%;
@@ -1094,16 +1095,7 @@ nav {
 }
 
 .head-content {
-  /*
-  margin-bottom: -15px;
-  padding: 15px 0 0;
-
-  &:after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-  }
-  */
+  margin-top: 1.5rem;
 
   label {
     margin-right: 5px;
@@ -1247,7 +1239,8 @@ nav {
 
 //// profile temp 
 
-.profile-top, .profile-header {
+.profile-top, 
+.profile-header {
   position: relative;
 }
 
@@ -1281,20 +1274,9 @@ nav {
 
 .profile-header {
 
-  &.affix-top, &.affix-bottom {
+  &.affix-top, 
+  &.affix-bottom {
     position: relative;
-  }
-
-  &.open {
-
-    .profile-btn-group {
-      width: 140px;
-
-      button {
-        margin-bottom: 5px;
-        width: 100%;
-      }
-    }
   }
 
   &.closed {

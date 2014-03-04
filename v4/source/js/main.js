@@ -288,33 +288,16 @@ jQuery(document).ready(function ($) {
     $('.profile-temp p').hide();
   }
 
-  $('.btn-first').on('click', function() {
-    //openProfile();
-    changeProfile();
-    $(this).addClass('active');
-    $('.box-1').show();
-  });
-
-  $('.btn-second').on('click', function() {
-    //openProfile();
-    changeProfile();
-    $(this).addClass('active');
-    $('.box-2').show();
-  });
-
-  $('.btn-third').on('click', function() {
-    //openProfile();
-    changeProfile();
-    $(this).addClass('active');
-    $('.box-3').show();
-  });
-
   $('.profile-header').waypoint('sticky', {
     context: '.page-wrapper',
-    offset: 10 // Apply "stuck" when element 30px from top
+    offset: -100
   });
 
-
+  $('.profile-btn-group').on('click', 'a', function() {
+    if ( $('.profile-header').hasClass('stuck')) {
+      $('.page-wrapper').scrollTop( 0 );
+    }
+  });
 
 // end .ready        
 });
