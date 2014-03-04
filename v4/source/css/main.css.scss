@@ -29,6 +29,10 @@ body {
 html {
   overflow-y: auto;
   font-size: 100%;
+
+  @include responsive(desktop-sm) {
+    font-size: 90%;
+  }
 }
 
 body {

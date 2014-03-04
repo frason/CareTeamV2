@@ -7,7 +7,100 @@
   text-transform: uppercase;
 }
 
+.sticky-wrapper {
+  min-height: 235px;
+}
 
+.profile-header {
+
+  @include responsive(tablet-lg) {
+
+    .profile-person {
+      background-size: 45px !important;
+    }
+
+    .profile-info-top,
+    .profile-info-middle,
+    .profile-info-bottom {
+      padding-bottom: 0 !important;
+
+      li {
+        margin-bottom: 10px;
+        width: 100% !important;
+      }
+    }
+
+    .profile-info-middle,
+    .profile-info-bottom {
+      padding-top: 0;
+    }
+  }
+}
+
+.icon-female {
+  float: left;
+  margin-right: 1rem;
+  display: block;
+  width: 45px;
+  height: 45px;
+  background: url(../img/profile-female.png) no-repeat;
+  background-size: contain;
+}
+
+.task-pill-top,
+.task-pill-content {
+  @include span-columns(9, $total-columns);
+}
+
+.task-pill-top {
+  margin-bottom: 10px;
+  
+  .pull-right {
+    text-align: right;
+  }
+}
+
+.task-pill-content {
+  border: 1px solid $blueMedium;
+  border-radius: 5px;
+
+  .pull-left {
+    padding: 20px;
+    width: 70%;
+    background: #F6F6F6;
+    border-radius: 5px 0 0 5px;
+
+    p {
+      margin-top: 1rem;
+      width: 100% !important;
+      line-height: 1.4;
+
+      strong {
+        margin-bottom: 5px;
+        display: block;
+        color: #777;
+        @extend %strongLabel;
+      }
+    }
+  }
+
+  .pull-right {
+    padding: 20px;
+    width: 30%;
+
+    p {
+      margin-bottom: 10px;
+      width: 100% !important;
+
+      strong {
+        margin-bottom: 5px;
+        display: block;
+        color: #777;
+        @extend %strongLabel;
+      }
+    }
+  }
+}
 
 /////////// PROFILE ///////////
 
@@ -15,7 +108,7 @@
   margin-bottom: 1em;
 
   .profile-info {
-    min-height: 268px;
+    // min-height: 268px;
   }
 
   &.stuck {
@@ -44,8 +137,27 @@
 
     .profile-person {
       padding: 0;
-      background-position: 1rem .5rem;
-      background-size: 40px;
+
+      .profile-info-top {
+
+          .info-name {
+            margin-top: 3px;
+            width: 48.5%;
+            font-size: 24px;
+          }
+
+          .info-phone {
+            margin-top: 6px;
+            color: $blueMedium;
+            font-size: 1.25rem;
+          }
+
+          .info-age,
+          .info-dob {
+            font-size: 1rem;
+            line-height: 1;
+          }
+      }
 
       .profile-btn-group {
         right: 1rem;
@@ -93,6 +205,7 @@
 
           .btn-patient {
             padding-left: 0 !important;
+            background: url(../img/patient-white.png) no-repeat;
             background-position: 50% 50%;
             background-size: 24px 21px; 
           }
@@ -111,6 +224,7 @@
 
           .btn-encounters {
             padding-left: 0 !important;
+            background: url(../img/icon-encounters.png) no-repeat;
             background-position: 50% 50%;
             background-size: 32px 21px; 
           }
@@ -124,10 +238,6 @@
     width: 100%;
     background: {
       color: #fff;
-      image: url(../img/profile-female.png);
-      repeat: no-repeat;
-      position: 20px 10px;
-      size: 45px;
     }
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -157,7 +267,11 @@
 
     .tab-pane .tab-content { 
       margin: 1rem; 
-      @include span-columns(5, $total-columns);
+
+      p {
+        padding-bottom: 1rem;
+        @include span-columns(5, $total-columns);
+      }
 
       h4 {
         margin-bottom: 1rem;
@@ -165,16 +279,16 @@
     }
 
     .profile-info-top {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       vertical-align: bottom;
 
       .info-name {
-        padding-left: 3.8rem;
         width: 45%;
         font-size: 2rem;
       }
 
       .info-phone {
+        margin-top: 12px;
         color: $blueMedium;
         font-size: 1.25rem;
 
@@ -211,7 +325,7 @@
 
       li {
         color: rgba(0,0,0,.5);
-        font-size: 1.125rem !important;
+        font-size: 1rem !important;
       }
 
       li strong {
@@ -230,31 +344,51 @@
       z-index: 101;
       background: $blueMedium;
 
+      @include responsive(tablet-lg) {
+        // @include span-columns(2 omega, $total-columns);
+      }
+
       li {
         padding: 0 1.5rem;
         border-bottom: 2px solid #fff;
       }
 
       a {
-        min-height: 50px;
+        min-height: 40px;
         display: block;
         color: #fff;
-        font-size: 1.25rem;
-        line-height: 50px;
+        font-size: 1.125rem;
+        line-height: 40px;
         text-align: left;
-        
         border-radius: 0;
+
+        @include responsive(tablet-lg) {
+          text-indent: -9999px;
+        }
       }
 
       .active {
         background: #fff;
 
-        a { color: #333; }
+        a { 
+          color: #333; 
+        }
+      }
+
+      .btn:active, .btn.active {
+        -webkit-box-shadow: none;
+                box-shadow: none;
       }
     }
 
     .btn-patient {
       padding-left: 55px !important;
+      background: url(../img/patient-white.png) no-repeat;
+      background-size: 27px 24px;
+      background-position: 0 50%;
+    }
+
+    li.active .btn-patient {
       background: url(../img/icon-patient.png) no-repeat;
       background-size: 27px 24px;
       background-position: 0 50%;
@@ -267,9 +401,21 @@
       background-position: 0 50%;
     }
 
+    li.active .btn-tasks {
+      background: url(../img/tasks-grey.png) no-repeat;
+      background-size: 27px 31px; 
+      background-position: 0 50%;
+    }
+
     .btn-messages {
       padding-left: 55px !important;
       background: url(../img/icon-messages.png) no-repeat;
+      background-size: 24px 33px; 
+      background-position: 0 50%;
+    }
+
+    li.active .btn-messages {
+      background: url(../img/messages-grey.png) no-repeat;
       background-size: 24px 33px; 
       background-position: 0 50%;
     }
@@ -281,13 +427,19 @@
       background-position: 0 50%;
     }
 
+    li.active .btn-encounters {
+      background: url(../img/encounters-grey.png) no-repeat;
+      background-size: 44px 29px; 
+      background-position: 0 50%;
+    }
+
     .profile-info {
       @include span-columns(12, $total-columns);
 
       li {
         float: left;
         width: 25%;
-        font-size: 1.25rem;
+        font-size: 1rem;
         line-height: 1.2;
 
         strong {
@@ -415,6 +567,7 @@
       width: 100%;
 
       li {
+        position: relative;
         cursor: pointer;
         color: #fff;
         background: $blueMedium;
@@ -423,6 +576,21 @@
         -webkit-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
            -moz-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
                 box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
+
+        &:after {
+          top: 50%;
+          right: 16px;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+          border-color: rgba(255, 255, 255, 0);
+          border-top-color: #ffffff;
+          border-width: 12px;
+          margin-top: -6px;
+        }
       }
     }
   }
@@ -536,6 +704,18 @@
 
       &.expanded {
         display: block;
+
+        li.tiles-meds {
+          padding: 15px;
+          color: #333;
+          background: #fff;
+          border: 1px solid transparent;
+
+          h3, 
+          a {
+            color: #333;
+          }
+        }
       }
     }
   }
@@ -801,16 +981,13 @@ div.bl-panel-items > div.bl-hide-current-work {
     }
 
     h1 {
+      margin-bottom: 1rem;
       font-size: 2rem;
 
       small {
         display: block;
         font-size: 0.75rem;
       }
-    }
-
-    @include responsive(tablet-ipad) {
-      display: none;
     }
 
     div {
@@ -826,6 +1003,14 @@ div.bl-panel-items > div.bl-hide-current-work {
         text-transform: uppercase;
       }
     }
+  }
+
+  .pull-left li {
+    margin-bottom: 1rem;
+  }
+
+  .pull-right p {
+    margin-top: 1rem;
   }
 
   .head-content {
