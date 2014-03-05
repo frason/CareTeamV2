@@ -61,14 +61,14 @@
 }
 
 .task-pill-content {
+  position: relative;
+  background: #F6F6F6;
   border: 1px solid $blueMedium;
   border-radius: 5px;
 
   .pull-left {
     padding: 20px;
     width: 70%;
-    background: #F6F6F6;
-    border-radius: 5px 0 0 5px;
 
     p {
       margin-top: 1rem;
@@ -85,8 +85,20 @@
   }
 
   .pull-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
     padding: 20px;
     width: 30%;
+    background: #fff;
+    border-radius: 0 5px 5px 0;
+
+    button {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+    }
 
     p {
       margin-bottom: 10px;
@@ -159,74 +171,79 @@
           }
       }
 
-      .profile-btn-group {
-        right: 1rem;
-        padding: 0;
-        height: 100%;
+      .profile-top {
 
-        li {
-          position: relative;
-          float: left;
+        .profile-btn-group {
+          right: 1rem;
           padding: 0;
-          width: 25%;
           height: 100%;
-          overflow: hidden;
-          border-bottom: none;
-          
-          &:before {
-            content: "";
-            position: absolute;
-            top: 1rem;
-            right: 0;
-            bottom: 1rem;
-            width: 2px;
-            background: #fff;
-            z-index: 1;
-          }
 
-          &:last-child:before {
-            display: none;
-          }
-
-          &.active {
-            background: $blueMedium;
-          }
-
-          a {
-            width: 100%;
+          li {
+            position: relative;
+            float: left;
+            padding: 0;
+            width: 25%;
             height: 100%;
-            text-indent: -9999px;
-            border-top: none;
-
-            &.btn-primary {
-              border-radius: 0;
+            overflow: hidden;
+            border-bottom: none;
+            
+            &:before {
+              content: "";
+              position: absolute;
+              top: 1rem;
+              right: 0;
+              bottom: 1rem;
+              width: 2px;
+              background: #fff;
+              z-index: 1;
             }
-          }
 
-          .btn-patient {
-            padding-left: 0 !important;
-            background: url(../img/patient-white.png) no-repeat;
-            background-position: 50% 50%;
-            background-size: 24px 21px; 
-          }
+            &:last-child:before {
+              display: none;
+            }
 
-          .btn-tasks {
-            padding-left: 0 !important;
-            background-position: 50% 50%;
-            background-size: 21px 25px; 
-          }
+            &.active {
+              background: $blueMedium;
+              border-top: none;
+            }
 
-          .btn-messages {
-            padding-left: 0 !important;
-            background-position: 50% 50%;
-            background-size: 19px 25px; 
-          }
+            a {
+              left: 0;
+              width: 100%;
+              height: 100%;
+              text-indent: -9999px;
+              border-top: none;
 
-          .btn-encounters {
-            padding-left: 0 !important;
-            background: url(../img/icon-encounters.png) no-repeat;
-            background-position: 50% 50%;
-            background-size: 32px 21px; 
+              &.btn-primary {
+                border-radius: 0;
+              }
+            }
+
+            .btn-patient, &.active .btn-patient {
+              padding-left: 0 !important;
+              background: url(../img/patient-white.png) no-repeat;
+              background-position: 50% 50%;
+              background-size: 24px 21px; 
+            }
+
+            .btn-tasks, &.active .btn-tasks {
+              padding-left: 0 !important;
+              background-position: 50% 50%;
+              background-size: 21px 25px; 
+            }
+
+            .btn-messages, &.active .btn-messages {
+              padding-left: 0 !important;
+              background-position: 50% 50%;
+              background-size: 19px 25px; 
+            }
+
+            .btn-encounters, &.active .btn-encounters {
+              padding-left: 0 !important;
+              background: url(../img/icon-encounters.png) no-repeat;
+              background-position: 50% 50%;
+              background-size: 32px 21px; 
+            }
           }
         }
       }
@@ -247,6 +264,112 @@
       background: {
         position: 15px 15px;
         size: 70px;
+      }
+    }
+
+    .profile-top {
+
+      .profile-btn-group {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        @include span-columns(3 omega, $total-columns);
+        z-index: 101;
+        background: $blueMedium;
+
+        li {
+          position: relative;
+          display: table;
+          width: 100%;
+          height: 25%;
+          overflow: hidden;
+
+          &.active {
+            background: #fff;
+            @include border-top-pad(7px, $blueBand);
+
+            a { 
+              color: #333; 
+            }
+          }
+
+          &:first-child.active {
+            border-radius: 0 5px 0 0;
+          }
+          
+          a {
+            position: relative;
+            left: 1.5rem;
+            padding-left: 3.375rem;
+            display: table-cell;
+            color: #fff;
+            font-size: 1.125rem;
+            text-align: left;
+            vertical-align: middle;
+            border-radius: 0;
+
+            @include responsive(tablet-lg) {
+              text-indent: -9999px;
+            }
+          }
+
+          .btn:active, .btn.active {
+            -webkit-box-shadow: none;
+               -moz-box-shadow: none;
+                    box-shadow: none;
+          }
+        }
+
+        .btn-patient {
+          background: url(../img/patient-white.png) no-repeat;
+          background-size: 27px 24px; 
+          background-position: 0 50%; 
+        }
+
+        li.active .btn-patient {
+          background: url(../img/icon-patient.png) no-repeat;
+          background-size: 27px 24px;  
+          background-position: 0 50%;
+        }
+
+        .btn-tasks {
+         
+          background: url(../img/icon-tasks.png) no-repeat;
+          background-size: 27px 31px; 
+          background-position: 0 50%;
+        }
+
+        li.active .btn-tasks {
+          background: url(../img/tasks-grey.png) no-repeat;
+          background-size: 27px 31px; 
+          background-position: 0 50%;
+        }
+
+        .btn-messages {
+          
+          background: url(../img/icon-messages.png) no-repeat;
+          background-size: 24px 33px; 
+          background-position: 0 50%;
+        }
+
+        li.active .btn-messages {
+          background: url(../img/messages-grey.png) no-repeat;
+          background-size: 24px 33px; 
+          background-position: 0 50%;
+        }
+
+        .btn-encounters {
+          background: url(../img/icon-encounters.png) no-repeat;
+          background-size: 44px 29px; 
+          background-position: 0 50%;
+        }
+
+        li.active .btn-encounters {
+          background: url(../img/encounters-grey.png) no-repeat;
+          background-size: 44px 29px; 
+          background-position: 0 50%;
+        }
       }
     }
 
@@ -332,105 +455,6 @@
         color: #9B9B9B;
         font-size: .75rem;
       }
-    }
-
-    .profile-btn-group {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      padding: .5rem 0;
-      @include span-columns(3 omega, $total-columns);
-      z-index: 101;
-      background: $blueMedium;
-
-      @include responsive(tablet-lg) {
-        // @include span-columns(2 omega, $total-columns);
-      }
-
-      li {
-        padding: 0 1.5rem;
-        border-bottom: 2px solid #fff;
-      }
-
-      a {
-        min-height: 40px;
-        display: block;
-        color: #fff;
-        font-size: 1.125rem;
-        line-height: 40px;
-        text-align: left;
-        border-radius: 0;
-
-        @include responsive(tablet-lg) {
-          text-indent: -9999px;
-        }
-      }
-
-      .active {
-        background: #fff;
-
-        a { 
-          color: #333; 
-        }
-      }
-
-      .btn:active, .btn.active {
-        -webkit-box-shadow: none;
-                box-shadow: none;
-      }
-    }
-
-    .btn-patient {
-      padding-left: 55px !important;
-      background: url(../img/patient-white.png) no-repeat;
-      background-size: 27px 24px;
-      background-position: 0 50%;
-    }
-
-    li.active .btn-patient {
-      background: url(../img/icon-patient.png) no-repeat;
-      background-size: 27px 24px;
-      background-position: 0 50%;
-    }
-
-    .btn-tasks {
-      padding-left: 55px !important;
-      background: url(../img/icon-tasks.png) no-repeat;
-      background-size: 27px 31px; 
-      background-position: 0 50%;
-    }
-
-    li.active .btn-tasks {
-      background: url(../img/tasks-grey.png) no-repeat;
-      background-size: 27px 31px; 
-      background-position: 0 50%;
-    }
-
-    .btn-messages {
-      padding-left: 55px !important;
-      background: url(../img/icon-messages.png) no-repeat;
-      background-size: 24px 33px; 
-      background-position: 0 50%;
-    }
-
-    li.active .btn-messages {
-      background: url(../img/messages-grey.png) no-repeat;
-      background-size: 24px 33px; 
-      background-position: 0 50%;
-    }
-
-    .btn-encounters {
-      padding-left: 55px !important;
-      background: url(../img/icon-encounters.png) no-repeat;
-      background-size: 44px 29px; 
-      background-position: 0 50%;
-    }
-
-    li.active .btn-encounters {
-      background: url(../img/encounters-grey.png) no-repeat;
-      background-size: 44px 29px; 
-      background-position: 0 50%;
     }
 
     .profile-info {
@@ -749,7 +773,6 @@ body.goals .aside-profile li.tiles-goals {
 .content-module {
   @include span-columns(8 omega, $total-columns);
   @include border-top-pad($blueBand);
-  padding-top: 1rem;
 
   @include responsive(tablet-lg) {
     @include span-columns(12, $total-columns);
