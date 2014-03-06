@@ -290,7 +290,7 @@ jQuery(document).ready(function ($) {
 
   $('.profile-header').waypoint('sticky', {
     context: '.page-wrapper',
-    offset: -100
+    offset: -40
   });
 
   $('.profile-btn-group').on('click', 'a', function() {
@@ -298,6 +298,8 @@ jQuery(document).ready(function ($) {
       $('.page-wrapper').scrollTop( 0 );
     }
   });
+
+  $('.')
 
 // end .ready        
 });

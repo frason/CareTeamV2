@@ -1,0 +1,88 @@
+---
+title: Patient History
+aside: partials/profile-aside
+modal: partials/modal-meds
+card: partials/profile-card
+---
+
+<%= partial current_page.data.card || "partials/profile-card" %>
+<%= partial current_page.data.aside || "partials/profile-aside" %>
+
+<section class="content-module">
+
+  <div class="head-content first-content clearfix">
+
+    <div class="btn-group btn-group-justified">
+      <div class="btn-group">
+        <a class="btn btn-default" href="#events" data-toggle="tab">Life Events</a>
+      </div>
+      <div class="btn-group">
+        <a class="btn btn-default" href="#social" data-toggle="tab">Social History</a>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-outline pull-right">Add Life Event</button>
+
+  </div>
+
+
+  <div class="tab-content">
+
+    <div class="tab-pane fade in active" id="events">
+
+      <ol class="timeline">
+        <li>
+          <div class="timeline-date">
+            <p><span>2014</span>74 years old</p>
+          </div>
+          <div class="timeline-event">
+            <div>
+              <span>1/14/14</span>
+              <p>Admitted to ER after falling on hip.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-date">
+            <p><span>2010</span>70 years old</p>
+          </div>
+          <div class="timeline-event">
+            <div>
+              <span>1/1/14</span>
+              <p>Diagnosed with depression.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-date">
+            <p><span>2009</span>69 years old</p>
+          </div>
+          <div class="timeline-event">
+            <div>
+              <span>6/2/09</span>
+              <p>Henry Johnson (spouse) dies of heart attack.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-date">
+            <p><span>2007</span>67 years old</p>
+          </div>
+          <div class="timeline-event">
+            <div>
+              <span>11/2/07</span>
+              <p>Diagnosed with Type2 Diabetes (Case Management starts)</p>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+    </div>
+
+    <div class="tab-pane fade" id="social">
+      <p>Social History</p>
+    </div>
+
+  </div>
+
+</section>

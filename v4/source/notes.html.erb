@@ -1,0 +1,15 @@
+---
+title: Notes & Docs
+aside: partials/profile-aside
+modal: partials/modal-meds
+card: partials/profile-card
+---
+
+<%= partial current_page.data.card || "partials/profile-card" %>
+<%= partial current_page.data.aside || "partials/profile-aside" %>
+
+<section class="content-module">
+  <div class="head-content first-content clearfix">
+    <h2 class="pull-left">Notes <a class="btn btn-outline">Add Note</a></h2>
+  </div>
+</section>

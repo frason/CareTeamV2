@@ -7,8 +7,12 @@
   text-transform: uppercase;
 }
 
-.sticky-wrapper {
-  min-height: 235px;
+.sticky-wrapper.stuck {
+  height: 210px !important;
+
+  @include responsive(tablet-lg) {
+    height: 200px !important;
+  }
 }
 
 .profile-header {
@@ -17,22 +21,63 @@
 
     .profile-person {
       background-size: 45px !important;
-    }
 
-    .profile-info-top,
-    .profile-info-middle,
-    .profile-info-bottom {
-      padding-bottom: 0 !important;
+      .profile-info {
 
-      li {
-        margin-bottom: 10px;
-        width: 100% !important;
+        .profile-info-top,
+        .profile-info-middle,
+        .profile-info-bottom {
+          padding: 0 1rem;
+        }
+
+        .profile-info-top {
+          margin-bottom: 2rem;
+
+          .info-name {
+            margin-top: 10px;
+            width: 100%;  
+            line-height: 45px; // same as icon height
+          }
+
+          .info-phone,
+          .info-age,
+          .info-dob {
+            display: none;
+          }
+        }
+
+        .profile-info-middle,
+        .profile-info-bottom {
+          background: #fff;
+
+          li {
+            float: none;
+            padding: 8px 0;
+            display: block;
+            width: 100%;
+            font-size: .875rem;
+            border-bottom: 1px solid $grayLight;
+
+            span {
+              color: #333;
+            }
+
+            strong {
+              float: left;
+              @include span-columns(4, $total-columns);
+              font-size: .75rem;
+            }
+          }
+        }
+
+        .profile-info-bottom {
+          border-radius: 0 0 0 4px;
+
+          li:last-child {
+            border-bottom: none;
+          }
+        }
       }
-    }
-
-    .profile-info-middle,
-    .profile-info-bottom {
-      padding-top: 0;
     }
   }
 }
@@ -153,9 +198,9 @@
       .profile-info-top {
 
           .info-name {
-            margin-top: 3px;
             width: 48.5%;
             font-size: 24px;
+            line-height: 45px; // same as icon height
           }
 
           .info-phone {
@@ -205,6 +250,7 @@
             &.active {
               background: $blueMedium;
               border-top: none;
+              border-radius: 0 4px 0 0;
             }
 
             a {
@@ -277,6 +323,7 @@
         @include span-columns(3 omega, $total-columns);
         z-index: 101;
         background: $blueMedium;
+        border-radius: 0 4px 0 0;
 
         li {
           position: relative;
@@ -295,7 +342,7 @@
           }
 
           &:first-child.active {
-            border-radius: 0 5px 0 0;
+            border-radius: 0 4px 0 0;
           }
           
           a {
@@ -759,12 +806,13 @@
   }
 }
 
-body.conditions .aside-profile li.tiles-conditions, 
-body.meds .aside-profile li.tiles-meds, 
-body.vitals .aside-profile li.tiles-vitals, 
-body.encounters .aside-profile li.tiles-encounters, 
-body.procedures .aside-profile li.tiles-procedures, 
-body.goals .aside-profile li.tiles-goals {
+body.conditions .aside-profile .ul-tiles:not(.expanded) li.tiles-conditions, 
+body.meds .aside-profile .ul-tiles:not(.expanded) li.tiles-meds, 
+body.vitals .aside-profile .ul-tiles:not(.expanded) li.tiles-vitals, 
+body.assessments .aside-profile .ul-tiles:not(.expanded) li.tiles-assessments, 
+body.procedures .aside-profile .ul-tiles:not(.expanded) li.tiles-procedures, 
+body.goals .aside-profile .ul-tiles:not(.expanded) li.tiles-goals,
+body.history .aside-profile .ul-tiles:not(.expanded) li.tiles-history {
   @extend %active-tile;
 }
 
@@ -1125,3 +1173,5 @@ div.bl-panel-items > div.bl-hide-current-work {
     @extend %strongLabel;
   }
 }
+
+.btn-group-justified { margin-bottom: 1rem; }

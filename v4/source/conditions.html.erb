@@ -4,8 +4,10 @@ aside: partials/profile-aside
 panel: partials/modal
 paginate: partials/paginate
 nav: partials/nav-1
+card: partials/profile-card
 ---
 
+<%= partial current_page.data.card || "partials/profile-card" %>
 <%= partial current_page.data.aside || "partials/profile-aside" %>
 
 <section class="content-module">

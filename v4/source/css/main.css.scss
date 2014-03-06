@@ -1357,4 +1357,89 @@ header[role="fixed-header"] {
 }
 
 
+////// Patient History //////
 
+.timeline {
+  display: table;
+  width: 100%;
+
+  li {
+    display: table-row;   
+    border: 1px solid blue;
+  }
+
+  .timeline-date {
+    @include span-columns(2, $total-columns);
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
+    border-bottom: 1px dashed #ccc;
+
+    p {
+      vertical-align: middle;
+
+      span { display: block; }
+    }
+  }
+
+  .timeline-event {
+    @include span-columns(10 omega, $total-columns);
+    position: relative;
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 2px;
+      background: $grayDark;
+      z-index: 1;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -1rem;
+      margin-top: -1rem;
+      width: 2rem;
+      height: 2rem;
+      background: #868585;
+      z-index: 1;
+      border: 6px solid #9B9B9B;
+      border-radius: 50%;
+    }
+
+    div {
+      position: relative;
+      margin: 2rem 0 2rem 3rem;
+      padding: 1rem 1rem 1rem 5rem;
+      border: 1px solid $grayDark;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -2.5rem;
+        width: 2rem;
+        height: 1px;
+        background: $grayDark;
+        z-index: 1;
+      }
+
+      p {
+        display: inline-block;
+      }
+
+      span {
+        margin-right: 2rem;
+        display: inline-block;
+        color: #777;
+      }
+    }
+  }
+}

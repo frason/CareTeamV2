@@ -20,3 +20,15 @@
 		}
 	}
 }
+
+.panel-close {
+
+  img {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 25px;
+    height: 25px;
+    z-index: 100;
+  }
+}

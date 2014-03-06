@@ -33,10 +33,10 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
       originalHandler = options.handler;
       options.handler = function(direction) {
         var $sticky, shouldBeStuck;
-
         $sticky = $(this).children(':first');
         shouldBeStuck = direction === 'down' || direction === 'right';
         $sticky.toggleClass(options.stuckClass, shouldBeStuck);
+        $('.sticky-wrapper').toggleClass(options.stuckClass, shouldBeStuck);
         $wrap.height(shouldBeStuck ? $sticky.outerHeight() : '');
         if (originalHandler != null) {
           return originalHandler.call(this, direction);
