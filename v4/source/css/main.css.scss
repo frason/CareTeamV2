@@ -27,7 +27,6 @@ body {
 }
 
 html {
-  overflow-y: auto;
   font-size: 100%;
 
   @include responsive(desktop-sm) {
@@ -38,9 +37,9 @@ html {
 body {
   color: #000;
   font-size: 1rem;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
-  font-weight: 300; 
+  font-weight: 400; 
   line-height: 1;
 }
 
@@ -95,7 +94,7 @@ h5, h6 {
   padding-top: 85px;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
 
   ol, ul {
     margin: 0;
@@ -1294,21 +1293,27 @@ nav {
   }
 }
 
-
 header[role="fixed-header"] {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 0 140px 0 4rem;
+  padding: 0 180px 0 4rem;
   height: 65px;
   display: table;
   z-index: 900;
-  background: #eee;
-  border-bottom: 1px solid #999;
+  background: $purpleDark;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25), 
+                      inset 0px -1px 0px 0px #42659D, 
+                      inset 0px 1px 0px 0px rgba(255,255,255,0.25);
+     -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25), 
+                      inset 0px -1px 0px 0px #42659D, 
+                      inset 0px 1px 0px 0px rgba(255,255,255,0.25);
+          box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25), 
+                      inset 0px -1px 0px 0px #42659D, 
+                      inset 0px 1px 0px 0px rgba(255,255,255,0.25);
 
   @include responsive(tablet-lg) {
-
     .form-search {
       display: none;
     }
@@ -1316,6 +1321,11 @@ header[role="fixed-header"] {
 
   &.table {
     margin-bottom: 0;
+  }
+
+  h1 {
+    color: #fff;
+    font-weight: 300;
   }
 
   .logo {
@@ -1332,14 +1342,94 @@ header[role="fixed-header"] {
     position: absolute;
     top: 50%;
     left: 1rem;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+    background: $purpleLight;
+    border: 1px solid #42659D;
+    border-radius: 3px;
     -webkit-transform: translateY(-50%);
        -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%);   
+            transform: translateY(-50%); 
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(82,86,97,0.25), 
+                        inset 0px 1px 0px 0px rgba(255,255,255,0.50);
+       -moz-box-shadow:    0px 1px 2px 0px rgba(82,86,97,0.25), 
+                        inset 0px 1px 0px 0px rgba(255,255,255,0.50);
+            box-shadow: 0px 1px 2px 0px rgba(82,86,97,0.25), 
+                        inset 0px 1px 0px 0px rgba(255,255,255,0.50);
+
+    &.active {
+      .icon-bar { background-color: #fff; }
+    }
+
+    .icon-bar {
+      margin: 0 auto;
+      display: block;
+      width: 22px;
+      height: 3px;
+      background-color: #42659D;
+
+      + .icon-bar {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .form-search input {
+    padding: 6px 12px 6px 32px;
+    width: 400px;
+    height: 40px;
+    color: #fff;
+    font-weight: 300;
+    background-color: $purpleLight;
+    background-image: url(../img/icon-search.png);
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+    background-size: 15px 15px;
+    border: 1px solid #42659D;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.25), 
+                        inset 0px 2px 2px 0px rgba(55,84,130,0.50);
+       -moz-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.25), 
+                        inset 0px 2px 2px 0px rgba(55,84,130,0.50);
+            box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.25), 
+                        inset 0px 2px 2px 0px rgba(55,84,130,0.50);
   }
 
   .nav-pills {
     text-align: right;
+
+    .btn-link {
+      padding: .2rem .8rem;
+      color: #fff;
+      font-size: 1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .badge {
+      font-weight: normal;
+    }
+
+    .btn-messages {
+      .badge {
+        background-color: $purpleLight;
+      }
+    }
+
+    .btn-watchlist {
+      .badge {
+        color: #C0D8FF;
+        background-color: $purpleDarkest;
+      }
+    }
   }
 
   .nav-search {
@@ -1353,7 +1443,6 @@ header[role="fixed-header"] {
   .dropdown-menu {
     text-align: left;
   }
-
 }
 
 
@@ -1443,3 +1532,20 @@ header[role="fixed-header"] {
     }
   }
 }
+
+.btn-group-justified {
+  border-bottom: 3px solid $blueMedium;
+
+  .btn {
+    border: none;
+    border-radius: 5px 5px 0 0 !important;
+  }
+
+  a.active {
+    color: #fff;
+    background: $blueMedium;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+

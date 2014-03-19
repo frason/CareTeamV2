@@ -6,6 +6,9 @@ card: partials/profile-card
 ---
 
 <%= partial current_page.data.card || "partials/profile-card" %>
+
+<div class="clearfix">
+
 <%= partial current_page.data.aside || "partials/profile-aside" %>
 
 <section class="content-module">
@@ -14,7 +17,7 @@ card: partials/profile-card
 
     <div class="btn-group btn-group-justified">
       <div class="btn-group">
-        <a class="btn btn-default" href="#events" data-toggle="tab">Life Events</a>
+        <a class="btn btn-default active" href="#events" data-toggle="tab">Life Events</a>
       </div>
       <div class="btn-group">
         <a class="btn btn-default" href="#social" data-toggle="tab">Social History</a>
@@ -86,3 +89,5 @@ card: partials/profile-card
   </div>
 
 </section>
+
+<div>

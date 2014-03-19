@@ -1,6 +1,6 @@
 ---
 title: Live Style Guide
-nav: partials/nav-style-guide
+nav: partials/nav-2
 relativePath: ../
 
 primaryColors:
@@ -114,7 +114,9 @@ fontIcons:
   <%= stylesheet_link_tag 'style-guide' %>
 <% end %>
 
-<div class="row clearfix">
+
+
+<div class="clearfix">
   <div class="col desktop-12col-span12 tablet-12col-span12 mobile-12col-span12">
     <h2>Fonts</h2>
     <table class="table-bordered">
@@ -123,18 +125,18 @@ fontIcons:
         <th>CSS</th>
       </tr>
       <tr>
-        <td class="helvLight">Helvetica Neue Light</td>
+        <td class="helvLight">Open Sans<br><br>Open Sans Light</td>
         <td>
 <pre>
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-weight: 300;  /* Firefox */
+font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight: 400, 300;  /* Firefox */
 </pre>          
         </td>
       </tr>
     </table>
 
 
-    <div class="row clearfix">
+    <div class="clearfix">
       <h2>Primary Colors</h2>
       <%
         primaryColorsLength = current_page.data.primaryColors.length
@@ -175,7 +177,7 @@ font-weight: 300;  /* Firefox */
         <th>HTML</th>
       </tr>
       <tr>
-        <td class="helvLight"><a href="#" class="btn-primary">Connect</a></td>
+        <td class="helvLight"><a href="#" class="btn btn-primary">Connect</a></td>
         <td>Primary button</td>
         <td>
 <pre>
@@ -183,19 +185,9 @@ font-weight: 300;  /* Firefox */
 </pre>          
         </td>
       </tr>
+      
       <tr>
-        <td class="helvLight"><a href="#" class="btn-primary withSidebar clearfix"><span>Watchlist</span> <span>3</span></a></td>
-        <td>Primary button with Sidebar</td>
-        <td>
-<pre>
-&lt;a href="#" class="btn-primary withSidebar clearfix"&gt;
-  &lt;span&gt;Watchlist&lt;/span&gt; &lt;span&gt;3&lt;/span&gt;
-&lt;/a&gt;
-</pre>          
-        </td>
-      </tr>
-      <tr>
-        <td class="helvLight"><a href="#" class="btn-secondary">Connect</a></td>
+        <td class="helvLight"><a href="#" class="btn btn-secondary">Connect</a></td>
         <td>Secondary button</td>
         <td>
 <pre>
@@ -203,17 +195,7 @@ font-weight: 300;  /* Firefox */
 </pre>          
         </td>
       </tr>
-      <tr>
-        <td class="helvLight"><a href="#" class="btn-secondary withSidebar clearfix"><span>Watchlist</span> <span>3</span></a></td>
-        <td>Secondary button with Sidebar</td>
-        <td>
-<pre>
-&lt;a href="#" class="btn-secondary withSidebar clearfix"&gt;
-  &lt;span&gt;Watchlist&lt;/span&gt; &lt;span&gt;3&lt;/span&gt;
-&lt;/a&gt;
-</pre>          
-        </td>
-      </tr>
+     
     </table>
 
 
@@ -223,21 +205,21 @@ font-weight: 300;  /* Firefox */
 
     <p>With the font-encoding number, you can use it as an html-entity or in the CSS ':before' selector in the 'content' property. Example:</p>
 
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+    <div class="m-bottom col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
       <strong>Font encoding number</strong>
 <pre>
 e600
 </pre>  
     </div>
     
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+    <div class="m-bottom col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
       <strong>HTML entity</strong>
 <pre>
 &amp;#xe600;
 </pre>  
     </div>
 
-    <div class="col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
+    <div class="m-bottom col desktop-12col-span4 tablet-12col-span4 mobile-12col-span12">
       <strong>CSS class</strong>
 <pre>
 .icon-cog:before {
@@ -246,7 +228,7 @@ e600
 </pre> 
     </div>
 
-    <div class="row clearfix">   
+    <div class="clearfix">   
       <%
         fontIconsLength = current_page.data.fontIcons.length
         fontIconsHalf = fontIconsLength / 2
@@ -279,6 +261,7 @@ e600
 
     <hr/>
 
+<!--
     <h2>Grid system</h2>
     <p>This site uses a 12-column fluid grid constructed with the <a href="http://susy.oddbird.net/" target="_blank">Susy</a> grid plugin for SASS/Compass. CSS classes are prefixed with the breakpoint ("mobile", "tablet", or "desktop"), followed by the number at the end that indicates the number of columns to span within the 12-column grid. Example:</p>
 
@@ -287,7 +270,7 @@ e600
       <i>(resize the screen to see the divs respond)</i>
     </p>
 
-    <div class="row clearfix"> 
+    <div class="clearfix"> 
       <div class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12" style="border: 1px dashed black;">
         <div class="item">
           class="col desktop-12col-span3 tablet-12col-span6 mobile-12col-span12"
@@ -310,6 +293,7 @@ e600
       </div>
     </div><!-- .row -->
 
+<!--
     <p>&nbsp;</p>
     
     <strong>HTML markup</strong>
@@ -326,6 +310,7 @@ e600
 
     <hr/>
 
+    -->
     <h2>Toggling Breakpoint classes in the &lt;html&gt; tag</h2>    
     <p>In addition to media-queries in the .css, a simple script in "/js/main.js" also toggles between breakpoint classes in the &lt;html&gt; tag on window 'resize'. This should be a very simple script to add or modify if you need other breakpoints.</p>  
 
@@ -356,3 +341,5 @@ e600
     <p>&nbsp;</p>
   </div><!-- .col-->
 </div><!-- .row -->
+
+

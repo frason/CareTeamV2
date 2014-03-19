@@ -10,36 +10,37 @@
     <title>Healthagen | <%= current_page.data.title %></title>
     <meta name="description" content="">
     <meta name="viewport" content="initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <% if content_for?(:stylesheets) %>  
       <%= yield_content :stylesheets %>
     <% end %>
-    <!-- 
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"> 
-    -->
-    <%= stylesheet_link_tag 'boilerplate', 'bootstrap.min', 'main' %>
-    <!-- 'isotope-style',  -->
+    <%= stylesheet_link_tag 'boilerplate', 'bootstrap.min', 'pushy', 'main' %>
     <%= javascript_include_tag 'vendor/modernizr-2.6.2.min' %>
 </head>
 <body class="<%= page_classes %>">
 
-    <div id="top" class="wrapper">
+    <!-- Pushy Menu -->
+    <nav class="pushy pushy-left">
+        <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Patients</a></li>
+            <li><a href="#">Connect</a></li>
+            <li><a href="#">Tasks</a></li>
+            <li><a href="#">Patient Profile</a></li>
+        </ul>
+    </nav>
+
+    <!-- Site Overlay : used with Pushy Menu -->
+    <div class="site-overlay"></div>
+
+    <div id="container" class="wrapper">
 
         <%= partial current_page.data.nav || "partials/nav-1" %>
 
         <div class="page-wrapper">
           <%= yield %>
         </div>
-
-        <div id="panel" style="display: none;"><!-- info-panel -->
-            <a class="close-x" id="close-x">x</a>
-            <dl>
-                <dt>window-width:</dt>
-                <dd class="win"></dd>
-                <dt>breakpoint:</dt>
-                <dd class="breakpoint"></dd>
-            </dl>
-        </div>
-
+      
     </div>
 
     
@@ -49,6 +50,6 @@
       <%= yield_content :scripts %>
     <% end %>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <%= javascript_include_tag 'classie', 'modalEffects', 'cssParser', 'waypoints.min', 'sticky', 'plugins', 'main' %>
+    <%= javascript_include_tag 'classie', 'modalEffects', 'cssParser', 'waypoints.min', 'sticky', 'pushy.min', 'plugins', 'main' %>
 </body>
 </html>

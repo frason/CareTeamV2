@@ -1,14 +1,46 @@
+@import "partials/variables";
 @import "partials/my-mixins";
 
 $tableBorder: #D5D9D8;
 
-.container {
-  font-family: arial, sans-serif;
-}
+.live-style-guide {
 
-.helvLight {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;  /* Firefox */
+  header[role="fixed-header"] {
+    padding-left: 1rem;
+  }
+
+  .page-wrapper {
+
+    h2 {
+      margin: 1rem 0;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .col {
+
+      strong {
+        margin: .5rem 0;
+        display: block;
+      }
+    }
+
+    .m-bottom {
+      margin-bottom: 1rem;
+    }
+
+    .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+      border-top: 0;
+      border-left: 0;
+    }
+
+    .table-bordered {
+      border-bottom: 0;
+    }
+  }
 }
 
 table {
@@ -69,7 +101,6 @@ pre, code {
   border: 1px solid $tableBorder;
   border-radius: 4px;
   display: block;
-  @include rem-fallback(font-size, 0.875);
   margin: 0 0 1rem 0;
   padding: 8px;
   white-space: pre-wrap;

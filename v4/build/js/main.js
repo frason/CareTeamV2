@@ -3,6 +3,7 @@ $.fn.exists = function () {
     return this.length !== 0;
 }
 
+// get URL parameters
 $.extend({
   getUrlVars: function(){
     var vars = [], hash;
@@ -20,52 +21,114 @@ $.extend({
   }
 });
 
-// info-panel
-jQuery(document).ready(function ($) {  
+/**
+ * boxlayout.js v1.0.0
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Copyright 2013, Codrops
+ * http://www.codrops.com
+ */
+var Boxlayout = (function() {
 
-    var $window = $(window),
-        $body = $('body'),
-        $html = $('html');
+  var $workPanelsContainer = $( '#bl-panel-work-items' ),
+    $workPanels = $workPanelsContainer.children( 'div' ),
+    // if currently navigating the work items
+    isAnimating = false,
+    // close work panel trigger
+    $closeWorkItem = $workPanelsContainer.find( 'nav > span.bl-icon-close' ),
+    transEndEventNames = {
+      'WebkitTransition' : 'webkitTransitionEnd',
+      'MozTransition' : 'transitionend',
+      'OTransition' : 'oTransitionEnd',
+      'msTransition' : 'MSTransitionEnd',
+      'transition' : 'transitionend'
+    },
+    // transition end event name
+    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+    // support css transitions
+    supportTransitions = Modernizr.csstransitions;
 
-    function toggleBreakpoint() {
-      var windowWidth = $window.width();
-       // toggle breakpoint classes
-      $html.toggleClass('desktop', (windowWidth >= 1025));
-      $html.toggleClass('tablet-lnd', ( (windowWidth >= 769) && (windowWidth <= 1024) ));
-      $html.toggleClass('tablet-ptr', ( (windowWidth >= 640) && (windowWidth <= 768) ));          
-      $html.toggleClass('mobile', (windowWidth <= 639) );
-    }
+  function init() {
+    initEvents();
+  }
 
-    toggleBreakpoint();
+  function initEvents() {
 
-    if ( $('#panel').exists() ) {
-      var $panel = $('#panel'),
-          $win = $('.win', $panel),
-          $width = $('.width', $panel),
-          $fontsize = $('.fontsize', $panel),
-          $closeBtn = $('.close-x', $panel);
+    // navigating the work items: current work panel scales down and the next work panel slides up
+    $('.panel-trigger').on( 'click', function( event ) {
 
-      $closeBtn.click(function () {
-        $panel.hide();
-      });
+      var getName = $(this).data('name');
+      
+      if( isAnimating ) {
+        return false;
+      }
 
-      $win.html($window.width() + 'px');
-      $width.html($body.outerWidth() + 'px');
-      $fontsize.html($html.css('font-size'));
-    }
+      // isAnimating = true;
 
-    $(window).on('resize', function () {
-        //console.log($window.width());
-        toggleBreakpoint();
+      /*
+      $currentPanel.removeClass( 'bl-show-work' ).addClass( 'bl-hide-current-work' ).on( transEndEventName, function( event ) {
+        if( !$( event.target ).is( 'div' ) ) return false;
+        $( this ).off( transEndEventName ).removeClass( 'bl-hide-current-work' );
+        isAnimating = false;
+      } );
 
-        if ( $('#panel').exists() ) {
-          $win.html($window.width() + 'px');
-          $width.html($body.outerWidth() + 'px');
-          $fontsize.html($html.css('font-size'));
-        }
+      if( !supportTransitions ) {
+        $currentPanel.removeClass( 'bl-hide-current-work' );
+        isAnimating = false;
+      }
+      */
+
+      $('.profile-modal header h1').html( getName );
+
+      /*
+      if ( getRisk !="undefined" ) {
+        $('.profile-modal header div').html( '<strong>Risk Level</strong>' + getRisk + ' Risk');
+      } 
+
+      if ( getParagraph !="undefined" ) {
+        $('.note-group p').hide();
+        $('.profile-modal .' + getParagraph).show();
+      }
+      */
+
+      $('.panel-slide').addClass( 'bl-show-work' );
+
+      return false;
+
+    } );
+
+    $('.panel-close').on( 'click', function( event ) {
+
+      //$sectionWork.removeClass( 'bl-scale-down' );
+      //$workPanelsContainer.removeClass( 'bl-panel-items-show' );
+      $('.panel-slide').removeClass( 'bl-show-work' );
+      
+      return false;
+
     });
-// end .ready        
-});
+
+    // clicking the work panels close button: the current work panel slides down and the section scales up again
+    /*
+    $closeWorkItem.on( 'click', function( event ) {
+
+      // scale up main section
+      $sectionWork.removeClass( 'bl-scale-down' );
+      $workPanelsContainer.removeClass( 'bl-panel-items-show' );
+      $workPanels.eq( currentWorkPanel ).removeClass( 'bl-show-work' );
+      
+      return false;
+
+    } );
+    */
+
+  }
+
+  return { init : init };
+
+})();
 
 
 // dashboard isotope
@@ -76,7 +139,8 @@ jQuery(document).ready(function ($) {
     $container.isotope({
       itemSelector : '.element',
       masonry : {
-        columnWidth : 1
+        columnWidth : 1,
+        gutterWidth: 10
       },
       getSortData : {
         date : function ( $elem ) {
@@ -194,7 +258,6 @@ jQuery(document).ready(function ($) {
     $('.isotope-item').removeClass('active').show();
   });
 
-
   // Getting URL var
   if ( $('body').hasClass('page') ) {
     var byName = $.getUrlVar('id');
@@ -202,15 +265,61 @@ jQuery(document).ready(function ($) {
 
     $('.btn-back').show();
   }
+  
+  Boxlayout.init();
 
-  // reveal Profile tiles
-  $(window).on('click', function() {
-    
-      alert('clicked');
-    
+  // profile navigation
+  $('.aside-collapsed').on('click', 'li', function() {
+    if (!$(this).attr('data-toggled') || $(this).attr('data-toggled') == 'off') {
+      $(this).attr('data-toggled','on');
+      $('.page-wrapper').scrollTop( 125 );
+      $('.ul-tiles, .aside-column-wrapper').toggleClass('expanded');
+    }
+    else if ($(this).attr('data-toggled') == 'on') {
+      $(this).attr('data-toggled','off');
+      $('.ul-tiles, .aside-column-wrapper').toggleClass('expanded');
+    }
   });
 
+  $(window).resize(function() {
+    if ( $('.ul-tiles').hasClass('expanded') ) {
+      $(this).attr('data-toggled','on');
+      $('.ul-tiles, .aside-column-wrapper').toggleClass('expanded');
+    }
+  });
 
+  function openProfile () {
+    $('.profile-header').removeClass('closed').addClass('open');
+  }
+
+  function changeProfile () {
+    $('.profile-btn-group button').removeClass('active');
+    $('.profile-temp p').hide();
+  }
+
+  $('.profile-header').waypoint('sticky', {
+    context: '.page-wrapper',
+    offset: -40
+  });
+
+  $('.profile-btn-group').on('click', 'a', function() {
+    if ( $('.profile-header').hasClass('stuck')) {
+      $('.page-wrapper').scrollTop( 0 );
+    }
+  });
+
+  $('.btn-group-justified').on('click', 'a', function() {
+    $('.btn-group-justified a').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $('.btn-experiment').on('click', function () {
+    $('.exp-dropdown li').toggleClass('active');
+  });
+
+  $('.hamburger').on('click', function() {
+    $(this).toggleClass('active');
+  });
 
 // end .ready        
 });

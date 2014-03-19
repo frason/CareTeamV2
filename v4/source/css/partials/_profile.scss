@@ -329,7 +329,8 @@
           position: relative;
           display: table;
           width: 100%;
-          height: 25%;
+          // height: 25%;
+          height: 50px;
           overflow: hidden;
 
           &.active {
@@ -421,9 +422,7 @@
     }
 
     .profile-top, 
-    .profile-bottom {
-      width: 100%;
-    }
+    .profile-bottom { width: 100%; }
 
     .profile-info-top,
     .profile-info-middle,
@@ -440,12 +439,11 @@
 
       p {
         padding-bottom: 1rem;
+        line-height: 1.5;
         @include span-columns(5, $total-columns);
       }
 
-      h4 {
-        margin-bottom: 1rem;
-      }
+      h4 { margin-bottom: 1rem; }
     }
 
     .profile-info-top {
@@ -470,13 +468,8 @@
         }
       }
 
-      .info-age {
-        width: 10%;
-      }
-
-      .info-dob {
-        width: 15%;
-      }
+      .info-age { width: 10%; }
+      .info-dob { width: 15%; }
     }
 
     .profile-info-middle {
@@ -489,9 +482,7 @@
     .profile-info-bottom {
       background: #F1F9FB;
 
-      span {
-        display: block;
-      }
+      span { display: block; }
 
       li {
         color: rgba(0,0,0,.5);
@@ -543,9 +534,7 @@
         text-transform: uppercase;
       }
 
-      span {
-        display: block;
-      }
+      span { display: block; }
     }
   }
 
@@ -572,9 +561,7 @@
         @include justify-no-float(h4,span);
       }
 
-      img {
-        display: none;
-      }
+      img { display: none; }
     }
   }
 
@@ -609,9 +596,8 @@
       width: 3rem;
       height: 40px;
 
-      img, span {
-        display: none;
-      }
+      img, 
+      span { display: none; }
     }
   }
 
@@ -620,15 +606,16 @@
 // Aside
 
 .aside-profile {
-  @include span-columns(4, $total-columns);
+  float: left;
+  width: 30%;
+  // @include span-columns(3, $total-columns);
 
   @include responsive(tablet-lg) {
-    @include span-columns(12, $total-columns);
+    // @include span-columns(12, $total-columns);
+    width: 100%;
   }
 
-  .aside-collapsed {
-    display: none;
-  }
+  .aside-collapsed { display: none; }
 
   @include responsive(tablet-lg) {
 
@@ -666,67 +653,58 @@
     }
   }
 
+  .ul-tiles {
+    margin-bottom: 5rem;
+    border-bottom: 1px solid #aaa;
+  }
+
   li {
     position: relative;
-    float: left;
-    margin-bottom: 4%;
-    padding: 15px;
-    width: 48%;
-    height: 152px;
-    list-style: none; 
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    -moz-box-shadow:    0px 2px 0px 0px rgba(212,212,212,0.25);
-    -webkit-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
-    box-shadow:         0px 2px 0px 0px rgba(212,212,212,0.25);
-
-    &:nth-child(odd) {
-      margin-right: 4%;
-    }
-
+    background: #F4F6F9;
+    border: 1px solid #aaa;
+    border-right: none;
+    border-bottom: none;
+    -webkit-box-shadow: inset 0px 2px 0px 0px #FFFFFF, inset 0px 0px 20px 0px rgba(95,145,227,0.10);
+       -moz-box-shadow: inset 0px 2px 0px 0px #FFFFFF, inset 0px 0px 20px 0px rgba(95,145,227,0.10);
+            box-shadow: inset 0px 2px 0px 0px #FFFFFF, inset 0px 0px 20px 0px rgba(95,145,227,0.10);
+ 
     a {
-      color: #333;
+      padding: 12px 30px;
+      color: #999;
       display: block;
-      height: 100%;
+      min-height: 4.375rem;
     }
 
-    &.active {
-      padding: 8px 15px 15px;
-      color: #fff;
-      background: $blueMedium;
-      border: 1px solid transparent;
-      @include border-top-pad(7px, $blueBand);
-      border-radius: 0 0 5px 5px;
+    h3 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
 
-      a {
-        color: #fff;
+      span {
+        margin-top: 0.25rem;
+        padding-bottom: 1rem;
+        display: block;
+        font-size: 0.8125rem;
       }
     }
 
-    h3 span {
-      margin-top: 0.25rem;
-      display: block;
-      font-size: 0.875rem;
-    }
-
-    small, span {
-      display: block;
-    }
+    small { display: block; }
 
     p {
       position: absolute;
       bottom: 10px;
-      left: 15px;
+      left: 30px;
       margin: 0;
       font-size: 0.75rem;
-      line-height: 0.875rem;
+
+      span {
+        color: #aaa;
+      }
     }
 
     &.tiles-hotspot {
-      h3 {
-        color: $blueMedium;
-      }
+      background: #fff;
+
+      h3 { color: $orange; }
     }
 
     @include responsive(tablet-lg) {
@@ -739,15 +717,10 @@
          -moz-box-shadow: none;
               box-shadow: none;
 
-      &:nth-child(odd) {
-        margin-right: 0;
-      }
+      &:nth-child(odd) { margin-right: 0; }
 
       &.tiles-hotspot {
-
-        h3 {
-          color: #333;
-        }
+        h3 { color: #333; }
       }
 
       h3 {
@@ -755,9 +728,7 @@
         display: inline-block;
         vertical-align: top;
 
-        span {
-          display: none;
-        }
+        span { display: none; }
       }
 
       p {
@@ -773,37 +744,31 @@
     .ul-tiles {
       display: none;
 
-      &.expanded {
-        display: block;
-
-        li.tiles-meds {
-          padding: 15px;
-          color: #333;
-          background: #fff;
-          border: 1px solid transparent;
-
-          h3, 
-          a {
-            color: #333;
-          }
-        }
-      }
+      &.expanded { display: block; }
     }
   }
 
 }
 
 %active-tile {
-  padding: 8px 15px 15px;
-  color: #fff;
-  background: $blueMedium;
-  border: none;
-  @include border-top-pad(7px, $blueBand);
-  border-radius: 0 0 5px 5px; 
+  background: #fff;
 
-  a, h3 {
-    color: #fff;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -5px;
+    bottom: -1px;
+    z-index: 10;
+    width: 10px;
+    background: #6092E2;
+    border: 1px solid #42659D;
+    -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.50);
+      -moz-box-shadow:  inset 0px 1px 0px 0px rgba(255,255,255,0.50);
+            box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.50);
   }
+
+  h3 { color: #666; }
 }
 
 body.conditions .aside-profile .ul-tiles:not(.expanded) li.tiles-conditions, 
@@ -812,18 +777,72 @@ body.vitals .aside-profile .ul-tiles:not(.expanded) li.tiles-vitals,
 body.assessments .aside-profile .ul-tiles:not(.expanded) li.tiles-assessments, 
 body.procedures .aside-profile .ul-tiles:not(.expanded) li.tiles-procedures, 
 body.goals .aside-profile .ul-tiles:not(.expanded) li.tiles-goals,
-body.history .aside-profile .ul-tiles:not(.expanded) li.tiles-history {
+body.history .aside-profile .ul-tiles:not(.expanded) li.tiles-history,
+body.notes .aside-profile .ul-tiles:not(.expanded) li.tiles-notes  {
   @extend %active-tile;
+}
+
+body.conditions .aside-profile .expanded li.tiles-conditions, 
+body.meds .aside-profile .expanded li.tiles-meds, 
+body.vitals .aside-profile .expanded li.tiles-vitals, 
+body.assessments .aside-profile .expanded li.tiles-assessments, 
+body.procedures .aside-profile .expanded li.tiles-procedures, 
+body.goals .aside-profile .expanded li.tiles-goals,
+body.history .aside-profile .expanded li.tiles-history,
+body.notes .aside-profile .expanded li.tiles-notes  {
+  display: none;
+}
+
+.aside-column-wrapper {
+  border: 1px solid transparent;
+
+  &.expanded { 
+    position: relative;
+    border: 1px solid $grayLight;
+    border-radius: 0 0 5px 5px;
+    -webkit-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
+       -moz-box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25); 
+            box-shadow: 0px 2px 0px 0px rgba(212,212,212,0.25);
+
+    .aside-collapsed {
+      margin-bottom: 0;
+
+      li { border-radius: 0; }
+    }
+
+    .ul-tiles {
+      -webkit-transition: all 0.3s;
+              transition: all 0.3s;
+    }
+
+    .tiles {
+      padding: 0;
+      background: #eee;
+      border-bottom: 1px solid $grayLight;
+      border-radius: 0;
+
+      &:last-child {
+        border-bottom: none;
+        border-radius: 0 0 5px 5px;
+      }
+
+      a { padding: 15px; }
+    }
+  }
 }
 
 // Content 
 
 .content-module {
-  @include span-columns(8 omega, $total-columns);
+  // @include span-columns(8 omega, $total-columns);
+  float: right;
+  width: 70%;
   @include border-top-pad($blueBand);
 
   @include responsive(tablet-lg) {
-    @include span-columns(12, $total-columns);
+    // @include span-columns(12, $total-columns);
+    width: 100%;
+    border-top: none;
   }
 
   article {
@@ -844,14 +863,10 @@ body.history .aside-profile .ul-tiles:not(.expanded) li.tiles-history {
       text-align: center;
       border: 1px solid transparent;
 
-      p {
-        line-height: 116px;
-      }
+      p { line-height: 116px; }
     }
 
-    .panel-trigger {
-      cursor: pointer;
-    }
+    .panel-trigger { cursor: pointer; }
 
     header {
       @include justify-no-float(h3, span);
@@ -872,13 +887,13 @@ body.history .aside-profile .ul-tiles:not(.expanded) li.tiles-history {
           margin-right: 20px;
           display: inline-block;
           list-style: none;
-          font-size: 1.125rem;
+          font-size: .875rem;
           line-height: 1.25;
 
           strong {
             display: block;
             color: $greyTextLighter;
-            font-size: 0.875rem;
+            font-size: .6875rem;
             font-weight: normal;
             text-transform: uppercase;
           }
@@ -1001,13 +1016,9 @@ div.bl-panel-items > div.bl-hide-current-work {
   width: 100%;
   background: $whiteMedium;
 
-  .date, .code {
-    width: 18%;
-  }
+  .date, .code { width: 18%; }
 
-  th, td {
-    padding: 10px;
-  }
+  th, td { padding: 10px }
 
   th {
     color: $blackLight;
@@ -1034,9 +1045,7 @@ div.bl-panel-items > div.bl-hide-current-work {
     margin-left: 10px;
   }
 
-  .btn-toolbar {
-    float: right;
-  }
+  .btn-toolbar { float: right; }
 }
 
 // end /paginate
@@ -1047,9 +1056,7 @@ div.bl-panel-items > div.bl-hide-current-work {
 .profile-modal {
 
   header {
-    h1, div {
-      display: inline-block;
-    }
+    h1, div { display: inline-block; }
 
     h1 {
       margin-bottom: 1rem;
@@ -1076,20 +1083,20 @@ div.bl-panel-items > div.bl-hide-current-work {
     }
   }
 
-  .pull-left li {
-    margin-bottom: 1rem;
+  .pull-left li { 
+    margin-bottom: 1.5rem; 
+    line-height: 1.4;
   }
 
-  .pull-right p {
-    margin-top: 1rem;
+  .pull-right p { 
+    margin-top: 1.5rem;
+    line-height: 1.5; 
   }
 
   .head-content {
     // @include justify-no-float(h2,div);
 
-    .pull-right {
-      text-align: right;
-    }
+    .pull-right { text-align: right; }
   }
 
   .note-box {
@@ -1131,13 +1138,9 @@ div.bl-panel-items > div.bl-hide-current-work {
       padding: 1rem;
       width: 60%;
 
-      h2 {
-        margin-bottom: 1rem;
-      }
+      h2 { margin-bottom: 1rem; }
 
-      ul {
-        margin-top: 1rem;
-      }
+      ul { margin-top: 1rem; }
     }
 
     footer {
@@ -1155,9 +1158,7 @@ div.bl-panel-items > div.bl-hide-current-work {
         margin-bottom: 1rem;
         color: $blueMedium;
 
-        strong {
-          color: #777;
-        }
+        strong { color: #777; }
       }
     }
 
