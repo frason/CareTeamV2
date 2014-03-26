@@ -1,0 +1,172 @@
+<div class="profile-card col-md-12" ng-repeat="patient in patients" ng-show="patient.firstName == 'Betsy'">
+
+    <div class="profile-border clearfix">
+
+        <header class="clearfix">
+
+            <div class="pull-left">
+
+                <h1 ng-class="{ 'hotspot' : patient.hotspot === true }">{{ patient.lastName }}, {{ patient.firstName }}</h1>
+                <span class="phone">(212) 123-4567</span>
+               
+                <dl>
+                    <dt>Age</dt>
+                    <dd>{{ patient.age }}</dd>
+                </dl>
+                <dl>
+                    <dt>DOB</dt>
+                    <dd>05/21/{{ 2014 - patient.age }}</dd>
+                </dl>
+
+            </div>
+
+            <ul class="nav nav-tabs pull-right">
+                <li class="active">
+                    <a data-target="#tabPatient" data-toggle="tab">Patient</a>
+                </li>
+                <li>
+                    <a data-target="#tabTasks" data-toggle="tab">Tasks</a>
+                </li>
+                <li>
+                    <a data-target="#tabMessages" data-toggle="tab">Messages</a>
+                </li>
+                <li>
+                    <a data-target="#tabEncounters" data-toggle="tab">Encounters</a>
+                </li>
+            </ul>
+
+        </header>
+
+        <footer class="tab-content">    
+        
+            <div id="tabPatient" class="tab-pane fade in active">
+
+                <div class="dl-group dl-group-full clearfix">
+                    <dl>
+                        <dt>Case Managers</dt>
+                        <dd ng-repeat="manager in patient.managers">{{ $index + 1 }}. {{ manager }} <a href="">edit</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>Gender</dt>
+                        <dd>{{ patient.gender }}</dd>
+                    </dl>
+                    <dl>
+                        <dt>Careteam ID</dt>
+                        <dd>588620{{ $index + 1 }}</dd>
+                    </dl>
+                    <dl>
+                        <dt>Program</dt>
+                        <dd>{{ patient.program }}</dd>
+                    </dl>
+                    <dl>
+                        <dt>Address: Home</dt>
+                        <dd>12345 Grabel Ln,<br>Folkston, GA 80435</dd>
+                    </dl>
+                </div>
+
+                <div class="dl-group dl-group-full clearfix">
+                    <dl>
+                        <dt>Primary contact</dt>
+                        <dd>{{ patient.firstName + ' ' + patient.lastName }}</dd>
+                    </dl>
+                    <dl>
+                        <dt>Insurer</dt>
+                        <dd>{{ patient.insurer }}</dd>
+                    </dl>
+                    <dl>
+                        <dt>Eligibility</dt>
+                        <dd>01/01/2011</dd>
+                    </dl>
+                    <dl>
+                        <dt>Primary Care Doctor</dt>
+                        <dd>{{ patient.primaryDoctor }}<br>(606) 123-4567</dd>
+                    </dl>
+                </div>
+
+            </div>
+           
+            <div id="tabTasks" class="tab-pane fade clearfix">
+
+                <div class="profile-slider">
+
+                    <h2>Today's Tasks <a>view all</a></h2>
+
+                    <div class="profile-slide clearfix">
+
+                        <div class="pull-left col-md-9">
+
+                            <div class="dl-group clearfix">
+                            
+                                <h3 ng-class="{ 'hotspot' : patient.hotspot === true }">{{ patient.tasks.type }}</h3>
+
+                                <dl>
+                                    <dt>Time</dt>
+                                    <dd>{{ patient.tasks.time }}</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Status</dt>
+                                    <dd>{{ patient.tasks.status }}</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Primary Physician</dt>
+                                    <dd>{{ patient.primaryDoctor }}</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Program</dt>
+                                    <dd>{{ patient.program }}</dd>
+                                </dl>
+
+                            </div>
+
+                            <p>I've seen things you people wouldn't believe: Attack ships on fire off the shoulder of Orion; I watched c-beams glitter in the dark near the Tannhäuser Gate. All those moments will be lost in time, like tears in the rain... <a>More</a></p>
+
+                        </div>
+
+                        <div class="pull-right col-md-3">
+
+                            <div class="dl-group dl-group-full clearfix">
+                                <dl class="pull-left">
+                                    <dt>Playlist</dt>
+                                    <dd>{{ patient.playlist.title }}</dd> 
+                                </dl>
+                            </div>
+
+                            <button type="button" class="btn btn-default pull-left" ng-show="patient.tasks.step">{{ patient.tasks.step }}</button>
+                            <div class="btn-group pull-right" ng-show="patient.tasks.step">
+                              <button type="button" class="btn btn-default">Start</button>
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </button>
+                              <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                              </ul>
+                            </div>
+                        </div>  
+                    </div> 
+                </div> 
+            </div>
+
+            <div id="tabMessages" class="tab-pane fade">
+
+                <h2 class="clearfix">33 Messages / <strong>3 New</strong> <a>view all</a> <button type="button" class="btn btn-default pull-right">Create Message</button></h2>
+
+                <div class="message-box"></div>
+
+            </div>
+
+            <div id="tabEncounters" class="tab-pane fade">
+
+                <h2 class="clearfix">33 Messages <button type="button" class="btn btn-default pull-right">Create Encounter</button></h2>
+
+                <div class="message-box"</div>
+
+            </div>
+            
+
+        </footer>
+
+    </div>
+</div>

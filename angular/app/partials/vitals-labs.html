@@ -1,0 +1,84 @@
+<section class="section-vitals clearfix">
+
+    <div data-ng-include data-src="'app/partials/profile.html'"></div>
+    <div data-ng-include data-src="'app/partials/navigation.html'"></div>
+
+    <div class="section-content col-md-9 pull-right clearfix">
+
+        <div class="article-wrapper">
+
+            <div class="section-title clearfix">
+                <h2 class="pull-left">Vitals <button type="button" class="btn btn-primary">Add Vitals</button></h2>
+
+                <div class="pull-right">
+                    <label>Filter by</label>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">All</button>
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table-vitals table-grey">
+                <tr>
+                    <th class="name">Name</th>
+                    <th>Result</th>
+                    <th>Healthy Range</th>
+                    <th>Date</th>
+                    <th class="source">Source</th>
+                </tr>
+                <tr ng-repeat="vital in vitals">
+                    <td>{{ vital.title }}</td>
+                    <td>{{ vital.result }}</td>
+                    <td ng-show="vital.lowRange">{{ vital.lowRange + ' &ndash; ' + vital.highRange }}</td>
+                    <td ng-show="vital.healthRange">{{ vital.healthRange }}</td>
+                    <td>{{ vital.date }}</td>
+                    <td>{{ vital.source }}</td>
+                </tr>
+            </table>
+
+            <div class="section-title clearfix">
+                <h2 class="pull-left">Lab Data <button type="button" class="btn btn-primary">Add Labs</button></h2>
+            </div>
+
+            <ul class="module-list">
+
+                <li class="clearfix" ng-repeat="lab in labs">
+
+                    <header class="pull-left">
+
+                        <h2><a>{{ lab.title }}</a></h2>
+                        <small>On 3/15/13 via Aetna</small>
+
+                    </header>
+
+                    <footer class="pull-right clearfix">
+
+                        <div class="dl-group dl-group-full pull-right clearfix">
+                            <dl class="col-md-3">
+                                <dt>Result</dt>
+                                <dd>{{ lab.result }}</dd>
+                            </dl>
+                            <dl class="col-md-5">
+                                <dt>Healthy Range</dt>
+                                <dd>{{ lab.lowRange + ' &ndash; ' + lab.highRange }}%</dd>
+                            </dl>
+                            <dl class="col-md-4">
+                                <dt>&nbsp;</dt>
+                                <dd>3</dd>
+                            </dl>
+                        </div>
+                    </footer>
+
+
+                </li>
+
+            </ul>

@@ -1,0 +1,330 @@
+@charset "UTF-8";
+
+@import
+
+  // Bootflat
+  "bootflat/global",
+  "bootflat/button",
+  "bootflat/button_group",
+  "bootflat/label_badge",
+  "bootflat/tooltip",
+  "bootflat/popover",
+  "bootflat/progress",
+  "bootflat/breadcrumb",
+  "bootflat/pagination",
+  "bootflat/pager",
+  "bootflat/form",
+  "bootflat/checkbox_radio",
+  "bootflat/alert",
+  "bootflat/tab",
+  "bootflat/pill",
+  "bootflat/navbar",
+  "bootflat/list",
+  "bootflat/media_list",
+  "bootflat/modal",
+  "bootflat/well",
+  "bootflat/thumbnail",
+  "bootflat/jumbotron",
+  "bootflat/panel",
+  "bootflat/accordion",
+  "bootflat/footer",
+  "bootflat/dropdown",
+
+  // Healthagen 
+  "partials/variables", 
+  "partials/mixins", 
+  "partials/globals", 
+  "partials/header",
+  "partials/buttons",
+  "partials/modules",
+  "partials/profile-card",
+  "partials/asides";
+
+
+// Angular JS Bootstrap 
+.nav, .pagination, .carousel, .panel-title a, a { cursor: pointer; }
+
+.hotspot, .hotspot a {
+  color: $hotColor;
+}
+
+.hotspot h2, .hot-color {
+  color: $hotColor;
+}
+
+#container {
+-webkit-transition: all 0.4s ease;
+-moz-transition: all 0.4s ease;
+transition: all 0.4s ease;
+}
+
+.navbar-fixed-top .container {
+  width: 100% !important;
+}
+
+.article-wrapper {
+  padding: 20px;
+  border: 1px solid #aaa;
+}
+
+.section-content {
+  padding-left: 0;
+
+  @include responsive(tablet) {
+    padding-left: 15px;
+  }
+}
+
+.section-header {
+
+  h1 {
+    font: {
+      size: 28px;
+      weight: 300;
+    }
+  }
+}
+
+.section-title {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #bbb;
+
+  h2 {  
+    color: #666;
+    font: {
+      size: 1.5rem;
+      weight: 400;
+    }
+
+    button { margin-left: .3rem; }
+  }
+}
+
+// PLAYLISTS 
+
+.section-playlists {
+  margin-top: 4rem;
+}
+
+.article-wrapper {
+  background: #fff;
+
+  > h2 {
+    margin: 0;
+    padding-bottom: 1rem;
+    color: #666;
+    font: {
+      size: 1.5rem;
+      weight: 400;
+    }
+    border-bottom: 1px solid #bbb;
+
+    button { margin-left: .3rem; }
+  }
+
+
+}
+
+.aside-playlists {
+  width: 25%;
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      width: 100%;
+      list-style: none;
+
+      span {
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+}
+
+
+
+/* General styles for all menus */
+.cbp-spmenu {
+  background: #47a3da;
+  position: fixed;
+}
+
+.cbp-spmenu h3 {
+  color: #afdefa;
+  font-size: 1.9em;
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+  background: #0d77b6;
+}
+
+.cbp-spmenu a {
+  display: block;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+  background: #258ecd;
+}
+
+.cbp-spmenu a:active {
+  background: #afdefa;
+  color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+  width: 240px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.cbp-spmenu-vertical a {
+  border-bottom: 1px solid #258ecd;
+  padding: 1em;
+}
+
+.cbp-spmenu-horizontal {
+  width: 100%;
+  height: 150px;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.cbp-spmenu-horizontal h3 {
+  height: 100%;
+  width: 20%;
+  float: left;
+}
+
+.cbp-spmenu-horizontal a {
+  float: left;
+  width: 20%;
+  padding: 0.8em;
+  border-left: 1px solid #258ecd;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-left {
+  //left: -240px;
+  -webkit-transform: translate3d(-240px,0,0);
+-moz-transform: translate3d(-240px,0,0);
+-ms-transform: translate3d(-240px,0,0);
+-o-transform: translate3d(-240px,0,0);
+transform: translate3d(-240px,0,0);
+}
+
+.cbp-spmenu-right {
+  right: -240px;
+}
+
+.cbp-spmenu-left.cbp-spmenu-open {
+  // left: 0px;
+  -webkit-transform: translate3d(0,0,0);
+-moz-transform: translate3d(0,0,0);
+-ms-transform: translate3d(0,0,0);
+-o-transform: translate3d(0,0,0);
+transform: translate3d(0,0,0);
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+  right: 0px;
+}
+
+/* Horizontal menu that slides from the top or bottom */
+
+.cbp-spmenu-top {
+  top: -150px;
+}
+
+.cbp-spmenu-bottom {
+  bottom: -150px;
+}
+
+.cbp-spmenu-top.cbp-spmenu-open {
+  top: 0px;
+}
+
+.cbp-spmenu-bottom.cbp-spmenu-open {
+  bottom: 0px;
+}
+
+/* Push classes applied to the body */
+
+.cbp-spmenu-push {
+
+}
+
+.cbp-spmenu-push-toright {
+  -webkit-transform: translate3d(240px,0,0);
+  -moz-transform: translate3d(240px,0,0);
+  -ms-transform: translate3d(240px,0,0);
+  -o-transform: translate3d(240px,0,0);
+  transform: translate3d(240px,0,0);
+}
+
+.cbp-spmenu-push-toleft {
+  
+}
+
+/* Transitions */
+
+.cbp-spmenu,
+.cbp-spmenu-push {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+/* Example media queries */
+
+@media screen and (max-width: 55.1875em){
+
+  .cbp-spmenu-horizontal {
+    font-size: 75%;
+    height: 110px;
+  }
+
+  .cbp-spmenu-top {
+    top: -110px;
+  }
+
+  .cbp-spmenu-bottom {
+    bottom: -110px;
+  }
+
+}
+
+@media screen and (max-height: 26.375em){
+
+  .cbp-spmenu-vertical {
+    font-size: 90%;
+    width: 190px;
+  }
+
+  .cbp-spmenu-left,
+  .cbp-spmenu-push-toleft {
+    left: -190px;
+  }
+
+  .cbp-spmenu-right {
+    right: -190px;
+  }
+
+  .cbp-spmenu-push-toright {
+    left: 190px;
+  }
+}
