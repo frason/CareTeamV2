@@ -1,0 +1,93 @@
+<section class="section-conditions section-content clearfix">
+
+    <div data-ng-include data-src="'app/partials/profile.html'"></div>
+    
+    <aside class="aside-navigation col-md-3 col-sm-12 col-xs-12 pull-left" role="navigation" data-ng-include data-src="'app/partials/navigation.html'"></aside>
+
+    <div class="article-panel col-md-9 col-sm-12 col-xs-12 pull-right clearfix">
+
+        <div class="article-wrapper">
+
+            <div class="section-title clearfix">
+                <h2 class="pull-left">Conditions <button type="button" class="btn btn-primary">Add Condition</button></h2>          
+
+                <div class="pull-right">
+                    <label>Filter by</label>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default">Current</button>
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a data-ng-click="setOrder('asc')">Ascending</a></li>
+                        <li><a data-ng-click="setOrder('desc')">Descending</a></li>
+                        <li><a data-ng-click="setOrder('risk')">Risk</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="module-list">
+
+                <li class="clearfix" ng-repeat="condition in conditions | orderBy:orderby:reverse">
+
+                    <header class="pull-left clearfix">
+
+                        <div class="pull-left">
+                            <h2><a>{{ condition.title }}</a></h2>
+                            <small>On {{ getRandom( 1, 12 ) }}/{{ getRandom( 1, 28 ) }}/20{{ getRandom( 10, 14 ) }} via Aetna</small>
+                        </div>
+
+                         <div class="dl-group pull-right clearfix">
+                                
+                            <h3 ng-class="{ 'hotspot' : patient.hotspot === true }">{{ patient.tasks.type }}</h3>
+
+                            <dl>
+                                <dt>&nbsp;</dt>
+                                <dd>3</dd>
+                            </dl>
+
+                            <dl>
+                                <dt>&nbsp;</dt>
+                                <dd>6</dd>
+                            </dl>
+
+                        </div>
+
+                    </header>
+
+                    <footer class="pull-right clearfix">
+
+                        <div class="dl-group pull-right clearfix">
+                            <dl>
+                                <dt>Risk Level</dt>
+                                <dd>{{ condition.risk }}</dd>
+                            </dl>
+                        </div>
+                    </footer>
+                    
+                </li>
+
+            </ul>
+
+            <div class="section-title clearfix">
+                <h2>Diagnoses <button type="button" class="btn btn-primary">Add Diagnoses</button></h2>    
+            </div> 
+
+            <table class="table-grey">
+                <tr>
+                    <th class="name">Onset Date</th>
+                    <th>Code</th>
+                    <th>Description</th>
+                </tr>
+                <tr ng-repeat="diagnosis in diagnoses">
+                    <td>1/21/2014</td>
+                    <td>ICD9M-{{ getRandom( 100, 900 ) }}</td>
+                    <td>{{ diagnosis.description }}</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,95 @@
+    <header class="section-header section-header-full clearfix">
+
+        <h1 class="pull-left">{{ playlists.length }} Active Playlists</h1>
+
+        <div class="pull-right">
+            <div class="btn-group">
+                <a href="#/tasks" class="btn btn-primary">List</a>
+                <a class="btn btn-default" disabled="disabled">Playlists</a>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="section-playlists section-content">
+
+        <div class="article-panel col-md-9 col-sm-12 col-xs-12 pull-left">
+
+            <div class="article-wrapper">
+
+                <h2>Playlists</h2>
+
+                <ul>
+
+                    <li ng-class="{ 'hotspot' : playlist.hotspot === true }" class="article-li clearfix" ng-repeat="playlist in playlists" ng-switch="playlist.hotspot">
+
+                        <header class="pull-left clearfix">
+
+                            <h2 ng-class="{ 'hotspot' : playlist.hotspot === true }"><a>{{ playlist.title }}</a></h2>
+
+                            <div class="dl-group clearfix">
+                                <dl>
+                                    <dt>Patients</dt>
+                                    <dd>{{ playlist.patients }}</dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>Steps</dt>
+                                    <dd>{{ playlist.steps }}</dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>Effectiveness</dt>
+                                    <dd>{{ playlist.effectiveness }}%</dd>
+                                </dl>
+                            </div>
+
+                            <p>{{ playlist.goal }}</p>
+
+                        </header>
+
+                        <footer class="pull-right">
+
+                            <img src="bootflat/img/playlist-step1.png" ng-switch-when="false">
+                            <img src="bootflat/img/playlist-step4.png" ng-switch-when="true">
+
+                            <div class="dl-group dl-group-full clearfix">
+                                <dl class="pull-left">
+                                    <dt>Step {{ playlist.stepPosition }}</dt>
+                                    <dd ng-class="{ 'hotspot' : playlist.hotspot === true }">{{ playlist.stepDescription }}</dd> 
+                                </dl>
+
+                                <dl class="pull-right">
+                                    <dt>Patients</dt>
+                                    <dd>{{ playlist.patients }}</dd>
+                                </dl>
+                            </div>
+
+                        </footer>
+                    </li>
+                </ul>
+
+            </div><!-- // .article-wrapper -->
+        </div><!-- // .pull-left -->
+
+        <aside class="aside-playlists col-md-3 col-sm-12 col-xs-12 pull-right">
+
+            <div class="aside-inner">
+
+                <h3>All Playlists</h3>
+
+                <input type="text" ng-model="search" placeholder="Search">
+
+                <ul>
+                    <li class="th-list clearfix">Name <span>Effectiveness</span></li>
+                    <li class="clearfix" ng-repeat="playlist in playlists | filter:search">{{ playlist.title }} <span>{{ playlist.effectiveness }}%</span></li>
+                </ul>
+
+            </div>
+
+        </aside>
+       
+
+    </section>
+
+

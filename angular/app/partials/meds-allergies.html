@@ -1,0 +1,87 @@
+
+<section class="section-meds section-content row clearfix">
+
+    <div data-ng-include="'app/partials/profile.html'"></div>
+    
+    <aside class="aside-navigation col-md-3 col-sm-12 col-xs-12 pull-left" role="navigation" data-ng-include data-src="'app/partials/navigation.html'"></aside>
+
+    <div class="article-panel col-md-9 col-sm-12 col-xs-12 pull-right clearfix">
+
+        <div class="article-wrapper">
+
+            <div class="section-title clearfix">
+
+                <h2 class="pull-left">Medications <button type="button" class="btn btn-primary">Add Medication</button></h2>
+
+               <button type="button" class="btn btn-default show-right pull-right">Filter</button>
+            </div>
+
+            <ul class="module-list module-meds">
+
+                <li class="clearfix" ng-repeat="med in medications | orderBy:orderby:reverse">
+
+                    <header class="pull-left clearfix">
+
+                        <h2><a href="" class="show-bottom" data-window="{{ $index + 1 }}"><strong>{{ med.title }}</strong> &ndash; {{ med.dosage }}</a></h2>
+
+                        <div class="dl-group clearfix">
+                            <dl>
+                                <dt>Started</dt>
+                                <dd>June 7th, 2013</dd>
+                            </dl>
+
+                            <dl>
+                                <dt>Ended</dt>
+                                <dd>March 28, 2014</dd>
+                            </dl>
+                        </div>
+
+                    </header>
+
+                    <footer class="pull-right clearfix">
+
+                        <p class="text-right">1 Tablet Daily</p>
+                        
+                        <div class="btn-group pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary">Active</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary" disabled="disabled">Inactive</button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary">Not Reviewed</button>
+                            </div>
+                        </div>
+                    </footer>
+
+                </li>
+
+            </ul>
+
+            <div class="section-title clearfix">
+                <h2>Allergies <button type="button" class="btn btn-primary">Add Allergies</button></h2>
+            </div>
+
+            <p class="well well-lg">No known allergies</p>
+
+        </div><!-- // .article-wrapper -->
+
+    </div>
+
+</section>
+
+<!-- slide-bottom windows -->
+<div class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-bottom" id="cbp-spmenu-{{ $index + 1 }}" ng-repeat="med in medications">
+    
+    <h3><a href=""><strong>{{ med.title }}</strong> &ndash; {{ med.dosage }}</a></h3>
+    
+</div>
+
+<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right cbp-spmenu-s2 clearfix">
+  <h3>Filter Medications <a class="pull-right show-right-close"></a></h3>
+  <ul>
+    <li><a data-ng-click="setOrder('asc')">Ascending</a></li>
+    <li><a data-ng-click="setOrder('desc')">Descending</a></li>
+  </ul>
+</div>

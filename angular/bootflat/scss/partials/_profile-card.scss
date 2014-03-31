@@ -1,0 +1,153 @@
+
+.profile-card {
+  margin-bottom: 2rem;
+  
+  .profile-border {
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #aaa;
+
+    header {
+
+      .pull-left {
+        width: 75%;
+
+        h1 {
+          width: 44%;
+          display: inline-block;
+          color: #E16D44;
+          font-size: 1.875rem;
+        }
+
+        .top-info {
+          display: inline-block;
+        }
+
+        .phone {
+          margin-right: 3rem;
+          padding-left: 1.5rem;
+          display: inline-block;
+          color: $linkColor;
+          font-size: 1.125rem;
+          background: url(../img/icon-phone.png) no-repeat;
+          background-position: 0 50%;
+          background-size: 1rem .8125rem;
+        }
+
+        dl {
+          display: inline-block;
+          min-width: 4rem;
+
+          dt {
+            color: #aaa;
+            font-size: .75rem;
+            font-weight: 300;
+            text-transform: uppercase;
+          }
+
+          dd {
+            margin: 0;
+            color: #777;
+            font-size: 1.125rem;
+          }
+        }
+
+        @include responsive(tablet) {
+          width: 60%;
+
+          h1 {
+            width: 100%;
+          }
+
+          .top-info {
+            margin-top: 1rem;
+            display: block;
+          }
+        }
+      }
+
+      .profile-nav {
+        
+        li {
+          display: inline-block;
+          width: 2.5rem;
+
+          &.active a {
+            background: #e7f0fe;
+          }
+
+          a {
+            padding: .4375rem;
+            display: block;
+
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+    
+    footer {
+      padding: 1.8rem 1rem 0;
+      background: #FAFAFA;
+
+      h2 {
+        padding-bottom: 1rem;
+        font-size: 1.25rem;
+        border-bottom: 1px solid #bbb;
+
+        a {
+          margin-left: .5rem;
+          display: inline-block;
+          font-size: 1.125rem;
+        }
+      }
+
+      .dl-managers, .dl-contact {
+        width: 27%;
+      }
+
+      .dl-gender {
+        width: 11%;
+      }
+
+      .dl-careteam {
+        width: 14%;
+      }
+
+      .dl-program, .dl-eligibility {
+        width: 21%;
+      }
+
+      .dl-insurer {
+        width: 25%;
+      }
+
+      .profile-slide {
+        padding: 1rem;
+        width: 100%;
+        background: $lightGrey;
+
+        p {
+          margin: 1.5rem 0;
+          color: #999;
+          line-height: 1.5;
+        }
+      }
+
+
+      .dl-group-full {
+        padding-bottom: 1.5rem;
+
+        dl { 
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  aside {
+    height: 100px;
+    background: $lightGrey;
+  }
+}
+

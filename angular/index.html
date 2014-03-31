@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="patientsApp">
+<head>
+    <title ng-controller="titleController" ng-cloak>{{ title }} | Healthagen</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet'> 
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootflat/css/bootflat.css" rel="stylesheet">
+</head>
+
+<body class="cbp-spmenu-push">
+
+    <nav class="cbp-spmenu cbp-spmenu-left" id="cbp-spmenu-s1">
+      <h3><img src="bootflat/img/icon-female.png" width="35" height="35"> Miriam Makeba</h3>
+      <ul>
+        <li><a href="#/overview">Overview</a></li>
+        <li><a href="#/meds-allergies">Patients</a></li>
+        <li><a href="#/tasks">Tasks</a></li>
+        <li><a>Success</a></li>
+      </ul>
+      <ul>
+        <li><a>Account</a></li>
+        <li><a>Admin</a></li>
+      </ul>
+      <ul>
+        <li><a>Logout</a></li>
+      </ul>
+    </nav>
+
+    <div id="container" class="wrapper">
+
+        <header class="table clearfix" role="fixed-header">
+
+          <button id="showLeftPush" type="button" class="menu-btn hamburger">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <form class="table-cell form-search" role="search">
+            <input type="text" class="form-control">
+          </form>
+
+          <div class="table-cell nav nav-pills">
+            <button type="button" class="nav-search btn btn-link">Search</button>
+            <div class="btn-group">
+              <button id="showBottom" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                New <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+              </ul>
+            </div>
+            <a href="#/messages" class="btn btn-link btn-messages">Messages <span class="badge">3</span></a>
+            <button type="button" class="btn btn-link btn-watchlist">Watchlist <span class="badge">5</span></button>
+          </div> 
+
+          <a href="" class="logo"><img src="bootflat/img/logo.png" width="159" height="30"></a>
+
+        </header>
+
+        <div class="page-scroll container-fluid">
+           
+            <div animated-view></div>
+
+            <div id="overlay-left"></div>
+            <div id="overlay-right"></div>
+        </div>
+
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/holder.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controllers.js"></script>
+    <script src="app/services/customersService.js"></script>
+    <script src="app/directives/animatedView.js"></script>
+    <script src="app/directives/holderFix.js"></script>
+
+    <script src="js/classie.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

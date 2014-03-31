@@ -1,0 +1,81 @@
+        <header class="section-header section-header-full clearfix">
+
+            <h1 class="pull-left">Today's Hotspots</h1>
+
+        </header>
+
+
+<section class="section-overview section-content">
+
+    <div class="col-md-9 col-sm-12 col-xs-12 pull-left clearfix">
+
+        <ul class="pull-left">
+            <li class="hotspot" ng-repeat="patient in patients" ng-show="patient.hotspot">
+                <h2>{{ patient.firstName + ' ' + patient.lastName }}</h2>
+                <div class="hotspot-inner">
+                    <div class="dl-group clearfix">
+                        <dl class="pull-left">
+                            <dt>Age</dt>
+                            <dd>{{ patient.age }}</dd> 
+                        </dl>
+                        <dl class="pull-left">
+                            <dt>Primary Physician</dt>
+                            <dd>{{ patient.primaryDoctor }}</dd> 
+                        </dl>
+                    </div>
+                    <div class="dl-group">
+                        <dl>
+                            <dt>Diagnoses</dt>
+                            <dd>{{ patient.diagnoses }}</dd> 
+                        </dl>
+                    </div>
+                </div>
+                <h3>{{ patient.type }}</h3>
+                <span>{{ patient.time }}</span>
+            </li>
+        </ul>
+
+    </div>
+
+    <aside class="aside-overview col-md-3 col-sm-12 col-xs-12 pull-right">
+
+        <div class="aside-inner">
+
+            <div class="clearfix">
+                <h3 class="pull-left">Tasks</h3>
+                <button type="button" class="pull-right btn btn-default">View All</button>
+            </div>
+
+            <h4>Today's</h4>
+            <ul>
+                <li ng-repeat="task in tasks" ng-show="task.today === true">
+                    <a href="">
+                        <strong>{{ task.type }}</strong><br>
+                        {{ task.firstName + ' ' + task.lastName }}
+                    </a>
+                </li>
+            </ul>
+
+            <h4>Tomorrow's</h4>
+            <ul>
+                <li ng-repeat="task in tasks" ng-show="task.today === false">
+                    <a href="">
+                        <strong>{{ task.type }}</strong><br>
+                        {{ task.firstName + ' ' + task.lastName }}
+                    </a>
+                </li>
+            </ul>
+
+            <h4>Upcoming</h4>
+            <ul>
+                <li>
+                    No upcoming tasks.
+                </li>
+            </ul>
+
+         </div>
+    </aside>
+   
+</section>
+
+

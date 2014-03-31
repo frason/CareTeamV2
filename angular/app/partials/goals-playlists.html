@@ -1,0 +1,79 @@
+
+<section class="section-goals section-content clearfix">
+
+    <div data-ng-include="'app/partials/profile.html'"></div>
+    
+    <aside class="aside-navigation col-md-3 col-sm-12 col-xs-12 pull-left" role="navigation" data-ng-include data-src="'app/partials/navigation.html'"></aside>
+
+    <div class="article-panel col-md-9 col-sm-12 col-xs-12 pull-right clearfix">
+
+        <div class="article-wrapper">
+
+            <div class="section-title clearfix">
+
+                <h2 class="pull-left">Goals <button type="button" class="btn btn-primary">Add Goal</button></h2>
+
+                <div class="pull-right">
+                    <label>View</label>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Running
+                        
+                        </button>
+                      <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a>Ascending</a></li>
+                        <li><a>Descending</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="module-list module-problems">
+
+                <li class="clearfix" ng-repeat="goal in goals">
+
+                    <header class="clearfix">
+
+                        <h2><a href="" class="show-bottom" data-window="{{ $index + 1 }}"><strong>{{ goal.title }}</strong></a></h2>
+
+                        <div class="dl-group clearfix">
+                            <dl>
+                                <dt>Started</dt>
+                                <dd>June 7th, 2013</dd>
+                            </dl>
+                        </div>
+
+                    </header>
+
+                    <footer class="clearfix">
+                       
+                       <div class="dl-group clearfix">
+                            <dl>
+                                <dt>Goal</dt>
+                                <dd>{{ goal.goal }}</dd>
+                            </dl>
+                            <dl>
+                                <dt>Next Task</dt>
+                                <dd>{{ goal.task }}</dd>
+                            </dl>
+                        </div> 
+
+                    </footer>
+
+                </li>
+
+            </ul>
+
+          
+        </div><!-- // .article-wrapper -->
+
+    </div>
+
+</section>
+
+<!-- slide-bottom windows -->
+<div class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-bottom" id="cbp-spmenu-{{ $index + 1 }}" ng-repeat="goal in goals">
+    
+      <h3><a href=""><strong>{{ goal.title }}</strong></a></h3>
+    
+</div>

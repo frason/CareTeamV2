@@ -1,0 +1,202 @@
+    <header class="section-header section-header-full">
+
+        <div class="clearfix">
+
+            <h1 class="pull-left">{{ tasks.length }} Tasks</h1>
+
+            <div class="pull-right">
+                <div class="btn-group">
+                    <a class="btn btn-default" disabled="disabled">List</a>
+                    <a href="#/tasks-playlists" class="btn btn-primary">Playlists</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <div class="btn-group">
+
+            <button type="button" class="btn btn-default btn-filter">Filter</button>
+            <button type="button" class="btn btn-default btn-sort">Sort</button>
+            <button type="button" class="btn btn-default btn-views">Views</button>
+
+        </div> -->
+
+    </header>
+
+
+    <section class="section-tasks section-content clearfix">
+
+        <div class="article-panel col-md-9 col-sm-12 col-xs-12 pull-left">
+
+            <div class="article-wrapper">
+
+                <h2>Today's Tasks</h2>
+
+                <ul>
+
+                    <li ng-class="{ 'hotspot' : task.hotspot === true }" class="article-li clearfix" ng-repeat="task in tasks | filter:{today:'true'}">
+
+                        <header class="pull-left clearfix">
+
+                            <div class="dl-group clearfix">
+                                <h3 ng-class="{ 'hotspot' : task.hotspot === true }">
+                                    <a>
+                                        {{ task.type }}<br>
+                                        <small>{{ task.firstName + ' ' + task.lastName }}</small>
+                                    </a>
+                                </h3>
+
+                                <dl class="dl-time">
+                                    <dt>Time</dt>
+                                    <dd>Today</dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>Status</dt>
+                                    <dd>{{ task.status }}</dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>Primary Physician</dt>
+                                    <dd>{{ task.physician }}</dd>
+                                </dl>
+                            </div>
+
+                            <p>We are more like Germany: ambitious and misunderstood. Anyhoo, let's discuss this... <a href="">More</a></p>
+
+                        </header>
+
+                        <footer class="pull-right">
+
+                            <div class="dl-group clearfix">
+                                <dl class="pull-left">
+                                    <dt>Playlist</dt>
+                                    <dd>{{ task.playlist }}</dd> 
+                                </dl>
+                            </div>
+
+                            <button type="button" class="btn btn-default pull-left" ng-show="task.step">{{ task.step }}</button>
+                            
+                            <div class="btn-group pull-right" ng-show="task.step">
+                              <button type="button" class="btn btn-default">Start</button>
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                              </ul>
+                            </div>
+
+                        </footer>
+                    </li>
+                </ul>
+
+                <h2>Tomorrow's Tasks</h2>
+
+                <ul>
+
+                    <li ng-class="{ 'hotspot' : task.hotspot === true }" class="article-li clearfix" ng-repeat="task in tasks | filter:{today:'false'}">
+
+                        <header class="pull-left clearfix">
+
+                            <div class="dl-group clearfix">
+                                <h3 ng-class="{ 'hotspot' : task.hotspot === true }">
+                                    <a>
+                                        {{ task.type }}<br>
+                                        <small>{{ task.firstName + ' ' + task.lastName }}</small>
+                                    </a>
+                                </h3>
+
+                                <dl class="dl-time">
+                                    <dt>Time</dt>
+                                    <dd>Tomorrow</dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>Status</dt>
+                                    <dd>{{ task.status }}</dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>Primary Physician</dt>
+                                    <dd>{{ task.physician }}</dd>
+                                </dl>
+                            </div>
+
+                            <p>We are more like Germany: ambitious and misunderstood. Anyhoo, let's discuss this... <a href="">More</a></p>
+
+                        </header>
+
+                        <footer class="pull-right">
+
+                            <div class="dl-group clearfix">
+                                <dl class="pull-left">
+                                    <dt>Playlist</dt>
+                                    <dd>{{ task.playlist }}</dd> 
+                                </dl>
+                            </div>
+
+                            <button type="button" class="btn btn-default pull-left" ng-show="task.step">{{ task.step }}</button>
+
+                            <div class="btn-group pull-right" ng-show="task.step">
+                              <button type="button" class="btn btn-default">Start</button>
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                              </ul>
+                            </div>
+                            
+                        </footer>
+                    </li>
+                </ul>
+
+            </div><!-- // .article-wrapper -->
+        </div><!-- // .pull-left -->
+
+        <aside class="aside-tasks col-md-3 col-sm-12 col-xs-12 pull-right">
+
+            <div class="aside-inner">
+
+                <h3>Tasks Statistics</h3>
+
+                <div class="dl-group clearfix">
+                    <dl>
+                        <dt>Due Today</dt>
+                        <dd class="dl-large">{{ remaining() }}</dd>
+                    </dl>
+                    <dl>
+                        <dt>This Week</dt>
+                        <dd class="dl-large">{{ tasks.length }}</dd>
+                    </dl>
+                </div>
+
+                <h5>Top 3 Patients</h5>
+                <ol>
+                    <li ng-repeat="task in tasks" ng-show="task.hotspot">
+                        <a>{{ task.firstName + ' ' + task.lastName }}</a>
+                    </li>
+                </ol>
+
+
+                <h5>Top 3 Task Types</h5>
+                <ol>
+                    <li ng-repeat="task in tasks | limitTo: 3">
+                        <a>{{ task.type }}</a>
+                    </li>
+                </ol>
+            </div>
+
+        </aside>
+
+
+    </section>
+
+
